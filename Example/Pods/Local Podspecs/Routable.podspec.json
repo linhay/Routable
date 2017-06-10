@@ -1,0 +1,35 @@
+{
+  "name": "Routable",
+  "version": "0.1.0",
+  "summary": "A short description of Extensions.",
+  "homepage": "https://github.com/lin/Extensions",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "lin": "linhan.bigl055@outlook.com"
+  },
+  "source": {
+    "git": "https://github.com/bigL055/Routable",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": [
+    "Sources/*/**",
+    "Sources/*/*/**",
+    "Sources/**"
+  ],
+  "public_header_files": [
+    "Sources/Routable.h"
+  ],
+  "frameworks": [
+    "UIKit"
+  ],
+  "requires_arc": true,
+  "pod_target_xcconfig": {
+    "SWIFT_VERSION": "3.0"
+  }
+}

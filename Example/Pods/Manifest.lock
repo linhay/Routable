@@ -1,0 +1,16 @@
+PODS:
+  - Routable (0.1.0)
+
+DEPENDENCIES:
+  - Routable (from `../`)
+
+EXTERNAL SOURCES:
+  Routable:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Routable: 301d11c858beac05b5d4f7b72370ed008566d03d
+
+PODFILE CHECKSUM: 8d538564d9e7bd927b6369be028b79277bebb12b
+
+COCOAPODS: 1.2.1
