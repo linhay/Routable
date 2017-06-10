@@ -4,7 +4,7 @@ s.version          = '0.1.0'
 s.summary          = '基础的路由服务'
 
 
-s.homepage         = 'https://github.com/lin/Extensions'
+s.homepage         = 'https://github.com/bigL055/Routable'
 s.license          = { :type => 'MIT', :file => 'LICENSE' }
 s.author           = { 'lin' => 'linhan.bigl055@outlook.com' }
 s.source = { :git => 'https://github.com/bigL055/Routable.git', :tag => s.version.to_s }
