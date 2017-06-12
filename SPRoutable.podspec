@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-s.name             = 'Routable'
+s.name             = 'SPRoutable'
 s.version          = '0.1.0'
 s.summary          = '基础的路由服务'
 

@@ -45,7 +45,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		61552B9935F64C22E757429D /* Pods-Routable_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Routable_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Routable_Example/Pods-Routable_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		62EF8BF05C23CE2BE276B3CB /* Pods-Routable_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Routable_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Routable_Example/Pods-Routable_Example.release.xcconfig"; sourceTree = "<group>"; };
-		D708ABE3D23B10173268732B /* Routable.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Routable.podspec; path = ../Routable.podspec; sourceTree = "<group>"; };
+		D708ABE3D23B10173268732B /* SPRoutable.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SPRoutable.podspec; path = ../SPRoutable.podspec; sourceTree = "<group>"; };
 		F7A1A607D848D1067BAEC435 /* Pods_Routable_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Routable_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -152,7 +152,7 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				D708ABE3D23B10173268732B /* Routable.podspec */,
+				D708ABE3D23B10173268732B /* SPRoutable.podspec */,
 				5685A2A965330ED04E30D52C /* README.md */,
 				2D6CFCDC3868C4E11DBEDD61 /* LICENSE */,
 			);
