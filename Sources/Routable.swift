@@ -8,10 +8,13 @@
 
 import UIKit
 
+
 public class Routable {
+
   fileprivate let namespace = Bundle.main.infoDictionary?["CFBundleExecutable"] as! String
   public static let shared = Routable()
   fileprivate lazy var cachedTarget = [String: Any]()
+
 }
 
 public extension Routable {
@@ -46,21 +49,21 @@ public extension Routable {
       guard let target = target as? NSObject else { return nil }
       switch target.responds(to: action) {
       case true:
-        guard let object = target.perform(action, with: params) else { return nil }
-        return object.takeUnretainedValue()
+        guard let value = target.perform(action, with: params) else { return nil }
+        return value.takeUnretainedValue()
       case false:
         let actionString = "router_\(actionName)Params:"
         var action = NSSelectorFromString(actionString)
         switch target.responds(to: action) {
         case true:
-          guard let object = target.perform(action, with: params) else { return nil }
-          return object.takeUnretainedValue()
+          guard let value = target.perform(action, with: params) else { return nil }
+          return value.takeUnretainedValue()
         case false:
           action = NSSelectorFromString("notFound:")
           switch target.responds(to: action) {
           case true:
-            guard let object = target.perform(action, with: params) else { return nil }
-            return object.takeUnretainedValue()
+            guard let value = target.perform(action, with: params) else { return nil }
+            return value.takeUnretainedValue()
           case false:
             cachedTarget.removeValue(forKey: targetClassString)
             return nil
@@ -83,7 +86,7 @@ public extension Routable {
 
     let actionName = url.path.replacingOccurrences(of: "/", with: "")
 
-    let result = performTarget(name: url.host ?? "",
+    let result = performTarget(name: url.host!,
                                actionName: actionName,
                                params: params,
                                isCacheTarget: false)
@@ -91,5 +94,10 @@ public extension Routable {
     completion?(["result": result ?? false])
     return result
   }
+  
 }
+
+
+
+
 
