@@ -22,7 +22,7 @@ pod "SPRoutable"
 
 ## Author
 
-bigL055, linhan.bigl055@outlook.com
+linger, linhan.bigl055@outlook.com
 
 ## License
 
