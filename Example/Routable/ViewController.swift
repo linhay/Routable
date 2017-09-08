@@ -7,18 +7,24 @@
 //
 
 import UIKit
+import Routable
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+  @IBAction func event1(_ sender: UIButton) {
+    guard let vc = Routable.viewController(url: "http://b/b") else { return }
+    navigationController?.pushViewController(vc, animated: true)
+  }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  @IBAction func event2(_ sender: UIButton) {
+    guard let item = Routable.view(url: "http://c/c") else { return }
+    let count = view.subviews.count
+    item.frame = CGRect(x: count * 80, y: 0, width: 80, height: 80)
+    sender.addSubview(item)
+  }
+
+  @IBAction func event3(_ sender: UIButton) {
+  }
 
 }
 

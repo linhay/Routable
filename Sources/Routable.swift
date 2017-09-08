@@ -94,6 +94,52 @@ public extension Routable {
     completion?(["result": result ?? false])
     return result
   }
+
+
+  /// 解析viewController类型
+  ///
+  /// - Parameter url: viewController 路径
+  /// - Returns: viewController 或者 nil
+  public class func viewController(url: String) -> UIViewController? {
+    guard let path = URL(string: url) else {
+      assert(true, "url非法:" + url)
+      return nil
+    }
+
+    let object = Routable.shared.performAction(url: path, completion: nil)
+    if let vc = object as? UIViewController { return vc }
+    return nil
+  }
+
+  /// 解析view类型
+  ///
+  /// - Parameter url: view 路径
+  /// - Returns: view 或者 nil
+  public class func view(url: String) -> UIView? {
+    guard let path = URL(string: url) else {
+      assert(true, "url非法:" + url)
+      return nil
+    }
+
+    let object = Routable.shared.performAction(url: path, completion: nil)
+    if let view = object as? UIView { return view }
+    return nil
+  }
+
+  /// 解析view类型
+  ///
+  /// - Parameter url: view 路径
+  /// - Returns: view 或者 nil
+  public class func object<T: AnyObject>(url: String) -> T? {
+    guard let path = URL(string: url) else {
+      assert(true, "url非法:" + url)
+      return nil
+    }
+
+    let object = Routable.shared.performAction(url: path, completion: nil)
+    if let element = object as? T { return element }
+    return nil
+  }
   
 }
 
