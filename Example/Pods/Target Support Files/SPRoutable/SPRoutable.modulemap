@@ -1,0 +1,6 @@
+framework module SPRoutable {
+  umbrella header "SPRoutable-umbrella.h"
+
+  export *
+  module * { export * }
+}
