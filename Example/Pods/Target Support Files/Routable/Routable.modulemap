@@ -1,6 +1,0 @@
-framework module Routable {
-  umbrella header "Routable-umbrella.h"
-
-  export *
-  module * { export * }
-}

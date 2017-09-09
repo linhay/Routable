@@ -1,11 +1,7 @@
 use_frameworks!
 
 target 'Routable_Example' do
-  pod 'Routable', :path => '../'
-
-  target 'Routable_Tests' do
-    inherit! :search_paths
-
-    
-  end
+  pod 'SPRoutable', :path => '../'
+  pod 'AModules', :path => '../'
+  pod 'BModules', :path => '../'
 end

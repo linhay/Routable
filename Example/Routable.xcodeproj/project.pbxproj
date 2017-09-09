@@ -12,11 +12,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		7600C3EC86201FBE2F488EC4 /* Pods_Routable_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7A1A607D848D1067BAEC435 /* Pods_Routable_Example.framework */; };
-		9D4AFF4B1F62B03900CB7AFF /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4AFF4A1F62B03900CB7AFF /* BViewController.swift */; };
-		9D4AFF4D1F62B06F00CB7AFF /* Router_b.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4AFF4C1F62B06F00CB7AFF /* Router_b.swift */; };
 		9D4AFF4F1F62B33B00CB7AFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D4AFF4E1F62B33B00CB7AFF /* Main.storyboard */; };
-		9D771E5A1F62B5690075BEC9 /* CView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D771E591F62B5690075BEC9 /* CView.swift */; };
-		9D771E5C1F62B57A0075BEC9 /* Router_c.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D771E5B1F62B57A0075BEC9 /* Router_c.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,11 +29,10 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		61552B9935F64C22E757429D /* Pods-Routable_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Routable_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Routable_Example/Pods-Routable_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		62EF8BF05C23CE2BE276B3CB /* Pods-Routable_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Routable_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Routable_Example/Pods-Routable_Example.release.xcconfig"; sourceTree = "<group>"; };
-		9D4AFF4A1F62B03900CB7AFF /* BViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
-		9D4AFF4C1F62B06F00CB7AFF /* Router_b.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router_b.swift; sourceTree = "<group>"; };
+		9D3908501F6391A600539CDD /* AModules.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = AModules.podspec; path = ../AModules.podspec; sourceTree = "<group>"; };
+		9D3908591F63978800539CDD /* Routable_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Routable_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		9D39085D1F639DB800539CDD /* BModules.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = BModules.podspec; path = ../BModules.podspec; sourceTree = "<group>"; };
 		9D4AFF4E1F62B33B00CB7AFF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		9D771E591F62B5690075BEC9 /* CView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CView.swift; sourceTree = "<group>"; };
-		9D771E5B1F62B57A0075BEC9 /* Router_c.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router_c.swift; sourceTree = "<group>"; };
 		D708ABE3D23B10173268732B /* SPRoutable.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SPRoutable.podspec; path = ../SPRoutable.podspec; sourceTree = "<group>"; };
 		F7A1A607D848D1067BAEC435 /* Pods_Routable_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Routable_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -98,14 +93,11 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				9D4AFF4A1F62B03900CB7AFF /* BViewController.swift */,
-				9D4AFF4C1F62B06F00CB7AFF /* Router_b.swift */,
-				9D771E591F62B5690075BEC9 /* CView.swift */,
-				9D771E5B1F62B57A0075BEC9 /* Router_c.swift */,
 				9D4AFF4E1F62B33B00CB7AFF /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				9D3908591F63978800539CDD /* Routable_Example-Bridging-Header.h */,
 			);
 			name = "Example for Routable";
 			path = Routable;
@@ -122,6 +114,8 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				9D3908501F6391A600539CDD /* AModules.podspec */,
+				9D39085D1F639DB800539CDD /* BModules.podspec */,
 				D708ABE3D23B10173268732B /* SPRoutable.podspec */,
 				5685A2A965330ED04E30D52C /* README.md */,
 				2D6CFCDC3868C4E11DBEDD61 /* LICENSE */,
@@ -165,7 +159,7 @@
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = 3L8RM3MDLS;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0900;
 					};
 				};
 			};
@@ -222,13 +216,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Routable_Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DD368FB19EFE8BBF764F052D /* [CP] Embed Pods Frameworks */ = {
@@ -237,9 +234,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Routable_Example/Pods-Routable_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AModules/AModules.framework",
+				"${BUILT_PRODUCTS_DIR}/BModules/BModules.framework",
+				"${BUILT_PRODUCTS_DIR}/SPRoutable/SPRoutable.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AModules.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BModules.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPRoutable.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -254,11 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				9D4AFF4B1F62B03900CB7AFF /* BViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				9D771E5A1F62B5690075BEC9 /* CView.swift in Sources */,
-				9D771E5C1F62B57A0075BEC9 /* Router_c.swift in Sources */,
-				9D4AFF4D1F62B06F00CB7AFF /* Router_b.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,12 +368,15 @@
 			baseConfigurationReference = 61552B9935F64C22E757429D /* Pods-Routable_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 3L8RM3MDLS;
 				INFOPLIST_FILE = Routable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Routable/Routable_Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -383,12 +386,14 @@
 			baseConfigurationReference = 62EF8BF05C23CE2BE276B3CB /* Pods-Routable_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 3L8RM3MDLS;
 				INFOPLIST_FILE = Routable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Routable/Routable_Example-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

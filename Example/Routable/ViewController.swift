@@ -7,24 +7,28 @@
 //
 
 import UIKit
-import Routable
+import SPRoutable
 
 class ViewController: UITableViewController {
 
   @IBAction func event1(_ sender: UIButton) {
-    guard let vc = Routable.viewController(url: "http://b/b") else { return }
+    guard let vc = Routable.viewController(url: "http://objc/a") else { return }
     navigationController?.pushViewController(vc, animated: true)
   }
 
   @IBAction func event2(_ sender: UIButton) {
-    guard let item = Routable.view(url: "http://c/c") else { return }
-    let count = view.subviews.count
-    item.frame = CGRect(x: count * 80, y: 0, width: 80, height: 80)
-    sender.addSubview(item)
+    guard let vc = Routable.viewController(url: "http://swift/a") else { return }
+    navigationController?.pushViewController(vc, animated: true)
   }
 
   @IBAction func event3(_ sender: UIButton) {
+     Routable.executing(url: "http://swift/c?a=0")
   }
 
 }
+
+
+
+
+
 

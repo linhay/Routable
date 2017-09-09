@@ -29,7 +29,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtb-7e-aiv">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
-                                                    <state key="normal" title="ViewController"/>
+                                                    <state key="normal" title="http://objc/a"/>
                                                     <connections>
                                                         <action selector="event1:" destination="77g-Ab-dyY" eventType="touchUpInside" id="OJX-fp-Mdt"/>
                                                     </connections>
@@ -52,7 +52,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ly2-zM-2zc">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
-                                                    <state key="normal" title="View"/>
+                                                    <state key="normal" title="http://swift/a"/>
                                                     <connections>
                                                         <action selector="event2:" destination="77g-Ab-dyY" eventType="touchUpInside" id="NfP-EZ-Xap"/>
                                                     </connections>
@@ -75,7 +75,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGS-ac-hEh">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
-                                                    <state key="normal" title="AnyObject"/>
+                                                    <state key="normal" title="http://swift/c"/>
                                                     <connections>
                                                         <action selector="event3:" destination="77g-Ab-dyY" eventType="touchUpInside" id="qiu-Hb-a0o"/>
                                                     </connections>
