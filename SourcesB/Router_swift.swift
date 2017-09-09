@@ -19,12 +19,19 @@ class Router_swift: NSObject {
 
   func router_b() -> UIView {
     let view = UIView()
-    view.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+    view.frame = CGRect(x: 0, y: 300, width: 300, height: 300)
     view.backgroundColor = UIColor.red
     return view
   }
 
   func router_c(params: [String: Any] = [:]) {
-    print(params)
+    let alert = UIAlertController()
+    alert.title = #function
+    alert.message = params.description
+    let action = UIAlertAction(title: "确定",
+                               style: UIAlertActionStyle.cancel,
+                               handler: nil)
+    alert.addAction(action)
+    UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
   }
 }

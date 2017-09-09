@@ -14,7 +14,7 @@ class ViewController: UITableViewController {
               "http://swift/a",
               "http://swift/b",
               "http://swift/b",
-              "http://swift/c&ut=3"]
+              "http://swift/c?ut=3"]
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return list.count
