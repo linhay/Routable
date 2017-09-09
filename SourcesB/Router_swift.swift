@@ -10,6 +10,7 @@ import UIKit
 
 @objc(Router_swift)
 class Router_swift: NSObject {
+  var flag = true
 
   func router_a(params:[String: Any]) -> UIViewController {
     let vc = UIViewController()
@@ -20,7 +21,8 @@ class Router_swift: NSObject {
   func router_b() -> UIView {
     let view = UIView()
     view.frame = CGRect(x: 0, y: 300, width: 300, height: 300)
-    view.backgroundColor = UIColor.red
+    view.backgroundColor = flag ? UIColor.red : UIColor.blue
+    flag = !flag
     return view
   }
 
