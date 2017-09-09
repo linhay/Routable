@@ -13,6 +13,7 @@ class ViewController: UITableViewController {
   let list = ["http://objc/a",
               "http://swift/a",
               "http://swift/b",
+              "http://swift/b",
               "http://swift/c&ut=3"]
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,6 +39,9 @@ class ViewController: UITableViewController {
       guard let v = Routable.view(url: str) else { return }
       tableView.addSubview(v)
     case 3:
+      guard let v: UIView = Routable.object(url: str) else { return }
+      tableView.addSubview(v)
+    case 4:
       Routable.executing(url: str)
     default:
       return

@@ -25,7 +25,8 @@ pod "SPRoutable"
 
 - 示例
 
-  -  you must have a target class at anywhere abount cocapods,ex:
+  -  必须有一个目标类
+     - 目标类为swift,且存在于Frameworks中,则需要在头部添加@objc(类名)
 
   ```swift
   @objc(Router_swift)
@@ -36,30 +37,36 @@ pod "SPRoutable"
       return vc
     }
 
-    func router_b() -> UIViewController {
-      let vc = UIViewController()
-      vc.view.backgroundColor = UIColor.red
-      return vc
+    func router_b() -> UIView {
+      let view = UIView()
+      view.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+      view.backgroundColor = UIColor.red
+      return view
     }
 
     func router_c(params: [String: Any] = [:]) {
       print(params)
     }
-  }  
+  }
   ```
 
-  - You could use routable like:
+  - 可以这样使用:
 
   ```swift
    get viewController:
-   guard let vc = Routable.viewController(url: "http://objc/a") else { return }
+   guard let vc = Routable.viewController(url: "http://swift/a") else { return }
   	
-   get 
+   get view:
+   guard let v = Routable.view(url: "http://swift/b") else { return }
+
+   get object:
+   guard let v: UIView = Routable.object(url: "http://swift/b") else { return }
+
+   get function:
+   Routable.executing(url: str)
   ```
 
-    
-
-- 路由参数配置:
+- 路由配置参数配置:
 
   ```swift
   Routable.classPrefix = "Router_"  // defalut: "Router_"

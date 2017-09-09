@@ -27,5 +27,4 @@ class Router_swift: NSObject {
   func router_c(params: [String: Any] = [:]) {
     print(params)
   }
-
 }
