@@ -13,13 +13,13 @@ public struct Routable {
   /// 命名空间
   fileprivate static let namespace = Bundle.main.infoDictionary?["CFBundleExecutable"] as! String
   /// 类名前缀
-  static var classPrefix = "Router_"
+  public static var classPrefix = "Router_"
   /// 方法名前缀
-  static var funcPrefix = "router_"
+  public static var funcPrefix = "router_"
   /// 参数名
-  static var paramName = "Params"
+  public static var paramName = "Params"
   /// 指定协议头, ""则为任意格式
-  static var scheme = ""
+  public static var scheme = ""
   /// 缓存
   static var cache = [String: Any]()
   
@@ -46,6 +46,7 @@ public extension Routable {
     }
     let object = Routable.performAction(url: path)
     if let vc = object as? UIViewController { return vc }
+    assert(false, "无法解析为UIViewController类型:" + url)
     return nil
   }
   
@@ -61,6 +62,7 @@ public extension Routable {
     
     let object = Routable.performAction(url: path)
     if let view = object as? UIView { return view }
+    assert(false, "无法解析为UIView类型:" + url)
     return nil
   }
   
@@ -105,7 +107,7 @@ extension Routable {
       cache[name] = target
       return target
     }
-
+    
     if let value = target(name: classPrefix + name) { return value }
     if let value = target(name: namespace + "." + classPrefix + name) { return value }
     return nil
@@ -149,12 +151,12 @@ extension Routable {
                             params: [String: Any] = [:]) -> AnyObject? {
     
     guard let target = getClass(name: name) else {
-      assert(false, "无法查询到指定类")
+      assert(false, "无法查询到指定类:" + name)
       return nil
     }
     
     guard let function = getFunc(target: target, name: actionName, hasParams: !params.isEmpty) else {
-      assert(false, "无法查询到指定类函数")
+      assert(false, "无法查询到指定类函数:" + actionName)
       cache(remove: name)
       return nil
     }
@@ -175,12 +177,12 @@ extension Routable {
   /// - Returns: 对象
   static func performAction(url: URL) -> AnyObject? {
     var params = [String: Any]()
-
+    
     if !scheme.isEmpty, url.scheme! != scheme {
       assert(false, "url格式不正确:" + url.absoluteString)
       return nil
     }
-
+    
     var urlstr = ""
     
     if let query = url.query { urlstr = query.removingPercentEncoding ?? "" }

@@ -10,19 +10,38 @@ import UIKit
 import SPRoutable
 
 class ViewController: UITableViewController {
+  let list = ["http://objc/a",
+              "http://swift/a",
+              "http://swift/b",
+              "http://swift/c&ut=3"]
 
-  @IBAction func event1(_ sender: UIButton) {
-    guard let vc = Routable.viewController(url: "http://objc/a") else { return }
-    navigationController?.pushViewController(vc, animated: true)
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return list.count
   }
 
-  @IBAction func event2(_ sender: UIButton) {
-    guard let vc = Routable.viewController(url: "http://swift/a") else { return }
-    navigationController?.pushViewController(vc, animated: true)
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = super.tableView(tableView, cellForRowAt: indexPath)
+    cell.textLabel?.text = list[indexPath.item]
+    return cell
   }
 
-  @IBAction func event3(_ sender: UIButton) {
-     Routable.executing(url: "http://swift/c?a=0")
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let str = list[indexPath.item]
+    switch indexPath.item {
+    case 0:
+      guard let vc = Routable.viewController(url: str) else { return }
+      navigationController?.pushViewController(vc, animated: true)
+    case 1:
+      guard let vc = Routable.viewController(url: str) else { return }
+      navigationController?.pushViewController(vc, animated: true)
+    case 2:
+      guard let v = Routable.view(url: str) else { return }
+      tableView.addSubview(v)
+    case 3:
+      Routable.executing(url: str)
+    default:
+      return
+    }
   }
 
 }

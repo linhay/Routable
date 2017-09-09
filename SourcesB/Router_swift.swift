@@ -17,14 +17,15 @@ class Router_swift: NSObject {
     return vc
   }
 
-  func router_b() -> UIViewController {
-    let vc = UIViewController()
-    vc.view.backgroundColor = UIColor.red
-    return vc
+  func router_b() -> UIView {
+    let view = UIView()
+    view.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+    view.backgroundColor = UIColor.red
+    return view
   }
 
   func router_c(params: [String: Any] = [:]) {
-    print(#function)
+    print(params)
   }
 
 }
