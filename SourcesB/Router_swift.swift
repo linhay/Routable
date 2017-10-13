@@ -12,13 +12,13 @@ import UIKit
 class Router_swift: NSObject {
   var flag = true
 
-  func router_a(params:[String: Any]) -> UIViewController {
+ @objc func router_a(params:[String: Any]) -> UIViewController {
     let vc = UIViewController()
     vc.view.backgroundColor = UIColor.blue
     return vc
   }
 
-  func router_b() -> UIView {
+ @objc func router_b() -> UIView {
     let view = UIView()
     view.frame = CGRect(x: 0, y: 300, width: 300, height: 300)
     view.backgroundColor = flag ? UIColor.red : UIColor.blue
@@ -26,7 +26,7 @@ class Router_swift: NSObject {
     return view
   }
 
-  func router_c(params: [String: Any] = [:]) {
+ @objc func router_c(params: [String: Any] = [:]) {
     let alert = UIAlertController()
     alert.title = #function
     alert.message = params.description
