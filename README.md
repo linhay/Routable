@@ -74,6 +74,10 @@
       alert.addAction(action)
       UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
     }
+    
+	@objc func router_notice() {
+    print(#function + "router_notice")
+	}
   }
   ```
 
@@ -90,7 +94,11 @@
    guard let v: UIView = Routable.object(url: "http://swift/b") else { return }
 
    get function:
-   Routable.executing(url: str)
+   Routable.executing(url: "http://swift/c")
+
+	// 需要通知对象存活保证
+   send noice:
+   Routable.noice(url:"http://swift/notice")
   ```
 
 - 路由配置参数配置:

@@ -9,7 +9,7 @@
 
 @implementation Router_objc
 
--(UIViewController *)router_a {
+-(UIViewController *)router_vc {
   UIViewController * vc = [[UIViewController alloc] init];
   vc.view.backgroundColor = UIColor.greenColor;
   return vc;

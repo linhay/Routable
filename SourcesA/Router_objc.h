@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface Router_objc : NSObject
--(UIViewController *)router_a;
+-(UIViewController *)router_vc;
 @end

@@ -22,7 +22,8 @@ public struct Routable {
   public static var scheme = ""
   /// 缓存
   static var cache = [String: Any]()
-  
+  /// 通知缓存
+  static var notice = [String:[String]]()
 }
 
 public extension Routable {
@@ -135,10 +136,17 @@ extension Routable {
         let sel = NSSelectorFromString(funcPrefix + name + "With" + paramName + ":")
         if target.responds(to: sel){ return sel }
       }
+
       do {
         let sel = NSSelectorFromString(funcPrefix + name + paramName + ":")
         if target.responds(to: sel){ return sel }
       }
+      /// 匿名参数
+      do {
+        let sel = NSSelectorFromString(funcPrefix + name + ":")
+        if target.responds(to: sel){ return sel }
+      }
+
       return nil
     }else{
       let sel = NSSelectorFromString(funcPrefix + name)
@@ -155,23 +163,15 @@ extension Routable {
   ///   - params: 函数参数
   ///   - isCacheTarget: 是否缓存
   /// - Returns: 对象
-  public static func target(name: String,
-                            actionName: String,
-                            params: [String: Any] = [:],
-                            isAssert:Bool = true) -> AnyObject? {
+  public static func target(name: String, actionName: String, params: [String: Any] = [:], isAssert:Bool = true) -> AnyObject? {
     
     guard let target = getClass(name: name) else {
-      if isAssert {
-        assert(false, "无法查询到指定类:" + name)
-      }
+      if isAssert { assert(false, "无法查询到指定类:" + name) }
       return nil
     }
     
     guard let function = getFunc(target: target, name: actionName, hasParams: !params.isEmpty) else {
-      if isAssert {
-      assert(false, "无法查询到指定类函数:" + actionName)
-      cache(remove: name)
-      }
+      if isAssert { assert(false, "无法查询到指定类函数:" + actionName) }
       return nil
     }
     
@@ -189,8 +189,7 @@ extension Routable {
   ///
   /// - Parameter url: 路径
   /// - Returns: 对象
- @discardableResult static func performAction(url: URL,
-                                              isAssert:Bool = true) -> AnyObject? {
+ @discardableResult static func performAction(url: URL, isAssert:Bool = true) -> AnyObject? {
     var params = [String: Any]()
     
     if !scheme.isEmpty, url.scheme! != scheme {

@@ -8,15 +8,24 @@
 
 import UIKit
 import SPRoutable
+import BModules
+import AModules
 
 class ViewController: UITableViewController {
-  let list = ["http://objc/a",
+  let list = ["http://objc/vc",
               "http://swift/vc",
               "http://swift/view",
-              "http://swift/alert",
-              "http://swift/c?ut=3",
-              "http://swift/dict",
+              "http://swift/alert?ut=3",
+              "http://swift/object",
               "http://notice/notice"]
+
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    RunTime.methods(from: Router_swift.self).forEach { (item) in
+      print(method_getName(item))
+    }
+  }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return list.count
@@ -30,29 +39,33 @@ class ViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let str = list[indexPath.item]
-    switch indexPath.item {
-    case 0:
+    if str.contains("vc"){
       guard let vc = Routable.viewController(url: str) else { return }
       navigationController?.pushViewController(vc, animated: true)
-    case 1:
-      guard let vc = Routable.viewController(url: str) else { return }
-      navigationController?.pushViewController(vc, animated: true)
-    case 2:
-      guard let v = Routable.view(url: str) else { return }
-      tableView.addSubview(v)
-    case 3:
-      guard let v: UIView = Routable.object(url: str) else { return }
-      tableView.addSubview(v)
-    case 4:
-      Routable.executing(url: str)
-    case 5:
-     guard let v: NSObject = Routable.object(url: str) else { return }
-     print(v)
-    case 6:
-      Routable.notice(url: str)
-    default:
       return
     }
+
+    if str.contains("view"){
+      guard let v = Routable.view(url: str) else { return }
+      tableView.addSubview(v)
+      return
+    }
+
+    if str.contains("object"){
+      guard let v: NSDictionary = Routable.object(url: str) else { return }
+      print(v)
+      return
+    }
+
+    if str.contains("alert"){
+      Routable.executing(url: str)
+      return
+    }
+
+    if str.contains("notice"){
+      Routable.notice(url: str)
+    }
+
   }
 
 }

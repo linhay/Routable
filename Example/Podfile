@@ -1,6 +1,7 @@
 use_frameworks!
 
 target 'Routable_Example' do
+  pod 'BLFoundation'
   pod 'SPRoutable', :path => '../'
   pod 'AModules', :path => '../'
   pod 'BModules', :path => '../'

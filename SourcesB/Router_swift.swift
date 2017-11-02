@@ -10,7 +10,7 @@ import UIKit
 import SPRoutable
 
 @objc(Router_swift)
-class Router_swift: NSObject {
+public class Router_swift: NSObject {
   var flag = true
 
  @objc func router_vc(params:[String: Any]) -> UIViewController {
@@ -38,7 +38,7 @@ class Router_swift: NSObject {
     UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
   }
 
-  @objc func router_dict() -> NSDictionary {
+  @objc func router_object() -> NSDictionary {
     return ["s": 2]
   }
 
