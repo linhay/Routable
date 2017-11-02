@@ -1,7 +1,9 @@
 PODS:
-  - AModules (0.1.0)
-  - BModules (0.1.0)
-  - SPRoutable (0.4.0)
+  - AModules (0.1.0):
+    - SPRoutable
+  - BModules (0.1.0):
+    - SPRoutable
+  - SPRoutable (0.6.0)
 
 DEPENDENCIES:
   - AModules (from `../`)
@@ -17,9 +19,9 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  AModules: 5cf45ad589d1bd6196ab076bc52f22854d1c634f
-  BModules: 5875065d675502d35845d88c79209b38cbf8feed
-  SPRoutable: ecb3abbab15463d864206f9bd381d4cf5d9233f5
+  AModules: 83ea313e36b4275a3c8eb30839092f1d6205403b
+  BModules: c7e5a84392ba64a6d5cbb5df0781fa021b1cf880
+  SPRoutable: a5a585e19cb011b57165301e50404c37a5452897
 
 PODFILE CHECKSUM: 499d0871725de775b0673c704de34733f0ab57ab
 

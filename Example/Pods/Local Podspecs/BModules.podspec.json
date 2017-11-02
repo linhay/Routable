@@ -29,6 +29,11 @@
     "UIKit"
   ],
   "requires_arc": true,
+  "dependencies": {
+    "SPRoutable": [
+
+    ]
+  },
   "pod_target_xcconfig": {
     "SWIFT_VERSION": "3.0"
   }

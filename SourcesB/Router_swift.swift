@@ -7,18 +7,19 @@
 //
 
 import UIKit
+import SPRoutable
 
 @objc(Router_swift)
 class Router_swift: NSObject {
   var flag = true
 
- @objc func router_a(params:[String: Any]) -> UIViewController {
-    let vc = UIViewController()
+ @objc func router_vc(params:[String: Any]) -> UIViewController {
+    let vc = SwiftViewController()
     vc.view.backgroundColor = UIColor.blue
     return vc
   }
 
- @objc func router_b() -> UIView {
+ @objc func router_view() -> UIView {
     let view = UIView()
     view.frame = CGRect(x: 0, y: 300, width: 300, height: 300)
     view.backgroundColor = flag ? UIColor.red : UIColor.blue
@@ -26,7 +27,7 @@ class Router_swift: NSObject {
     return view
   }
 
- @objc func router_c(params: [String: Any] = [:]) {
+ @objc func router_alert(params: [String: Any] = [:]) {
     let alert = UIAlertController()
     alert.title = #function
     alert.message = params.description
@@ -36,4 +37,13 @@ class Router_swift: NSObject {
     alert.addAction(action)
     UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
   }
+
+  @objc func router_dict() -> NSDictionary {
+    return ["s": 2]
+  }
+
+  @objc func router_notice() {
+    print(#function + "router_notice")
+  }
+
 }

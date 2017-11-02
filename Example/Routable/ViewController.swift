@@ -11,10 +11,12 @@ import SPRoutable
 
 class ViewController: UITableViewController {
   let list = ["http://objc/a",
-              "http://swift/a",
-              "http://swift/b",
-              "http://swift/b",
-              "http://swift/c?ut=3"]
+              "http://swift/vc",
+              "http://swift/view",
+              "http://swift/alert",
+              "http://swift/c?ut=3",
+              "http://swift/dict",
+              "http://notice/notice"]
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return list.count
@@ -43,6 +45,11 @@ class ViewController: UITableViewController {
       tableView.addSubview(v)
     case 4:
       Routable.executing(url: str)
+    case 5:
+     guard let v: NSObject = Routable.object(url: str) else { return }
+     print(v)
+    case 6:
+      Routable.notice(url: str)
     default:
       return
     }

@@ -7,105 +7,135 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B33A8467D5A6B1847A0E472E2730C2B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		1C5D4A699DBA4868DBB8B62486496812 /* Routable.h in Headers */ = {isa = PBXBuildFile; fileRef = 9288A28CF3A1AD10C743F8321D625168 /* Routable.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1DF56D2D1129DFEA768EC3AD74009BB4 /* AModules-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E3869866E40E169C11719188F734873C /* AModules-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		265A347D652D8818C621F957AD18CB02 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		3983DD84768BAEA3BF8D6A225D7BD497 /* BModules.h in Headers */ = {isa = PBXBuildFile; fileRef = 97FF4B8D9519216F0F83B3F105433785 /* BModules.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3F0E27C1655B68752CCAAF2588A41E4B /* Router_swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13E5ABA110596EFBBDC23AC8C86985B /* Router_swift.swift */; };
-		4A7261F400F37133CAD11310092EDE92 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		51F3F7014D17F89FCF6002DC9E0B1D2C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
-		574ED082DE4778409F71BB562763F25E /* SPRoutable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CE8B10EB4ADA73D0CF2628FAEDA574 /* SPRoutable-dummy.m */; };
+		0ED43FB3BAB5143C60B1A411B2C99DC7 /* SPRoutable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D73D92892ADBBD1C06BEBB79AF35868 /* SPRoutable-dummy.m */; };
+		1B33A8467D5A6B1847A0E472E2730C2B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B83FB0FF4221DA6ED7DC932ACC23015 /* Foundation.framework */; };
+		1CE2AF88A7F1937A5E49FF0CB81EA146 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A9986220446931ED540F8E2CE35098 /* UIKit.framework */; };
+		21B4D2534CEB9D498729027D491B5000 /* SPRoutable-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E5C3512986D77E70BD3DFC149DAB1A33 /* SPRoutable-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2376187A7D4C5DB66299B0CE7406CAD6 /* SPRoutable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3090FCCCB71B76FA1160759C6BAC8E09 /* SPRoutable.framework */; };
+		3CFC3F6AF44887534A294CF98C21F7A5 /* AModules.h in Headers */ = {isa = PBXBuildFile; fileRef = 61783806CFB9FDF98593315D120557BC /* AModules.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4342C580754FAF43F94F0668BC812BC1 /* BModules-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A787CC60E3E3C882978CE9F5BEA4C44C /* BModules-dummy.m */; };
+		4C09627C04C5A61F4CD4BB098F98969D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B83FB0FF4221DA6ED7DC932ACC23015 /* Foundation.framework */; };
+		4C96E2728616362EB0C3345140A395C9 /* URLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF49DE594963F5143F85E3EEF421B99C /* URLProtocol.swift */; };
 		614840EBFA30522C056DE07F70959987 /* Pods-Routable_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EFBD015922CFA3A630A3619C51FEB96B /* Pods-Routable_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7E9BAAB368B5662A32DF0EC1A47F6C87 /* Router_objc.h in Headers */ = {isa = PBXBuildFile; fileRef = C714E8E89F7955ED7A999168BD63AAB1 /* Router_objc.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		89B6FCE9E9F1464567EDFCEE28CDA824 /* AModules-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E03100E1CA7E16BD43E2A03379B4F1 /* AModules-dummy.m */; };
-		8AC27E006A3176C7AF13D641D9FD13FD /* SPRoutable-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 329C0360A7BB93AC7635E3C16E4E9675 /* SPRoutable-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A4B8A09FC3F9D9FE511BE4C3DA83C98E /* AModules.h in Headers */ = {isa = PBXBuildFile; fileRef = DABFC3D5D6AEA78384FF1E38D04628D3 /* AModules.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72924BAB90A3E024DF4A643A2FD9075F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A9986220446931ED540F8E2CE35098 /* UIKit.framework */; };
+		7343968E4A1A50D71B728F2692AD3159 /* AModules-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAAEB291269DD117A5EAFBFC1C61957 /* AModules-dummy.m */; };
+		87FA37CD93CDA63135D9CCC604CF3B7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B83FB0FF4221DA6ED7DC932ACC23015 /* Foundation.framework */; };
+		8FFB29F8297B5A56E6B6A361622C2F32 /* Router_swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B665951537097948BB9F6C78400E9 /* Router_swift.swift */; };
+		99B11913D1A7ADAFC88268DA61A1AC4A /* BModules.h in Headers */ = {isa = PBXBuildFile; fileRef = 7597EEE12ADDFFAAF33820126FDE9F5A /* BModules.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B1F65889648EFB2A7FB337AEAEF07F6 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783C308017F0171F899665CFF5A7BC00 /* SwiftViewController.swift */; };
+		AE447EAA8C4E7FA781718DC475159B33 /* BModules-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DEF04A9DEB6CE0E56B23DF588DCD8AB4 /* BModules-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B874748626F767D7B7E660D73927FD63 /* Routable.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D7A6643BF19AD328D558288D7D08BC8 /* Routable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BB130C8F86A7C20F0C23CE89D9805A63 /* Pods-Routable_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2599630A0A06F419913BA5A12B805D3D /* Pods-Routable_Example-dummy.m */; };
-		BDB17F5E5777FF34DD11BED6E1AFE009 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
-		C2103745E5D433607EB064324EE7F8DB /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F6FD7E41ECB21474FB404A72B165E /* Routable.swift */; };
-		C48231E77D561D1FAD8F56596E790B46 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		DEC78287829B20DA3298EEA15EB7F0D1 /* BModules-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C4380B2C6B70EABBCE5F434C958D8C /* BModules-dummy.m */; };
-		E26D69AAEF178CBA113CED51045C540B /* BModules-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CF75AD0A38FE9A082C9EBF726355FADF /* BModules-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E75690792B877DB4C95A98DDB47C390B /* Router_objc.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A16D04334E46851724AE0D0F711AD71 /* Router_objc.m */; };
+		BC5C104B593D80DE39146D857AA131DD /* Router_objc.h in Headers */ = {isa = PBXBuildFile; fileRef = 49EA275EDAE0F707CA273B1E06A5001B /* Router_objc.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C20B40C5C2BD145019D487BB72CE8382 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B83FB0FF4221DA6ED7DC932ACC23015 /* Foundation.framework */; };
+		CDF75075ECDDAF1925126BAFBBD9A6F6 /* Router_objc.m in Sources */ = {isa = PBXBuildFile; fileRef = B1185C0BCC9507BE567D3E7767EAEC51 /* Router_objc.m */; };
+		E5004041B2BB120BDB8ED27ADA4FAF6F /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35043A801E573A631EF78356D500152C /* Routable.swift */; };
+		EA08CCF8BB8D4464EC7D046E125C76B6 /* AModules-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F8AB9260061B527DB1EA3BC05B1696B /* AModules-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA83A38E0CBF96234255147C18B0926C /* SPRoutable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3090FCCCB71B76FA1160759C6BAC8E09 /* SPRoutable.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		134A61E6B268491D2E37D7A8BA5953F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 76ACD219D60B0AE9FAD22F95B0297B50;
+			remoteInfo = SPRoutable;
+		};
+		51250EB61A3D79714FE48B55A7C0CC14 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 76ACD219D60B0AE9FAD22F95B0297B50;
+			remoteInfo = SPRoutable;
+		};
 		74FCFF86899B01FBD426FB27611951A1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 304000F35DC22E425F4B443B87252BD7;
+			remoteGlobalIDString = B0D49854DF386D40D70E1EC19A9340AC;
 			remoteInfo = BModules;
 		};
 		D943187F1D3AF257666C42E7C9AB5234 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AC7ED5A1769E0C22C73249D851EC32B2;
+			remoteGlobalIDString = 68023BDF34DF3DFBE5172C728D8BFDAE;
 			remoteInfo = AModules;
 		};
 		D9BFB2C81057EE97802929A18978E994 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 2BE7B87DB36B3627942666A77634701B;
+			remoteGlobalIDString = 76ACD219D60B0AE9FAD22F95B0297B50;
 			remoteInfo = SPRoutable;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		04DBC734177BEAF907E4251DA7D22A5A /* Pods_Routable_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Routable_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		08CE8B10EB4ADA73D0CF2628FAEDA574 /* SPRoutable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SPRoutable-dummy.m"; sourceTree = "<group>"; };
-		2121F8E3F736688DC724E65C85B318E0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C54B9D9B371FF0CBD38598E6949D432 /* SPRoutable.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SPRoutable.xcconfig; sourceTree = "<group>"; };
+		127157838D0D03F534C469DEF7A193B8 /* BModules-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BModules-prefix.pch"; sourceTree = "<group>"; };
+		12AF869E411DC6F196BD40A52CCDBD95 /* SPRoutable.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SPRoutable.modulemap; sourceTree = "<group>"; };
+		244B48232761D4088EC135A0A6D77D87 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2599630A0A06F419913BA5A12B805D3D /* Pods-Routable_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Routable_Example-dummy.m"; sourceTree = "<group>"; };
-		2EF4A08397B8BC54EA3F51747C65C4D4 /* AModules.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AModules.xcconfig; sourceTree = "<group>"; };
-		329C0360A7BB93AC7635E3C16E4E9675 /* SPRoutable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPRoutable-umbrella.h"; sourceTree = "<group>"; };
+		3090FCCCB71B76FA1160759C6BAC8E09 /* SPRoutable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPRoutable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35043A801E573A631EF78356D500152C /* Routable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Routable.swift; path = Sources/Routable.swift; sourceTree = "<group>"; };
 		35A0C17246A383835767BC883F7A98A8 /* AModules.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AModules.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45CE173D4A5E9F3BAAA08BC6096182DE /* Pods-Routable_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Routable_Example-resources.sh"; sourceTree = "<group>"; };
 		495C965FFC39B23AACF67C925D26DF9D /* Pods-Routable_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Routable_Example-frameworks.sh"; sourceTree = "<group>"; };
-		62D615F11153A8BED950BB346FF8A935 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49EA275EDAE0F707CA273B1E06A5001B /* Router_objc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Router_objc.h; path = SourcesA/Router_objc.h; sourceTree = "<group>"; };
+		4BAAEB291269DD117A5EAFBFC1C61957 /* AModules-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AModules-dummy.m"; sourceTree = "<group>"; };
+		5D73D92892ADBBD1C06BEBB79AF35868 /* SPRoutable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SPRoutable-dummy.m"; sourceTree = "<group>"; };
+		61783806CFB9FDF98593315D120557BC /* AModules.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AModules.h; path = SourcesA/AModules.h; sourceTree = "<group>"; };
+		6F8AB9260061B527DB1EA3BC05B1696B /* AModules-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AModules-umbrella.h"; sourceTree = "<group>"; };
+		7057D8C8424725F13692AA983D7850B9 /* SPRoutable-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPRoutable-prefix.pch"; sourceTree = "<group>"; };
+		71F43AC20E50E5598316B65DD15FCE1E /* AModules-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AModules-prefix.pch"; sourceTree = "<group>"; };
 		736ACAE8D8B4129BC39007C0B95AA46B /* Pods-Routable_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Routable_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		8A16D04334E46851724AE0D0F711AD71 /* Router_objc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Router_objc.m; path = SourcesA/Router_objc.m; sourceTree = "<group>"; };
-		9288A28CF3A1AD10C743F8321D625168 /* Routable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Routable.h; path = Sources/Routable.h; sourceTree = "<group>"; };
+		7597EEE12ADDFFAAF33820126FDE9F5A /* BModules.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BModules.h; path = SourcesB/BModules.h; sourceTree = "<group>"; };
+		783C308017F0171F899665CFF5A7BC00 /* SwiftViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftViewController.swift; path = SourcesB/SwiftViewController.swift; sourceTree = "<group>"; };
+		7D7A6643BF19AD328D558288D7D08BC8 /* Routable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Routable.h; path = Sources/Routable.h; sourceTree = "<group>"; };
+		8065169D51FE534B7F9429778EC11474 /* AModules.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AModules.xcconfig; sourceTree = "<group>"; };
+		83A9986220446931ED540F8E2CE35098 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93EE9DD14B9E0C28F3595B455DA96A6D /* Pods-Routable_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Routable_Example.modulemap"; sourceTree = "<group>"; };
 		966DAE93CFFF2F6EFFD724D1F2DC4100 /* BModules.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BModules.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		967DC3A37224F8E64BE0073C157AD000 /* BModules.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = BModules.modulemap; sourceTree = "<group>"; };
-		97FF4B8D9519216F0F83B3F105433785 /* BModules.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BModules.h; path = SourcesB/BModules.h; sourceTree = "<group>"; };
+		9B83FB0FF4221DA6ED7DC932ACC23015 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		9CB3B9061A356F2076865FF6E0AF98F8 /* Pods-Routable_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Routable_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		AB12730CEB1EC1928B90586959F748A0 /* AModules-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AModules-prefix.pch"; sourceTree = "<group>"; };
-		B13E5ABA110596EFBBDC23AC8C86985B /* Router_swift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Router_swift.swift; path = SourcesB/Router_swift.swift; sourceTree = "<group>"; };
-		B169F059941E49521540887D98C6A9A0 /* BModules-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BModules-prefix.pch"; sourceTree = "<group>"; };
-		B4B5E505D1988020ADF585222FBAFA6C /* SPRoutable.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SPRoutable.xcconfig; sourceTree = "<group>"; };
-		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		C0DDFE5068FED3AF6EA084EFB02CCA3E /* AModules.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AModules.modulemap; sourceTree = "<group>"; };
-		C0E03100E1CA7E16BD43E2A03379B4F1 /* AModules-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AModules-dummy.m"; sourceTree = "<group>"; };
-		C6C6CA1629B85D879A4C43F9D18BE080 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C714E8E89F7955ED7A999168BD63AAB1 /* Router_objc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Router_objc.h; path = SourcesA/Router_objc.h; sourceTree = "<group>"; };
-		C94F6FD7E41ECB21474FB404A72B165E /* Routable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Routable.swift; path = Sources/Routable.swift; sourceTree = "<group>"; };
+		A730ED43CD2ED15E76BACFF49B92F9FD /* AModules.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AModules.modulemap; sourceTree = "<group>"; };
+		A787CC60E3E3C882978CE9F5BEA4C44C /* BModules-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BModules-dummy.m"; sourceTree = "<group>"; };
+		B1185C0BCC9507BE567D3E7767EAEC51 /* Router_objc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Router_objc.m; path = SourcesA/Router_objc.m; sourceTree = "<group>"; };
+		C5F9ED0BE1E88955B15D4C0AC0360129 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9A486319422C560D2A677FEECF62078 /* Pods-Routable_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Routable_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		CD0388BF4ABBD37751C21183843A206C /* Pods-Routable_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Routable_Example.release.xcconfig"; sourceTree = "<group>"; };
-		CF75AD0A38FE9A082C9EBF726355FADF /* BModules-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BModules-umbrella.h"; sourceTree = "<group>"; };
 		D226C8A02B762673BF42BE6AC922B5B0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D971F6CCBFACA107722858A2F5C8F0CA /* BModules.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BModules.xcconfig; sourceTree = "<group>"; };
-		DABFC3D5D6AEA78384FF1E38D04628D3 /* AModules.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AModules.h; path = SourcesA/AModules.h; sourceTree = "<group>"; };
-		E3869866E40E169C11719188F734873C /* AModules-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AModules-umbrella.h"; sourceTree = "<group>"; };
-		E9C4380B2C6B70EABBCE5F434C958D8C /* BModules-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BModules-dummy.m"; sourceTree = "<group>"; };
-		EDF6388750EC6972885D176A41D3C399 /* SPRoutable.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SPRoutable.modulemap; sourceTree = "<group>"; };
-		EE9ACB12298CBE2EAE2A1F76D193981C /* SPRoutable-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPRoutable-prefix.pch"; sourceTree = "<group>"; };
+		D25B665951537097948BB9F6C78400E9 /* Router_swift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Router_swift.swift; path = SourcesB/Router_swift.swift; sourceTree = "<group>"; };
+		D5CFB620EDECF28C978C6130662536E2 /* BModules.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = BModules.modulemap; sourceTree = "<group>"; };
+		DEF04A9DEB6CE0E56B23DF588DCD8AB4 /* BModules-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BModules-umbrella.h"; sourceTree = "<group>"; };
+		E5C3512986D77E70BD3DFC149DAB1A33 /* SPRoutable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPRoutable-umbrella.h"; sourceTree = "<group>"; };
+		EF49DE594963F5143F85E3EEF421B99C /* URLProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLProtocol.swift; path = Sources/URLProtocol.swift; sourceTree = "<group>"; };
 		EFBD015922CFA3A630A3619C51FEB96B /* Pods-Routable_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Routable_Example-umbrella.h"; sourceTree = "<group>"; };
 		F074276A01013040035DDE6B4A975D6D /* SPRoutable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPRoutable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F09E5FC5404276B606928A668742B507 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2669A292708F87C02599D0BB2644CD6 /* BModules.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BModules.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		42D76807098665A5DC27763A5D46011A /* Frameworks */ = {
+		03BA5B110DB700AD618A6E05FC19E37A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				265A347D652D8818C621F957AD18CB02 /* Foundation.framework in Frameworks */,
-				BDB17F5E5777FF34DD11BED6E1AFE009 /* UIKit.framework in Frameworks */,
+				C20B40C5C2BD145019D487BB72CE8382 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		272BA2C3E8535A3398FAD862982FFC99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C09627C04C5A61F4CD4BB098F98969D /* Foundation.framework in Frameworks */,
+				FA83A38E0CBF96234255147C18B0926C /* SPRoutable.framework in Frameworks */,
+				1CE2AF88A7F1937A5E49FF0CB81EA146 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,49 +147,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8533EDE9C1CD7008D337AD15B99AFBD7 /* Frameworks */ = {
+		4F557D180CF70A123F77C26CD4D5FB61 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A7261F400F37133CAD11310092EDE92 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D0E11B952499E4A2A255D0ED60C95CB3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C48231E77D561D1FAD8F56596E790B46 /* Foundation.framework in Frameworks */,
-				51F3F7014D17F89FCF6002DC9E0B1D2C /* UIKit.framework in Frameworks */,
+				87FA37CD93CDA63135D9CCC604CF3B7B /* Foundation.framework in Frameworks */,
+				2376187A7D4C5DB66299B0CE7406CAD6 /* SPRoutable.framework in Frameworks */,
+				72924BAB90A3E024DF4A643A2FD9075F /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		19CD75FEF1F0250F68C01C71BD58BB07 /* SPRoutable */ = {
+		156E0A652A3DC5F50B4308A313CFDDC0 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9288A28CF3A1AD10C743F8321D625168 /* Routable.h */,
-				C94F6FD7E41ECB21474FB404A72B165E /* Routable.swift */,
-				DFC87DEEA2B0C1D05B6B45A70011A589 /* Support Files */,
+				C4EE3E118BDB74D5E6C4B01A254A10CF /* AModules */,
+				2F6C0C0B4A9DC8FC0A76722648206C30 /* BModules */,
+				AA0BF1B0477EB0D85574B312F5A928D6 /* SPRoutable */,
 			);
-			name = SPRoutable;
-			path = ../..;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		19E2323A78B845BE38FDB226E5FF66CE /* Support Files */ = {
+		20661A2294BC4E0DDA882EFD9B1760E1 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				967DC3A37224F8E64BE0073C157AD000 /* BModules.modulemap */,
-				D971F6CCBFACA107722858A2F5C8F0CA /* BModules.xcconfig */,
-				E9C4380B2C6B70EABBCE5F434C958D8C /* BModules-dummy.m */,
-				B169F059941E49521540887D98C6A9A0 /* BModules-prefix.pch */,
-				CF75AD0A38FE9A082C9EBF726355FADF /* BModules-umbrella.h */,
-				62D615F11153A8BED950BB346FF8A935 /* Info.plist */,
+				9B83FB0FF4221DA6ED7DC932ACC23015 /* Foundation.framework */,
+				83A9986220446931ED540F8E2CE35098 /* UIKit.framework */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/BModules";
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		2F6C0C0B4A9DC8FC0A76722648206C30 /* BModules */ = {
+			isa = PBXGroup;
+			children = (
+				7597EEE12ADDFFAAF33820126FDE9F5A /* BModules.h */,
+				D25B665951537097948BB9F6C78400E9 /* Router_swift.swift */,
+				783C308017F0171F899665CFF5A7BC00 /* SwiftViewController.swift */,
+				F06AE912222AC49FFC6F30D02ED9ED6B /* Support Files */,
+			);
+			name = BModules;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		40769A7ED46D5998CC37CF27994DEE35 /* Pods-Routable_Example */ = {
@@ -180,35 +209,6 @@
 			path = "Target Support Files/Pods-Routable_Example";
 			sourceTree = "<group>";
 		};
-		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				438B396F6B4147076630CAEFE34282C1 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		438B396F6B4147076630CAEFE34282C1 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */,
-				B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		47DC7D43EF1CFF762E0C59A8A4E512BE /* AModules */ = {
-			isa = PBXGroup;
-			children = (
-				DABFC3D5D6AEA78384FF1E38D04628D3 /* AModules.h */,
-				C714E8E89F7955ED7A999168BD63AAB1 /* Router_objc.h */,
-				8A16D04334E46851724AE0D0F711AD71 /* Router_objc.m */,
-				7AB33FA2F923ED38407A5565448E343E /* Support Files */,
-			);
-			name = AModules;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		4EE032EB1CD318E442AEA5049D135AE9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,26 +220,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		775C55D12ACD9B4E2A303CB6C5B26FB9 /* BModules */ = {
+		5C1061D838D7CAD3C64232BCC96009A4 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				97FF4B8D9519216F0F83B3F105433785 /* BModules.h */,
-				B13E5ABA110596EFBBDC23AC8C86985B /* Router_swift.swift */,
-				19E2323A78B845BE38FDB226E5FF66CE /* Support Files */,
-			);
-			name = BModules;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		7AB33FA2F923ED38407A5565448E343E /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C0DDFE5068FED3AF6EA084EFB02CCA3E /* AModules.modulemap */,
-				2EF4A08397B8BC54EA3F51747C65C4D4 /* AModules.xcconfig */,
-				C0E03100E1CA7E16BD43E2A03379B4F1 /* AModules-dummy.m */,
-				AB12730CEB1EC1928B90586959F748A0 /* AModules-prefix.pch */,
-				E3869866E40E169C11719188F734873C /* AModules-umbrella.h */,
-				2121F8E3F736688DC724E65C85B318E0 /* Info.plist */,
+				A730ED43CD2ED15E76BACFF49B92F9FD /* AModules.modulemap */,
+				8065169D51FE534B7F9429778EC11474 /* AModules.xcconfig */,
+				4BAAEB291269DD117A5EAFBFC1C61957 /* AModules-dummy.m */,
+				71F43AC20E50E5598316B65DD15FCE1E /* AModules-prefix.pch */,
+				6F8AB9260061B527DB1EA3BC05B1696B /* AModules-umbrella.h */,
+				F09E5FC5404276B606928A668742B507 /* Info.plist */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/AModules";
@@ -249,21 +238,35 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				86636AE31B1F860114B3928D75269E8D /* Development Pods */,
-				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				156E0A652A3DC5F50B4308A313CFDDC0 /* Development Pods */,
+				E7DCF72E19D802329650E9FA0BA87ECA /* Frameworks */,
 				4EE032EB1CD318E442AEA5049D135AE9 /* Products */,
 				C834C5847F6E37CBAEF48FA009175E4D /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		86636AE31B1F860114B3928D75269E8D /* Development Pods */ = {
+		AA0BF1B0477EB0D85574B312F5A928D6 /* SPRoutable */ = {
 			isa = PBXGroup;
 			children = (
-				47DC7D43EF1CFF762E0C59A8A4E512BE /* AModules */,
-				775C55D12ACD9B4E2A303CB6C5B26FB9 /* BModules */,
-				19CD75FEF1F0250F68C01C71BD58BB07 /* SPRoutable */,
+				7D7A6643BF19AD328D558288D7D08BC8 /* Routable.h */,
+				35043A801E573A631EF78356D500152C /* Routable.swift */,
+				EF49DE594963F5143F85E3EEF421B99C /* URLProtocol.swift */,
+				F1B91296CA1E05555C5CA69FE88F810B /* Support Files */,
 			);
-			name = "Development Pods";
+			name = SPRoutable;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		C4EE3E118BDB74D5E6C4B01A254A10CF /* AModules */ = {
+			isa = PBXGroup;
+			children = (
+				61783806CFB9FDF98593315D120557BC /* AModules.h */,
+				49EA275EDAE0F707CA273B1E06A5001B /* Router_objc.h */,
+				B1185C0BCC9507BE567D3E7767EAEC51 /* Router_objc.m */,
+				5C1061D838D7CAD3C64232BCC96009A4 /* Support Files */,
+			);
+			name = AModules;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		C834C5847F6E37CBAEF48FA009175E4D /* Targets Support Files */ = {
@@ -274,15 +277,38 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		DFC87DEEA2B0C1D05B6B45A70011A589 /* Support Files */ = {
+		E7DCF72E19D802329650E9FA0BA87ECA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C6C6CA1629B85D879A4C43F9D18BE080 /* Info.plist */,
-				EDF6388750EC6972885D176A41D3C399 /* SPRoutable.modulemap */,
-				B4B5E505D1988020ADF585222FBAFA6C /* SPRoutable.xcconfig */,
-				08CE8B10EB4ADA73D0CF2628FAEDA574 /* SPRoutable-dummy.m */,
-				EE9ACB12298CBE2EAE2A1F76D193981C /* SPRoutable-prefix.pch */,
-				329C0360A7BB93AC7635E3C16E4E9675 /* SPRoutable-umbrella.h */,
+				3090FCCCB71B76FA1160759C6BAC8E09 /* SPRoutable.framework */,
+				20661A2294BC4E0DDA882EFD9B1760E1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F06AE912222AC49FFC6F30D02ED9ED6B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D5CFB620EDECF28C978C6130662536E2 /* BModules.modulemap */,
+				F2669A292708F87C02599D0BB2644CD6 /* BModules.xcconfig */,
+				A787CC60E3E3C882978CE9F5BEA4C44C /* BModules-dummy.m */,
+				127157838D0D03F534C469DEF7A193B8 /* BModules-prefix.pch */,
+				DEF04A9DEB6CE0E56B23DF588DCD8AB4 /* BModules-umbrella.h */,
+				244B48232761D4088EC135A0A6D77D87 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/BModules";
+			sourceTree = "<group>";
+		};
+		F1B91296CA1E05555C5CA69FE88F810B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C5F9ED0BE1E88955B15D4C0AC0360129 /* Info.plist */,
+				12AF869E411DC6F196BD40A52CCDBD95 /* SPRoutable.modulemap */,
+				0C54B9D9B371FF0CBD38598E6949D432 /* SPRoutable.xcconfig */,
+				5D73D92892ADBBD1C06BEBB79AF35868 /* SPRoutable-dummy.m */,
+				7057D8C8424725F13692AA983D7850B9 /* SPRoutable-prefix.pch */,
+				E5C3512986D77E70BD3DFC149DAB1A33 /* SPRoutable-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/SPRoutable";
@@ -291,12 +317,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		26C48BDD2A71903202A8851E7EF1D182 /* Headers */ = {
+		01C7F8750D6C6D2C0E4F7A439FA56C70 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E26D69AAEF178CBA113CED51045C540B /* BModules-umbrella.h in Headers */,
-				3983DD84768BAEA3BF8D6A225D7BD497 /* BModules.h in Headers */,
+				EA08CCF8BB8D4464EC7D046E125C76B6 /* AModules-umbrella.h in Headers */,
+				3CFC3F6AF44887534A294CF98C21F7A5 /* AModules.h in Headers */,
+				BC5C104B593D80DE39146D857AA131DD /* Router_objc.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E504C575626569B9F007123A01A124C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B874748626F767D7B7E660D73927FD63 /* Routable.h in Headers */,
+				21B4D2534CEB9D498729027D491B5000 /* SPRoutable-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,60 +344,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CAB4CD8DEE88A28867B996973C1EE0A7 /* Headers */ = {
+		AFAF4AB93C421C12FCCEDBCBBC2BCC75 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DF56D2D1129DFEA768EC3AD74009BB4 /* AModules-umbrella.h in Headers */,
-				A4B8A09FC3F9D9FE511BE4C3DA83C98E /* AModules.h in Headers */,
-				7E9BAAB368B5662A32DF0EC1A47F6C87 /* Router_objc.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F5890E7972180C61CB7F44C6FC16492D /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1C5D4A699DBA4868DBB8B62486496812 /* Routable.h in Headers */,
-				8AC27E006A3176C7AF13D641D9FD13FD /* SPRoutable-umbrella.h in Headers */,
+				AE447EAA8C4E7FA781718DC475159B33 /* BModules-umbrella.h in Headers */,
+				99B11913D1A7ADAFC88268DA61A1AC4A /* BModules.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2BE7B87DB36B3627942666A77634701B /* SPRoutable */ = {
+		68023BDF34DF3DFBE5172C728D8BFDAE /* AModules */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8E026244C06C5F712B01427F5162A467 /* Build configuration list for PBXNativeTarget "SPRoutable" */;
+			buildConfigurationList = 59403511BCD59C7FEE34648FCB179986 /* Build configuration list for PBXNativeTarget "AModules" */;
 			buildPhases = (
-				0BCA58520DF7D6BAA0D5530ECCACBAD0 /* Sources */,
-				8533EDE9C1CD7008D337AD15B99AFBD7 /* Frameworks */,
-				F5890E7972180C61CB7F44C6FC16492D /* Headers */,
+				F63E0FD249165B0D4A7CA2FDBAE4C66C /* Sources */,
+				4F557D180CF70A123F77C26CD4D5FB61 /* Frameworks */,
+				01C7F8750D6C6D2C0E4F7A439FA56C70 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F0DE209FC61DD27436166739AF19F8DA /* PBXTargetDependency */,
 			);
-			name = SPRoutable;
-			productName = SPRoutable;
-			productReference = F074276A01013040035DDE6B4A975D6D /* SPRoutable.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		304000F35DC22E425F4B443B87252BD7 /* BModules */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 01F78EEB33BDC8C94E15C2BF7B396457 /* Build configuration list for PBXNativeTarget "BModules" */;
-			buildPhases = (
-				57E71CCC53C45C837D8EA9CBED1ACF64 /* Sources */,
-				D0E11B952499E4A2A255D0ED60C95CB3 /* Frameworks */,
-				26C48BDD2A71903202A8851E7EF1D182 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = BModules;
-			productName = BModules;
-			productReference = 966DAE93CFFF2F6EFFD724D1F2DC4100 /* BModules.framework */;
+			name = AModules;
+			productName = AModules;
+			productReference = 35A0C17246A383835767BC883F7A98A8 /* AModules.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		6B8EB0D17D587478DA49E38332B0D3C6 /* Pods-Routable_Example */ = {
@@ -384,21 +394,39 @@
 			productReference = 04DBC734177BEAF907E4251DA7D22A5A /* Pods_Routable_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		AC7ED5A1769E0C22C73249D851EC32B2 /* AModules */ = {
+		76ACD219D60B0AE9FAD22F95B0297B50 /* SPRoutable */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A09B7DBE308BA3A378B3ADC234D2DD1D /* Build configuration list for PBXNativeTarget "AModules" */;
+			buildConfigurationList = 893CDF6F4E2339447FF12FD3216EDC54 /* Build configuration list for PBXNativeTarget "SPRoutable" */;
 			buildPhases = (
-				CD7FA2C316FE3E1F7E298403980B0C12 /* Sources */,
-				42D76807098665A5DC27763A5D46011A /* Frameworks */,
-				CAB4CD8DEE88A28867B996973C1EE0A7 /* Headers */,
+				13CAB7F6294FC492FB031491BC2E1C8E /* Sources */,
+				03BA5B110DB700AD618A6E05FC19E37A /* Frameworks */,
+				3E504C575626569B9F007123A01A124C /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = AModules;
-			productName = AModules;
-			productReference = 35A0C17246A383835767BC883F7A98A8 /* AModules.framework */;
+			name = SPRoutable;
+			productName = SPRoutable;
+			productReference = F074276A01013040035DDE6B4A975D6D /* SPRoutable.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B0D49854DF386D40D70E1EC19A9340AC /* BModules */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3334253F03EDDC1FC13362B3B8898368 /* Build configuration list for PBXNativeTarget "BModules" */;
+			buildPhases = (
+				68B1252E2B3FACF488E8A249704C6927 /* Sources */,
+				272BA2C3E8535A3398FAD862982FFC99 /* Frameworks */,
+				AFAF4AB93C421C12FCCEDBCBBC2BCC75 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF640D074B062C050B79D43CAA56236F /* PBXTargetDependency */,
+			);
+			name = BModules;
+			productName = BModules;
+			productReference = 966DAE93CFFF2F6EFFD724D1F2DC4100 /* BModules.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -408,7 +436,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0910;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -422,30 +450,32 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AC7ED5A1769E0C22C73249D851EC32B2 /* AModules */,
-				304000F35DC22E425F4B443B87252BD7 /* BModules */,
+				68023BDF34DF3DFBE5172C728D8BFDAE /* AModules */,
+				B0D49854DF386D40D70E1EC19A9340AC /* BModules */,
 				6B8EB0D17D587478DA49E38332B0D3C6 /* Pods-Routable_Example */,
-				2BE7B87DB36B3627942666A77634701B /* SPRoutable */,
+				76ACD219D60B0AE9FAD22F95B0297B50 /* SPRoutable */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0BCA58520DF7D6BAA0D5530ECCACBAD0 /* Sources */ = {
+		13CAB7F6294FC492FB031491BC2E1C8E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2103745E5D433607EB064324EE7F8DB /* Routable.swift in Sources */,
-				574ED082DE4778409F71BB562763F25E /* SPRoutable-dummy.m in Sources */,
+				E5004041B2BB120BDB8ED27ADA4FAF6F /* Routable.swift in Sources */,
+				0ED43FB3BAB5143C60B1A411B2C99DC7 /* SPRoutable-dummy.m in Sources */,
+				4C96E2728616362EB0C3345140A395C9 /* URLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		57E71CCC53C45C837D8EA9CBED1ACF64 /* Sources */ = {
+		68B1252E2B3FACF488E8A249704C6927 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEC78287829B20DA3298EEA15EB7F0D1 /* BModules-dummy.m in Sources */,
-				3F0E27C1655B68752CCAAF2588A41E4B /* Router_swift.swift in Sources */,
+				4342C580754FAF43F94F0668BC812BC1 /* BModules-dummy.m in Sources */,
+				8FFB29F8297B5A56E6B6A361622C2F32 /* Router_swift.swift in Sources */,
+				9B1F65889648EFB2A7FB337AEAEF07F6 /* SwiftViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,12 +487,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD7FA2C316FE3E1F7E298403980B0C12 /* Sources */ = {
+		F63E0FD249165B0D4A7CA2FDBAE4C66C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89B6FCE9E9F1464567EDFCEE28CDA824 /* AModules-dummy.m in Sources */,
-				E75690792B877DB4C95A98DDB47C390B /* Router_objc.m in Sources */,
+				7343968E4A1A50D71B728F2692AD3159 /* AModules-dummy.m in Sources */,
+				CDF75075ECDDAF1925126BAFBBD9A6F6 /* Router_objc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,52 +502,59 @@
 		153A2C4BA6CC7E76F70C3910B8F7495D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = BModules;
-			target = 304000F35DC22E425F4B443B87252BD7 /* BModules */;
+			target = B0D49854DF386D40D70E1EC19A9340AC /* BModules */;
 			targetProxy = 74FCFF86899B01FBD426FB27611951A1 /* PBXContainerItemProxy */;
 		};
 		AD4261599A73F04AA3B5FF6CDEBB91A3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SPRoutable;
-			target = 2BE7B87DB36B3627942666A77634701B /* SPRoutable */;
+			target = 76ACD219D60B0AE9FAD22F95B0297B50 /* SPRoutable */;
 			targetProxy = D9BFB2C81057EE97802929A18978E994 /* PBXContainerItemProxy */;
+		};
+		BF640D074B062C050B79D43CAA56236F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SPRoutable;
+			target = 76ACD219D60B0AE9FAD22F95B0297B50 /* SPRoutable */;
+			targetProxy = 51250EB61A3D79714FE48B55A7C0CC14 /* PBXContainerItemProxy */;
 		};
 		E66BF95FA516C58BA9F2080C28969FE3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AModules;
-			target = AC7ED5A1769E0C22C73249D851EC32B2 /* AModules */;
+			target = 68023BDF34DF3DFBE5172C728D8BFDAE /* AModules */;
 			targetProxy = D943187F1D3AF257666C42E7C9AB5234 /* PBXContainerItemProxy */;
+		};
+		F0DE209FC61DD27436166739AF19F8DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SPRoutable;
+			target = 76ACD219D60B0AE9FAD22F95B0297B50 /* SPRoutable */;
+			targetProxy = 134A61E6B268491D2E37D7A8BA5953F7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		3ED3EB1619134A528409FF368606F8F8 /* Debug */ = {
+		1681274DBD439797D805C729CF875FC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4B5E505D1988020ADF585222FBAFA6C /* SPRoutable.xcconfig */;
+			baseConfigurationReference = 8065169D51FE534B7F9429778EC11474 /* AModules.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SPRoutable/SPRoutable-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SPRoutable/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/AModules/AModules-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AModules/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SPRoutable/SPRoutable.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SPRoutable;
+				MODULEMAP_FILE = "Target Support Files/AModules/AModules.modulemap";
+				PRODUCT_NAME = AModules;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -525,46 +562,98 @@
 			};
 			name = Debug;
 		};
-		585CA96BE6266E60CB1B9AF5EDB1DAD0 /* Debug */ = {
+		170C6E8664D23DFBD529392E05EF20E7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9A486319422C560D2A677FEECF62078 /* Pods-Routable_Example.debug.xcconfig */;
+			baseConfigurationReference = 8065169D51FE534B7F9429778EC11474 /* AModules.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Routable_Example/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/AModules/AModules-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AModules/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Routable_Example/Pods-Routable_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Routable_Example;
+				MODULEMAP_FILE = "Target Support Files/AModules/AModules.modulemap";
+				PRODUCT_NAME = AModules;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
+			name = Release;
+		};
+		1CDAB5613991E411E5990BAF694995C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
 			name = Debug;
 		};
-		6B3950C575BC645234B8E464FEC2A480 /* Release */ = {
+		2A4FC8E6788ED7AA21EB97F748369329 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CD0388BF4ABBD37751C21183843A206C /* Pods-Routable_Example.release.xcconfig */;
 			buildSettings = {
@@ -573,20 +662,16 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-Routable_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Routable_Example/Pods-Routable_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -595,267 +680,32 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		717E77604BFBB04BEAF56608A1CB2EDE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		7A920E0C773BF8AB697694CFDB20742F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2EF4A08397B8BC54EA3F51747C65C4D4 /* AModules.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AModules/AModules-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AModules/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AModules/AModules.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = AModules;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		895D24ECD4BD8CC938CFAC5D6ACB7495 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2EF4A08397B8BC54EA3F51747C65C4D4 /* AModules.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AModules/AModules-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AModules/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AModules/AModules.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = AModules;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		8AA8EC43DCDBDFB79D743CBCA4641F27 /* Release */ = {
+		5FDCBBA68119AA31C46191CDC7FD659D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D971F6CCBFACA107722858A2F5C8F0CA /* BModules.xcconfig */;
+			baseConfigurationReference = F2669A292708F87C02599D0BB2644CD6 /* BModules.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/BModules/BModules-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/BModules/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/BModules/BModules.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = BModules;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A626955D92F79A10D77F4848C1E16594 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4B5E505D1988020ADF585222FBAFA6C /* SPRoutable.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SPRoutable/SPRoutable-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SPRoutable/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SPRoutable/SPRoutable.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SPRoutable;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A6A03C9B1314C05BD3C2FBD3F65EDF83 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = NO;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_DEBUG=1",
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		BDBBA61B5DB423AC1C43CCF11E114F17 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D971F6CCBFACA107722858A2F5C8F0CA /* BModules.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/BModules/BModules-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/BModules/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/BModules/BModules.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = BModules;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -868,41 +718,226 @@
 			};
 			name = Debug;
 		};
+		7B62A85C412D689EF418FA67DA770A41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		8656BD8B9706391F19FFC7B3B56564EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9A486319422C560D2A677FEECF62078 /* Pods-Routable_Example.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Routable_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Routable_Example/Pods-Routable_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Routable_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D4F5D357C5A41AB26BAE735F17184E7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C54B9D9B371FF0CBD38598E6949D432 /* SPRoutable.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SPRoutable/SPRoutable-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SPRoutable/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SPRoutable/SPRoutable.modulemap";
+				PRODUCT_NAME = SPRoutable;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DD82D0500D8300C4E917DA2141A96401 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C54B9D9B371FF0CBD38598E6949D432 /* SPRoutable.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SPRoutable/SPRoutable-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SPRoutable/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SPRoutable/SPRoutable.modulemap";
+				PRODUCT_NAME = SPRoutable;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E95C5A7A69C5FB6218FC187D8F274143 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2669A292708F87C02599D0BB2644CD6 /* BModules.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BModules/BModules-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BModules/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BModules/BModules.modulemap";
+				PRODUCT_NAME = BModules;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		01F78EEB33BDC8C94E15C2BF7B396457 /* Build configuration list for PBXNativeTarget "BModules" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BDBBA61B5DB423AC1C43CCF11E114F17 /* Debug */,
-				8AA8EC43DCDBDFB79D743CBCA4641F27 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A6A03C9B1314C05BD3C2FBD3F65EDF83 /* Debug */,
-				717E77604BFBB04BEAF56608A1CB2EDE /* Release */,
+				1CDAB5613991E411E5990BAF694995C5 /* Debug */,
+				7B62A85C412D689EF418FA67DA770A41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8E026244C06C5F712B01427F5162A467 /* Build configuration list for PBXNativeTarget "SPRoutable" */ = {
+		3334253F03EDDC1FC13362B3B8898368 /* Build configuration list for PBXNativeTarget "BModules" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3ED3EB1619134A528409FF368606F8F8 /* Debug */,
-				A626955D92F79A10D77F4848C1E16594 /* Release */,
+				5FDCBBA68119AA31C46191CDC7FD659D /* Debug */,
+				E95C5A7A69C5FB6218FC187D8F274143 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A09B7DBE308BA3A378B3ADC234D2DD1D /* Build configuration list for PBXNativeTarget "AModules" */ = {
+		59403511BCD59C7FEE34648FCB179986 /* Build configuration list for PBXNativeTarget "AModules" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7A920E0C773BF8AB697694CFDB20742F /* Debug */,
-				895D24ECD4BD8CC938CFAC5D6ACB7495 /* Release */,
+				1681274DBD439797D805C729CF875FC3 /* Debug */,
+				170C6E8664D23DFBD529392E05EF20E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		893CDF6F4E2339447FF12FD3216EDC54 /* Build configuration list for PBXNativeTarget "SPRoutable" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4F5D357C5A41AB26BAE735F17184E7C /* Debug */,
+				DD82D0500D8300C4E917DA2141A96401 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -910,8 +945,8 @@
 		DE81AB53B042869E54B592B29255B12F /* Build configuration list for PBXNativeTarget "Pods-Routable_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				585CA96BE6266E60CB1B9AF5EDB1DAD0 /* Debug */,
-				6B3950C575BC645234B8E464FEC2A480 /* Release */,
+				8656BD8B9706391F19FFC7B3B56564EF /* Debug */,
+				2A4FC8E6788ED7AA21EB97F748369329 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
