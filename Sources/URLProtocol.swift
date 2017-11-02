@@ -31,7 +31,6 @@ extension URL: URLProtocol {
 
   public func asURL() -> URL? {
     return self
-    return nil
   }
 
   public func asString() -> String {
