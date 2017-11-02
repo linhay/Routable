@@ -41,7 +41,7 @@ public extension Routable {
   /// - Parameter url: viewController 路径
   /// - Returns: viewController 或者 nil
   public static func viewController(url: URLProtocol) -> UIViewController? {
-    let path = url.asURL()
+    guard let path = url.asURL() else { return nil }
     let object = Routable.performAction(url: path)
     if let vc = object as? UIViewController { return vc }
     assert(false, "无法解析为UIViewController类型:" + url.asString())
@@ -53,7 +53,7 @@ public extension Routable {
   /// - Parameter url: view 路径
   /// - Returns: view 或者 nil
   public static func view(url: URLProtocol) -> UIView? {
-    let path = url.asURL()
+    guard let path = url.asURL() else { return nil }
     let object = Routable.performAction(url: path)
     if let view = object as? UIView { return view }
     assert(false, "无法解析为UIView类型:" + url.asString())
@@ -65,7 +65,7 @@ public extension Routable {
   /// - Parameter url: view 路径
   /// - Returns: view 或者 nil
   public static func object<T: AnyObject>(url: URLProtocol) -> T? {
-    let path = url.asURL()
+    guard let path = url.asURL() else { return nil }
     let object = Routable.performAction(url: path)
     if let element = object as? T { return element }
     return nil
@@ -76,8 +76,7 @@ public extension Routable {
   ///
   /// - Parameter url: 函数路径
   public static func notice(url: URLProtocol) {
-
-    let path = url.asURL()
+    guard let path = url.asURL() else { return }
     if path.host != "notice" {
       assert(false, "检查 URL host: " + (path.host ?? "") + "🌰: http://notice/path")
       return
@@ -97,7 +96,7 @@ public extension Routable {
   /// - Parameter url: 函数路径
   public static func executing(url: URLProtocol,
                                isAssert:Bool = true) {
-    let path = url.asURL()
+    guard let path = url.asURL() else { return }
     Routable.performAction(url: path, isAssert: isAssert)
   }
   

@@ -8,15 +8,16 @@
 import Foundation
 
 public protocol URLProtocol {
-  func asURL() -> URL
+  func asURL() -> URL?
   func asString() -> String
 }
 
 
 extension String: URLProtocol {
-  public func asURL() -> URL {
+  public func asURL() -> URL? {
     guard let url = URL(string: self) else {
-      assert(false, "cheak url: " + self)
+      assert(false, "检查 url: " + self)
+      return nil
     }
     return url
   }
@@ -28,8 +29,9 @@ extension String: URLProtocol {
 
 extension URL: URLProtocol {
 
-  public func asURL() -> URL {
+  public func asURL() -> URL? {
     return self
+    return nil
   }
 
   public func asString() -> String {
