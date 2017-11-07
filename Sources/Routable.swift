@@ -82,11 +82,11 @@ public extension Routable {
       return
     }
 
-  cache.keys.forEach({ (item) in
-    //TODO: 不太严谨
-    let name = item.replacingOccurrences(of: classPrefix, with: "")
-    let path = url.asString().replacingOccurrences(of: "://notice/", with: "://\(name)/")
-     Routable.executing(url: path,isAssert: false)
+    cache.keys.forEach({ (item) in
+      //TODO: 不太严谨
+      let name = item.replacingOccurrences(of: classPrefix, with: "")
+      let path = url.asString().replacingOccurrences(of: "://notice/", with: "://\(name)/")
+      Routable.executing(url: path,isAssert: false)
     })
   }
 
@@ -188,21 +188,24 @@ extension Routable {
   ///
   /// - Parameter url: 路径
   /// - Returns: 对象
- @discardableResult static func performAction(url: URL, isAssert:Bool = true) -> AnyObject? {
+  @discardableResult static func performAction(url: URL, isAssert:Bool = true) -> AnyObject? {
     var params = [String: Any]()
     
     if !scheme.isEmpty, url.scheme! != scheme {
       assert(false, "url格式不正确:" + url.absoluteString)
       return nil
     }
-    
-    var urlstr = ""
-    
-    if let query = url.query { urlstr = query.removingPercentEncoding ?? "" }
-    urlstr.components(separatedBy: "&").forEach { (item) in
-      let list = item.components(separatedBy: "=")
-      if list.count < 2 { return }
-      params[list.first!] = list.last!
+
+    if let urlstr = url.query {
+      urlstr.components(separatedBy: "&").forEach { (item) in
+        let list = item.components(separatedBy: "=")
+        if list.count < 2 { return }
+        if let last = list.last as? String {
+          params[list.first!] = last.removingPercentEncoding ?? last
+        }else{
+          params[list.first!] = list.last!
+        }
+      }
     }
     
     let actionName = url.path.replacingOccurrences(of: "/", with: "")
