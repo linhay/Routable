@@ -35,13 +35,28 @@ public extension Routable {
     let targetName = classPrefix + name
     cache.removeValue(forKey: targetName)
   }
-  
+
+  public static func urlFormat(url: URLProtocol,params:[String: Any]) -> URL?{
+    if params.isEmpty { return url.asURL() }
+
+    guard var components = URLComponents(string: url.asString()) else { return nil }
+    var querys = components.queryItems ?? []
+
+    let newQuerys = params.map { (item) -> URLQueryItem in
+      let value = String(describing: item.value).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryValueAllowed) ?? ""
+      return URLQueryItem(name: item.key, value: value)
+    }
+    querys += newQuerys
+    components.queryItems = querys
+    return components.url
+  }
+
   /// 解析viewController类型
   ///
   /// - Parameter url: viewController 路径
   /// - Returns: viewController 或者 nil
-  public static func viewController(url: URLProtocol) -> UIViewController? {
-    guard let path = url.asURL() else { return nil }
+  public static func viewController(url: URLProtocol,params:[String: Any] = [:]) -> UIViewController? {
+    guard let path = urlFormat(url: url, params: params) else { return nil }
     let object = Routable.performAction(url: path)
     if let vc = object as? UIViewController { return vc }
     assert(false, "无法解析为UIViewController类型:" + url.asString())
@@ -52,8 +67,8 @@ public extension Routable {
   ///
   /// - Parameter url: view 路径
   /// - Returns: view 或者 nil
-  public static func view(url: URLProtocol) -> UIView? {
-    guard let path = url.asURL() else { return nil }
+  public static func view(url: URLProtocol,params:[String: Any] = [:]) -> UIView? {
+    guard let path = urlFormat(url: url, params: params) else { return nil }
     let object = Routable.performAction(url: path)
     if let view = object as? UIView { return view }
     assert(false, "无法解析为UIView类型:" + url.asString())
@@ -64,8 +79,8 @@ public extension Routable {
   ///
   /// - Parameter url: view 路径
   /// - Returns: view 或者 nil
-  public static func object<T: AnyObject>(url: URLProtocol) -> T? {
-    guard let path = url.asURL() else { return nil }
+  public static func object<T: AnyObject>(url: URLProtocol,params:[String: Any] = [:]) -> T? {
+    guard let path = urlFormat(url: url, params: params) else { return nil }
     let object = Routable.performAction(url: path)
     if let element = object as? T { return element }
     return nil
@@ -75,8 +90,8 @@ public extension Routable {
   /// 通知所有已缓存类型函数
   ///
   /// - Parameter url: 函数路径
-  public static func notice(url: URLProtocol) {
-    guard let path = url.asURL() else { return }
+  public static func notice(url: URLProtocol,params:[String: Any] = [:]) {
+    guard let path = urlFormat(url: url, params: params) else { return }
     if path.host != "notice" {
       assert(false, "检查 URL host: " + (path.host ?? "") + "🌰: http://notice/path")
       return
@@ -200,11 +215,7 @@ extension Routable {
       urlstr.components(separatedBy: "&").forEach { (item) in
         let list = item.components(separatedBy: "=")
         if list.count < 2 { return }
-        if let last = list.last as? String {
-          params[list.first!] = last.removingPercentEncoding ?? last
-        }else{
-          params[list.first!] = list.last!
-        }
+        params[list.first!] = list.last!
       }
     }
     

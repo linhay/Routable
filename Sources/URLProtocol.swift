@@ -7,6 +7,12 @@
 
 import Foundation
 
+
+extension CharacterSet{
+  static let urlQueryValueAllowed = CharacterSet(charactersIn: "&\"#%<>[]^`{|}=").inverted
+}
+
+
 public protocol URLProtocol {
   func asURL() -> URL?
   func asString() -> String
