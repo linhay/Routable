@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = 'SPRoutable'
-s.version          = '0.7.3'
+s.version          = '0.7.4'
 s.summary          = '基础的路由服务'
 
 
@@ -15,6 +15,6 @@ s.source_files = ["Sources/*/**","Sources/*/*/**","Sources/**"]
 
 s.public_header_files = ["Sources/Routable.h"]
 s.requires_arc = true
-s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3.0' }
+s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
 
 end

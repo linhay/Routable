@@ -43,7 +43,7 @@ public extension Routable {
     var querys = components.queryItems ?? []
 
     let newQuerys = params.map { (item) -> URLQueryItem in
-      let value = String(describing: item.value).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryValueAllowed) ?? ""
+      let value = String(describing: item.value)
       return URLQueryItem(name: item.key, value: value)
     }
     querys += newQuerys
@@ -215,7 +215,7 @@ extension Routable {
       urlstr.components(separatedBy: "&").forEach { (item) in
         let list = item.components(separatedBy: "=")
         if list.count < 2 { return }
-        params[list.first!] = list.last!
+        params[list.first!] = list.last!.removingPercentEncoding ?? ""
       }
     }
     
