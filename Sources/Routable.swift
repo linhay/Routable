@@ -100,7 +100,7 @@ public extension Routable {
     cache.keys.forEach({ (item) in
       //TODO: 不太严谨
       let name = item.replacingOccurrences(of: classPrefix, with: "")
-      let path = url.asString().replacingOccurrences(of: "://notice/", with: "://\(name)/")
+      let path = path.asString().replacingOccurrences(of: "://notice/", with: "://\(name)/")
       Routable.executing(url: path,isAssert: false)
     })
   }

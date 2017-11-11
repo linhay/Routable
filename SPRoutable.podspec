@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = 'SPRoutable'
-s.version          = '0.7.4'
+s.version          = '0.7.5'
 s.summary          = '基础的路由服务'
 
 
