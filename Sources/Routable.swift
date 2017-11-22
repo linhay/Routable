@@ -35,13 +35,13 @@ public extension Routable {
     let targetName = classPrefix + name
     cache.removeValue(forKey: targetName)
   }
-
+  
   public static func urlFormat(url: URLProtocol,params:[String: Any]) -> URL?{
     if params.isEmpty { return url.asURL() }
-
+    
     guard var components = URLComponents(string: url.asString()) else { return nil }
     var querys = components.queryItems ?? []
-
+    
     let newQuerys = params.map { (item) -> URLQueryItem in
       let value = String(describing: item.value)
       return URLQueryItem(name: item.key, value: value)
@@ -50,7 +50,7 @@ public extension Routable {
     components.queryItems = querys
     return components.url
   }
-
+  
   /// 解析viewController类型
   ///
   /// - Parameter url: viewController 路径
@@ -85,8 +85,8 @@ public extension Routable {
     if let element = object as? T { return element }
     return nil
   }
-
-
+  
+  
   /// 通知所有已缓存类型函数
   ///
   /// - Parameter url: 函数路径
@@ -96,7 +96,7 @@ public extension Routable {
       assert(false, "检查 URL host: " + (path.host ?? "") + "🌰: http://notice/path")
       return
     }
-
+    
     cache.keys.forEach({ (item) in
       //TODO: 不太严谨
       let name = item.replacingOccurrences(of: classPrefix, with: "")
@@ -104,7 +104,7 @@ public extension Routable {
       Routable.executing(url: path,isAssert: false)
     })
   }
-
+  
   
   /// 执行路径指定函数
   ///
@@ -150,7 +150,7 @@ extension Routable {
         let sel = NSSelectorFromString(funcPrefix + name + "With" + paramName + ":")
         if target.responds(to: sel){ return sel }
       }
-
+      
       do {
         let sel = NSSelectorFromString(funcPrefix + name + paramName + ":")
         if target.responds(to: sel){ return sel }
@@ -160,7 +160,7 @@ extension Routable {
         let sel = NSSelectorFromString(funcPrefix + name + ":")
         if target.responds(to: sel){ return sel }
       }
-
+      
       return nil
     }else{
       let sel = NSSelectorFromString(funcPrefix + name)
@@ -210,12 +210,15 @@ extension Routable {
       assert(false, "url格式不正确:" + url.absoluteString)
       return nil
     }
-
+    
     if let urlstr = url.query {
       urlstr.components(separatedBy: "&").forEach { (item) in
         let list = item.components(separatedBy: "=")
-        if list.count < 2 { return }
-        params[list.first!] = list.last!.removingPercentEncoding ?? ""
+        if list.count == 2 {
+          params[list.first!] = list.last!.removingPercentEncoding ?? ""
+        }else if list.count > 2 {
+          params[list.first!] = list.dropFirst().joined().removingPercentEncoding ?? ""
+        }
       }
     }
     
