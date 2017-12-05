@@ -104,13 +104,20 @@ public extension Routable {
       Routable.executing(url: path,isAssert: false)
     })
   }
-  
+
+
+  /// 执行路径指定函数
+  ///
+  /// - Parameter url: 函数路径
+  public static func executing(url: URLProtocol, params:[String: Any] = [:]) {
+    guard let path = urlFormat(url: url, params: params) else { return }
+    Routable.performAction(url: path, isAssert: true)
+  }
   
   /// 执行路径指定函数
   ///
   /// - Parameter url: 函数路径
-  public static func executing(url: URLProtocol,
-                               isAssert:Bool = true) {
+  private static func executing(url: URLProtocol, isAssert:Bool = true) {
     guard let path = url.asURL() else { return }
     Routable.performAction(url: path, isAssert: isAssert)
   }
