@@ -24,6 +24,8 @@ public struct Routable {
   static var cache = [String: Any]()
   /// 通知缓存
   static var notice = [String:[String]]()
+  /// 代理缓存
+  static var delegate = [String: String]()
 }
 
 public extension Routable {
@@ -79,7 +81,7 @@ public extension Routable {
   ///
   /// - Parameter url: view 路径
   /// - Returns: view 或者 nil
-  public static func object<T: AnyObject>(url: URLProtocol,params:[String: Any] = [:]) -> T? {
+  public static func object<T: Any>(url: URLProtocol,params:[String: Any] = [:]) -> T? {
     guard let path = urlFormat(url: url, params: params) else { return nil }
     let object = Routable.performAction(url: path)
     if let element = object as? T { return element }
@@ -184,7 +186,10 @@ extension Routable {
   ///   - params: 函数参数
   ///   - isCacheTarget: 是否缓存
   /// - Returns: 对象
-  public static func target(name: String, actionName: String, params: [String: Any] = [:], isAssert:Bool = true) -> AnyObject? {
+  public static func target(name: String,
+                            actionName: String,
+                            params: [String: Any] = [:],
+                            isAssert:Bool = true) -> AnyObject? {
     
     guard let target = getClass(name: name) else {
       if isAssert { assert(false, "无法查询到指定类:" + name) }

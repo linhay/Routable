@@ -13,21 +13,25 @@ import SPRoutable
 public class Router_swift: NSObject {
   var flag = true
 
- @objc func router_vc(params:[String: Any]) -> UIViewController {
+
+  @objc func router_vc(params:[String: Any]) -> UIViewController {
     let vc = SwiftViewController()
-    vc.view.backgroundColor = UIColor.blue
+    vc.view.backgroundColor = flag ? UIColor.red : UIColor.blue
+    vc.title = #function
+    flag = !flag
     return vc
+
   }
 
- @objc func router_view() -> UIView {
+  @objc func router_view(params:[String: Any]) -> UIView {
     let view = UIView()
-    view.frame = CGRect(x: 0, y: 300, width: 300, height: 300)
+    view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 20)
     view.backgroundColor = flag ? UIColor.red : UIColor.blue
     flag = !flag
     return view
   }
 
- @objc func router_alert(params: [String: Any] = [:]) {
+  @objc func router_alert(params: [String: Any] = [:]) {
     let alert = UIAlertController()
     alert.title = #function
     alert.message = params.description
@@ -38,12 +42,17 @@ public class Router_swift: NSObject {
     UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
   }
 
-  @objc func router_object() -> NSDictionary {
-    return ["s": 2]
+  @objc func router_int(params: [String: Any] = [:]) -> Int {
+    return flag ? 100 : 200
   }
 
-  @objc func router_notice() {
-    print(#function + "router_notice")
+  @objc func router_integer(params: [String: Any] = [:]) -> NSInteger {
+    let int = NSInteger(bitPattern: flag ? 100 : 200)
+    return int
+  }
+
+  @objc func router_noticeResult() {
+    router_alert(params: ["notice": #function])
   }
 
 }

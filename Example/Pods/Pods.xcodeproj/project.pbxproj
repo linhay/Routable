@@ -37,6 +37,8 @@
 		8FFB29F8297B5A56E6B6A361622C2F32 /* Router_swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F10B42A5C349CC40AD8753691C8BC0 /* Router_swift.swift */; };
 		99B11913D1A7ADAFC88268DA61A1AC4A /* BModules.h in Headers */ = {isa = PBXBuildFile; fileRef = 46E7E7213E709ACAECDC87769563AC98 /* BModules.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9B1F65889648EFB2A7FB337AEAEF07F6 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663E0A3A3EDE964F04AC8D3C206B9CC8 /* SwiftViewController.swift */; };
+		9D0FAD081FED0A820056BD0F /* OBjCViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D0FAD061FED0A820056BD0F /* OBjCViewController.h */; };
+		9D0FAD091FED0A820056BD0F /* OBjCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D0FAD071FED0A820056BD0F /* OBjCViewController.m */; };
 		AABECAFA9A94BB059327ADF4E2E0670B /* Bool+SP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95047FE9E21BEEC41F4C69FD17EEB23 /* Bool+SP.swift */; };
 		AE447EAA8C4E7FA781718DC475159B33 /* BModules-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 708CF93EBF352BDEF51355D59FA124F7 /* BModules-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B61B44BE6F96EA8CE409E145CDD0DBC9 /* Date+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8B2D422E7DCE33C945BFB61A3DA21 /* Date+Timepiece.swift */; };
@@ -154,6 +156,8 @@
 		9AA87CC09C6869B822D5BAC41561EB7A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B83FB0FF4221DA6ED7DC932ACC23015 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		9CB3B9061A356F2076865FF6E0AF98F8 /* Pods-Routable_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Routable_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9D0FAD061FED0A820056BD0F /* OBjCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OBjCViewController.h; path = SourcesA/OBjCViewController.h; sourceTree = "<group>"; };
+		9D0FAD071FED0A820056BD0F /* OBjCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = OBjCViewController.m; path = SourcesA/OBjCViewController.m; sourceTree = "<group>"; };
 		A0F51DE731A44F2D28B9113630356B03 /* BModules.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BModules.xcconfig; sourceTree = "<group>"; };
 		A3A4616F5088BDD1BC55DBA7CCAEBC96 /* Int+SP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Int+SP.swift"; path = "Sources/Number/Int+SP.swift"; sourceTree = "<group>"; };
 		A6EBB9CA41CDA06A321C6DFFA10F6451 /* BLFoundation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = BLFoundation.modulemap; sourceTree = "<group>"; };
@@ -318,6 +322,8 @@
 				C12AA4279FF49F179F0F8C30B1DC1E70 /* AModules.h */,
 				B83D3C1CC11529A9A3E07E85C737103F /* Router_objc.h */,
 				6781D275BCFFF08CB28AFF1F0FAF1EB2 /* Router_objc.m */,
+				9D0FAD061FED0A820056BD0F /* OBjCViewController.h */,
+				9D0FAD071FED0A820056BD0F /* OBjCViewController.m */,
 				98AACA6819BEC40C57D8DB02D8563E66 /* Support Files */,
 			);
 			name = AModules;
@@ -447,6 +453,7 @@
 				EA08CCF8BB8D4464EC7D046E125C76B6 /* AModules-umbrella.h in Headers */,
 				3CFC3F6AF44887534A294CF98C21F7A5 /* AModules.h in Headers */,
 				BC5C104B593D80DE39146D857AA131DD /* Router_objc.h in Headers */,
+				9D0FAD081FED0A820056BD0F /* OBjCViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,6 +680,7 @@
 			files = (
 				7343968E4A1A50D71B728F2692AD3159 /* AModules-dummy.m in Sources */,
 				CDF75075ECDDAF1925126BAFBBD9A6F6 /* Router_objc.m in Sources */,
+				9D0FAD091FED0A820056BD0F /* OBjCViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

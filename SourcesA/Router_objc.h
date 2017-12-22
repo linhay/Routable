@@ -10,4 +10,9 @@
 
 @interface Router_objc : NSObject
 -(UIViewController *)router_vc;
+-(UIView *)router_view;
+-(void)router_alert:(NSDictionary *)params;
+-(int)router_int:(NSDictionary *)params;
+-(NSInteger *)router_integer:(NSDictionary *)params;
+-(void)router_noticeResult:(NSDictionary *)params;
 @end
