@@ -105,12 +105,14 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AModules/AModules.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BLFoundation/BLFoundation.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BModules/BModules.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SPKit/SPKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SPRoutable/SPRoutable.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AModules/AModules.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BLFoundation/BLFoundation.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BModules/BModules.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SPKit/SPKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SPRoutable/SPRoutable.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

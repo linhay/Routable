@@ -10,6 +10,7 @@ import UIKit
 import SPRoutable
 import BModules
 import AModules
+import SPKit
 
 class ViewController: UITableViewController {
   let list = ["http://swift/vc",
@@ -57,6 +58,7 @@ class ViewController: UITableViewController {
 
     if str.contains("vc"){
       guard let vc = Routable.viewController(url: str) else { return }
+      vc.view.backgroundColor = UIColor.random
       navigationController?.pushViewController(vc, animated: true)
       return
     }
@@ -66,25 +68,26 @@ class ViewController: UITableViewController {
       navigationController?.view.subviews.forEach({ (item) in
         if item.frame == v.frame { item.removeFromSuperview() }
       })
+      v.backgroundColor = UIColor.random
       navigationController?.view.addSubview(v)
       return
     }
 
     if str.contains("int"){
       guard let v = Routable.object(url: str) as Int? else { return }
-      print(v)
+      Routable.executing(url: "http://swift/alert?Int=\(v)")
       return
     }
 
     if str.contains("integer"){
       guard let v = Routable.object(url: str) as NSInteger? else { return }
-      print(v)
+      Routable.executing(url: "http://swift/alert?NSInteger=\(v)")
       return
     }
 
     if str.contains("string"){
       guard let v = Routable.object(url: str) as String? else { return }
-      print(v)
+      Routable.executing(url: "http://swift/alert?String=\(v)")
       return
     }
 

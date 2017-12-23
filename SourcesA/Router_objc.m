@@ -26,7 +26,7 @@
 
 -(void)router_alert:(NSDictionary *)params {
   UIAlertController * alert = [UIAlertController alertControllerWithTitle: @"router_alert"
-                                                                  message: nil
+                                                                  message: [params description]
                                                            preferredStyle:UIAlertControllerStyleActionSheet];
   UIAlertAction * done = [UIAlertAction actionWithTitle: @"ok"
                                                   style: UIAlertActionStyleDestructive
@@ -37,11 +37,11 @@
 }
 
 -(int)router_int:(NSDictionary *)params{
-  return 200;
+  return rand();
 }
 
 -(NSInteger *)router_integer:(NSDictionary *)params{
-  NSNumber * value = [[NSNumber alloc]initWithInt:300];
+  NSNumber * value = [[NSNumber alloc]initWithInt:rand()];
   return [value integerValue];
 }
 

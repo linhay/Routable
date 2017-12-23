@@ -85,7 +85,7 @@ public extension Routable {
   /// - Returns: view 或者 nil
   public static func object<T: Any>(url: URLProtocol,params:[String: Any] = [:]) -> T? {
     guard let path = urlFormat(url: url, params: params) else { return nil }
-    guard let object = Routable.performAction(url: path) else { return nil }
+    guard let object = Routable.perform(value: path) else { return nil }
     if String(describing: T.self).hasPrefix("Int") {
       return object.toOpaque().hashValue as? T
     }else{
@@ -110,7 +110,7 @@ public extension Routable {
       let name = item.replacingOccurrences(of: classPrefix, with: "")
       let path = path.asString().replacingOccurrences(of: "://notice/", with: "://\(name)/")
       if let endURL = path.asURL() {
-        Routable.performFunc(url: endURL)
+        Routable.perform(function: endURL)
       }
     })
   }
@@ -121,7 +121,7 @@ public extension Routable {
   /// - Parameter url: 函数路径
   public static func executing(url: URLProtocol, params:[String: Any] = [:]) {
     guard let path = urlFormat(url: url, params: params) else { return }
-    Routable.performFunc(url: path)
+    Routable.perform(function: path)
   }
 
 }
@@ -153,7 +153,7 @@ extension Routable {
   ///   - name: 指定函数名
   ///   - hasParams: 是否有参数
   /// - Returns: 指定函数
-  static func getFunc(target: NSObject, name: String,hasParams: Bool) -> Selector? {
+  static func getSEL(target: NSObject, name: String,hasParams: Bool) -> Selector? {
     if hasParams {
       do {
         let sel = NSSelectorFromString(funcPrefix + name + "With" + paramName + ":")
@@ -174,7 +174,7 @@ extension Routable {
     }else{
       let sel = NSSelectorFromString(funcPrefix + name)
       if target.responds(to: sel){ return sel }
-      return getFunc(target: target, name: name, hasParams: true)
+      return getSEL(target: target, name: name, hasParams: true)
     }
   }
   
@@ -190,9 +190,9 @@ extension Routable {
                              actionName: String,
                              params: [String: Any] = [:]) {
     guard let target = getClass(name: name) else { return }
-    guard let function = getFunc(target: target, name: actionName, hasParams: !params.isEmpty) else { return }
+    guard let function = getSEL(target: target, name: actionName, hasParams: !params.isEmpty) else { return }
     
-    switch function.description.contains(":") {
+    switch function.description.hasSuffix(":") {
     case true:
       target.perform(function, with: params)
     case false:
@@ -212,9 +212,9 @@ extension Routable {
                             actionName: String,
                             params: [String: Any] = [:]) -> Unmanaged<AnyObject>? {
     guard let target = getClass(name: name) else { return nil }
-    guard let function = getFunc(target: target, name: actionName, hasParams: !params.isEmpty) else { return nil }
+    guard let function = getSEL(target: target, name: actionName, hasParams: !params.isEmpty) else { return nil }
 
-    switch function.description.contains(":") {
+    switch function.description.hasSuffix(":") {
     case true:
       guard let value = target.perform(function, with: params) else { return nil }
       return value
@@ -224,15 +224,18 @@ extension Routable {
     }
   }
 
-
-  static func performFunc(url: URL) {
-    var params = [String: Any]()
-
-    if !scheme.isEmpty, url.scheme! != scheme {
-      assert(false, "url格式不正确:" + url.absoluteString)
-      return
+  /// 获取路径所需参数
+  ///
+  /// - Parameter url: 路径
+  /// - Returns: 所需参数
+  static func getPathValues(url: URL) -> (class: String,function: String,params: [String: Any])?{
+    guard (scheme.isEmpty || url.scheme == scheme),
+      let function = url.path.components(separatedBy: "/").last,
+      let className = url.host else {
+        assertionFailure("url 不合法")
+        return nil
     }
-
+    var params = [String: Any]()
     if let urlstr = url.query {
       urlstr.components(separatedBy: "&").forEach { (item) in
         let list = item.components(separatedBy: "=")
@@ -243,39 +246,25 @@ extension Routable {
         }
       }
     }
-
-    let actionName = url.path.replacingOccurrences(of: "/", with: "")
-    execute(name: url.host!, actionName: actionName, params: params)
+    return (className,function,params)
   }
 
+
+  /// 由路径获取指定函数并执行
+  ///
+  /// - Parameter url: 路劲
+  static func perform(function url: URL) {
+    guard let value = getPathValues(url: url) else { return }
+    execute(name: value.class, actionName: value.function, params: value.params)
+  }
 
   /// 由路径获取指定对象
   ///
   /// - Parameter url: 路径
   /// - Returns: 对象
-  @discardableResult static func performAction(url: URL) -> Unmanaged<AnyObject>? {
-    var params = [String: Any]()
-    
-    if !scheme.isEmpty, url.scheme! != scheme {
-      assert(false, "url格式不正确:" + url.absoluteString)
-      return nil
-    }
-    
-    if let urlstr = url.query {
-      urlstr.components(separatedBy: "&").forEach { (item) in
-        let list = item.components(separatedBy: "=")
-        if list.count == 2 {
-          params[list.first!] = list.last!.removingPercentEncoding ?? ""
-        }else if list.count > 2 {
-          params[list.first!] = list.dropFirst().joined().removingPercentEncoding ?? ""
-        }
-      }
-    }
-    
-    let actionName = url.path.replacingOccurrences(of: "/", with: "")
-    let result = target(name: url.host!,
-                        actionName: actionName,
-                        params: params)
+  static func perform(value url: URL) -> Unmanaged<AnyObject>? {
+    guard let value = getPathValues(url: url) else { return nil }
+    let result = target(name: value.class, actionName: value.function, params: value.params)
     return result
   }
   

@@ -238,6 +238,7 @@
 				"${BUILT_PRODUCTS_DIR}/AModules/AModules.framework",
 				"${BUILT_PRODUCTS_DIR}/BLFoundation/BLFoundation.framework",
 				"${BUILT_PRODUCTS_DIR}/BModules/BModules.framework",
+				"${BUILT_PRODUCTS_DIR}/SPKit/SPKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SPRoutable/SPRoutable.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -245,6 +246,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AModules.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BLFoundation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BModules.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPRoutable.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
