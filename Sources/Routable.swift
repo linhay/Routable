@@ -26,6 +26,12 @@ public struct Routable {
   static var notice = [String:[String]]()
   /// 代理缓存
   static var delegate = [String: String]()
+
+  enum Style {
+    case object
+    case execute
+  }
+
 }
 
 public extension Routable {
@@ -103,7 +109,9 @@ public extension Routable {
       //TODO: 不太严谨
       let name = item.replacingOccurrences(of: classPrefix, with: "")
       let path = path.asString().replacingOccurrences(of: "://notice/", with: "://\(name)/")
-      Routable.executing(url: path,isAssert: false)
+      if let endURL = path.asURL() {
+        Routable.performFunc(url: endURL)
+      }
     })
   }
 
@@ -113,17 +121,9 @@ public extension Routable {
   /// - Parameter url: 函数路径
   public static func executing(url: URLProtocol, params:[String: Any] = [:]) {
     guard let path = urlFormat(url: url, params: params) else { return }
-    Routable.performAction(url: path, isAssert: true)
+    Routable.performFunc(url: path)
   }
-  
-  /// 执行路径指定函数
-  ///
-  /// - Parameter url: 函数路径
-  private static func executing(url: URLProtocol, isAssert:Bool = true) {
-    guard let path = url.asURL() else { return }
-    Routable.performAction(url: path, isAssert: isAssert)
-  }
-  
+
 }
 
 extension Routable {
@@ -186,22 +186,35 @@ extension Routable {
   ///   - params: 函数参数
   ///   - isCacheTarget: 是否缓存
   /// - Returns: 对象
+  public static func execute(name: String,
+                             actionName: String,
+                             params: [String: Any] = [:]) {
+    guard let target = getClass(name: name) else { return }
+    guard let function = getFunc(target: target, name: actionName, hasParams: !params.isEmpty) else { return }
+    
+    switch function.description.contains(":") {
+    case true:
+      target.perform(function, with: params)
+    case false:
+      target.perform(function)
+    }
+  }
+
+  /// 获取指定对象
+  ///
+  /// - Parameters:
+  ///   - name: 类名
+  ///   - actionName: 函数名
+  ///   - params: 函数参数
+  ///   - isCacheTarget: 是否缓存
+  /// - Returns: 对象
   public static func target(name: String,
                             actionName: String,
-                            params: [String: Any] = [:],
-                            isAssert:Bool = true) -> AnyObject? {
-    
-    guard let target = getClass(name: name) else {
-      if isAssert { assert(false, "无法查询到指定类:" + name) }
-      return nil
-    }
-    
-    guard let function = getFunc(target: target, name: actionName, hasParams: !params.isEmpty) else {
-      if isAssert { assert(false, "无法查询到指定类函数:" + actionName) }
-      return nil
-    }
-    
-    switch function.description.contains(paramName + ":") {
+                            params: [String: Any] = [:]) -> AnyObject? {
+    guard let target = getClass(name: name) else { return nil }
+    guard let function = getFunc(target: target, name: actionName, hasParams: !params.isEmpty) else { return nil }
+
+    switch function.description.contains(":") {
     case true:
       guard let value = target.perform(function, with: params) else { return nil }
       return value.takeUnretainedValue()
@@ -210,12 +223,37 @@ extension Routable {
       return value.takeUnretainedValue()
     }
   }
-  
+
+
+   static func performFunc(url: URL) {
+    var params = [String: Any]()
+
+    if !scheme.isEmpty, url.scheme! != scheme {
+      assert(false, "url格式不正确:" + url.absoluteString)
+      return
+    }
+
+    if let urlstr = url.query {
+      urlstr.components(separatedBy: "&").forEach { (item) in
+        let list = item.components(separatedBy: "=")
+        if list.count == 2 {
+          params[list.first!] = list.last!.removingPercentEncoding ?? ""
+        }else if list.count > 2 {
+          params[list.first!] = list.dropFirst().joined().removingPercentEncoding ?? ""
+        }
+      }
+    }
+
+    let actionName = url.path.replacingOccurrences(of: "/", with: "")
+    execute(name: url.host!, actionName: actionName, params: params)
+  }
+
+
   /// 由路径获取指定对象
   ///
   /// - Parameter url: 路径
   /// - Returns: 对象
-  @discardableResult static func performAction(url: URL, isAssert:Bool = true) -> AnyObject? {
+  @discardableResult static func performAction(url: URL) -> AnyObject? {
     var params = [String: Any]()
     
     if !scheme.isEmpty, url.scheme! != scheme {
@@ -237,8 +275,7 @@ extension Routable {
     let actionName = url.path.replacingOccurrences(of: "/", with: "")
     let result = target(name: url.host!,
                         actionName: actionName,
-                        params: params,
-                        isAssert: isAssert)
+                        params: params)
     return result
   }
   

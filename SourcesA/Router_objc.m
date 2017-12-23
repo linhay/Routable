@@ -46,8 +46,7 @@
 }
 
 -(void)router_noticeResult:(NSDictionary *)params{
-  NSDictionary* dict = [[NSDictionary alloc]init];
-  [dict setValue:@"router_noticeResult" forKey:@"notice"];
+  NSDictionary* dict = [NSDictionary dictionaryWithObject:@"router_noticeResult" forKey:@"notice"];
   [self router_alert: dict];
 }
 

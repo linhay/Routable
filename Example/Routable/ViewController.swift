@@ -31,6 +31,12 @@ class ViewController: UITableViewController {
     RunTime.methods(from: Router_swift.self).forEach { (item) in
       print(method_getName(item))
     }
+
+    if let cls = NSClassFromString("Router_objc") {
+      RunTime.methods(from: cls).forEach { (item) in
+        print(method_getName(item))
+      }
+    }
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
