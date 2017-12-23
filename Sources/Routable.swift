@@ -64,9 +64,7 @@ public extension Routable {
   /// - Parameter url: viewController 路径
   /// - Returns: viewController 或者 nil
   public static func viewController(url: URLProtocol,params:[String: Any] = [:]) -> UIViewController? {
-    guard let path = urlFormat(url: url, params: params) else { return nil }
-    let object = Routable.performAction(url: path)
-    if let vc = object as? UIViewController { return vc }
+    if let vc = object(url: url, params: params) as UIViewController? { return vc }
     assert(false, "无法解析为UIViewController类型:" + url.asString())
     return nil
   }
@@ -76,9 +74,7 @@ public extension Routable {
   /// - Parameter url: view 路径
   /// - Returns: view 或者 nil
   public static func view(url: URLProtocol,params:[String: Any] = [:]) -> UIView? {
-    guard let path = urlFormat(url: url, params: params) else { return nil }
-    let object = Routable.performAction(url: path)
-    if let view = object as? UIView { return view }
+    if let vc = object(url: url, params: params) as UIView? { return vc }
     assert(false, "无法解析为UIView类型:" + url.asString())
     return nil
   }
@@ -89,8 +85,12 @@ public extension Routable {
   /// - Returns: view 或者 nil
   public static func object<T: Any>(url: URLProtocol,params:[String: Any] = [:]) -> T? {
     guard let path = urlFormat(url: url, params: params) else { return nil }
-    let object = Routable.performAction(url: path)
-    if let element = object as? T { return element }
+    guard let object = Routable.performAction(url: path) else { return nil }
+    if String(describing: T.self).hasPrefix("Int") {
+      return object.toOpaque().hashValue as? T
+    }else{
+      if let element = object.takeUnretainedValue() as? T { return element }
+    }
     return nil
   }
   
@@ -210,22 +210,22 @@ extension Routable {
   /// - Returns: 对象
   public static func target(name: String,
                             actionName: String,
-                            params: [String: Any] = [:]) -> AnyObject? {
+                            params: [String: Any] = [:]) -> Unmanaged<AnyObject>? {
     guard let target = getClass(name: name) else { return nil }
     guard let function = getFunc(target: target, name: actionName, hasParams: !params.isEmpty) else { return nil }
 
     switch function.description.contains(":") {
     case true:
       guard let value = target.perform(function, with: params) else { return nil }
-      return value.takeUnretainedValue()
+      return value
     case false:
       guard let value = target.perform(function) else { return nil }
-      return value.takeUnretainedValue()
+      return value
     }
   }
 
 
-   static func performFunc(url: URL) {
+  static func performFunc(url: URL) {
     var params = [String: Any]()
 
     if !scheme.isEmpty, url.scheme! != scheme {
@@ -253,7 +253,7 @@ extension Routable {
   ///
   /// - Parameter url: 路径
   /// - Returns: 对象
-  @discardableResult static func performAction(url: URL) -> AnyObject? {
+  @discardableResult static func performAction(url: URL) -> Unmanaged<AnyObject>? {
     var params = [String: Any]()
     
     if !scheme.isEmpty, url.scheme! != scheme {

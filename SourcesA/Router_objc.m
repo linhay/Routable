@@ -45,6 +45,10 @@
   return [value integerValue];
 }
 
+-(NSString *)router_string:(NSDictionary *)params{
+  return NSStringFromSelector(_cmd);
+}
+
 -(void)router_noticeResult:(NSDictionary *)params{
   NSDictionary* dict = [NSDictionary dictionaryWithObject:@"router_noticeResult" forKey:@"notice"];
   [self router_alert: dict];

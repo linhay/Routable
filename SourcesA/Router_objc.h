@@ -14,5 +14,6 @@
 -(void)router_alert:(NSDictionary *)params;
 -(int)router_int:(NSDictionary *)params;
 -(NSInteger *)router_integer:(NSDictionary *)params;
+-(NSString *)router_string:(NSDictionary *)params;
 -(void)router_noticeResult:(NSDictionary *)params;
 @end

@@ -51,6 +51,10 @@ public class Router_swift: NSObject {
     return int
   }
 
+  @objc func router_string(params: [String: Any] = [:]) -> String {
+    return #function
+  }
+
   @objc func router_noticeResult() {
     router_alert(params: ["notice": #function])
   }

@@ -17,12 +17,14 @@ class ViewController: UITableViewController {
               "http://swift/alert?ut=3",
               "http://swift/int",
               "http://swift/integer",
+              "http://swift/string",
               "http://notice/noticeResult",
               "http://objc/vc",
               "http://objc/view",
               "http://objc/alert?ut=3",
               "http://objc/int",
               "http://objc/integer",
+              "http://objc/string",
               "http://notice/noticeResult"]
 
 
@@ -61,6 +63,9 @@ class ViewController: UITableViewController {
 
     if str.contains("view"){
       guard let v = Routable.view(url: str) else { return }
+      navigationController?.view.subviews.forEach({ (item) in
+        if item.frame == v.frame { item.removeFromSuperview() }
+      })
       navigationController?.view.addSubview(v)
       return
     }
@@ -77,10 +82,15 @@ class ViewController: UITableViewController {
       return
     }
 
+    if str.contains("string"){
+      guard let v = Routable.object(url: str) as String? else { return }
+      print(v)
+      return
+    }
+
     if str.contains("noticeResult"){
       Routable.notice(url: str)
     }
-
 
     if str.contains("alert"){
       Routable.executing(url: str)
