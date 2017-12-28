@@ -86,11 +86,35 @@ public extension Routable {
   public static func object<T: Any>(url: URLProtocol,params:[String: Any] = [:]) -> T? {
     guard let path = urlFormat(url: url, params: params) else { return nil }
     guard let object = Routable.perform(value: path) else { return nil }
-    if String(describing: T.self).hasPrefix("Int") {
+    print(String(describing: T.self))
+    switch String(describing: T.self) {
+    case "Int":
       return object.toOpaque().hashValue as? T
-    }else{
+    case "UInt":
+      let hash = object.toOpaque().hashValue
+      if hash > UInt.max || hash < UInt.min { return nil }
+      return UInt(hash) as? T
+    case "UInt8":
+      let hash = object.toOpaque().hashValue
+      if hash > UInt8.max || hash < UInt8.min { return nil }
+      return UInt8(hash) as? T
+    case "UInt16":
+      let hash = object.toOpaque().hashValue
+      if hash > UInt16.max || hash < UInt16.min { return nil }
+      return UInt16(hash) as? T
+    case "UInt32":
+      let hash = object.toOpaque().hashValue
+      if hash > UInt32.max || hash < UInt32.min { return nil }
+      return UInt32(hash) as? T
+    case "UInt64":
+      let hash = object.toOpaque().hashValue
+      if hash > UInt64.max || hash < UInt64.min { return nil }
+      return UInt64(hash) as? T
+    default:
       if let element = object.takeUnretainedValue() as? T { return element }
+
     }
+
     return nil
   }
   
