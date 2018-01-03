@@ -7,19 +7,20 @@
 
 ## Example
 
-![gif](./gif.gif)
-
-
-
-## 安装
-
-- CocoaPods: 
-
-  ```ruby
-  pod "SPRoutable"
-  ```
+![routable_swift](./ReadmeData/routable_swift.gif)
+![routable_swift](./ReadmeData/routable_objc.gif)
 
 ## 简介
+
+Routable是采用swift编写的 Target-Action形式的路由框架.参考自:[casa: iOS应用架构谈 组件化方案][https://casatwy.com/iOS-Modulization.html)]
+
+## 使用
+
+- 使用CocoaPods安装
+
+  ```
+  pod "SPRoutable"
+  ```
 
 - 导入
 
