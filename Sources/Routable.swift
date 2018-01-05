@@ -112,9 +112,7 @@ public extension Routable {
       return UInt64(hash) as? T
     default:
       if let element = object.takeUnretainedValue() as? T { return element }
-
     }
-
     return nil
   }
   

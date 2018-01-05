@@ -47,68 +47,79 @@ Routable是采用swift编写的 Target-Action形式的路由框架.参考自:[ca
      - swift示例:
 
   ```swift
-  @objc(Router_swift)
-  class Router_swift: NSObject {
-    var flag = true
+@objc(Router_swift)
+public class Router_swift: NSObject {
 
-   @objc func router_a(params:[String: Any]) -> UIViewController {
-      let vc = UIViewController()
-      vc.view.backgroundColor = UIColor.blue
-      return vc
-    }
-
-   @objc func router_b() -> UIView {
-      let view = UIView()
-      view.frame = CGRect(x: 0, y: 300, width: 300, height: 300)
-      view.backgroundColor = flag ? UIColor.red : UIColor.blue
-      flag = !flag
-      return view
-    }
-
-   @objc func router_c(params: [String: Any] = [:]) {
-      let alert = UIAlertController()
-      alert.title = #function
-      alert.message = params.description
-      let action = UIAlertAction(title: "确定",
-                                 style: UIAlertActionStyle.cancel,
-                                 handler: nil)
-      alert.addAction(action)
-      UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
-    }
-    
-	@objc func router_notice() {
-    print(#function + "router_notice")
-	}
+  @objc func router_vc(params:[String: Any]) -> UIViewController {
+    let vc = SwiftViewController()
+    vc.title = #function
+    return vc
   }
+
+  @objc func router_view(params:[String: Any]) -> UIView {
+    let view = UIView()
+    view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 20)
+    return view
+  }
+
+  @objc func router_alert(params: [String: Any] = [:]) {
+    let alert = UIAlertController()
+    alert.title = #function
+    alert.message = params.description
+    let action = UIAlertAction(title: "确定",
+                               style: UIAlertActionStyle.cancel,
+                               handler: nil)
+    alert.addAction(action)
+    UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+  }
+
+  @objc func router_int(params: [String: Any] = [:]) -> Int {
+    return arc4random_uniform(UInt32.max).hashValue
+  }
+
+  @objc func router_integer(params: [String: Any] = [:]) -> NSInteger {
+    let int = NSInteger(bitPattern: UInt(arc4random_uniform(UInt32.max)))
+    return int
+  }
+
+  @objc func router_string(params: [String: Any] = [:]) -> String {
+    return #function
+  }
+
+  @objc func router_noticeResult() {
+    router_alert(params: ["notice": #function])
+  }
+
+}
   ```
 
   - 可以这样使用:
 
   ```swift
-   get viewController:
-   guard let vc = Routable.viewController(url: "http://swift/a") else { return }
+get viewController:
+guard let vc = Routable.viewController(url: "http://swift/vc") else { return }
   	
-   get view:
-   guard let v = Routable.view(url: "http://swift/b") else { return }
+get view:
+guard let v = Routable.view(url: "http://swift/view") else { return }
 
-   get object:
-   guard let v: UIView = Routable.object(url: "http://swift/b") else { return }
+get int:
+guard let v: UIView = Routable.object(url: "http://swift/int") as Int? else { return }
 
-   get function:
-   Routable.executing(url: "http://swift/c")
+get function:
+Routable.executing(url: "http://swift/alert?ut=3")
 
-	// 需要通知对象存活保证
-   send noice:
-   Routable.noice(url:"http://swift/notice")
+//广播
+send noice:
+Routable.noice(url:"http://notice/noticeResult")
   ```
 
 - 路由配置参数配置:
 
   ```swift
-  Routable.classPrefix = "Router_"  // defalut: "Router_"
-  Routable.funcPrefix  = "router_"  // defalut: "router_"
-  Routable.paramName   = "Params"   // defalut: "Params"
-  Routable.scheme	     = "scheme"   // defalut: ""
+  Routable.classPrefix = "Router_"  // 类名前缀 	 defalut: "Router_"
+  Routable.funcPrefix  = "router_"  // 函数前缀	 defalut: "router_"
+  Routable.paramName   = "Params"   // 函数参数前缀 defalut: "Params"
+  Routable.scheme	     = "scheme"   // 协议头	  defalut: ""
   ```
 
 ## Author
