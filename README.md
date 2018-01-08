@@ -127,7 +127,7 @@ Routable是采用swift编写的 Target-Action形式的路由框架.参考自:[ca
 
 ## Author
 
-linger, linhan.bigl055@outlook.com
+linhey, linhan.linhey@outlook.com
 
 ## License
 

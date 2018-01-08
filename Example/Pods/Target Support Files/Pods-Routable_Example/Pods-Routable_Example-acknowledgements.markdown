@@ -28,7 +28,7 @@ SOFTWARE.
 
 ## BLFoundation
 
-Copyright (c) 2017 1581799848@qq.com <158179948@qq.com>
+Copyright (c) 2017 linhey <linhan.linhey@outlook.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
