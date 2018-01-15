@@ -86,7 +86,6 @@ public extension Routable {
   public static func object<T: Any>(url: URLProtocol,params:[String: Any] = [:]) -> T? {
     guard let path = urlFormat(url: url, params: params) else { return nil }
     guard let object = Routable.perform(value: path) else { return nil }
-    print(String(describing: T.self))
     switch String(describing: T.self) {
     case "Int":
       return object.toOpaque().hashValue as? T
