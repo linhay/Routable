@@ -46,13 +46,19 @@ public extension Routable {
   
   public static func urlFormat(url: URLProtocol,params:[String: Any]) -> URL?{
     if params.isEmpty { return url.asURL() }
-    
     guard var components = URLComponents(string: url.asString()) else { return nil }
     var querys = components.queryItems ?? []
-    
     let newQuerys = params.map { (item) -> URLQueryItem in
-      let value = String(describing: item.value)
-      return URLQueryItem(name: item.key, value: value)
+      switch item.value {
+      case let v as String:
+        return URLQueryItem(name: item.key, value: v)
+      case let v as [String:Any]:
+        return URLQueryItem(name: item.key, value: RoutableHelp.formatJSON(dict: v))
+      case let v as [Any]:
+        return URLQueryItem(name: item.key, value: RoutableHelp.formatJSON(array: v))
+      default:
+        return URLQueryItem(name: item.key, value: String(describing: item.value))
+      }
     }
     querys += newQuerys
     components.queryItems = querys
@@ -263,7 +269,17 @@ extension Routable {
         if list.count == 2 {
           params[list.first!] = list.last!.removingPercentEncoding ?? ""
         }else if list.count > 2 {
-          params[list.first!] = list.dropFirst().joined().removingPercentEncoding ?? ""
+          let value = list.dropFirst().joined().removingPercentEncoding ?? ""
+          let dict = RoutableHelp.dictionary(string: value)
+          if !dict.isEmpty {
+            params[list.first!] = dict
+            return
+          }
+          let array = RoutableHelp.array(string: value)
+          if !array.isEmpty {
+            params[list.first!] = array
+          }
+          params[list.first!] = value
         }
       }
     }

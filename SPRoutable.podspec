@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = 'SPRoutable'
-s.version          = '0.8.1'
+s.version          = '0.8.2'
 s.summary          = '基础的路由服务'
 
 
@@ -16,7 +16,6 @@ s.source_files = ["Sources/*/**","Sources/*/*/**","Sources/**"]
 s.public_header_files = ["Sources/Routable.h"]
 s.requires_arc = true
 
-s.dependency 'YYCache'
 s.dependency 'AnyFormatProtocol'
 s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
 

@@ -1,0 +1,6 @@
+framework module AnyFormatProtocol {
+  umbrella header "AnyFormatProtocol-umbrella.h"
+
+  export *
+  module * { export * }
+}
