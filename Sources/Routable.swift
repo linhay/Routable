@@ -35,7 +35,7 @@ public struct Routable {
 }
 
 public extension Routable {
-  
+
   /// 清除指定缓存
   ///
   /// - Parameter name: key
@@ -43,7 +43,7 @@ public extension Routable {
     let targetName = classPrefix + name
     cache.removeValue(forKey: targetName)
   }
-  
+
   public static func urlFormat(url: URLProtocol,params:[String: Any]) -> URL?{
     if params.isEmpty { return url.asURL() }
     guard var components = URLComponents(string: url.asString()) else { return nil }
@@ -64,7 +64,7 @@ public extension Routable {
     components.queryItems = querys
     return components.url
   }
-  
+
   /// 解析viewController类型
   ///
   /// - Parameter url: viewController 路径
@@ -74,7 +74,7 @@ public extension Routable {
     assert(false, "无法解析为UIViewController类型:" + url.asString())
     return nil
   }
-  
+
   /// 解析view类型
   ///
   /// - Parameter url: view 路径
@@ -84,7 +84,7 @@ public extension Routable {
     assert(false, "无法解析为UIView类型:" + url.asString())
     return nil
   }
-  
+
   /// 解析AnyObject类型
   ///
   /// - Parameter url: view 路径
@@ -120,8 +120,8 @@ public extension Routable {
     }
     return nil
   }
-  
-  
+
+
   /// 通知所有已缓存类型函数
   ///
   /// - Parameter url: 函数路径
@@ -131,7 +131,7 @@ public extension Routable {
       assert(false, "检查 URL host: " + (path.host ?? "") + "🌰: http://notice/path")
       return
     }
-    
+
     cache.keys.forEach({ (item) in
       //TODO: 不太严谨
       let name = item.replacingOccurrences(of: classPrefix, with: "")
@@ -154,7 +154,7 @@ public extension Routable {
 }
 
 extension Routable {
-  
+
   /// 获取类对象
   ///
   /// - Parameter name: 类名
@@ -167,12 +167,12 @@ extension Routable {
       cache[name] = target
       return target
     }
-    
+
     if let value = target(name: classPrefix + name) { return value }
     if let value = target(name: namespace + "." + classPrefix + name) { return value }
     return nil
   }
-  
+
   /// 获取指定类指定函数
   ///
   /// - Parameters:
@@ -186,7 +186,7 @@ extension Routable {
         let sel = NSSelectorFromString(funcPrefix + name + "With" + paramName + ":")
         if target.responds(to: sel){ return sel }
       }
-      
+
       do {
         let sel = NSSelectorFromString(funcPrefix + name + paramName + ":")
         if target.responds(to: sel){ return sel }
@@ -196,7 +196,7 @@ extension Routable {
         let sel = NSSelectorFromString(funcPrefix + name + ":")
         if target.responds(to: sel){ return sel }
       }
-      
+
       return nil
     }else{
       let sel = NSSelectorFromString(funcPrefix + name)
@@ -204,7 +204,7 @@ extension Routable {
       return getSEL(target: target, name: name, hasParams: true)
     }
   }
-  
+
   /// 获取指定对象
   ///
   /// - Parameters:
@@ -218,7 +218,7 @@ extension Routable {
                              params: [String: Any] = [:]) {
     guard let target = getClass(name: name) else { return }
     guard let function = getSEL(target: target, name: actionName, hasParams: !params.isEmpty) else { return }
-    
+
     switch function.description.hasSuffix(":") {
     case true:
       target.perform(function, with: params)
@@ -256,33 +256,42 @@ extension Routable {
   /// - Parameter url: 路径
   /// - Returns: 所需参数
   static func getPathValues(url: URL) -> (class: String,function: String,params: [String: Any])?{
+    /// 处理参数类型
+    ///
+    /// - Parameter string: 需要处理的参数字符
+    /// - Returns: 处理后类型
+    func dealValueType(string: String?) -> Any? {
+      guard var str = string?.removingPercentEncoding, !str.isEmpty else { return string }
+      str = str.trimmingCharacters(in: CharacterSet.whitespaces)
+      guard str.hasPrefix("[") || str.hasPrefix("{") else { return string }
+      let dict = RoutableHelp.dictionary(string: str)
+      if !dict.isEmpty { return dict }
+      let array = RoutableHelp.array(string: str)
+      if !array.isEmpty { return array }
+      return str
+    }
+
+    /// 处理协议头合法
     guard (scheme.isEmpty || url.scheme == scheme),
       let function = url.path.components(separatedBy: "/").last,
       let className = url.host else {
         assertionFailure("url 不合法")
         return nil
     }
+
+    /// 处理参数
     var params = [String: Any]()
     if let urlstr = url.query {
       urlstr.components(separatedBy: "&").forEach { (item) in
         let list = item.components(separatedBy: "=")
         if list.count == 2 {
-          params[list.first!] = list.last!.removingPercentEncoding ?? ""
+          params[list.first!] = dealValueType(string: list.last)
         }else if list.count > 2 {
-          let value = list.dropFirst().joined().removingPercentEncoding ?? ""
-          let dict = RoutableHelp.dictionary(string: value)
-          if !dict.isEmpty {
-            params[list.first!] = dict
-            return
-          }
-          let array = RoutableHelp.array(string: value)
-          if !array.isEmpty {
-            params[list.first!] = array
-          }
-          params[list.first!] = value
+          params[list.first!] = dealValueType(string: list.dropFirst().joined())
         }
       }
     }
+
     return (className,function,params)
   }
 
@@ -304,7 +313,7 @@ extension Routable {
     let result = target(name: value.class, actionName: value.function, params: value.params)
     return result
   }
-  
+
 }
 
 

@@ -21,7 +21,7 @@ struct RoutableHelp {
     }
     return [:]
   }
-  
+
   /// JSON to array
   ///
   /// - Returns: array
@@ -35,34 +35,34 @@ struct RoutableHelp {
     }
     return []
   }
-  
+
   /// 格式化为Json
   ///
   /// - Returns: Json字符串
   static func formatJSON(dict: [String: Any]) -> String {
     guard JSONSerialization.isValidJSONObject(dict) else { return "{}" }
     do {
-      let jsonData = try JSONSerialization.data(withJSONObject: self, options: JSONSerialization.WritingOptions())
+      let jsonData = try JSONSerialization.data(withJSONObject: dict, options: JSONSerialization.WritingOptions(rawValue: 0))
       return String(data: jsonData, encoding: .utf8) ?? "{}"
     } catch {
       return "{}"
     }
   }
-  
+
   /// 格式化为Json
   ///
   /// - Returns: Json字符串
   static func formatJSON(array: [Any]) -> String {
     guard JSONSerialization.isValidJSONObject(array) else { return "{}" }
     do {
-      let jsonData = try JSONSerialization.data(withJSONObject: self, options: JSONSerialization.WritingOptions())
+      let jsonData = try JSONSerialization.data(withJSONObject: self, options: JSONSerialization.WritingOptions(rawValue: 0))
       return String(data: jsonData, encoding: .utf8) ?? "{}"
     } catch {
       return "{}"
     }
   }
-  
-  
+
+
 }
 
 
