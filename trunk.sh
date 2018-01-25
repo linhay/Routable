@@ -4,7 +4,8 @@
 
 value=./*.podspec
 file=${value##*/}
-echo "podspec:"  $file1
+
+echo "podspec:"  ${file[*]}
 #获取podspec 中版本号
 version=`grep -m1 "s.version" $file|awk '{print $NF}'|sed "s/\'//g"`
 echo "version:"  $version
