@@ -19,7 +19,7 @@
 		2660AE64C9E410A25C2843C36234176F /* SPKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 48D6E74D42802BED80BA5A8B40D487EB /* SPKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26716A741AF7BA466B6A94D7D02708F1 /* BModules.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CD33F2569E31ACFE5F1A9CBC7ED16A2 /* BModules.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		29D6E7BFC80D699725A224EA138BD470 /* SP+CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5135023804A6655EE61C420E5E7EEE05 /* SP+CGRect.swift */; };
-		2C3D234BB20731DBEDA62E65883A1016 /* Routable+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C3943422EBC3C8928FF78B1FF7D8A7 /* Routable+String.swift */; };
+		2C3D234BB20731DBEDA62E65883A1016 /* Routable+help.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C3943422EBC3C8928FF78B1FF7D8A7 /* Routable+help.swift */; };
 		2E1E64BC2190D8B910963CC632E4B528 /* Pods-Routable_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2599630A0A06F419913BA5A12B805D3D /* Pods-Routable_Example-dummy.m */; };
 		3148EBB311B7545F796F186CF55744FE /* BModules-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 61B947178A2F59A9D6D56C7A636A53F3 /* BModules-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		352C14237666129EBF267AFEBA301B5F /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4FE2144F0540AE26AEC4E668158269 /* Routable.swift */; };
@@ -293,7 +293,7 @@
 		F196FAB97CDBC4F5EB9B607C5F4BB0F5 /* Router_objc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Router_objc.m; path = SourcesA/Router_objc.m; sourceTree = "<group>"; };
 		F1B55DA42940E62A6A14BF4F9CF7C021 /* SPRoutable.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SPRoutable.modulemap; sourceTree = "<group>"; };
 		F201BD227149C02114D08D1B00107FF8 /* SPKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4C3943422EBC3C8928FF78B1FF7D8A7 /* Routable+String.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+String.swift"; path = "Sources/Routable+String.swift"; sourceTree = "<group>"; };
+		F4C3943422EBC3C8928FF78B1FF7D8A7 /* Routable+help.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+help.swift"; path = "Sources/Routable+help.swift"; sourceTree = "<group>"; };
 		F4C4E914F0408F0AC5A381F2A31D602F /* BModules.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = BModules.podspec; sourceTree = "<group>"; };
 		F505F4F1538EB007409A357CC93FFC5C /* SP+UIColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UIColor.swift"; path = "Sources/SP+UIColor.swift"; sourceTree = "<group>"; };
 		F5D8971AFE7BE7A33A2E1D5EFBEB87C5 /* Router_objc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Router_objc.h; path = SourcesA/Router_objc.h; sourceTree = "<group>"; };
@@ -567,7 +567,7 @@
 			children = (
 				7A39924145E4CE0B7C840464E072EC12 /* Routable.h */,
 				4F4FE2144F0540AE26AEC4E668158269 /* Routable.swift */,
-				F4C3943422EBC3C8928FF78B1FF7D8A7 /* Routable+String.swift */,
+				F4C3943422EBC3C8928FF78B1FF7D8A7 /* Routable+help.swift */,
 				6AD7DA8632C8091D0DB634914BD0B321 /* URLProtocol.swift */,
 				1CEA42F8F783DFDDDDB3B04AE2E6E7D5 /* Pod */,
 				B41B51E41C4045B89962048A2BE19FF5 /* Support Files */,
@@ -966,7 +966,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C3D234BB20731DBEDA62E65883A1016 /* Routable+String.swift in Sources */,
+				2C3D234BB20731DBEDA62E65883A1016 /* Routable+help.swift in Sources */,
 				352C14237666129EBF267AFEBA301B5F /* Routable.swift in Sources */,
 				1F512188DDF4EF2AFA6AC5C22FD4DF2D /* SPRoutable-dummy.m in Sources */,
 				FE3BCD691114D06DA9EDC6F5F973D60B /* URLProtocol.swift in Sources */,

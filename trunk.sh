@@ -1,6 +1,4 @@
 #! /bin/bash
-#value=$(<uppod.sh)
-#echo "$value"
 
 # value=./*.podspec
 file="SPRoutable.podspec" #${value##*/}

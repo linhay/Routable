@@ -39,29 +39,15 @@ struct RoutableHelp {
   /// 格式化为Json
   ///
   /// - Returns: Json字符串
-  static func formatJSON(dict: [String: Any]) -> String {
-    guard JSONSerialization.isValidJSONObject(dict) else { return "{}" }
+  static func formatJSON(data: Any) -> String {
+    guard JSONSerialization.isValidJSONObject(data) else { return String(describing: data) }
     do {
-      let jsonData = try JSONSerialization.data(withJSONObject: dict, options: JSONSerialization.WritingOptions(rawValue: 0))
-      return String(data: jsonData, encoding: .utf8) ?? "{}"
+      let json = try JSONSerialization.data(withJSONObject: data, options: JSONSerialization.WritingOptions(rawValue: 0))
+      return String(data: json, encoding: .utf8) ?? String(describing: data)
     } catch {
-      return "{}"
+      return String(describing: data)
     }
   }
-
-  /// 格式化为Json
-  ///
-  /// - Returns: Json字符串
-  static func formatJSON(array: [Any]) -> String {
-    guard JSONSerialization.isValidJSONObject(array) else { return "{}" }
-    do {
-      let jsonData = try JSONSerialization.data(withJSONObject: self, options: JSONSerialization.WritingOptions(rawValue: 0))
-      return String(data: jsonData, encoding: .utf8) ?? "{}"
-    } catch {
-      return "{}"
-    }
-  }
-
 
 }
 

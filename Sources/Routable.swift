@@ -53,9 +53,9 @@ public extension Routable {
       case let v as String:
         return URLQueryItem(name: item.key, value: v)
       case let v as [String:Any]:
-        return URLQueryItem(name: item.key, value: RoutableHelp.formatJSON(dict: v))
+        return URLQueryItem(name: item.key, value: RoutableHelp.formatJSON(data: v))
       case let v as [Any]:
-        return URLQueryItem(name: item.key, value: RoutableHelp.formatJSON(array: v))
+        return URLQueryItem(name: item.key, value: RoutableHelp.formatJSON(data: v))
       default:
         return URLQueryItem(name: item.key, value: String(describing: item.value))
       }
