@@ -261,7 +261,8 @@ extension Routable {
     /// - Parameter string: 需要处理的参数字符
     /// - Returns: 处理后类型
     func dealValueType(string: String?) -> Any? {
-      guard var str = string?.removingPercentEncoding, !str.isEmpty else { return string }
+      guard var str = string?.removingPercentEncoding else { return string }
+      guard !str.isEmpty else { return str }
       str = str.trimmingCharacters(in: CharacterSet.whitespaces)
       guard str.hasPrefix("[") || str.hasPrefix("{") else { return string }
       let dict = RoutableHelp.dictionary(string: str)
