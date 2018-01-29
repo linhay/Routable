@@ -264,7 +264,7 @@ extension Routable {
       guard var str = string?.removingPercentEncoding else { return string }
       guard !str.isEmpty else { return str }
       str = str.trimmingCharacters(in: CharacterSet.whitespaces)
-      guard str.hasPrefix("[") || str.hasPrefix("{") else { return string }
+      guard str.hasPrefix("[") || str.hasPrefix("{") else { return str }
       let dict = RoutableHelp.dictionary(string: str)
       if !dict.isEmpty { return dict }
       let array = RoutableHelp.array(string: str)
