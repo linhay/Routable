@@ -27,11 +27,6 @@ public struct Routable {
   /// 代理缓存
   static var delegate = [String: String]()
 
-  enum Style {
-    case object
-    case execute
-  }
-
 }
 
 public extension Routable {
@@ -71,7 +66,6 @@ public extension Routable {
   /// - Returns: viewController 或者 nil
   public static func viewController(url: URLProtocol,params:[String: Any] = [:]) -> UIViewController? {
     if let vc = object(url: url, params: params) as UIViewController? { return vc }
-    assert(false, "无法解析为UIViewController类型:" + url.asString())
     return nil
   }
 
@@ -81,7 +75,6 @@ public extension Routable {
   /// - Returns: view 或者 nil
   public static func view(url: URLProtocol,params:[String: Any] = [:]) -> UIView? {
     if let vc = object(url: url, params: params) as UIView? { return vc }
-    assert(false, "无法解析为UIView类型:" + url.asString())
     return nil
   }
 
@@ -137,7 +130,7 @@ public extension Routable {
       let name = item.replacingOccurrences(of: classPrefix, with: "")
       let path = path.asString().replacingOccurrences(of: "://notice/", with: "://\(name)/")
       if let endURL = path.asURL() {
-        Routable.perform(function: endURL)
+       _ = Routable.perform(value: endURL)
       }
     })
   }
@@ -148,7 +141,7 @@ public extension Routable {
   /// - Parameter url: 函数路径
   public static func executing(url: URLProtocol, params:[String: Any] = [:]) {
     guard let path = urlFormat(url: url, params: params) else { return }
-    Routable.perform(function: path)
+    _ = Routable.perform(value: path)
   }
 
 }
@@ -213,34 +206,11 @@ extension Routable {
   ///   - params: 函数参数
   ///   - isCacheTarget: 是否缓存
   /// - Returns: 对象
-  public static func execute(name: String,
-                             actionName: String,
-                             params: [String: Any] = [:]) {
-    guard let target = getClass(name: name) else { return }
-    guard let function = getSEL(target: target, name: actionName, hasParams: !params.isEmpty) else { return }
-
-    switch function.description.hasSuffix(":") {
-    case true:
-      target.perform(function, with: params)
-    case false:
-      target.perform(function)
-    }
-  }
-
-  /// 获取指定对象
-  ///
-  /// - Parameters:
-  ///   - name: 类名
-  ///   - actionName: 函数名
-  ///   - params: 函数参数
-  ///   - isCacheTarget: 是否缓存
-  /// - Returns: 对象
   public static func target(name: String,
                             actionName: String,
                             params: [String: Any] = [:]) -> Unmanaged<AnyObject>? {
     guard let target = getClass(name: name) else { return nil }
     guard let function = getSEL(target: target, name: actionName, hasParams: !params.isEmpty) else { return nil }
-
     switch function.description.hasSuffix(":") {
     case true:
       guard let value = target.perform(function, with: params) else { return nil }
@@ -275,10 +245,7 @@ extension Routable {
     /// 处理协议头合法
     guard (scheme.isEmpty || url.scheme == scheme),
       let function = url.path.components(separatedBy: "/").last,
-      let className = url.host else {
-        assertionFailure("url 不合法")
-        return nil
-    }
+      let className = url.host else { return nil }
 
     /// 处理参数
     var params = [String: Any]()
@@ -294,15 +261,6 @@ extension Routable {
     }
 
     return (className,function,params)
-  }
-
-
-  /// 由路径获取指定函数并执行
-  ///
-  /// - Parameter url: 路劲
-  static func perform(function url: URL) {
-    guard let value = getPathValues(url: url) else { return }
-    execute(name: value.class, actionName: value.function, params: value.params)
   }
 
   /// 由路径获取指定对象
