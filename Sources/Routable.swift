@@ -26,13 +26,13 @@ public struct Routable {
   static var notice = [String:[String]]()
   /// 代理缓存
   static var delegate = [String: String]()
-
+  
   static var blockCache = [String: (_: [String: Any])->()]()
-
+  
 }
 
 public extension Routable {
-
+  
   /// 解析viewController类型
   ///
   /// - Parameter url: viewController 路径
@@ -41,21 +41,21 @@ public extension Routable {
     if let vc = object(url: url, params: params) as UIViewController? { return vc }
     return nil
   }
-
-
+  
+  
   public static func object(url: URLProtocol, params:[String: Any] = [:], call: @escaping (_: [String: Any])->()) {
     guard let path = urlFormat(url: url, params: params) else { return }
     guard let value = getPathValues(url: path) else { return }
     let id = "blockCache\(blockCache.count)"
     blockCache[id] = call
-   _ = target(name: value.class, actionName: value.function, params: value.params, callId: id)
+    _ = target(name: value.class, actionName: value.function, params: value.params, callId: id)
   }
-
+  
   public static func runBlock(id:String, params:[String: Any] = [:],isRemove: Bool = true) {
     blockCache[id]?(params)
     if isRemove { blockCache[id] = nil }
   }
-
+  
   /// 解析view类型
   ///
   /// - Parameter url: view 路径
@@ -64,7 +64,7 @@ public extension Routable {
     if let vc = object(url: url, params: params) as UIView? { return vc }
     return nil
   }
-
+  
   /// 解析AnyObject类型
   ///
   /// - Parameter url: view 路径
@@ -100,7 +100,7 @@ public extension Routable {
     }
     return nil
   }
-
+  
   /// 通知所有已缓存类型函数
   ///
   /// - Parameter url: 函数路径
@@ -110,7 +110,7 @@ public extension Routable {
       assert(false, "检查 URL host: " + (path.host ?? "") + "🌰: http://notice/path")
       return
     }
-
+    
     cache.keys.forEach({ (item) in
       //TODO: 不太严谨
       let name = item.replacingOccurrences(of: classPrefix, with: "")
@@ -120,8 +120,8 @@ public extension Routable {
       }
     })
   }
-
-
+  
+  
   /// 执行路径指定函数
   ///
   /// - Parameter url: 函数路径
@@ -129,11 +129,11 @@ public extension Routable {
     guard let path = urlFormat(url: url, params: params) else { return }
     _ = Routable.perform(value: path)
   }
-
+  
 }
 
 public extension Routable {
-
+  
   /// 清除指定缓存
   ///
   /// - Parameter name: key
@@ -141,7 +141,7 @@ public extension Routable {
     let targetName = classPrefix + name
     cache.removeValue(forKey: targetName)
   }
-
+  
   public static func urlFormat(url: URLProtocol,params:[String: Any]) -> URL?{
     if params.isEmpty { return url.asURL() }
     guard var components = URLComponents(string: url.asString()) else { return nil }
@@ -162,11 +162,11 @@ public extension Routable {
     components.queryItems = querys
     return components.url
   }
-
+  
 }
 
 extension Routable {
-
+  
   /// 获取类对象
   ///
   /// - Parameter name: 类名
@@ -179,17 +179,17 @@ extension Routable {
       cache[name] = target
       return target
     }
-
+    
     if let value = target(name: classPrefix + name) { return value }
     if let value = target(name: namespace + "." + classPrefix + name) { return value }
     return nil
   }
-
+  
   struct Event {
     let sel: Selector
     let argumentCount: UInt32
   }
-
+  
   /// 获取指定类指定函数
   ///
   /// - Parameters:
@@ -201,7 +201,7 @@ extension Routable {
     let methods = class_copyMethodList(type(of: target), &methodNum)
     for index in 0..<numericCast(methodNum) {
       guard let method = methods?[index] else { continue }
-     guard let selector = method_getName(method) else { continue }
+      let selector = method_getName(method) 
       let description = selector.description.replacingOccurrences(of: "With" + paramName, with: ":") + ":"
       if !description.hasPrefix(funcPrefix + name + ":") { continue }
       free(methods)
@@ -211,7 +211,7 @@ extension Routable {
     free(methods)
     return nil
   }
-
+  
   /// 获取指定对象
   ///
   /// - Parameters:
@@ -241,7 +241,7 @@ extension Routable {
       return nil
     }
   }
-
+  
   /// 获取路径所需参数
   ///
   /// - Parameter url: 路径
@@ -262,12 +262,12 @@ extension Routable {
       if !array.isEmpty { return array }
       return str
     }
-
+    
     /// 处理协议头合法
     guard (scheme.isEmpty || url.scheme == scheme),
       let function = url.path.components(separatedBy: "/").last,
       let className = url.host else { return nil }
-
+    
     /// 处理参数
     var params = [String: Any]()
     if let urlstr = url.query {
@@ -280,10 +280,10 @@ extension Routable {
         }
       }
     }
-
+    
     return (className,function,params)
   }
-
+  
   /// 由路径获取指定对象
   ///
   /// - Parameter url: 路径
@@ -296,7 +296,7 @@ extension Routable {
                         callId: "")
     return result
   }
-
+  
 }
 
 
