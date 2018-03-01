@@ -201,7 +201,7 @@ extension Routable {
     let methods = class_copyMethodList(type(of: target), &methodNum)
     for index in 0..<numericCast(methodNum) {
       guard let method = methods?[index] else { continue }
-      let selector = method_getName(method)
+     guard let selector = method_getName(method) else { continue }
       let description = selector.description.replacingOccurrences(of: "With" + paramName, with: ":") + ":"
       if !description.hasPrefix(funcPrefix + name + ":") { continue }
       free(methods)
@@ -238,6 +238,7 @@ extension Routable {
       return value
     default:
       assert(false)
+      return nil
     }
   }
 
