@@ -1,5 +1,5 @@
 //
-//  SPFoundation
+//  BLFoundation
 //  Pods
 //
 //  Created by BigL on 2017/9/15.
@@ -44,6 +44,8 @@ public extension String {
     }
     return nil
   }
+
+  
 }
 
 

@@ -1,6 +1,6 @@
 //
 //  String+operator.swift
-//  Pods-SPFoundation_Example
+//  Pods-BLFoundation_Example
 //
 //  Created by BigL on 2017/9/15.
 //

@@ -1,5 +1,5 @@
 //
-//  SPFoundation
+//  BLFoundation
 //  Pods
 //
 //  Created by BigL on 2017/9/15.
@@ -27,11 +27,11 @@ public extension RegexPattern{
     case .none: return ""
     case .ipv4: return "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
     case .illegal:
-      return "['\"//\\[\\]{}<>＜＞「」：；、•^\\n\\s*\r]"
+      return "[\\\\'\"//\\[\\]{}<>＜＞「」：；、•^\\n\\s*\r]"
     case .url:
       return "(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]"
     case .phone:
-      return "^1[34578]\\d{9}$"
+      return "^1[3456789]\\d{9}$"
     case .email:
       return "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
     case .number(equal: let digit):

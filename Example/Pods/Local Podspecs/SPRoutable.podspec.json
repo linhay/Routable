@@ -1,6 +1,6 @@
 {
   "name": "SPRoutable",
-  "version": "0.8.7",
+  "version": "0.8.9",
   "summary": "基础的路由服务",
   "homepage": "https://github.com/bigL055/Routable",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/bigL055/Routable.git",
-    "tag": "0.8.7"
+    "tag": "0.8.9"
   },
   "platforms": {
     "ios": "8.0"

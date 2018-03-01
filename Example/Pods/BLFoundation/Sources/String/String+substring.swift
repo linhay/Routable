@@ -35,7 +35,7 @@ public extension String {
   /// - Parameter index: 指定位置
   subscript(index: Int) -> String {
     if index < 0 || index >= count { return "" }
-    let index = characters.index(startIndex, offsetBy: index)
+    let index = self.index(startIndex, offsetBy: String.IndexDistance(index))
     return String(self[index])
   }
 
@@ -88,8 +88,7 @@ public extension String {
   /// - Returns: 子串
   func substring(after str: String) -> String {
     guard let index = self.index(last: str) else { return "" }
-    var str = String(self[index...])
-    str.removeFirst()
+    let str = String(self[index...])
     return str
   }
 }

@@ -51,16 +51,14 @@ public extension UIView{
 public extension BLExtension where Base: UIView{
 
   /// 返回目标View所在的控制器UIViewController
-  public var viewController: UIViewController {
+  public var viewController: UIViewController? {
     get{
       var next:UIView? = base
       repeat{
-        if let nextResponder = next?.next, nextResponder as? UIViewController != nil{
-          return (nextResponder as! UIViewController)
-        }
+        if let vc = next?.next as? UIViewController{ return vc }
         next = next?.superview
       }while next != nil
-      fatalError("无法从该View上寻找到viewController \n Couldn’t find viewController from view: \(base)")
+      return nil
     }
   }
 

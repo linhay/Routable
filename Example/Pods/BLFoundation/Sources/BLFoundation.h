@@ -1,16 +1,16 @@
 //
-//  SPFoundation
+//  BLFoundation
 //  Pods
 //
 //  Created by BigL on 2017/9/15.
 //
 
-#ifndef SPFoundation_h
-#define SPFoundation_h
+#ifndef BLFoundation_h
+#define BLFoundation_h
 
 
-FOUNDATION_EXPORT double SPFoundationVersionNumber;
-FOUNDATION_EXPORT const unsigned char SPFoundationVersionString[];
+FOUNDATION_EXPORT double BLFoundationVersionNumber;
+FOUNDATION_EXPORT const unsigned char BLFoundationVersionString[];
 
 
-#endif /* SPFoundation_h */
+#endif /* BLFoundation_h */

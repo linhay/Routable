@@ -1,5 +1,5 @@
 //
-//  SPFoundation
+//  BLFoundation
 //  Pods
 //
 //  Created by BigL on 2017/9/15.
@@ -7,12 +7,28 @@
 
 import UIKit
 
+
+public extension Dictionary {
+
+  /// 根据下标集合获取元素集合
+  ///
+  /// - Parameter keys: 下标集合
+  public subscript(keys: [Key]) -> [Value] {
+    let values = keys.flatMap { (key) -> Value? in
+      return self[key]
+    }
+    return values
+  }
+
+}
+
 public extension Dictionary {
   /// 从字典中随机取值
   ///
   /// - Returns: 值
-  public var random: Value {
+  public var random: Value? {
     get{
+      if isEmpty { return nil }
       let index: Int = Int(arc4random_uniform(UInt32(self.count)))
       return Array(self.values)[index]
     }

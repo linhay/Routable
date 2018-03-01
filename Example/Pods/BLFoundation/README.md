@@ -5,24 +5,42 @@
 [![License](https://img.shields.io/cocoapods/l/BLFoundation.svg?style=flat)](http://cocoapods.org/pods/BLFoundation)
 [![Platform](https://img.shields.io/cocoapods/p/BLFoundation.svg?style=flat)](http://cocoapods.org/pods/BLFoundation)
 
-## Example
+## 简介
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+BLFoundation是一套针对于Foundation的扩展.
 
-## Requirements
+## 使用
 
-## Installation
+- 使用CocoaPods安装
 
-BLFoundation is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+  ```
+  pod 'BLFoundation'
+  or pod 'BLFoundation/Data'
+  or pod 'BLFoundation/Date'
+  or pod 'BLFoundation/Number'
+  or pod 'BLFoundation/Data'
+  or pod 'BLFoundation/Tools'
+  ```
 
-```ruby
-pod 'BLFoundation'
-```
+- 导入
+
+  - swift
+
+    ```swift
+    import BLFoundation
+    ```
+
+  - objc
+
+    ```objective-c
+    #import<BLFoundation/BLFoundation.h>
+    ```
+
+
 
 ## Author
 
-1581799848@qq.com, 158179948@qq.com
+linhey, linhan.linhey@outlook.com
 
 ## License
 

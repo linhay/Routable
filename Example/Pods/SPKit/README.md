@@ -5,20 +5,31 @@
 [![License](https://img.shields.io/cocoapods/l/SPKit.svg?style=flat)](http://cocoapods.org/pods/SPKit)
 [![Platform](https://img.shields.io/cocoapods/p/SPKit.svg?style=flat)](http://cocoapods.org/pods/SPKit)
 
-## Example
+## 简介
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+提供一套基于UIKit的扩展框架,方便于项目快速开发.
 
-## Requirements
+## 安装
 
-## Installation
+- 使用cocoapods安装
 
-SPKit is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+  ```
+  pod 'SPKit'
+  ```
 
-```ruby
-pod 'SPKit'
-```
+- 导入
+
+  - swift
+
+    ```
+    import SPKit
+    ```
+
+  - objc
+
+    ```
+    #import<SPKit/SPKit.h>
+    ```
 
 ## Author
 

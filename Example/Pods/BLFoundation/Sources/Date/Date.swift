@@ -1,8 +1,8 @@
 //
-//  SPFoundation
+//  Timepiece
 //  Pods
 //
-//  Created by BigL on 2017/9/15.
+//  Created by naoty from https://github.com/naoty/Timepiece
 //
 
 import UIKit

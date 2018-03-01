@@ -1,5 +1,5 @@
 //
-//  SPFoundation
+//  BLFoundation
 //  Pods
 //
 //  Created by BigL on 2017/9/15.
@@ -12,7 +12,6 @@ import UIKit
 public extension Int {
   /// 绝对值
   public var abs: Int { return Swift.abs(self) }
-
   /// 检查: 是否为偶数
   public var isEven: Bool { return (self % 2 == 0) }
   /// 检查: 是否为奇数
@@ -21,7 +20,6 @@ public extension Int {
   public var isPositive: Bool { return (self > 0) }
   /// 检查: 是否为负数
   public var isNegative: Bool { return (self < 0) }
-
   /// 转换: Double.
   public var double: Double { return Double(self) }
   /// 转换: Float.
