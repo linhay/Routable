@@ -13,20 +13,19 @@
 		0BBCCE9C9B36BF976645E5464162BAA8 /* BLFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE0C1BA9228B6A35949817AB6C6DF87 /* BLFoundation.framework */; };
 		0F73879FA0262E06A700F54451C3B7AC /* Int+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5325D359E4B29359B68229DA1D89AE41 /* Int+Timepiece.swift */; };
 		1D5087BEC41B308F11632B4641C6A6CE /* SPRoutable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252C3B2A13362855D090BDD30355618 /* SPRoutable.framework */; };
-		1F512188DDF4EF2AFA6AC5C22FD4DF2D /* SPRoutable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 345CC6701E7879253DF00B9B4671BBA6 /* SPRoutable-dummy.m */; };
 		21176448F4F21D88F24B8A1526597418 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C11EAA5F07A1B5524A05841FD32C3B /* Date.swift */; };
+		23620053BE97BFB659B59FAEB3D29076 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDDAF9F9DF9C139E71E8B8CB1EA4C7F /* Routable.swift */; };
 		23886D9B6C02C59A45FB5059B7B6E353 /* Pods-Routable_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EFBD015922CFA3A630A3619C51FEB96B /* Pods-Routable_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2660AE64C9E410A25C2843C36234176F /* SPKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 48D6E74D42802BED80BA5A8B40D487EB /* SPKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26716A741AF7BA466B6A94D7D02708F1 /* BModules.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CD33F2569E31ACFE5F1A9CBC7ED16A2 /* BModules.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		29D6E7BFC80D699725A224EA138BD470 /* SP+CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5135023804A6655EE61C420E5E7EEE05 /* SP+CGRect.swift */; };
-		2C3D234BB20731DBEDA62E65883A1016 /* Routable+help.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C3943422EBC3C8928FF78B1FF7D8A7 /* Routable+help.swift */; };
 		2E1E64BC2190D8B910963CC632E4B528 /* Pods-Routable_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2599630A0A06F419913BA5A12B805D3D /* Pods-Routable_Example-dummy.m */; };
 		3148EBB311B7545F796F186CF55744FE /* BModules-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 61B947178A2F59A9D6D56C7A636A53F3 /* BModules-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		352C14237666129EBF267AFEBA301B5F /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4FE2144F0540AE26AEC4E668158269 /* Routable.swift */; };
 		35F536803A0DC9457BCA1A787C17813D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31C05B27472BED91E90B2CE37068C8AA /* UIKit.framework */; };
 		3BC8B6B50EB001228F4B24D2C9490A5E /* AModules.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CC3D5661D031A7C02D6C774B956B08F /* AModules.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		445F1A6893B1BA29675ED3B211B3980A /* Data+SP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4919764C5FA02A145E4CF4DAF7F7178 /* Data+SP.swift */; };
 		457AEE62A90C70611D311ED47C73BF2E /* AnyFormatProtocol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF744069D7DF9691B5E0EFF5A3DEE6C /* AnyFormatProtocol.framework */; };
+		4E727C036FF55088981471A8C9DAE48F /* URLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADAA6A6FC53A0F59B9BA21036F20DC /* URLProtocol.swift */; };
 		51D29024685CD18CEFEE3219B58B6830 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C729F01A91DC2D83298688E68149602 /* Foundation.framework */; };
 		52CE0F6AE12DA36BCC82F8444883B15B /* SP+NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2228ED1705073D7BDC64786A6913E090 /* SP+NSLayoutConstraint.swift */; };
 		56538D8E58B1E4ED75ED691079FA1944 /* String+substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CFAA1C11561AB4E560C643F7FF0F58 /* String+substring.swift */; };
@@ -48,6 +47,7 @@
 		8E42A82A30A4BE611A3201C32006CBE2 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202360B46F2624B25BC7AC1D2AF84C2A /* String+extension.swift */; };
 		8F6921FCCAA02E23B4EC344E094B7176 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C729F01A91DC2D83298688E68149602 /* Foundation.framework */; };
 		920BBCAEBFB8E6857B3A661F870BB7C6 /* SP+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE23C39E0710C8366E85FAF80DEF0E6B /* SP+CALayer.swift */; };
+		A6E2D2ABC829001101501D2EC79E47C1 /* Routable+help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48BC662C2087BA47A233335076B5EB /* Routable+help.swift */; };
 		A8FBE32E33714529314E60994A04218C /* SP+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6356F650A01745FE68CCBCAAACC2E533 /* SP+UITextField.swift */; };
 		A9FD06BBA3212109333E3B807B2B05A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C729F01A91DC2D83298688E68149602 /* Foundation.framework */; };
 		AABECAFA9A94BB059327ADF4E2E0670B /* Bool+SP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8225D1A5FFCAA40F531E1BEBEA60C4AC /* Bool+SP.swift */; };
@@ -55,7 +55,7 @@
 		AD650CE92F88DC2ED6807C670AEFC5E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C729F01A91DC2D83298688E68149602 /* Foundation.framework */; };
 		AE5BA0C9123A98B6F354993361520B65 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37038A946E07CACFF876AEA585B1167 /* SwiftViewController.swift */; };
 		B017552BF6C162AF23E23778479C8C35 /* SP+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78889AC9A1B5102B14292CBA2CDECE3 /* SP+UIView.swift */; };
-		B23DD583CAFD10CBA77E9904EDAE3986 /* SPRoutable-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BE7D6175749A882F0D80FFBA75D881B3 /* SPRoutable-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B23DD583CAFD10CBA77E9904EDAE3986 /* SPRoutable-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B65FA540F58AD1D75C4207133D608CFB /* SPRoutable-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B61B44BE6F96EA8CE409E145CDD0DBC9 /* Date+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153335F45254AD836C9021867B7F606A /* Date+Timepiece.swift */; };
 		B813BD50EA4E4A318769BD244542D536 /* Router_swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E186D50403EF78A34ED03330466E5414 /* Router_swift.swift */; };
 		BA40133DC9C4849172658C5750168170 /* DateComponents+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BA11C769E30130E2398B8D499FA5F3 /* DateComponents+Timepiece.swift */; };
@@ -74,6 +74,7 @@
 		D9C9C5D5F255AB875FA92E63AC62CF6B /* SP+UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0C5B3AC2447A44547D215F880682A3 /* SP+UIView+Frame.swift */; };
 		DB9AAF02A1CF78114340B89F88D478A5 /* SP+Swizzling.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87600601800799542922C769331609F /* SP+Swizzling.swift */; };
 		DFDF24225AF74210A1B8301A8DBD0876 /* Character+SP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984945455E254D20957E2CFB22F9CBFF /* Character+SP.swift */; };
+		E0EC3C4D07F5FBFE2695C81EF95682C4 /* SPRoutable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 08336F8845F1AC30EE3DF46F55370758 /* SPRoutable-dummy.m */; };
 		E490D3ED852A20EE7125B021BB743964 /* CGFloat+SP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164A4E1319773E670A6B4A8D9F254BB5 /* CGFloat+SP.swift */; };
 		E98852C059F224B9B0C7BA2D35432D77 /* SP+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEEC4E144D0E6CC88F73DC8C1003F8 /* SP+Extension.swift */; };
 		EB6847A9F6F33F5478B11BAAEDAAFB39 /* RunTime+SP.swift in Sources */ = {isa = PBXBuildFile; fileRef = F166E6509D90D7B21DFCD61D963887C1 /* RunTime+SP.swift */; };
@@ -81,7 +82,7 @@
 		EC78004E50FD2ED03C4A0D64BFE2EFB4 /* SP+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC02E2C946979297339213ADBD246C91 /* SP+UIImage.swift */; };
 		EC8853DD39A5A2FF68762595CC42050A /* String+operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A295E7D89AB52EFF9FA339A2E373D78B /* String+operator.swift */; };
 		ED01971FA9EE7BF4D45CE0F42D003891 /* SP+NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC51437C679F1FF96ADA70599B8E91B /* SP+NavigationController.swift */; };
-		EE88A5600C5DCDA377F5B771293F6FCE /* Routable.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A39924145E4CE0B7C840464E072EC12 /* Routable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE88A5600C5DCDA377F5B771293F6FCE /* Routable.h in Headers */ = {isa = PBXBuildFile; fileRef = C5925E9A982EA4A84FAAF80396AA28BB /* Routable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EEE078E77A2C7F13BBDEC398593624CB /* SP+UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1B62C8C90ED8A1FF805647B36F1CD1 /* SP+UIApplication.swift */; };
 		F1C072A7EA7C09521D7B4E08B0821E6A /* String+format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B40045E5DB7C03BD1DBA1388767128 /* String+format.swift */; };
 		F248FB4DF2146F7E462F0688601C178C /* SP+UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4859EA9840C388BBD37AC3773F5ACA65 /* SP+UIBarButtonItem.swift */; };
@@ -91,7 +92,6 @@
 		F7FEC5BF7C4DD2089575FEBD8A4740BD /* SPKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE272232C0B600E8F12923B8E5E9371D /* SPKit-dummy.m */; };
 		F837FFFE235E88A87933313AA88F04DE /* AModules-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED6B66B976483A4E8A4B27623C7760A /* AModules-dummy.m */; };
 		F965008C3A5332E44120C417BCF2F6AC /* SP+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DF038C4732579F8792E43F2C0E9CB6 /* SP+UILabel.swift */; };
-		FE3BCD691114D06DA9EDC6F5F973D60B /* URLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD7DA8632C8091D0DB634914BD0B321 /* URLProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,13 +185,16 @@
 		011FBDDA81535F3F8097556168FFDAE3 /* SPKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SPKit.modulemap; sourceTree = "<group>"; };
 		0252C3B2A13362855D090BDD30355618 /* SPRoutable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPRoutable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03872A2FFCF3D6052B15C5F2F86CF8E9 /* AModules-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AModules-umbrella.h"; sourceTree = "<group>"; };
+		04ADAA6A6FC53A0F59B9BA21036F20DC /* URLProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLProtocol.swift; path = Sources/URLProtocol.swift; sourceTree = "<group>"; };
+		08336F8845F1AC30EE3DF46F55370758 /* SPRoutable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SPRoutable-dummy.m"; sourceTree = "<group>"; };
 		08B0E2C612ED96CF331C71556F00840B /* BLFoundation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = BLFoundation.modulemap; sourceTree = "<group>"; };
 		0CB666F148F33B3955FD0F30DAE9640A /* SP+ViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+ViewController.swift"; path = "Sources/SP+ViewController.swift"; sourceTree = "<group>"; };
-		0F287777734F42261BF499DAA7B8B22F /* SPRoutable.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SPRoutable.xcconfig; sourceTree = "<group>"; };
+		14B29AD7AC5593C5685B5D9354F6EA23 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		153335F45254AD836C9021867B7F606A /* Date+Timepiece.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Timepiece.swift"; path = "Sources/Date/Date+Timepiece.swift"; sourceTree = "<group>"; };
 		15ECB641400A4985AA3B98BCEB31B175 /* SPKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPKit-prefix.pch"; sourceTree = "<group>"; };
 		164A4E1319773E670A6B4A8D9F254BB5 /* CGFloat+SP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CGFloat+SP.swift"; path = "Sources/Number/CGFloat+SP.swift"; sourceTree = "<group>"; };
 		18B40045E5DB7C03BD1DBA1388767128 /* String+format.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+format.swift"; path = "Sources/String+format.swift"; sourceTree = "<group>"; };
+		1A7AD2F2D1454483C79523565C665A45 /* SPRoutable-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPRoutable-prefix.pch"; sourceTree = "<group>"; };
 		1BC51437C679F1FF96ADA70599B8E91B /* SP+NavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+NavigationController.swift"; path = "Sources/SP+NavigationController.swift"; sourceTree = "<group>"; };
 		1BCEEC4E144D0E6CC88F73DC8C1003F8 /* SP+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+Extension.swift"; path = "Sources/SP+Extension.swift"; sourceTree = "<group>"; };
 		1BFEC54D486DF1B357D45419ADD84EF0 /* AModules.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AModules.xcconfig; sourceTree = "<group>"; };
@@ -206,7 +209,6 @@
 		319A3F66727F587669A0BFDD1D848837 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31B134DEDF9389AB52941C54F0A5D5F5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31C05B27472BED91E90B2CE37068C8AA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		345CC6701E7879253DF00B9B4671BBA6 /* SPRoutable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SPRoutable-dummy.m"; sourceTree = "<group>"; };
 		34DF038C4732579F8792E43F2C0E9CB6 /* SP+UILabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UILabel.swift"; path = "Sources/SP+UILabel.swift"; sourceTree = "<group>"; };
 		360627C4F2C6F748A905A4D393607322 /* SP+UIButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UIButton.swift"; path = "Sources/SP+UIButton.swift"; sourceTree = "<group>"; };
 		3CA2802106BC85F0EC5681307DFED9A0 /* AModules-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AModules-prefix.pch"; sourceTree = "<group>"; };
@@ -220,7 +222,6 @@
 		4BC1B3BC699F1CC683CB23F61EC47D36 /* Double+SP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Double+SP.swift"; path = "Sources/Number/Double+SP.swift"; sourceTree = "<group>"; };
 		4CC3D5661D031A7C02D6C774B956B08F /* AModules.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AModules.h; path = SourcesA/AModules.h; sourceTree = "<group>"; };
 		4D860F19F33E119061B93F77A42F1E70 /* String+MD5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+MD5.swift"; path = "Sources/Encryption/String+MD5.swift"; sourceTree = "<group>"; };
-		4F4FE2144F0540AE26AEC4E668158269 /* Routable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Routable.swift; path = Sources/Routable.swift; sourceTree = "<group>"; };
 		5135023804A6655EE61C420E5E7EEE05 /* SP+CGRect.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+CGRect.swift"; path = "Sources/SP+CGRect.swift"; sourceTree = "<group>"; };
 		5325D359E4B29359B68229DA1D89AE41 /* Int+Timepiece.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Int+Timepiece.swift"; path = "Sources/Date/Int+Timepiece.swift"; sourceTree = "<group>"; };
 		540FA32FAF3B244F64740C96D95CF9DD /* SPKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SPKit.xcconfig; sourceTree = "<group>"; };
@@ -229,8 +230,6 @@
 		61B947178A2F59A9D6D56C7A636A53F3 /* BModules-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BModules-umbrella.h"; sourceTree = "<group>"; };
 		6356F650A01745FE68CCBCAAACC2E533 /* SP+UITextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UITextField.swift"; path = "Sources/SP+UITextField.swift"; sourceTree = "<group>"; };
 		683C5F55DA49AA6637BDBDD575D69F8F /* AnyFormatProtocol-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AnyFormatProtocol-dummy.m"; sourceTree = "<group>"; };
-		6AD7DA8632C8091D0DB634914BD0B321 /* URLProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLProtocol.swift; path = Sources/URLProtocol.swift; sourceTree = "<group>"; };
-		6B10CB1BE06FD888C083DA4E569CC1EF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B8CDC62D6FC701A29A65E93133A0CD5 /* AnyFormatProtocol.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AnyFormatProtocol.xcconfig; sourceTree = "<group>"; };
 		6C7D681ADCF4CE2A27BE0515F8F428DA /* AnyFormatProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AnyFormatProtocol.h; path = Sources/AnyFormatProtocol.h; sourceTree = "<group>"; };
 		6E1B62C8C90ED8A1FF805647B36F1CD1 /* SP+UIApplication.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UIApplication.swift"; path = "Sources/SP+UIApplication.swift"; sourceTree = "<group>"; };
@@ -239,13 +238,13 @@
 		77F9E06056912B821F9E9871C06F1A4F /* SP+Device.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+Device.swift"; path = "Sources/SP+Device.swift"; sourceTree = "<group>"; };
 		780344E5976B2241B59704A5928859BA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		78C11EAA5F07A1B5524A05841FD32C3B /* Date.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Date.swift; path = Sources/Date/Date.swift; sourceTree = "<group>"; };
-		7A39924145E4CE0B7C840464E072EC12 /* Routable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Routable.h; path = Sources/Routable.h; sourceTree = "<group>"; };
 		7C729F01A91DC2D83298688E68149602 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7E7BE7DF1E193B8FC82F993B61DFDDC5 /* SPRoutable.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = SPRoutable.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7EB4BD8BF74201FB40CF2A5FF053BD1F /* BModules-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BModules-prefix.pch"; sourceTree = "<group>"; };
 		7FF108CDA6592F1A5B712369DD2B66F7 /* SP+UICell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UICell.swift"; path = "Sources/SP+UICell.swift"; sourceTree = "<group>"; };
 		8225D1A5FFCAA40F531E1BEBEA60C4AC /* Bool+SP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bool+SP.swift"; path = "Sources/Number/Bool+SP.swift"; sourceTree = "<group>"; };
 		88293203267A47E2C907457802883742 /* BModules.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = BModules.modulemap; sourceTree = "<group>"; };
+		88CBC83CCAAF8E249D532A998131CD85 /* SPRoutable.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = SPRoutable.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8D48BC662C2087BA47A233335076B5EB /* Routable+help.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+help.swift"; path = "Sources/Routable+help.swift"; sourceTree = "<group>"; };
 		8ED6B66B976483A4E8A4B27623C7760A /* AModules-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AModules-dummy.m"; sourceTree = "<group>"; };
 		910B48EC3CC013C11BFC538B798B4CA0 /* Regex+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Regex+Extension.swift"; path = "Sources/Regex+Extension.swift"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -253,7 +252,6 @@
 		984945455E254D20957E2CFB22F9CBFF /* Character+SP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Character+SP.swift"; path = "Sources/String/Character+SP.swift"; sourceTree = "<group>"; };
 		9CB3B9061A356F2076865FF6E0AF98F8 /* Pods-Routable_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Routable_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9E782126903B865813D403C6759B4B8B /* BModules.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BModules.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9FB6F9B47BFF47DA3851BD65964A7BC2 /* SPRoutable-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPRoutable-prefix.pch"; sourceTree = "<group>"; };
 		A295E7D89AB52EFF9FA339A2E373D78B /* String+operator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+operator.swift"; path = "Sources/String/String+operator.swift"; sourceTree = "<group>"; };
 		A4448D11390626069A4E20F68226D48A /* AnyFormatProtocol.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AnyFormatProtocol.modulemap; sourceTree = "<group>"; };
 		A4919764C5FA02A145E4CF4DAF7F7178 /* Data+SP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+SP.swift"; path = "Sources/Data+SP.swift"; sourceTree = "<group>"; };
@@ -263,11 +261,12 @@
 		AAAFF134F45799274F7DA3ABA939199A /* AModules.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AModules.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAB7B38E4972FE32BFC3D29A01113E41 /* BLFoundation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BLFoundation.h; path = Sources/BLFoundation.h; sourceTree = "<group>"; };
 		AC33DCA4F9434D4716029906C3EBAE88 /* AnyFormatProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyFormatProtocol.swift; path = Sources/AnyFormatProtocol.swift; sourceTree = "<group>"; };
+		B65FA540F58AD1D75C4207133D608CFB /* SPRoutable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPRoutable-umbrella.h"; sourceTree = "<group>"; };
 		BCA3AD90CC4D39105F4FF32628ADF024 /* BLFoundation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BLFoundation-umbrella.h"; sourceTree = "<group>"; };
-		BE7D6175749A882F0D80FFBA75D881B3 /* SPRoutable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPRoutable-umbrella.h"; sourceTree = "<group>"; };
 		C242C688F627F9503CA575BBB1D871F7 /* BLFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BLFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C476C14C09A1F3AD1C769F714AB54FC9 /* BLFoundation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BLFoundation-dummy.m"; sourceTree = "<group>"; };
 		C542594267CD4FC1296B55D4254BE095 /* BLFoundation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BLFoundation-prefix.pch"; sourceTree = "<group>"; };
+		C5925E9A982EA4A84FAAF80396AA28BB /* Routable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Routable.h; path = Sources/Routable.h; sourceTree = "<group>"; };
 		C78889AC9A1B5102B14292CBA2CDECE3 /* SP+UIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UIView.swift"; path = "Sources/SP+UIView.swift"; sourceTree = "<group>"; };
 		C959453F10EAEFA8BD22E8C1C78F3B7A /* String+format.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+format.swift"; path = "Sources/String/String+format.swift"; sourceTree = "<group>"; };
 		C9A486319422C560D2A677FEECF62078 /* Pods-Routable_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Routable_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -277,24 +276,25 @@
 		CEE48177D93DB73BD40A4611842B5762 /* AnyFormatProtocol-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AnyFormatProtocol-prefix.pch"; sourceTree = "<group>"; };
 		CFE0C1BA9228B6A35949817AB6C6DF87 /* BLFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BLFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0370C1A3F3CC4D5170C760625F788D8 /* AnyFormatProtocol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AnyFormatProtocol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D17CB8728CC4EE9BFEFECC4C55B658DA /* SPRoutable.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SPRoutable.modulemap; sourceTree = "<group>"; };
 		D226C8A02B762673BF42BE6AC922B5B0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D37038A946E07CACFF876AEA585B1167 /* SwiftViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftViewController.swift; path = SourcesB/SwiftViewController.swift; sourceTree = "<group>"; };
 		D589B22377FE829E159249677AC947B4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D87600601800799542922C769331609F /* SP+Swizzling.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+Swizzling.swift"; path = "Sources/SP+Swizzling.swift"; sourceTree = "<group>"; };
+		D994110115140B9DAE4FE1D558F34F9B /* SPRoutable.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SPRoutable.xcconfig; sourceTree = "<group>"; };
 		DA0C5B3AC2447A44547D215F880682A3 /* SP+UIView+Frame.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UIView+Frame.swift"; path = "Sources/SP+UIView+Frame.swift"; sourceTree = "<group>"; };
 		DBA526641C581EC68837FD49469B7A23 /* SP+UIControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UIControl.swift"; path = "Sources/SP+UIControl.swift"; sourceTree = "<group>"; };
 		DC02E2C946979297339213ADBD246C91 /* SP+UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UIImage.swift"; path = "Sources/SP+UIImage.swift"; sourceTree = "<group>"; };
 		DE7A6BB2A3B830733E6C8236740E6A48 /* AModules.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = AModules.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E024E4992FEEEFB473FE83E8AB62707E /* Dictionary+SP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Dictionary+SP.swift"; path = "Sources/Dictionary+SP.swift"; sourceTree = "<group>"; };
 		E186D50403EF78A34ED03330466E5414 /* Router_swift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Router_swift.swift; path = SourcesB/Router_swift.swift; sourceTree = "<group>"; };
+		EEDDAF9F9DF9C139E71E8B8CB1EA4C7F /* Routable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Routable.swift; path = Sources/Routable.swift; sourceTree = "<group>"; };
 		EFBD015922CFA3A630A3619C51FEB96B /* Pods-Routable_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Routable_Example-umbrella.h"; sourceTree = "<group>"; };
 		F0F30099B73DDC57DB17705DE3E4DA9D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F166E6509D90D7B21DFCD61D963887C1 /* RunTime+SP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "RunTime+SP.swift"; path = "Sources/RunTime+SP.swift"; sourceTree = "<group>"; };
 		F196FAB97CDBC4F5EB9B607C5F4BB0F5 /* Router_objc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Router_objc.m; path = SourcesA/Router_objc.m; sourceTree = "<group>"; };
-		F1B55DA42940E62A6A14BF4F9CF7C021 /* SPRoutable.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SPRoutable.modulemap; sourceTree = "<group>"; };
 		F201BD227149C02114D08D1B00107FF8 /* SPKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4C3943422EBC3C8928FF78B1FF7D8A7 /* Routable+help.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+help.swift"; path = "Sources/Routable+help.swift"; sourceTree = "<group>"; };
-		F4C4E914F0408F0AC5A381F2A31D602F /* BModules.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = BModules.podspec; sourceTree = "<group>"; };
+		F4C4E914F0408F0AC5A381F2A31D602F /* BModules.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = BModules.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F505F4F1538EB007409A357CC93FFC5C /* SP+UIColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UIColor.swift"; path = "Sources/SP+UIColor.swift"; sourceTree = "<group>"; };
 		F5D8971AFE7BE7A33A2E1D5EFBEB87C5 /* Router_objc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Router_objc.h; path = SourcesA/Router_objc.h; sourceTree = "<group>"; };
 		FAF747034DD287BCA122D36D5C2F9D03 /* AnyFormatProtocol-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AnyFormatProtocol-umbrella.h"; sourceTree = "<group>"; };
@@ -390,12 +390,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1CEA42F8F783DFDDDDB3B04AE2E6E7D5 /* Pod */ = {
+		1E56D823B9453852BB5C4C2F73FB72DA /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				7E7BE7DF1E193B8FC82F993B61DFDDC5 /* SPRoutable.podspec */,
+				14B29AD7AC5593C5685B5D9354F6EA23 /* Info.plist */,
+				D17CB8728CC4EE9BFEFECC4C55B658DA /* SPRoutable.modulemap */,
+				D994110115140B9DAE4FE1D558F34F9B /* SPRoutable.xcconfig */,
+				08336F8845F1AC30EE3DF46F55370758 /* SPRoutable-dummy.m */,
+				1A7AD2F2D1454483C79523565C665A45 /* SPRoutable-prefix.pch */,
+				B65FA540F58AD1D75C4207133D608CFB /* SPRoutable-umbrella.h */,
 			);
-			name = Pod;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/SPRoutable";
 			sourceTree = "<group>";
 		};
 		2D783E019FF780FED8316C30726E918F /* Support Files */ = {
@@ -410,6 +416,14 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/BLFoundation";
+			sourceTree = "<group>";
+		};
+		2FF73AE5B9230AAF93194AFE7CDD86BC /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				88CBC83CCAAF8E249D532A998131CD85 /* SPRoutable.podspec */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		3F8AA7B5B308542EE11986B182B8DF3F /* SPKit */ = {
@@ -469,6 +483,20 @@
 			path = AnyFormatProtocol;
 			sourceTree = "<group>";
 		};
+		5E42D7D295D2E933D8560610C35E4FC1 /* SPRoutable */ = {
+			isa = PBXGroup;
+			children = (
+				C5925E9A982EA4A84FAAF80396AA28BB /* Routable.h */,
+				EEDDAF9F9DF9C139E71E8B8CB1EA4C7F /* Routable.swift */,
+				8D48BC662C2087BA47A233335076B5EB /* Routable+help.swift */,
+				04ADAA6A6FC53A0F59B9BA21036F20DC /* URLProtocol.swift */,
+				2FF73AE5B9230AAF93194AFE7CDD86BC /* Pod */,
+				1E56D823B9453852BB5C4C2F73FB72DA /* Support Files */,
+			);
+			name = SPRoutable;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		618CF84AC1CE94BC8480F66070E7567C /* BModules */ = {
 			isa = PBXGroup;
 			children = (
@@ -501,7 +529,7 @@
 			children = (
 				BD378024C2810A95E75E19A673B35F5E /* AModules */,
 				618CF84AC1CE94BC8480F66070E7567C /* BModules */,
-				8911017D479895BAEC9AF231951B3E17 /* SPRoutable */,
+				5E42D7D295D2E933D8560610C35E4FC1 /* SPRoutable */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -562,20 +590,6 @@
 			path = "Example/Pods/Target Support Files/BModules";
 			sourceTree = "<group>";
 		};
-		8911017D479895BAEC9AF231951B3E17 /* SPRoutable */ = {
-			isa = PBXGroup;
-			children = (
-				7A39924145E4CE0B7C840464E072EC12 /* Routable.h */,
-				4F4FE2144F0540AE26AEC4E668158269 /* Routable.swift */,
-				F4C3943422EBC3C8928FF78B1FF7D8A7 /* Routable+help.swift */,
-				6AD7DA8632C8091D0DB634914BD0B321 /* URLProtocol.swift */,
-				1CEA42F8F783DFDDDDB3B04AE2E6E7D5 /* Pod */,
-				B41B51E41C4045B89962048A2BE19FF5 /* Support Files */,
-			);
-			name = SPRoutable;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		92E6E3C422E41D0B957F1DF6FE80B54D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -616,20 +630,6 @@
 				31C05B27472BED91E90B2CE37068C8AA /* UIKit.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		B41B51E41C4045B89962048A2BE19FF5 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				6B10CB1BE06FD888C083DA4E569CC1EF /* Info.plist */,
-				F1B55DA42940E62A6A14BF4F9CF7C021 /* SPRoutable.modulemap */,
-				0F287777734F42261BF499DAA7B8B22F /* SPRoutable.xcconfig */,
-				345CC6701E7879253DF00B9B4671BBA6 /* SPRoutable-dummy.m */,
-				9FB6F9B47BFF47DA3851BD65964A7BC2 /* SPRoutable-prefix.pch */,
-				BE7D6175749A882F0D80FFBA75D881B3 /* SPRoutable-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/SPRoutable";
 			sourceTree = "<group>";
 		};
 		BD378024C2810A95E75E19A673B35F5E /* AModules */ = {
@@ -794,7 +794,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E712088B3363D292A9B2F5CC822209D0 /* Build configuration list for PBXNativeTarget "SPRoutable" */;
 			buildPhases = (
-				8B59B3F5A1D33AD55EC5AFEC3861B451 /* Sources */,
+				84F144C145ADAF86588F7DF40E8C0A54 /* Sources */,
 				6BFA61D4DA7C8D20F5A2A16638940AAA /* Frameworks */,
 				3BF6F527B98508BB6FA34500833760F6 /* Headers */,
 			);
@@ -962,14 +962,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8B59B3F5A1D33AD55EC5AFEC3861B451 /* Sources */ = {
+		84F144C145ADAF86588F7DF40E8C0A54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C3D234BB20731DBEDA62E65883A1016 /* Routable+help.swift in Sources */,
-				352C14237666129EBF267AFEBA301B5F /* Routable.swift in Sources */,
-				1F512188DDF4EF2AFA6AC5C22FD4DF2D /* SPRoutable-dummy.m in Sources */,
-				FE3BCD691114D06DA9EDC6F5F973D60B /* URLProtocol.swift in Sources */,
+				A6E2D2ABC829001101501D2EC79E47C1 /* Routable+help.swift in Sources */,
+				23620053BE97BFB659B59FAEB3D29076 /* Routable.swift in Sources */,
+				E0EC3C4D07F5FBFE2695C81EF95682C4 /* SPRoutable-dummy.m in Sources */,
+				4E727C036FF55088981471A8C9DAE48F /* URLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1529,7 +1529,7 @@
 		};
 		937CBE04FDA4643CDF17B58FA2A461E4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F287777734F42261BF499DAA7B8B22F /* SPRoutable.xcconfig */;
+			baseConfigurationReference = D994110115140B9DAE4FE1D558F34F9B /* SPRoutable.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1627,7 +1627,7 @@
 		};
 		FF6949CBC3417DCDBB7238C946CE2AAE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F287777734F42261BF499DAA7B8B22F /* SPRoutable.xcconfig */;
+			baseConfigurationReference = D994110115140B9DAE4FE1D558F34F9B /* SPRoutable.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

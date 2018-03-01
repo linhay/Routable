@@ -7,7 +7,7 @@ PODS:
     - SPRoutable
   - SPKit (0.1.3):
     - BLFoundation
-  - SPRoutable (0.8.1):
+  - SPRoutable (0.8.7):
     - AnyFormatProtocol
 
 DEPENDENCIES:
@@ -31,7 +31,7 @@ SPEC CHECKSUMS:
   BLFoundation: 2c1e602dd390e1a62341160a2007826a5fc55458
   BModules: a04cfcb1ccc8e765b0caf8c9fdd3e9dc47e14035
   SPKit: d4d3d19cc0716f89b71f50fd5d1f64014b6c00bb
-  SPRoutable: 42b67d72a139208730b11e047d5d4cfd895f3f6e
+  SPRoutable: 3cc69a1bf0379113c136cfdca6d91acb25af15fa
 
 PODFILE CHECKSUM: bab2f97cd0e76336fdc95ba982affc7365c8f557
 
