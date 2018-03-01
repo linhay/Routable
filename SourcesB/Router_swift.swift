@@ -24,6 +24,14 @@ public class Router_swift: NSObject {
     return view
   }
 
+  @objc func router_async(params:[String: Any], id: String){
+    Routable.runBlock(id: id, params: ["hello": "world"], isRemove: true)
+  }
+
+  @objc func router_async2(params:[String: Any], id: String){
+    Routable.runBlock(id: id, params: ["hello": "world"], isRemove: true)
+  }
+
   @objc func router_alert(params: [String: Any] = [:]) {
     let alert = UIAlertController()
     alert.title = #function
@@ -49,6 +57,10 @@ public class Router_swift: NSObject {
   }
 
   @objc func router_noticeResult() {
+    router_alert(params: ["notice": #function])
+  }
+
+  @objc func router_notice(_ params: [String: Any]) {
     router_alert(params: ["notice": #function])
   }
 

@@ -27,38 +27,11 @@ public struct Routable {
   /// 代理缓存
   static var delegate = [String: String]()
 
+  static var blockCache = [String: (_: [String: Any])->()]()
+
 }
 
 public extension Routable {
-
-  /// 清除指定缓存
-  ///
-  /// - Parameter name: key
-  public static func cache(remove name: String) {
-    let targetName = classPrefix + name
-    cache.removeValue(forKey: targetName)
-  }
-
-  public static func urlFormat(url: URLProtocol,params:[String: Any]) -> URL?{
-    if params.isEmpty { return url.asURL() }
-    guard var components = URLComponents(string: url.asString()) else { return nil }
-    var querys = components.queryItems ?? []
-    let newQuerys = params.map { (item) -> URLQueryItem in
-      switch item.value {
-      case let v as String:
-        return URLQueryItem(name: item.key, value: v)
-      case let v as [String:Any]:
-        return URLQueryItem(name: item.key, value: RoutableHelp.formatJSON(data: v))
-      case let v as [Any]:
-        return URLQueryItem(name: item.key, value: RoutableHelp.formatJSON(data: v))
-      default:
-        return URLQueryItem(name: item.key, value: String(describing: item.value))
-      }
-    }
-    querys += newQuerys
-    components.queryItems = querys
-    return components.url
-  }
 
   /// 解析viewController类型
   ///
@@ -67,6 +40,20 @@ public extension Routable {
   public static func viewController(url: URLProtocol,params:[String: Any] = [:]) -> UIViewController? {
     if let vc = object(url: url, params: params) as UIViewController? { return vc }
     return nil
+  }
+
+
+  public static func object(url: URLProtocol, params:[String: Any] = [:], call: @escaping (_: [String: Any])->()) {
+    guard let path = urlFormat(url: url, params: params) else { return }
+    guard let value = getPathValues(url: path) else { return }
+    let id = "blockCache\(blockCache.count)"
+    blockCache[id] = call
+   _ = target(name: value.class, actionName: value.function, params: value.params, callId: id)
+  }
+
+  public static func runBlock(id:String, params:[String: Any] = [:],isRemove: Bool = true) {
+    blockCache[id]?(params)
+    if isRemove { blockCache[id] = nil }
   }
 
   /// 解析view类型
@@ -114,7 +101,6 @@ public extension Routable {
     return nil
   }
 
-
   /// 通知所有已缓存类型函数
   ///
   /// - Parameter url: 函数路径
@@ -130,7 +116,7 @@ public extension Routable {
       let name = item.replacingOccurrences(of: classPrefix, with: "")
       let path = path.asString().replacingOccurrences(of: "://notice/", with: "://\(name)/")
       if let endURL = path.asURL() {
-       _ = Routable.perform(value: endURL)
+        _ = Routable.perform(value: endURL)
       }
     })
   }
@@ -142,6 +128,39 @@ public extension Routable {
   public static func executing(url: URLProtocol, params:[String: Any] = [:]) {
     guard let path = urlFormat(url: url, params: params) else { return }
     _ = Routable.perform(value: path)
+  }
+
+}
+
+public extension Routable {
+
+  /// 清除指定缓存
+  ///
+  /// - Parameter name: key
+  public static func cache(remove name: String) {
+    let targetName = classPrefix + name
+    cache.removeValue(forKey: targetName)
+  }
+
+  public static func urlFormat(url: URLProtocol,params:[String: Any]) -> URL?{
+    if params.isEmpty { return url.asURL() }
+    guard var components = URLComponents(string: url.asString()) else { return nil }
+    var querys = components.queryItems ?? []
+    let newQuerys = params.map { (item) -> URLQueryItem in
+      switch item.value {
+      case let v as String:
+        return URLQueryItem(name: item.key, value: v)
+      case let v as [String:Any]:
+        return URLQueryItem(name: item.key, value: RoutableHelp.formatJSON(data: v))
+      case let v as [Any]:
+        return URLQueryItem(name: item.key, value: RoutableHelp.formatJSON(data: v))
+      default:
+        return URLQueryItem(name: item.key, value: String(describing: item.value))
+      }
+    }
+    querys += newQuerys
+    components.queryItems = querys
+    return components.url
   }
 
 }
@@ -166,36 +185,31 @@ extension Routable {
     return nil
   }
 
+  struct Event {
+    let sel: Selector
+    let argumentCount: UInt32
+  }
+
   /// 获取指定类指定函数
   ///
   /// - Parameters:
   ///   - target: 指定类
   ///   - name: 指定函数名
-  ///   - hasParams: 是否有参数
   /// - Returns: 指定函数
-  static func getSEL(target: NSObject, name: String,hasParams: Bool) -> Selector? {
-    if hasParams {
-      do {
-        let sel = NSSelectorFromString(funcPrefix + name + "With" + paramName + ":")
-        if target.responds(to: sel){ return sel }
-      }
-
-      do {
-        let sel = NSSelectorFromString(funcPrefix + name + paramName + ":")
-        if target.responds(to: sel){ return sel }
-      }
-      /// 匿名参数
-      do {
-        let sel = NSSelectorFromString(funcPrefix + name + ":")
-        if target.responds(to: sel){ return sel }
-      }
-
-      return nil
-    }else{
-      let sel = NSSelectorFromString(funcPrefix + name)
-      if target.responds(to: sel){ return sel }
-      return getSEL(target: target, name: name, hasParams: true)
+  static func getSEL(target: NSObject, name: String) -> Event? {
+    var methodNum: UInt32 = 0
+    let methods = class_copyMethodList(type(of: target), &methodNum)
+    for index in 0..<numericCast(methodNum) {
+      guard let method = methods?[index] else { continue }
+      let selector = method_getName(method)
+      let description = selector.description.replacingOccurrences(of: "With" + paramName, with: ":") + ":"
+      if !description.hasPrefix(funcPrefix + name + ":") { continue }
+      free(methods)
+      return Event(sel: selector,
+                   argumentCount: method_getNumberOfArguments(method) - 2)
     }
+    free(methods)
+    return nil
   }
 
   /// 获取指定对象
@@ -208,16 +222,22 @@ extension Routable {
   /// - Returns: 对象
   public static func target(name: String,
                             actionName: String,
-                            params: [String: Any] = [:]) -> Unmanaged<AnyObject>? {
+                            params: [String: Any] = [:],
+                            callId: String) -> Unmanaged<AnyObject>? {
     guard let target = getClass(name: name) else { return nil }
-    guard let function = getSEL(target: target, name: actionName, hasParams: !params.isEmpty) else { return nil }
-    switch function.description.hasSuffix(":") {
-    case true:
-      guard let value = target.perform(function, with: params) else { return nil }
+    guard let function = getSEL(target: target, name: actionName) else { return nil }
+    switch function.argumentCount {
+    case 0:
+      guard let value = target.perform(function.sel) else { return nil }
       return value
-    case false:
-      guard let value = target.perform(function) else { return nil }
+    case 1:
+      guard let value = target.perform(function.sel, with: params) else { return nil }
       return value
+    case 2:
+      guard let value = target.perform(function.sel, with: params, with: callId) else { return nil }
+      return value
+    default:
+      assert(false)
     }
   }
 
@@ -269,7 +289,10 @@ extension Routable {
   /// - Returns: 对象
   static func perform(value url: URL) -> Unmanaged<AnyObject>? {
     guard let value = getPathValues(url: url) else { return nil }
-    let result = target(name: value.class, actionName: value.function, params: value.params)
+    let result = target(name: value.class,
+                        actionName: value.function,
+                        params: value.params,
+                        callId: "")
     return result
   }
 

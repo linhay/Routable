@@ -13,7 +13,8 @@ import AModules
 import SPKit
 
 class ViewController: UITableViewController {
-  let list = ["http://swift/vc",
+  let list = ["http://swift/async",
+              "http://swift/vc",
               "http://swift/view",
               "http://swift/alert?ut=3",
               "http://swift/int",
@@ -55,6 +56,11 @@ class ViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let str = list[indexPath.item]
 
+    if str.contains("async") {
+      Routable.object(url: str, params: [:],call: { (result) in
+        Routable.executing(url: "http://swift/alert?String=async")
+      })
+    }
 
     if str.contains("vc"){
       guard let vc = Routable.viewController(url: str) else { return }
