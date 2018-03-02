@@ -20,6 +20,7 @@ class ViewController: UITableViewController {
               "http://swift/int",
               "http://swift/integer",
               "http://swift/string",
+              "http://swift/double",
               "http://notice/noticeResult",
               "http://objc/vc",
               "http://objc/view",
@@ -60,6 +61,12 @@ class ViewController: UITableViewController {
       Routable.object(url: str, params: [:],call: { (result) in
         Routable.executing(url: "http://swift/alert?String=async")
       })
+    }
+    
+    if str.contains("double") {
+      guard let v = Routable.object(url: str) as Int? else { return }
+      Routable.executing(url: "http://swift/double?double=\(v)")
+      return
     }
 
     if str.contains("vc"){

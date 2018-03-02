@@ -44,7 +44,11 @@ public class Router_swift: NSObject {
   }
 
   @objc func router_int(params: [String: Any] = [:]) -> Int {
-    return arc4random_uniform(UInt32.max).hashValue
+    return 123456789
+  }
+  
+  @objc func router_double(params: [String: Any] = [:]) -> Double {
+    return 11.11
   }
 
   @objc func router_integer(params: [String: Any] = [:]) -> NSInteger {

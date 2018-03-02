@@ -37,11 +37,11 @@
 }
 
 -(int)router_int:(NSDictionary *)params{
-  return rand();
+  return 123456789;
 }
 
 -(NSInteger *)router_integer:(NSDictionary *)params{
-  NSNumber * value = [[NSNumber alloc]initWithInt:rand()];
+  NSNumber * value = [[NSNumber alloc]initWithInt: 123456789];
   return [value integerValue];
 }
 
