@@ -79,10 +79,7 @@ public extension Routable {
       return result.unmanaged.takeUnretainedValue() as? T
     case .longlong,.point,.int:
       return result.unmanaged.toOpaque().hashValue as? T
-    case .double:
-//     let element = result.unmanaged.toOpaque().assumingMemoryBound(to: Double.self)
-//     return element.pointee as? T
-      return nil
+    case .double: return nil
     default: return nil
     }
   }
@@ -197,26 +194,27 @@ extension Routable {
   static func getSEL(target: NSObject, name: String) -> Function? {
     var methodNum: UInt32 = 0
     let methods = class_copyMethodList(type(of: target), &methodNum)
+    
     for index in 0..<numericCast(methodNum) {
       guard let method = methods?[index] else { continue }
       let sel: Selector = method_getName(method)
-      let description = sel.description
-        .replacingOccurrences(of: "With" + paramName, with: ":")
-        .replacingOccurrences(of: paramName + ":", with: ":") + ":"
-      if !description.hasPrefix(funcPrefix + name + ":") { continue }
-      free(methods)
+      guard let funcName = sel.description
+        .components(separatedBy: ":").first?
+        .components(separatedBy: "With").first?
+        .components(separatedBy: paramName).first else { continue }
+      if funcName != funcPrefix + name { continue }
       var dst: CChar = 0
       method_getReturnType(method, &dst, MemoryLayout<CChar>.size)
       let returnType = ObjectType(char: dst)
       
       let argumentsCount = method_getNumberOfArguments(method)
       let types = (0..<UInt32(argumentsCount)).map({ (index) -> ObjectType in
-         method_getArgumentType(method,index,&dst,MemoryLayout<CChar>.size)
+        method_getArgumentType(method,index,&dst,MemoryLayout<CChar>.size)
         return ObjectType(char: dst)
       })
-      
+      free(methods)
       return Function(sel: sel,
-                      argumentCount: argumentsCount - 2,
+                      argumentCount: argumentsCount,
                       returnType: returnType,
                       argumentTypes: types)
     }
@@ -232,17 +230,17 @@ extension Routable {
   ///   - params: 函数参数
   ///   - isCacheTarget: 是否缓存
   /// - Returns: 对象
-   static func target(name: String, actionName: String, params: [String: Any] = [:], callId: String = "") -> Result? {
+  static func target(name: String, actionName: String, params: [String: Any] = [:], callId: String = "") -> Result? {
     guard let target = getClass(name: name) else { return nil }
     guard let function = getSEL(target: target, name: actionName) else { return nil }
     switch function.argumentCount {
-    case 0:
+    case 2:
       guard let value = target.perform(function.sel) else { return nil }
       return Result(unmanaged: value, type: function.returnType)
-    case 1:
+    case 3:
       guard let value = target.perform(function.sel, with: params) else { return nil }
       return Result(unmanaged: value, type: function.returnType)
-    case 2:
+    case 4:
       guard let value = target.perform(function.sel, with: params, with: callId) else { return nil }
       return Result(unmanaged: value, type: function.returnType)
     default:
