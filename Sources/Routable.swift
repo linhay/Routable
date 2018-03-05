@@ -200,7 +200,9 @@ extension Routable {
     for index in 0..<numericCast(methodNum) {
       guard let method = methods?[index] else { continue }
       let sel: Selector = method_getName(method)
-      let description = sel.description.replacingOccurrences(of: "With" + paramName, with: ":") + ":"
+      let description = sel.description
+        .replacingOccurrences(of: "With" + paramName, with: ":")
+        .replacingOccurrences(of: paramName + ":", with: ":") + ":"
       if !description.hasPrefix(funcPrefix + name + ":") { continue }
       free(methods)
       var dst: CChar = 0
