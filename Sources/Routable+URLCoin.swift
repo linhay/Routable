@@ -7,13 +7,13 @@
 
 import Foundation
 
-public protocol URLProtocol {
+public protocol URLCoin {
   func asURL() -> URL?
   func asString() -> String
 }
 
 
-extension String: URLProtocol {
+extension String: URLCoin {
   public func asURL() -> URL? {
     guard let url = URL(string: self) else {
       assert(false, "检查 url: " + self)
@@ -27,7 +27,7 @@ extension String: URLProtocol {
   }
 }
 
-extension URL: URLProtocol {
+extension URL: URLCoin {
 
   public func asURL() -> URL? {
     return self

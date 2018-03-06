@@ -27,7 +27,7 @@
 		4E75B3FC871A8A7D5EA89C98910DBE15 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2404E8ED9054C8D53250D3F2CE6A8832 /* Int.swift */; };
 		50F17DC73A87E34530DA73F9336F1D40 /* BLFoundation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 31EB73F48C296067DE256C8140CC7611 /* BLFoundation-dummy.m */; };
 		52CE0F6AE12DA36BCC82F8444883B15B /* SP+NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640505E942E3F7A328673B12CC6DCC4 /* SP+NSLayoutConstraint.swift */; };
-		54DB5C0B78EB09CB480A13A43C3BCF82 /* URLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3888F08C08BDC42394423802A6C0B53A /* URLProtocol.swift */; };
+		54DB5C0B78EB09CB480A13A43C3BCF82 /* Routable+URLCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3888F08C08BDC42394423802A6C0B53A /* Routable+URLCoin.swift */; };
 		5CF9EB99B0CE67A50BF45C12FEA689E7 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6117901EF66420EEAA82F4104442A28 /* Double.swift */; };
 		5E928E6E9A3C5DDA517DDAB177D17711 /* SPRoutable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3112E28449D26EDBE968EFF0D50B456F /* SPRoutable-dummy.m */; };
 		60CD203126AB3E81A1A92D60982C37B9 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE64A37E28B435F461C64C33B48AA556 /* Routable.swift */; };
@@ -214,7 +214,7 @@
 		31EB73F48C296067DE256C8140CC7611 /* BLFoundation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BLFoundation-dummy.m"; sourceTree = "<group>"; };
 		3269B6B9DBF02B71D1C7BEF0428841D9 /* Router_swift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Router_swift.swift; path = SourcesB/Router_swift.swift; sourceTree = "<group>"; };
 		34EE762FFE10C31CB5C6BE65601A0EF1 /* SP+UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UIImage.swift"; path = "Sources/SP+UIImage.swift"; sourceTree = "<group>"; };
-		3888F08C08BDC42394423802A6C0B53A /* URLProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLProtocol.swift; path = Sources/URLProtocol.swift; sourceTree = "<group>"; };
+		3888F08C08BDC42394423802A6C0B53A /* Routable+URLCoin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+URLCoin.swift"; path = "Sources/Routable+URLCoin.swift"; sourceTree = "<group>"; };
 		39FA2AC97922F0825C09D061692E33D6 /* BModules.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BModules.h; path = SourcesB/BModules.h; sourceTree = "<group>"; };
 		3D7D46B95A9275378F3E302B04106F06 /* Data.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Data.swift; path = Sources/Data/Data.swift; sourceTree = "<group>"; };
 		3FBA9ABD948102033C48B1E6C0AEBBDD /* Bool.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bool.swift; path = Sources/Number/Bool.swift; sourceTree = "<group>"; };
@@ -664,7 +664,7 @@
 				DE64A37E28B435F461C64C33B48AA556 /* Routable.swift */,
 				4CB8AA39FC8013D75F422022ABB0A798 /* Routable+help.swift */,
 				ECE4B1D636263476F7F0456F1CA62368 /* Routable+ObjectType.swift */,
-				3888F08C08BDC42394423802A6C0B53A /* URLProtocol.swift */,
+				3888F08C08BDC42394423802A6C0B53A /* Routable+URLCoin.swift */,
 				2D9B589806C25D775AD93553BA7586C4 /* Pod */,
 				50911087B9414DDD8903DA89A8F78F92 /* Support Files */,
 			);
@@ -989,7 +989,7 @@
 				8661CE3AF89238893F30DF9B520BF5D9 /* Routable+ObjectType.swift in Sources */,
 				60CD203126AB3E81A1A92D60982C37B9 /* Routable.swift in Sources */,
 				5E928E6E9A3C5DDA517DDAB177D17711 /* SPRoutable-dummy.m in Sources */,
-				54DB5C0B78EB09CB480A13A43C3BCF82 /* URLProtocol.swift in Sources */,
+				54DB5C0B78EB09CB480A13A43C3BCF82 /* Routable+URLCoin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
