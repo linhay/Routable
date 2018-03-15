@@ -47,6 +47,10 @@ public class Router_swift: NSObject {
     return 123456789
   }
   
+  @objc func router_intWith2(params: [String: Any] = [:]) -> Int {
+    return 12345
+  }
+  
   @objc func router_double(params: [String: Any] = [:]) -> Double {
     return 11.11
   }
@@ -61,10 +65,6 @@ public class Router_swift: NSObject {
   }
 
   @objc func router_noticeResult() {
-    router_alert(params: ["notice": #function])
-  }
-
-  @objc func router_notice(_ params: [String: Any]) {
     router_alert(params: ["notice": #function])
   }
 

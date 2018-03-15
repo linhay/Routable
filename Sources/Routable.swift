@@ -194,15 +194,10 @@ extension Routable {
   static func getSEL(target: NSObject, name: String) -> Function? {
     var methodNum: UInt32 = 0
     let methods = class_copyMethodList(type(of: target), &methodNum)
-    
-    for index in 0..<numericCast(methodNum) {
-      guard let method = methods?[index] else { continue }
+    let list = (0..<numericCast(methodNum)).flatMap { (index) -> Function? in
+      guard let method = methods?[index] else { return nil }
       let sel: Selector = method_getName(method)
-      guard let funcName = sel.description
-        .components(separatedBy: ":").first?
-        .components(separatedBy: "With").first?
-        .components(separatedBy: paramName).first else { continue }
-      if funcName != funcPrefix + name { continue }
+      guard sel.description.hasPrefix(funcPrefix + name) else { return nil }
       var dst: CChar = 0
       method_getReturnType(method, &dst, MemoryLayout<CChar>.size)
       let returnType = ObjectType(char: dst)
@@ -212,14 +207,21 @@ extension Routable {
         method_getArgumentType(method,index,&dst,MemoryLayout<CChar>.size)
         return ObjectType(char: dst)
       })
-      free(methods)
       return Function(sel: sel,
                       argumentCount: argumentsCount,
                       returnType: returnType,
                       argumentTypes: types)
+      }.sorted { (func1, func2) -> Bool in
+        let funcName1 = func1.sel.description
+          .components(separatedBy: ":").first?
+          .components(separatedBy: "With" + paramName).first ?? ""
+        let funcName2 = func2.sel.description
+          .components(separatedBy: ":").first?
+          .components(separatedBy: "With" + paramName).first ?? ""
+        return funcName1.count < funcName2.count
     }
     free(methods)
-    return nil
+    return list.first
   }
   
   /// 获取指定对象
