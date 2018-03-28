@@ -4,10 +4,10 @@ s.version          = '0.1.0'
 s.summary          = '测试B'
 
 
-s.homepage         = 'https://github.com/bigL055/Routable'
+s.homepage         = 'https://github.com/linhay/Routable'
 s.license          = { :type => 'MIT', :file => 'LICENSE' }
 s.author           = { 'linhey' => 'linheyhan.linhey@outlook.com' }
-s.source = { :git => 'https://github.com/bigL055/Routable.git', :tag => s.version.to_s }
+s.source = { :git => 'https://github.com/linhay/Routable.git', :tag => s.version.to_s }
 
 s.ios.deployment_target = '8.0'
 

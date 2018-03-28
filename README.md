@@ -1,9 +1,8 @@
 # Routable
 
-[![CI Status](http://img.shields.io/travis/bigL055/Routable.svg?style=flat)](https://travis-ci.org/bigL055/Routable)
-[![Version](https://img.shields.io/cocoapods/v/Routable.svg?style=flat)](http://cocoapods.org/pods/Routable)
-[![License](https://img.shields.io/cocoapods/l/Routable.svg?style=flat)](http://cocoapods.org/pods/Routable)
-[![Platform](https://img.shields.io/cocoapods/p/Routable.svg?style=flat)](http://cocoapods.org/pods/Routable)
+[![Version](https://img.shields.io/cocoapods/v/Routable.svg?style=flat)](http://cocoapods.org/pods/SPRoutable)
+[![License](https://img.shields.io/cocoapods/l/Routable.svg?style=flat)](http://cocoapods.org/pods/SPRoutable)
+[![Platform](https://img.shields.io/cocoapods/p/Routable.svg?style=flat)](http://cocoapods.org/pods/SPRoutable)
 
 ## Example
 
