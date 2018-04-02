@@ -19,7 +19,7 @@ PODS:
     - SPRoutable
   - SPKit (0.1.5):
     - BLFoundation
-  - SPRoutable (0.9.0):
+  - SPRoutable (0.9.4):
     - AnyFormatProtocol
 
 DEPENDENCIES:
@@ -29,22 +29,28 @@ DEPENDENCIES:
   - SPKit
   - SPRoutable (from `../`)
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AnyFormatProtocol
+    - BLFoundation
+    - SPKit
+
 EXTERNAL SOURCES:
   AModules:
-    :path: ../
+    :path: "../"
   BModules:
-    :path: ../
+    :path: "../"
   SPRoutable:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  AModules: 8bebc812ac6e2d5b12289ebafeea04fed7422554
+  AModules: 092550c929dafc740296d6dc929b644302c684e3
   AnyFormatProtocol: 4df38a96d761a43343616747e4aa744c35bf5e52
   BLFoundation: 8cb533705aaeb73d4f2df1f87108788dab1b14f7
-  BModules: a612324faf40ece4163f44349d86bf7c7266fb2e
+  BModules: 73a1c80e4735f06d8755263f704738cdc889ea36
   SPKit: 3311e1d40b6d7cbebdc15af23d653ed197ec6af8
-  SPRoutable: 19388c429fcdab904b98495f6f929a8e9372ad10
+  SPRoutable: 2d305a2c9bc37d8b4176a4e2cc1907ce83b1105c
 
 PODFILE CHECKSUM: bab2f97cd0e76336fdc95ba982affc7365c8f557
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0.beta.1

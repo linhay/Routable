@@ -25,11 +25,11 @@ public class Router_swift: NSObject {
   }
 
   @objc func router_async(params:[String: Any], id: String){
-    Routable.runBlock(id: id, params: ["hello": "world"], isRemove: true)
+    Routable.callback(id: id, params: ["hello": "world"], isRemove: true)
   }
 
   @objc func router_async2(params:[String: Any], id: String){
-    Routable.runBlock(id: id, params: ["hello": "world"], isRemove: true)
+    Routable.callback(id: id, params: ["hello": "world"], isRemove: true)
   }
 
   @objc func router_alert(params: [String: Any] = [:]) {

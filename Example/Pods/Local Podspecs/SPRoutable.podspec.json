@@ -1,8 +1,8 @@
 {
   "name": "SPRoutable",
-  "version": "0.9.0",
+  "version": "0.9.4",
   "summary": "基础的路由服务",
-  "homepage": "https://github.com/bigL055/Routable",
+  "homepage": "https://github.com/linhay/Routable",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -11,8 +11,8 @@
     "linhey": "linheyhan.linhey@outlook.com"
   },
   "source": {
-    "git": "https://github.com/bigL055/Routable.git",
-    "tag": "0.9.0"
+    "git": "https://github.com/linhay/Routable.git",
+    "tag": "0.9.4"
   },
   "platforms": {
     "ios": "8.0"

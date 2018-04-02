@@ -2,7 +2,7 @@
   "name": "AModules",
   "version": "0.1.0",
   "summary": "测试A",
-  "homepage": "https://github.com/bigL055/Routable",
+  "homepage": "https://github.com/linhay/Routable",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -11,7 +11,7 @@
     "linhey": "linheyhan.linhey@outlook.com"
   },
   "source": {
-    "git": "https://github.com/bigL055/Routable.git",
+    "git": "https://github.com/linhay/Routable.git",
     "tag": "0.1.0"
   },
   "platforms": {
