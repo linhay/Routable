@@ -106,12 +106,12 @@ public extension Routable {
   ///   - url: url
   ///   - params: url 参数(选填)
   ///   - call: 回调数据
-  public static func object(url: URLCoin, params:[String: Any] = [:], call: @escaping (_: [String: Any])->()) {
-    guard let path = urlFormat(url: url, params: params) else { return }
-    guard let value = getPathValues(url: path) else { return }
+  @discardableResult public static func object(url: URLCoin, params:[String: Any] = [:], call: @escaping (_: [String: Any])->()) -> Any? {
+    guard let path = urlFormat(url: url, params: params) else { return nil }
+    guard let value = getPathValues(url: path) else { return nil }
     let id = "blockCache\(blockCache.count)"
     blockCache[id] = call
-    _ = target(name: value.class, actionName: value.function, params: value.params, callId: id)
+    return target(name: value.class, actionName: value.function, params: value.params, callId: id)
   }
   
   /// 执行回调
