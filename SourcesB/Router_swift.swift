@@ -58,7 +58,7 @@ extension Router_swift {
     block?("block")
   }
   
-  @objc public func standard1(params: [String: Any]?, id: Int) -> [String: Any]? {
+  @objc public func standard1(params: [String: Any]?, id: String) -> [String: Any]? {
     Routable.callback(id: id, params: ["standard1": "block"], isRemove: true)
     return ["standard1": "return"]
   

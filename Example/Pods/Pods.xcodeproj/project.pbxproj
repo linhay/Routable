@@ -7,36 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042606C7B834753D7668E925CAFEF8F0 /* Routable+ObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93C91C809699E7B06DB53AE22BFBF96 /* Routable+ObjectType.swift */; };
 		04AC2A14F2C63635B593E03F1B023914 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25870DA6894779705A49119E41C747A8 /* SwiftViewController.swift */; };
-		0500AC687B1F4ACF4A6585496CCAB5A7 /* Routable+URLCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9D77385392F19721072B695774927B /* Routable+URLCoin.swift */; };
 		07F80A8DF4250AA21FCB6B83F88BAE19 /* Proxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B855761803485FE9B12D15F7C8DA620 /* Proxy.m */; };
 		0B802D5FA20F035B6883DA65BB9F34E5 /* Invocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C3D6115D7F5F94C61899CD99A45D0F /* Invocation.m */; };
 		16A1A118BDA34C33B199EB48CDC78E98 /* Router_objc.m in Sources */ = {isa = PBXBuildFile; fileRef = 822F8C24BBAE2781760188F686832D00 /* Router_objc.m */; };
-		17AE4275FD69C424E65261C36B403CF9 /* SPRoutable-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C56A617B38A3E8CAF20D60D898E6491 /* SPRoutable-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		298D97DE630125DD8819A99CACBCD18C /* Routable+help.swift in Sources */ = {isa = PBXBuildFile; fileRef = C480B76D45C57D6C6EDB551541C5B950 /* Routable+help.swift */; };
+		17AE4275FD69C424E65261C36B403CF9 /* SPRoutable-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 08CC5D161BF0B0356AD874DB54274BB7 /* SPRoutable-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29F3474D39D80583E7BE07650BF0A083 /* SPRoutable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF405B7157B6927B6C0EF106761D3E8 /* SPRoutable-dummy.m */; };
 		2D024B017987A41F5C72A11CE70B60A1 /* BModules.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F73E60E68F2619D5483D58DB5CBA62E /* BModules.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2EDFD7DB654DBAC1FC39B0CFC68713D1 /* Router_objc.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F5E9008296EED3640DCC9BE3F608E0E /* Router_objc.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		38C8FDAD5F5AD583B7A1571CC4051CD5 /* AModules.h in Headers */ = {isa = PBXBuildFile; fileRef = 8170C3098759B5B19246BF8DD2F3DFF3 /* AModules.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		43101FCFBC00A389057CE179943850DE /* SPRoutable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4928655C4CB4AAF4E049774BC1521B0E /* SPRoutable-dummy.m */; };
 		432B85B7DD8D58DDA347824F7D9033D5 /* Router_swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4ADC70829DDA4479DD92D6CE928632 /* Router_swift.swift */; };
 		439B8BDC5CF5B5955C4E1446D3884F97 /* BModules-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E5618C5D1B60718CEDA3F89FDF5F1E /* BModules-dummy.m */; };
+		458B238941F78D0AFFC3F648A4B9393B /* Routable+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680C11D1D5CF6255287CB1089EF77A27 /* Routable+URL.swift */; };
 		470AD013AB80B4535B8258CFE458902D /* Pods-Routable_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 574B694ADD492932B6A78018F2D5D48E /* Pods-Routable_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4F49CF436B36D9BAFD3E7ED73DF04E54 /* Routable+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661CA2FACCB93238B6513123438FCCAD /* Routable+URL.swift */; };
-		5FB501C126C84B9E5C5E1FFC22787268 /* Routable+ObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B46E670B45AE0622330759A103F15E /* Routable+ObjectType.swift */; };
 		6A36B63FA5B6BA30423E9B13DD0698BB /* MethodSignature.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CA3AD90917B543259C37DC2AFFEA3B8 /* MethodSignature.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		74DAC5CD2F29290627F8710AEB09F653 /* Routable+Perform.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21648EECDB303331673FC46C128F829 /* Routable+Perform.swift */; };
+		7539D0E86C85D99B4D33E9A45F40156D /* Routable+format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9A84E8FEB6E2C6A2E77107D645BF2B /* Routable+format.swift */; };
 		7E8052D755DE562CADCA8FBCCDCD13E3 /* RoutableAssist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6371F4C9C7E8032C856D19720AFF46 /* RoutableAssist.framework */; };
-		8005D30C01B320FA6D0EA6B0D3A186E9 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA92E290D90082D0D63B0537C8E6754 /* Routable.swift */; };
 		81C48E364016ECB7F61BC066326AA9C8 /* RoutableAssist-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 26725FD572D03794E19375BC9CA52CDB /* RoutableAssist-dummy.m */; };
 		8B9CCD0098CBEED82256A736C13D91E6 /* BModules-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EB90DA5FB483CFFCE30253405C05F019 /* BModules-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95ED31E54AD482CFEBF6F182C3185296 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21278EEF17528AED3A72B30517CF8B7 /* Foundation.framework */; };
 		97EFFD9A49BF168A9BC6E9900D68EA28 /* SPRoutable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2531F5674F59698D8047474A85D3D0 /* SPRoutable.framework */; };
 		9A64406C4B602CB6E80BCC57BC80B31A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21278EEF17528AED3A72B30517CF8B7 /* Foundation.framework */; };
+		A39F9E45FEC43706F40E403F7BF5F92C /* Routable+Perform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1122C1FCEDF75F14FE8FAFC3C32CC8 /* Routable+Perform.swift */; };
 		A5663C434AA0D49A6C6C22232E21250F /* RoutableAssist-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EB94FF2BB961107DE0865D0563B76A53 /* RoutableAssist-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A79E854B99CCD151CD760093DB540A45 /* Routable.h in Headers */ = {isa = PBXBuildFile; fileRef = 4101A9FAFA25BBB228892DC14DDFF6BE /* Routable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A79E854B99CCD151CD760093DB540A45 /* Routable.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F141D842A1C8DB7586A39C295008F69 /* Routable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AAF88C65A630BBC9E118A63A13C3B2F7 /* RoutableAssist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6371F4C9C7E8032C856D19720AFF46 /* RoutableAssist.framework */; };
 		B7A1162CA3DCEC5C9483BEBBA8761EFA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D46200826D976F74ABBA7B93719856 /* UIKit.framework */; };
+		B83B4EE0BE1A4FC4313EBFD1B94C5C08 /* Routable+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7F53D22BA967433FB2D0840E81241 /* Routable+Data.swift */; };
 		BD939C47150337BF0B8FA38F16116997 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21278EEF17528AED3A72B30517CF8B7 /* Foundation.framework */; };
+		BE577731EA2EDD4B82D6ED16A20BE0DB /* Routable+URLCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2B999BD7876A554A752A087D7D1271 /* Routable+URLCoin.swift */; };
 		BFDE25F039382759C08A4B4963C9F64C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21278EEF17528AED3A72B30517CF8B7 /* Foundation.framework */; };
 		C80EC37741AD0ADDB61CC0ECCE1CBEEA /* AModules-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E1BE3B3CE1C71ACFC7986EDBBC04C812 /* AModules-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C99CFE1C466872D64018F7962ED8FB48 /* Proxy.h in Headers */ = {isa = PBXBuildFile; fileRef = D0277CC436545C25CC10729751251EAA /* Proxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -47,6 +47,7 @@
 		DB7439B778D1ED0E385A84F77A8684DC /* MethodSignature.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C1194DAAF9B733DB3A996DFD4C7403 /* MethodSignature.m */; };
 		DFDD96F77A398CD7876E3803A33256CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21278EEF17528AED3A72B30517CF8B7 /* Foundation.framework */; };
 		E33F5F049E661971208B644C210351A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D46200826D976F74ABBA7B93719856 /* UIKit.framework */; };
+		EF45293DD215501C3AE6317F903EC6E8 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800D0B30CAC65B29978E4428641E2B02 /* Routable.swift */; };
 		F40B91A9EA9E5C7A9B093CCEEEA65423 /* SPRoutable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2531F5674F59698D8047474A85D3D0 /* SPRoutable.framework */; };
 /* End PBXBuildFile section */
 
@@ -117,59 +118,59 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00DAE11F90A2A4C32731F62619C05793 /* SPRoutable.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SPRoutable.modulemap; sourceTree = "<group>"; };
 		01C3D6115D7F5F94C61899CD99A45D0F /* Invocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Invocation.m; path = RoutableAssist/Classes/Invocation.m; sourceTree = "<group>"; };
+		08CC5D161BF0B0356AD874DB54274BB7 /* SPRoutable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPRoutable-umbrella.h"; sourceTree = "<group>"; };
 		0B4ADC70829DDA4479DD92D6CE928632 /* Router_swift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Router_swift.swift; path = SourcesB/Router_swift.swift; sourceTree = "<group>"; };
 		0B855761803485FE9B12D15F7C8DA620 /* Proxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Proxy.m; path = RoutableAssist/Classes/Proxy.m; sourceTree = "<group>"; };
 		1CA3AD90917B543259C37DC2AFFEA3B8 /* MethodSignature.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MethodSignature.h; path = RoutableAssist/Classes/MethodSignature.h; sourceTree = "<group>"; };
-		21FD6F40BE75CB6F53656A86175A7874 /* SPRoutable.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SPRoutable.xcconfig; sourceTree = "<group>"; };
+		1F141D842A1C8DB7586A39C295008F69 /* Routable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Routable.h; path = Sources/Core/Routable.h; sourceTree = "<group>"; };
 		22241D719CC78ACF41B8B304B66BFEC9 /* AModules.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AModules.xcconfig; sourceTree = "<group>"; };
 		25870DA6894779705A49119E41C747A8 /* SwiftViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftViewController.swift; path = SourcesB/SwiftViewController.swift; sourceTree = "<group>"; };
 		26725FD572D03794E19375BC9CA52CDB /* RoutableAssist-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RoutableAssist-dummy.m"; sourceTree = "<group>"; };
 		28D907824528ABC186664F1033BDC5FE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2ECBBA547586F2533E089F755DA385CE /* SPRoutable.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SPRoutable.xcconfig; sourceTree = "<group>"; };
 		33C03EFE4CADBBC3D75495EA2B56A9B2 /* RoutableAssist.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RoutableAssist.xcconfig; sourceTree = "<group>"; };
 		3532D4629FABDDD8EE3B50CA867C139B /* AModules-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AModules-dummy.m"; sourceTree = "<group>"; };
 		36CD70C4DEF76A907C43171E92D73798 /* RoutableAssist.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RoutableAssist.modulemap; sourceTree = "<group>"; };
 		37AFB4096837323BFEB9AC2392620507 /* AModules.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = AModules.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		4101A9FAFA25BBB228892DC14DDFF6BE /* Routable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Routable.h; path = Sources/Core/Routable.h; sourceTree = "<group>"; };
 		439EBFC5218C1E420C3C23979E57DD8A /* Pods_Routable_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Routable_Example.framework; path = "Pods-Routable_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4928655C4CB4AAF4E049774BC1521B0E /* SPRoutable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SPRoutable-dummy.m"; sourceTree = "<group>"; };
 		4C46E921B69F0F09B6D05ED99BF5BAC4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		4C56A617B38A3E8CAF20D60D898E6491 /* SPRoutable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPRoutable-umbrella.h"; sourceTree = "<group>"; };
 		4F15CA0789B228448FF56A1220642772 /* BModules-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BModules-prefix.pch"; sourceTree = "<group>"; };
 		4F73E60E68F2619D5483D58DB5CBA62E /* BModules.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BModules.h; path = SourcesB/BModules.h; sourceTree = "<group>"; };
-		5480F17B86F7F6D1887CB12C89A49BA8 /* SPRoutable-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPRoutable-prefix.pch"; sourceTree = "<group>"; };
+		4F9A84E8FEB6E2C6A2E77107D645BF2B /* Routable+format.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+format.swift"; path = "Sources/Core/Routable+format.swift"; sourceTree = "<group>"; };
 		574B694ADD492932B6A78018F2D5D48E /* Pods-Routable_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Routable_Example-umbrella.h"; sourceTree = "<group>"; };
 		5DA19FDB9904D44663CBE401E56BA6CD /* Pods-Routable_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Routable_Example.modulemap"; sourceTree = "<group>"; };
 		5F5E9008296EED3640DCC9BE3F608E0E /* Router_objc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Router_objc.h; path = SourcesA/Router_objc.h; sourceTree = "<group>"; };
-		5FA92E290D90082D0D63B0537C8E6754 /* Routable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Routable.swift; path = Sources/Core/Routable.swift; sourceTree = "<group>"; };
+		603679F8D86BEF1AF52BCD3D7673D1E1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60B094B401E7ABF7DE44B93C3BA1A6FC /* Pods-Routable_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Routable_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		632590472F8E5426BDD9B9D16FED867E /* SPRoutable.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SPRoutable.modulemap; sourceTree = "<group>"; };
 		655C278264319EA335ABAFD081A6579B /* BModules.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BModules.modulemap; sourceTree = "<group>"; };
 		65E184CD91C8F11CA40A6A50EECDFA15 /* RoutableAssist-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RoutableAssist-prefix.pch"; sourceTree = "<group>"; };
-		661CA2FACCB93238B6513123438FCCAD /* Routable+URL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+URL.swift"; path = "Sources/Core/Routable+URL.swift"; sourceTree = "<group>"; };
 		678F15A010F5D384428E3F109C042482 /* AModules-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AModules-prefix.pch"; sourceTree = "<group>"; };
+		680C11D1D5CF6255287CB1089EF77A27 /* Routable+URL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+URL.swift"; path = "Sources/Core/Routable+URL.swift"; sourceTree = "<group>"; };
+		6B1122C1FCEDF75F14FE8FAFC3C32CC8 /* Routable+Perform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+Perform.swift"; path = "Sources/Core/Routable+Perform.swift"; sourceTree = "<group>"; };
 		6D34D9F2CC614471827D8E5114F9AB14 /* BModules.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BModules.xcconfig; sourceTree = "<group>"; };
+		6DC7F53D22BA967433FB2D0840E81241 /* Routable+Data.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+Data.swift"; path = "Sources/Core/Routable+Data.swift"; sourceTree = "<group>"; };
 		71C1194DAAF9B733DB3A996DFD4C7403 /* MethodSignature.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MethodSignature.m; path = RoutableAssist/Classes/MethodSignature.m; sourceTree = "<group>"; };
-		78B46E670B45AE0622330759A103F15E /* Routable+ObjectType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+ObjectType.swift"; path = "Sources/Core/Routable+ObjectType.swift"; sourceTree = "<group>"; };
 		79BA93DADB5C5766E557868E06917BD5 /* SPRoutable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SPRoutable.framework; path = SPRoutable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		800D0B30CAC65B29978E4428641E2B02 /* Routable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Routable.swift; path = Sources/Core/Routable.swift; sourceTree = "<group>"; };
 		8170C3098759B5B19246BF8DD2F3DFF3 /* AModules.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AModules.h; path = SourcesA/AModules.h; sourceTree = "<group>"; };
 		822F8C24BBAE2781760188F686832D00 /* Router_objc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Router_objc.m; path = SourcesA/Router_objc.m; sourceTree = "<group>"; };
 		8B41FD22E386EF81CA2E1E50B795D720 /* Pods-Routable_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Routable_Example-frameworks.sh"; sourceTree = "<group>"; };
+		8EF405B7157B6927B6C0EF106761D3E8 /* SPRoutable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SPRoutable-dummy.m"; sourceTree = "<group>"; };
 		92D46200826D976F74ABBA7B93719856 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9AADE6BBC6C0406D520DE7C0700F171B /* Pods-Routable_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Routable_Example-resources.sh"; sourceTree = "<group>"; };
 		9C2B318CD00F32D95E67E247E3E26821 /* Invocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Invocation.h; path = RoutableAssist/Classes/Invocation.h; sourceTree = "<group>"; };
-		9FBA6112F8C4F134879505FE08D9F0FF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A10A0ADED4956CCABCE4999710BB08D5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4E5618C5D1B60718CEDA3F89FDF5F1E /* BModules-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BModules-dummy.m"; sourceTree = "<group>"; };
 		AA2531F5674F59698D8047474A85D3D0 /* SPRoutable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPRoutable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB9D77385392F19721072B695774927B /* Routable+URLCoin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+URLCoin.swift"; path = "Sources/Core/Routable+URLCoin.swift"; sourceTree = "<group>"; };
 		AC77A0BB79DE3A408C634AD6911C0069 /* Pods-Routable_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Routable_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		B736146411615876D6108C86D0346273 /* Pods-Routable_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Routable_Example-dummy.m"; sourceTree = "<group>"; };
+		B93C91C809699E7B06DB53AE22BFBF96 /* Routable+ObjectType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+ObjectType.swift"; path = "Sources/Core/Routable+ObjectType.swift"; sourceTree = "<group>"; };
 		BBFE50C271C294FE6932618F293D7CE7 /* BModules.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = BModules.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BEA3E5675BB991B3BFD87522EC05FC6A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C21278EEF17528AED3A72B30517CF8B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		C480B76D45C57D6C6EDB551541C5B950 /* Routable+help.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+help.swift"; path = "Sources/Core/Routable+help.swift"; sourceTree = "<group>"; };
 		C63EA31CA5CE6B3FEF60C9DEE29D5588 /* Pods-Routable_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Routable_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		CB3D83CAA7E394FB7B899F2C369EE04A /* RoutableAssist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RoutableAssist.framework; path = RoutableAssist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE161B4A8E0FFAFA661A4792496D86C /* BModules.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BModules.framework; path = BModules.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,7 +182,8 @@
 		E6CC0C77E3AE3539928EB583E78D84C3 /* AModules.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AModules.modulemap; sourceTree = "<group>"; };
 		EB90DA5FB483CFFCE30253405C05F019 /* BModules-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BModules-umbrella.h"; sourceTree = "<group>"; };
 		EB94FF2BB961107DE0865D0563B76A53 /* RoutableAssist-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RoutableAssist-umbrella.h"; sourceTree = "<group>"; };
-		F21648EECDB303331673FC46C128F829 /* Routable+Perform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+Perform.swift"; path = "Sources/Core/Routable+Perform.swift"; sourceTree = "<group>"; };
+		F13A6F5D96EC8D2B71C31EA33B11FB2C /* SPRoutable-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPRoutable-prefix.pch"; sourceTree = "<group>"; };
+		FB2B999BD7876A554A752A087D7D1271 /* Routable+URLCoin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+URLCoin.swift"; path = "Sources/Core/Routable+URLCoin.swift"; sourceTree = "<group>"; };
 		FECCE4701E70884B269388CE53C53B82 /* Pods-Routable_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Routable_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -296,6 +298,20 @@
 			name = Pod;
 			sourceTree = "<group>";
 		};
+		602419C71940A07FAB8447EBA63F1EA1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				603679F8D86BEF1AF52BCD3D7673D1E1 /* Info.plist */,
+				632590472F8E5426BDD9B9D16FED867E /* SPRoutable.modulemap */,
+				2ECBBA547586F2533E089F755DA385CE /* SPRoutable.xcconfig */,
+				8EF405B7157B6927B6C0EF106761D3E8 /* SPRoutable-dummy.m */,
+				F13A6F5D96EC8D2B71C31EA33B11FB2C /* SPRoutable-prefix.pch */,
+				08CC5D161BF0B0356AD874DB54274BB7 /* SPRoutable-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/SPRoutable";
+			sourceTree = "<group>";
+		};
 		617506E22201003B7F7ACE32EEB0E3CC /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,22 +345,19 @@
 			);
 			sourceTree = "<group>";
 		};
-		876FC57AB3BA7844420EBF78F67DC0BB /* Pod */ = {
+		98A080EC2D56784148F911BFE7F9CDA8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				1F141D842A1C8DB7586A39C295008F69 /* Routable.h */,
+				800D0B30CAC65B29978E4428641E2B02 /* Routable.swift */,
+				6DC7F53D22BA967433FB2D0840E81241 /* Routable+Data.swift */,
+				4F9A84E8FEB6E2C6A2E77107D645BF2B /* Routable+format.swift */,
+				B93C91C809699E7B06DB53AE22BFBF96 /* Routable+ObjectType.swift */,
+				6B1122C1FCEDF75F14FE8FAFC3C32CC8 /* Routable+Perform.swift */,
+				680C11D1D5CF6255287CB1089EF77A27 /* Routable+URL.swift */,
+				FB2B999BD7876A554A752A087D7D1271 /* Routable+URLCoin.swift */,
 			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		A8B2AAB59832F4E4FDA745FCE6B084CA /* SPRoutable */ = {
-			isa = PBXGroup;
-			children = (
-				CB43E04F077198F7D4478A8E39E73DEC /* Core */,
-				876FC57AB3BA7844420EBF78F67DC0BB /* Pod */,
-				CB8E2EBF603B395C9F2F7863EB82E7EA /* Support Files */,
-			);
-			name = SPRoutable;
-			path = ../..;
+			name = Core;
 			sourceTree = "<group>";
 		};
 		A8B375C1DE3D4325D9E2015FF0BE0D55 /* Pods */ = {
@@ -374,34 +387,6 @@
 				D4BECA821CA30E9CD2E83571036F8901 /* Pods-Routable_Example */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		CB43E04F077198F7D4478A8E39E73DEC /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				4101A9FAFA25BBB228892DC14DDFF6BE /* Routable.h */,
-				5FA92E290D90082D0D63B0537C8E6754 /* Routable.swift */,
-				C480B76D45C57D6C6EDB551541C5B950 /* Routable+help.swift */,
-				78B46E670B45AE0622330759A103F15E /* Routable+ObjectType.swift */,
-				F21648EECDB303331673FC46C128F829 /* Routable+Perform.swift */,
-				661CA2FACCB93238B6513123438FCCAD /* Routable+URL.swift */,
-				AB9D77385392F19721072B695774927B /* Routable+URLCoin.swift */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		CB8E2EBF603B395C9F2F7863EB82E7EA /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				9FBA6112F8C4F134879505FE08D9F0FF /* Info.plist */,
-				00DAE11F90A2A4C32731F62619C05793 /* SPRoutable.modulemap */,
-				21FD6F40BE75CB6F53656A86175A7874 /* SPRoutable.xcconfig */,
-				4928655C4CB4AAF4E049774BC1521B0E /* SPRoutable-dummy.m */,
-				5480F17B86F7F6D1887CB12C89A49BA8 /* SPRoutable-prefix.pch */,
-				4C56A617B38A3E8CAF20D60D898E6491 /* SPRoutable-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/SPRoutable";
 			sourceTree = "<group>";
 		};
 		CC52C327F35736389EE39817CD77E651 /* Support Files */ = {
@@ -454,9 +439,27 @@
 			children = (
 				D2DAB590DB47BA8F46BB22F27A557DEA /* AModules */,
 				BFA0C43EFFC7D1E150F50E6068395394 /* BModules */,
-				A8B2AAB59832F4E4FDA745FCE6B084CA /* SPRoutable */,
+				EF5D6853934FD743F8DA235EDF79DDA1 /* SPRoutable */,
 			);
 			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		EF5D6853934FD743F8DA235EDF79DDA1 /* SPRoutable */ = {
+			isa = PBXGroup;
+			children = (
+				98A080EC2D56784148F911BFE7F9CDA8 /* Core */,
+				FB4F7F665C951DEEC2757E1FA1825448 /* Pod */,
+				602419C71940A07FAB8447EBA63F1EA1 /* Support Files */,
+			);
+			name = SPRoutable;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		FB4F7F665C951DEEC2757E1FA1825448 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		FCED6A34B8A4ABF4FA8BB41112B4A51F /* Frameworks */ = {
@@ -526,7 +529,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 967B278119E863A15CF29A571ACF8DB6 /* Build configuration list for PBXNativeTarget "SPRoutable" */;
 			buildPhases = (
-				A4F59F5A001FCB10EB4EC4FA3ADF0A72 /* Sources */,
+				2F213FE67D571B8E4EB2A3E9F949D144 /* Sources */,
 				ACF0853DD30F2702259658D84E27F7DD /* Frameworks */,
 				EA69F9D31EFD44D9BBC7088482901309 /* Headers */,
 			);
@@ -656,6 +659,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2F213FE67D571B8E4EB2A3E9F949D144 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B83B4EE0BE1A4FC4313EBFD1B94C5C08 /* Routable+Data.swift in Sources */,
+				7539D0E86C85D99B4D33E9A45F40156D /* Routable+format.swift in Sources */,
+				042606C7B834753D7668E925CAFEF8F0 /* Routable+ObjectType.swift in Sources */,
+				A39F9E45FEC43706F40E403F7BF5F92C /* Routable+Perform.swift in Sources */,
+				458B238941F78D0AFFC3F648A4B9393B /* Routable+URL.swift in Sources */,
+				BE577731EA2EDD4B82D6ED16A20BE0DB /* Routable+URLCoin.swift in Sources */,
+				EF45293DD215501C3AE6317F903EC6E8 /* Routable.swift in Sources */,
+				29F3474D39D80583E7BE07650BF0A083 /* SPRoutable-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		403021D0C4F2E92D7FB766389D185967 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -672,20 +690,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9F012A322EF65E6DB7CD33CC4D3C76F /* Pods-Routable_Example-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A4F59F5A001FCB10EB4EC4FA3ADF0A72 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				298D97DE630125DD8819A99CACBCD18C /* Routable+help.swift in Sources */,
-				5FB501C126C84B9E5C5E1FFC22787268 /* Routable+ObjectType.swift in Sources */,
-				74DAC5CD2F29290627F8710AEB09F653 /* Routable+Perform.swift in Sources */,
-				4F49CF436B36D9BAFD3E7ED73DF04E54 /* Routable+URL.swift in Sources */,
-				0500AC687B1F4ACF4A6585496CCAB5A7 /* Routable+URLCoin.swift in Sources */,
-				8005D30C01B320FA6D0EA6B0D3A186E9 /* Routable.swift in Sources */,
-				43101FCFBC00A389057CE179943850DE /* SPRoutable-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -991,7 +995,7 @@
 		};
 		75F9A31982DED55891A39D76EC8C29FE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 21FD6F40BE75CB6F53656A86175A7874 /* SPRoutable.xcconfig */;
+			baseConfigurationReference = 2ECBBA547586F2533E089F755DA385CE /* SPRoutable.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1145,7 +1149,7 @@
 		};
 		D104946DFAD1C93F17E547D70050532D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 21FD6F40BE75CB6F53656A86175A7874 /* SPRoutable.xcconfig */;
+			baseConfigurationReference = 2ECBBA547586F2533E089F755DA385CE /* SPRoutable.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

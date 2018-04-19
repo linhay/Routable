@@ -10,22 +10,84 @@ import RoutableAssist
 
 extension Routable {
   
+  
+  /// 获取指定对象
+  ///
+  /// - Parameters:
+  ///   - name: 类名
+  ///   - actionName: 函数名
+  ///   - params: 函数参数
+  ///   - isCacheTarget: 是否缓存
+  /// - Returns: 对象
+  class func target(name: String,
+                    selName: String,
+                    params: [String: Any],
+                    block: (([String: Any]) -> ())?) -> Any? {
+    
+    let id = name + "#" + selName
+    if id.first == "#" || id.last == "#" { return nil }
+    
+    // 命中缓存
+    if let data = cache[id] {
+      if data.isBadURL { return nil }
+      blockCache[id] = block
+      return getReturnValue(data: data)
+    }
+    
+    let data = RoutableData()
+    data.id = id
+    data.targetName = name
+    data.selName = selName
+    data.params = params
+    
+    guard
+      let target = getClass(name: name),
+      let sel = getSEL(target: target, name: selName),
+      target.responds(to: sel),
+      let sig = Proxy.methodSignature(target, sel: sel)
+      else {
+        data.isBadURL = true
+        cache[data.id] = data
+        return nil
+    }
+    
+    data.target = target
+    data.sel = sel
+    data.returnType = ObjectType(char: sig.methodReturnType)
+    cache[data.id] = data
+    return getReturnValue(data: data)
+  }
+  
+  
   /// 获取类对象
   ///
   /// - Parameter name: 类名
   /// - Returns: 类对象
   class func getClass(name: String) -> NSObject? {
     func target(name: String) -> NSObject? {
-      if let targetClass = classCache[name] { return targetClass }
       guard let targetClass = NSClassFromString(name) as? NSObject.Type else { return nil }
       let target = targetClass.init()
-      classCache[name] = target
+      
       return target
     }
     
-    if let value = target(name: classPrefix + name) { return value }
+    /// 缓存搜索
+    let cacheData = cache.first { (item) -> Bool in
+      return item.key == name
+      }?.value.target
+    
+    /// 命中缓存
+    if let value = cacheData {
+      return value
+    }
+    
+    if let value = target(name: classPrefix + name) {
+      return value
+    }
     // 不在主工程中的swift类
-    if let value = target(name: namespace + "." + classPrefix + name) { return value }
+    if let value = target(name: namespace + "." + classPrefix + name) {
+      return value
+    }
     return nil
   }
   
@@ -76,10 +138,9 @@ extension Routable {
   /// - Returns: 返回值
   class func getReturnObjectValue(data: RoutableData) -> Any? {
     guard
-      let sig = data.sig,
       let sel = data.sel,
       let target = data.target,
-      target.responds(to: sel)
+      let sig = Proxy.methodSignature(target, sel: sel)
       else {
         return nil
     }
@@ -104,11 +165,11 @@ extension Routable {
   /// - Parameter data: 数据
   /// - Returns: 返回值
   class func getReturnUnObjectValue(data: RoutableData) -> Any? {
+    
     guard
-      let sig = data.sig,
       let sel = data.sel,
       let target = data.target,
-      target.responds(to: sel),
+      let sig = Proxy.methodSignature(target, sel: sel),
       let inv = Invocation(methodSignature: sig)
       else {
         return nil
@@ -116,6 +177,7 @@ extension Routable {
     
     inv.target = target
     inv.selector = sel
+    invSetParams(inv: inv, params: data.params, id: data.id)
     inv.invoke()
     
     switch data.returnType {
@@ -143,33 +205,8 @@ extension Routable {
   }
   
   
-  
-  /// 获取指定对象
-  ///
-  /// - Parameters:
-  ///   - name: 类名
-  ///   - actionName: 函数名
-  ///   - params: 函数参数
-  ///   - isCacheTarget: 是否缓存
-  /// - Returns: 对象
-  class func target(data: RoutableData) -> Any? {
-    guard
-      let target = getClass(name: data.className),
-      let sel = getSEL(target: target, name: data.selName),
-      let sig = Proxy.methodSignature(target, sel: sel)
-      else {
-        data.isBadURL = true
-        cache[data.id] = data
-        return nil
-    }
-    
-    data.returnType = ObjectType(char: sig.methodReturnType)
-    return getReturnValue(data: data)
-  }
-  
-  
   // 参数设置
-  class func invSetParams(inv: Invocation,params: [String: Any],callId: Int) {
+  class func invSetParams(inv: Invocation,params: [String: Any],id: String) {
     (0..<inv.methodSignature.numberOfArguments).map { (index) -> ObjectType in
       return ObjectType(char: inv.methodSignature.getArgumentType(at: index))
       }
@@ -178,7 +215,7 @@ extension Routable {
       .forEach { (element) in
         switch element.element {
         case .int:
-          var item = callId
+          var item = id
           inv.setArgument(&item, at: element.offset + 2)
         case .object:
           var item = params
