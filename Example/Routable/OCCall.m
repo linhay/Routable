@@ -18,7 +18,6 @@
 }
 
 -(void) test {
-
 }
 
 @end
