@@ -21,11 +21,11 @@ extension Router_swift {
     return 666.666
   }
   
-  @objc public func int() -> Int {
+  @objc  func int() -> Int {
     return 666
   }
   
-  @objc public func string() -> String {
+  @objc  func string() -> String {
     return "swift-string"
   }
   

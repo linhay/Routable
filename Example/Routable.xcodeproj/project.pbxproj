@@ -15,6 +15,8 @@
 		9D4AFF4F1F62B33B00CB7AFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D4AFF4E1F62B33B00CB7AFF /* Main.storyboard */; };
 		CDC77629201B02DD00D1E90B /* trunk.sh in Resources */ = {isa = PBXBuildFile; fileRef = CDC77628201B02DD00D1E90B /* trunk.sh */; };
 		CDEE99C6208889B1005D474C /* OCCall.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE99C5208889B1005D474C /* OCCall.m */; };
+		CDEE99D12088F75B005D474C /* URLUnitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEE99CF2088F75B005D474C /* URLUnitCell.swift */; };
+		CDEE99D22088F75B005D474C /* URLUnitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDEE99D02088F75B005D474C /* URLUnitCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		CDC77628201B02DD00D1E90B /* trunk.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = trunk.sh; path = ../trunk.sh; sourceTree = "<group>"; };
 		CDEE99C4208889B1005D474C /* OCCall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCCall.h; sourceTree = "<group>"; };
 		CDEE99C5208889B1005D474C /* OCCall.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCCall.m; sourceTree = "<group>"; };
+		CDEE99CF2088F75B005D474C /* URLUnitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLUnitCell.swift; sourceTree = "<group>"; };
+		CDEE99D02088F75B005D474C /* URLUnitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = URLUnitCell.xib; sourceTree = "<group>"; };
 		D708ABE3D23B10173268732B /* SPRoutable.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SPRoutable.podspec; path = ../SPRoutable.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F7A1A607D848D1067BAEC435 /* Pods_Routable_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Routable_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -105,6 +109,8 @@
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 				9D3908591F63978800539CDD /* Routable_Example-Bridging-Header.h */,
+				CDEE99CF2088F75B005D474C /* URLUnitCell.swift */,
+				CDEE99D02088F75B005D474C /* URLUnitCell.xib */,
 			);
 			name = "Example for Routable";
 			path = Routable;
@@ -193,6 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDEE99D22088F75B005D474C /* URLUnitCell.xib in Resources */,
 				9D4AFF4F1F62B33B00CB7AFF /* Main.storyboard in Resources */,
 				CDC77629201B02DD00D1E90B /* trunk.sh in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
@@ -229,15 +236,19 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Routable_Example/Pods-Routable_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AModules/AModules.framework",
+				"${BUILT_PRODUCTS_DIR}/BLFoundation/BLFoundation.framework",
 				"${BUILT_PRODUCTS_DIR}/BModules/BModules.framework",
 				"${BUILT_PRODUCTS_DIR}/RoutableAssist/RoutableAssist.framework",
+				"${BUILT_PRODUCTS_DIR}/SPKit/SPKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SPRoutable/SPRoutable.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AModules.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BLFoundation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BModules.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RoutableAssist.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPRoutable.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,6 +266,7 @@
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				CDEE99C6208889B1005D474C /* OCCall.m in Sources */,
+				CDEE99D12088F75B005D474C /* URLUnitCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

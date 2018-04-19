@@ -32,69 +32,25 @@ class ViewController: UITableViewController {
                    "block",
                    "standard1"]
   
-  var urls = [String]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    Routable.classPrefix = "Router_"
     Routable.funcPrefix = ""
-    
-    testTypes.forEach { (item) in
-      urls.append("http://objc/\(item)")
-      urls.append("http://swift/\(item)")
-    }
-    
-//    let sig = Proxy.methodSignature(swift, sel: #selector(Router_swift.int))
-//    let inv = Invocation(methodSignature: sig)
-//    inv?.target = swift
-//    inv?.selector = #selector(Router_swift.int)
-//    inv?.invoke()
-//    var value: Int?
-//    inv?.getReturnValue(&value)
-//    print(value)
-    
-    
-    //    RunTime.methods(from: Router_swift.self).forEach { (item) in
-    //      print(method_getName(item))
-    //    }
-    //
-    //    if let cls = NSClassFromString("Router_objc") {
-    //      RunTime.methods(from: cls).forEach { (item) in
-    //        print(method_getName(item))
-    //      }
-    //    }
+    tableView.sp.register(URLUnitCell.self)
+  }
+  
+  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 100
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return urls.count
+    return testTypes.count
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-    let url = urls[indexPath.item]
-    cell.textLabel?.text = url
+    let cell = tableView.sp.dequeueCell(indexPath) as URLUnitCell
+    cell.selAction = testTypes[indexPath.item]
     return cell
-  }
-  
-  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let url = urls[indexPath.item]
-    var ans = "无法获取返回值"
-    
-    let res = Routable.object(url: url, params: ["url": url]) { (item) in
-      print(item)
-      } as Any?
-    
-    if res != nil,let value = res {
-      ans = String(describing: value)
-    }
-    
-    let alert = UIAlertController(title: url,
-                                  message: ans,
-                                  preferredStyle: .actionSheet)
-    alert.addAction(UIAlertAction(title: "done",
-                                  style: .cancel,
-                                  handler: nil))
-    self.present(alert, animated: true, completion: nil)
   }
   
 }

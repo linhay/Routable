@@ -13,11 +13,8 @@
 
 @implementation OCCall
 
-+(void) test2 {
-  
-}
-
 -(void) test {
+  [Routable viewWithUrlStr: @"sp://swift/int"];
 }
 
 @end

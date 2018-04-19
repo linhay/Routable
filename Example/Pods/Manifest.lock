@@ -1,9 +1,24 @@
 PODS:
   - AModules (0.1.0):
     - SPRoutable/Core
+  - BLFoundation (0.5.0):
+    - BLFoundation/Data (= 0.5.0)
+    - BLFoundation/Date (= 0.5.0)
+    - BLFoundation/Number (= 0.5.0)
+    - BLFoundation/String (= 0.5.0)
+    - BLFoundation/Tools (= 0.5.0)
+    - BLFoundation/URL (= 0.5.0)
+  - BLFoundation/Data (0.5.0)
+  - BLFoundation/Date (0.5.0)
+  - BLFoundation/Number (0.5.0)
+  - BLFoundation/String (0.5.0)
+  - BLFoundation/Tools (0.5.0)
+  - BLFoundation/URL (0.5.0)
   - BModules (0.1.0):
     - SPRoutable/Core
   - RoutableAssist (0.2.1)
+  - SPKit (0.2.1):
+    - BLFoundation
   - SPRoutable (0.9.6):
     - SPRoutable/Core (= 0.9.6)
     - SPRoutable/OC (= 0.9.6)
@@ -16,11 +31,14 @@ DEPENDENCIES:
   - AModules (from `../`)
   - BModules (from `../`)
   - RoutableAssist (= 0.2.1)
+  - SPKit
   - SPRoutable (from `../`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - BLFoundation
     - RoutableAssist
+    - SPKit
 
 EXTERNAL SOURCES:
   AModules:
@@ -32,10 +50,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AModules: 9dd8c64f2ce38c762c2bc6ee21f55c3da68abde1
+  BLFoundation: 1d358db211e5a10848ba4a9083bdcd567962b899
   BModules: 22c161b73eee8f9dcb3044b1578c6148359ef8c3
   RoutableAssist: 91c034a4da892a5f023c2fd891a90702ba0e6594
+  SPKit: 3d334317e4f0b8898ec9153455b58fe08c027fd9
   SPRoutable: 9fadc33a14d6850940180639d226f41119b24025
 
-PODFILE CHECKSUM: 18ecd8800757d844abc4055253e880a23b942d55
+PODFILE CHECKSUM: 32f2c7f182060f3a290292c6a93e17c4b0895b5e
 
 COCOAPODS: 1.5.0

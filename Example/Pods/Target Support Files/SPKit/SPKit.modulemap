@@ -1,0 +1,6 @@
+framework module SPKit {
+  umbrella header "SPKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
