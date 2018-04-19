@@ -19,13 +19,11 @@ extension Routable {
   ///   - params: 函数参数
   ///   - isCacheTarget: 是否缓存
   /// - Returns: 对象
-  class func target(name: String,
-                    selName: String,
-                    params: [String: Any],
+  class func target(urlValue: URLValue,
                     block: (([String: Any]) -> ())?) -> Any? {
     
-    let id = name + "#" + selName
-    if id.first == "#" || id.last == "#" { return nil }
+
+    guard let id = getCacheId(value: urlValue) else { return nil }
     
     // 命中缓存
     if let data = cache[id] {
@@ -36,13 +34,13 @@ extension Routable {
     
     let data = RoutableData()
     data.id = id
-    data.targetName = name
-    data.selName = selName
-    data.params = params
+    data.targetName = urlValue.targetName
+    data.selName = urlValue.selName
+    data.params = urlValue.params
     
     guard
-      let target = getClass(name: name),
-      let sel = getSEL(target: target, name: selName),
+      let target = getClass(name: urlValue.targetName),
+      let sel = getSEL(target: target, name: urlValue.selName),
       target.responds(to: sel),
       let sig = Proxy.methodSignature(target, sel: sel)
       else {

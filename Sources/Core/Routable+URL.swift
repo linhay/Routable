@@ -56,7 +56,7 @@ extension Routable {
   ///
   /// - Parameter url: 路径
   /// - Returns: 所需参数
-  class func urlParse(url: URL) -> (class: String,function: String,params: [String: Any])?{
+  class func urlParse(url: URL) -> URLValue?{
     
     /// 处理协议头合法
     guard (scheme.isEmpty || url.scheme == scheme),
@@ -75,6 +75,12 @@ extension Routable {
         }
       }
     }
-    return (className,function,params)
+    
+    let value1 = URLValue(targetName: className, selName: function, params: params)
+    /// 重定向策略
+    guard let id = getCacheId(value: value1),
+    var rule = repleRules[id] else { return value1 }
+    rule.params = value1.params
+    return rule
   }
 }

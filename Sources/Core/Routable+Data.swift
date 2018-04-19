@@ -7,13 +7,22 @@
 
 import UIKit
 
-class RoutableData {
-  var id: String = ""
-  var targetName = ""
-  var selName = ""
-  var target: NSObject?
-  var sel: Selector?
-  var params = [String: Any]()
-  var returnType: ObjectType = .unknown
-  var isBadURL = false
+extension Routable {
+  
+  class RoutableData {
+    var id: String = ""
+    var targetName = ""
+    var selName = ""
+    var target: NSObject?
+    var sel: Selector?
+    var params = [String: Any]()
+    var returnType: ObjectType = .unknown
+    var isBadURL = false
+  }
+  
+  struct URLValue {
+    var targetName: String
+    var selName: String
+    var params: [String: Any]
+  }
 }
