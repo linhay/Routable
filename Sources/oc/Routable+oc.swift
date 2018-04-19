@@ -10,6 +10,14 @@ import UIKit
 // for Object-C
 public extension Routable {
   
+  /// 设置重定向规则组
+  ///
+  /// - Parameter rules: 重定向规则
+  @objc public class func set(repleRules rules: [String: String]) {
+    set(reple: rules)
+  }
+
+  
   /// 执行路径指定函数
   ///
   /// - Parameter url: url

@@ -4,14 +4,19 @@ PODS:
   - BModules (0.1.0):
     - SPRoutable/Core
   - RoutableAssist (0.2.1)
-  - SPRoutable/Core (0.9.5.2):
+  - SPRoutable (0.9.6):
+    - SPRoutable/Core (= 0.9.6)
+    - SPRoutable/OC (= 0.9.6)
+  - SPRoutable/Core (0.9.6):
     - RoutableAssist
+  - SPRoutable/OC (0.9.6):
+    - SPRoutable/Core
 
 DEPENDENCIES:
   - AModules (from `../`)
   - BModules (from `../`)
   - RoutableAssist (= 0.2.1)
-  - SPRoutable/Core (from `../`)
+  - SPRoutable (from `../`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -29,8 +34,8 @@ SPEC CHECKSUMS:
   AModules: 9dd8c64f2ce38c762c2bc6ee21f55c3da68abde1
   BModules: 22c161b73eee8f9dcb3044b1578c6148359ef8c3
   RoutableAssist: 91c034a4da892a5f023c2fd891a90702ba0e6594
-  SPRoutable: 01a7df763c6c5bd76e6fc29902f5e77d9eefa361
+  SPRoutable: 9fadc33a14d6850940180639d226f41119b24025
 
-PODFILE CHECKSUM: f664260fbaee9ae1f3daf9a00a493e2735841398
+PODFILE CHECKSUM: 18ecd8800757d844abc4055253e880a23b942d55
 
 COCOAPODS: 1.5.0

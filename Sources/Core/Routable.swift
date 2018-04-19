@@ -115,7 +115,7 @@ extension Routable {
   /// 设置重定向规则组
   ///
   /// - Parameter rules: 重定向规则
-  public class func set(repleRules rules: [String: String]) {
+  public class func set(reple rules: [String: String]) {
     repleRules.removeAll()
     rules.forEach { (item) in
       if let lhsURL = URL(string: item.key),
