@@ -16,6 +16,14 @@ class URLUnitCell: UITableViewCell,SPNibProtocol {
       urlLabel.text = "http://swift/" + selAction
     }
   }
+  @IBOutlet weak var backView: UIView!{
+    didSet{
+      backView.layer.cornerRadius = 2
+      backView.sp.setShadow(color: UIColor.black.withAlphaComponent(0.5),
+                            offset: CGSize(width: -0.5, height: -0.5),
+                            radius: 5)
+    }
+  }
   
   @IBOutlet weak var urlLabel: UILabel!
   

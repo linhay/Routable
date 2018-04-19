@@ -52,13 +52,20 @@ extension Router_swift {
 }
 
 
+// MARK: - UI测试
 extension Router_swift {
   
-  @objc func block(block: ((_ str: String)->())?) {
-    block?("block")
+  @objc public func vc(params: [String: Any]) -> UIViewController {
+    let vc = UIViewController()
+    vc.title = params["title"] as? String ?? ""
+    return vc
   }
   
-  @objc public func standard1(params: [String: Any]?, id: String) -> [String: Any]? {
+}
+
+extension Router_swift {
+  
+  @objc public func standard1(params: [String: Any], id: String) -> [String: Any]? {
     Routable.callback(id: id, params: ["standard1": "block"], isRemove: true)
     return ["standard1": "return"]
   

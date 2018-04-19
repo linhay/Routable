@@ -144,13 +144,13 @@ extension Routable {
     }
     
     switch sig.numberOfArguments {
-    case 0:
+    case 2:
       let value = target.perform(sel)
       return value?.takeUnretainedValue()
-    case 1:
+    case 3:
       let value = target.perform(sel, with: data.params)
       return value?.takeUnretainedValue()
-    case 2:
+    case 4:
       let value = target.perform(sel, with: data.params, with: data.id)
       return value?.takeUnretainedValue()
     default:

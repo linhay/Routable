@@ -29,12 +29,13 @@ class ViewController: UITableViewController {
                    "dictionary",
                    "array",
                    "selector",
-                   "block",
+                   "vc",
                    "standard1"]
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    title = "Routable"
     Routable.funcPrefix = ""
     tableView.sp.register(URLUnitCell.self)
   }
