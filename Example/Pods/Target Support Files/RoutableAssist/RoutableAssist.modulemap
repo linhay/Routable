@@ -1,0 +1,6 @@
+framework module RoutableAssist {
+  umbrella header "RoutableAssist-umbrella.h"
+
+  export *
+  module * { export * }
+}

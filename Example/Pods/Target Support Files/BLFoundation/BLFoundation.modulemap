@@ -1,6 +1,0 @@
-framework module BLFoundation {
-  umbrella header "BLFoundation-umbrella.h"
-
-  export *
-  module * { export * }
-}
