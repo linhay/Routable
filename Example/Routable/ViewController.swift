@@ -9,112 +9,94 @@
 import UIKit
 import SPRoutable
 import BModules
+import RoutableAssist
 //import AModules
-import SPKit
 
 class ViewController: UITableViewController {
-  let list = ["http://swift/async",
-              "http://swift/vc",
-              "http://swift/view",
-              "http://swift/alert?ut=3",
-              "http://swift/int",
-              "http://swift/integer",
-              "http://swift/string",
-              "http://swift/double",
-              "http://notice/noticeResult",
-              "http://objc/vc",
-              "http://objc/view",
-              "http://objc/alert?ut=3",
-              "http://objc/int",
-              "http://objc/integer",
-              "http://objc/string",
-              "http://notice/noticeResult"]
-
-
+  
+  
+  enum TestType: String {
+    case resultType = "返回值类型"
+  }
+  
+  var sections = [TestType: [String]]()
+  
+  let testTypes = ["int",
+                   "double",
+                   "string",
+                   "cgfloat",
+                   "boolValue",
+                   "dictionary",
+                   "array",
+                   "selector",
+                   "block",
+                   "standard1"]
+  
+  var urls = [String]()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    RunTime.methods(from: Router_swift.self).forEach { (item) in
-      print(method_getName(item))
-    }
-
-    if let cls = NSClassFromString("Router_objc") {
-      RunTime.methods(from: cls).forEach { (item) in
-        print(method_getName(item))
-      }
-    }
-  }
-
-  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return list.count
-  }
-
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-    cell.textLabel?.text = list[indexPath.item]
-    return cell
-  }
-
-  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let str = list[indexPath.item]
-
-    if str.contains("async") {
-      Routable.object(url: str, params: [:],call: { (result) in
-        Routable.executing(url: "http://swift/alert?String=async")
-      })
+    Routable.classPrefix = "Router_"
+    Routable.funcPrefix = ""
+    
+    testTypes.forEach { (item) in
+      urls.append("http://objc/\(item)")
+      urls.append("http://swift/\(item)")
     }
     
-    if str.contains("double") {
-      guard let v = Routable.object(url: str) as Int? else { return }
-      Routable.executing(url: "http://swift/double?double=\(v)")
-      return
-    }
-
-    if str.contains("vc"){
-      guard let vc = Routable.viewController(url: str) else { return }
-      vc.view.backgroundColor = UIColor.random
-      navigationController?.pushViewController(vc, animated: true)
-      return
-    }
-
-    if str.contains("view"){
-      guard let v = Routable.view(url: str) else { return }
-      navigationController?.view.subviews.forEach({ (item) in
-        if item.frame == v.frame { item.removeFromSuperview() }
-      })
-      v.backgroundColor = UIColor.random
-      navigationController?.view.addSubview(v)
-      return
-    }
-
-    if str.contains("int"){
-      guard let v = Routable.object(url: str) as Int? else { return }
-      Routable.executing(url: "http://swift/alert?Int=\(v)")
-      return
-    }
-
-    if str.contains("integer"){
-      guard let v = Routable.object(url: str) as NSInteger? else { return }
-      Routable.executing(url: "http://swift/alert?NSInteger=\(v)")
-      return
-    }
-
-    if str.contains("string"){
-      guard let v = Routable.object(url: str) as String? else { return }
-      Routable.executing(url: "http://swift/alert?String=\(v)")
-      return
-    }
-
-    if str.contains("noticeResult"){
-      Routable.notice(url: str)
-    }
-
-    if str.contains("alert"){
-      Routable.executing(url: str)
-      return
-    }
-
+//    let sig = Proxy.methodSignature(swift, sel: #selector(Router_swift.int))
+//    let inv = Invocation(methodSignature: sig)
+//    inv?.target = swift
+//    inv?.selector = #selector(Router_swift.int)
+//    inv?.invoke()
+//    var value: Int?
+//    inv?.getReturnValue(&value)
+//    print(value)
+    
+    
+    //    RunTime.methods(from: Router_swift.self).forEach { (item) in
+    //      print(method_getName(item))
+    //    }
+    //
+    //    if let cls = NSClassFromString("Router_objc") {
+    //      RunTime.methods(from: cls).forEach { (item) in
+    //        print(method_getName(item))
+    //      }
+    //    }
   }
-
+  
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return urls.count
+  }
+  
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+    let url = urls[indexPath.item]
+    cell.textLabel?.text = url
+    return cell
+  }
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let url = urls[indexPath.item]
+    var ans = "无法获取返回值"
+    
+    let res = Routable.object(url: url, params: ["url": url]) { (item) in
+      print(item)
+      } as Any?
+    
+    if res != nil,let value = res {
+      ans = String(describing: value)
+    }
+    
+    let alert = UIAlertController(title: url,
+                                  message: ans,
+                                  preferredStyle: .actionSheet)
+    alert.addAction(UIAlertAction(title: "done",
+                                  style: .cancel,
+                                  handler: nil))
+    self.present(alert, animated: true, completion: nil)
+  }
+  
 }
 
 

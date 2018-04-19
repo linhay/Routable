@@ -6,10 +6,23 @@
 //  Copyright © 2017年 fun.bigl.com. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import Foundation
+import RoutableAssist
 
-public struct Routable {
+class RoutableData {
+  var id = ""
+  var url: URL?
+  var className = ""
+  var selName = ""
+  var params = [String: Any]()
+  var blockId: Int = -1
+  var invocation: Invocation?
+  var isBadURL = false
+}
+
+
+public class Routable: NSObject {
   /// 命名空间
   fileprivate static let namespace = Bundle.main.infoDictionary?["CFBundleExecutable"] as! String
   /// 类名前缀
@@ -20,112 +33,78 @@ public struct Routable {
   public static var paramName = "Params"
   /// 指定协议头, ""则为任意格式
   public static var scheme = ""
+  
+  static var cache = [String: RoutableData]()
   /// 路由类缓存
   static var classCache = [String: NSObject]()
-  /// 代理缓存
-  static var replceCache = [String: String]()
+  /// 函数映射表
+  static var invocationCache = [String: NSObject]()
   /// 回调缓存
-  static var blockCache = [String: (_: [String: Any])->()]()
+  static var blockCache = [Int: (_: [String: Any])->()]()
   
   
-  struct Function {
-    /// 函数
-    let sel: Selector
-    /// 函数参数数量
-    let argumentCount: UInt32
-    /// 返回值类型
-    let returnType: ObjectType
-    /// 参数类型数组
-    let argumentTypes: [ObjectType]
+  
+  
+}
+
+public extension Routable {
+  
+  
+  @discardableResult @objc public class func object(url: String) -> Any? {
+    return object(url: url, params: [:], call: nil)
   }
   
-  /// class信息
-  struct ClassInfo {
-    let name: String
-    let funcs: [Function]
+  @discardableResult @objc public class func object(url: String, params:[String: Any]) -> Any? {
+    return object(url: url, params: params, call: nil)
   }
   
-  struct Result {
-    /// 返回值
-    let unmanaged: Unmanaged<AnyObject>
-    /// 返回值类型
-    let type: ObjectType
+  @discardableResult @objc public class func object(url: String, params:[String: Any] = [:], call: ((_: [String: Any])->())? = nil) -> Any? {
+    return object(url: url, params: params, call: call)
   }
   
 }
 
+
+// MARK: - UIKit
 public extension Routable {
   
   /// 解析viewController类型
   ///
   /// - Parameter url: viewController 路径
   /// - Returns: viewController 或者 nil
-  public static func viewController(url: URLCoin,params:[String: Any] = [:]) -> UIViewController? {
-    return object(url: url, params: params) as UIViewController?
+  public class func viewController(url: URLCoin,params:[String: Any] = [:]) -> UIViewController? {
+    return object(url: url, params: params) as? UIViewController
   }
   
   /// 解析view类型
   ///
   /// - Parameter url: view 路径
   /// - Returns: view 或者 nil
-  public static func view(url: URLCoin,params:[String: Any] = [:]) -> UIView? {
-    return object(url: url, params: params) as UIView?
+  public class func view(url: URLCoin,params:[String: Any] = [:]) -> UIView? {
+    return object(url: url, params: params) as? UIView
   }
   
-  /// 执行路径指定函数
-  ///
-  /// - Parameter url: 函数路径
-  public static func executing(url: URLCoin, params:[String: Any] = [:]) {
-    _ = object(url: url, params: params) as Any?
-  }
+}
+
+// MARK: - block
+extension Routable {
   
-  /// 解析AnyObject类型
-  ///
-  /// - Parameters:
-  ///   - url: url
-  ///   - params: url 参数(选填)
-  /// - Returns: AnyObject 数据
-  public static func object<T: Any>(url: URLCoin,params:[String: Any] = [:]) -> T? {
-    guard let path = urlFormat(url: url, params: params) else { return nil }
-    guard let value = getPathValues(url: path) else { return nil }
-    guard let result = target(name: value.class, actionName: value.function, params: value.params) else { return nil }
-    switch result.type {
-    case .void: return nil
-    case .object:
-      return result.unmanaged.takeUnretainedValue() as? T
-    case .longlong,.point,.int:
-      return result.unmanaged.toOpaque().hashValue as? T
-    case .double: return nil
-    default: return nil
-    }
-  }
   
-  /// 解析AnyObject类型(回调形式)
+  /// 执行回调
   ///
   /// - Parameters:
-  ///   - url: url
-  ///   - params: url 参数(选填)
-  ///   - call: 回调数据
-  @discardableResult public static func object(url: URLCoin,
-                                                       params:[String: Any] = [:],
-                                                       call: @escaping (_: [String: Any])->()) -> Any? {
-    guard let path = urlFormat(url: url, params: params) else { return nil }
-    guard let value = getPathValues(url: path) else { return nil }
-    let id = "blockCache\(blockCache.count)"
-    blockCache[id] = call
-    guard let result = target(name: value.class,
-                 actionName: value.function,
-                 params: value.params,
-                 callId: id) else { return nil }
-    switch result.type {
-    case .void: return nil
-    case .object:
-      return result.unmanaged.takeUnretainedValue()
-    case .longlong,.point,.int:
-      return result.unmanaged.toOpaque().hashValue
-    case .double: return nil
-    default: return nil
-    }
+  ///   - id: 回调id(自动生成并传递)
+  public class func callback(id:Int) {
+    callback(id: id, params: [:], isRemove: true)
+  }
+  
+  /// 执行回调
+  ///
+  /// - Parameters:
+  ///   - id: 回调id(自动生成并传递)
+  ///   - params: 回调数据
+  public class func callback(id:Int, params:[String: Any]) {
+    callback(id: id, params: params, isRemove: true)
   }
   
   /// 执行回调
@@ -134,16 +113,28 @@ public extension Routable {
   ///   - id: 回调id(自动生成并传递)
   ///   - params: 回调数据
   ///   - isRemove: 是否移除本次回调(默认移除)
-  public static func callback(id:String, params:[String: Any] = [:],isRemove: Bool = true) {
+  public class func callback(id:Int, params:[String: Any],isRemove: Bool) {
     blockCache[id]?(params)
     if isRemove { blockCache[id] = nil }
+  }
+  
+  
+}
+
+extension Routable {
+  
+  /// 执行路径指定函数
+  ///
+  /// - Parameter url: 函数路径
+  public class func executing(url: URLCoin, params:[String: Any] = [:]) {
+    _ = object(url: url, params: params)
   }
   
   /// 通知所有已缓存类型函数
   ///
   /// - Parameter url: 函数路径
-  public static func notice(url: URLCoin,params:[String: Any] = [:]) {
-    guard let path = urlFormat(url: url, params: params) else { return }
+  public class func notice(url: URLCoin,params:[String: Any] = [:]) {
+    guard let path = createURL(url: url, params: params) else { return }
     if path.host != "notice" {
       assert(false, "检查 URL host: " + (path.host ?? "") + "🌰: http://notice/path")
       return
@@ -159,6 +150,45 @@ public extension Routable {
     })
   }
   
+}
+
+extension Routable {
+  
+  /// 解析AnyObject类型(回调形式)
+  ///
+  /// - Parameters:
+  ///   - url: url
+  ///   - params: url 参数(选填)
+  ///   - call: 回调数据
+  @discardableResult public class func object(url: URLCoin,
+                                              params:[String: Any] = [:],
+                                              call: ((_: [String: Any])->())? = nil) -> Any? {
+    guard let url = createURL(url: url, params: params) else { return nil }
+    guard let value = urlParse(url: url) else { return nil }
+    let cacheId = (url.host ?? "") + url.path
+    let blockId = cacheId.hashValue
+    blockCache[blockId] = call
+    
+    
+    if let data = cache[cacheId] {
+      if data.isBadURL { return nil }
+      if let inv = data.invocation {
+        invSetParams(inv: inv, params: value.params, callId: blockId)
+        inv.invoke()
+        return invReturnValue(inv: inv)
+      }
+      assert(false, "不应该出现")
+    }
+    
+    let data = RoutableData()
+    data.url = url
+    data.className = value.class
+    data.selName = value.function
+    data.params = value.params
+    data.blockId = blockId
+    
+    return target(data: data)
+  }
   
 }
 
@@ -167,7 +197,7 @@ public extension Routable {
   /// 清除指定缓存
   ///
   /// - Parameter name: key
-  public static func cache(remove name: String) {
+  public class func cache(remove name: String) {
     let targetName = classPrefix + name
     classCache.removeValue(forKey: targetName)
   }
@@ -178,7 +208,7 @@ public extension Routable {
   ///   - url: 待格式化 url 或 url 字符串
   ///   - params: 待拼接入url得参数
   /// - Returns: 合并后的 url
-  public static func urlFormat(url: URLCoin,params:[String: Any]) -> URL?{
+  public class func createURL(url: URLCoin,params:[String: Any]) -> URL?{
     if params.isEmpty { return url.asURL() }
     guard var components = URLComponents(string: url.asString()) else { return nil }
     var querys = components.queryItems ?? []
@@ -207,7 +237,7 @@ extension Routable {
   ///
   /// - Parameter name: 类名
   /// - Returns: 类对象
-  static func getClass(name: String) -> NSObject? {
+  class func getClass(name: String) -> NSObject? {
     func target(name: String) -> NSObject? {
       if let targetClass = classCache[name] { return targetClass }
       guard let targetClass = NSClassFromString(name) as? NSObject.Type else { return nil }
@@ -222,38 +252,25 @@ extension Routable {
     return nil
   }
   
-  
   /// 获取指定类指定函数
   ///
   /// - Parameters:
   ///   - target: 指定类
   ///   - name: 指定函数名
   /// - Returns: 指定函数
-  static func getSEL(target: NSObject, name: String) -> Function? {
+  class func getSEL(target: NSObject, name: String) -> Selector? {
     var methodNum: UInt32 = 0
     let methods = class_copyMethodList(type(of: target), &methodNum)
-    let list = (0..<numericCast(methodNum)).flatMap { (index) -> Function? in
+    let list = (0..<numericCast(methodNum)).flatMap { (index) -> Selector? in
       guard let method = methods?[index] else { return nil }
       let sel: Selector = method_getName(method)
       guard sel.description.hasPrefix(funcPrefix + name) else { return nil }
-      var dst: CChar = 0
-      method_getReturnType(method, &dst, MemoryLayout<CChar>.size)
-      let returnType = ObjectType(char: dst)
-      
-      let argumentsCount = method_getNumberOfArguments(method)
-      let types = (0..<UInt32(argumentsCount)).map({ (index) -> ObjectType in
-        method_getArgumentType(method,index,&dst,MemoryLayout<CChar>.size)
-        return ObjectType(char: dst)
-      })
-      return Function(sel: sel,
-                      argumentCount: argumentsCount,
-                      returnType: returnType,
-                      argumentTypes: types)
+      return sel
       }.sorted { (func1, func2) -> Bool in
-        let funcName1 = func1.sel.description
+        let funcName1 = func1.description
           .components(separatedBy: ":").first?
           .components(separatedBy: "With" + paramName).first ?? ""
-        let funcName2 = func2.sel.description
+        let funcName2 = func2.description
           .components(separatedBy: ":").first?
           .components(separatedBy: "With" + paramName).first ?? ""
         return funcName1.count < funcName2.count
@@ -270,21 +287,107 @@ extension Routable {
   ///   - params: 函数参数
   ///   - isCacheTarget: 是否缓存
   /// - Returns: 对象
-  static func target(name: String, actionName: String, params: [String: Any] = [:], callId: String = "") -> Result? {
-    guard let target = getClass(name: name) else { return nil }
-    guard let function = getSEL(target: target, name: actionName) else { return nil }
-    switch function.argumentCount {
-    case 2:
-      guard let value = target.perform(function.sel) else { return nil }
-      return Result(unmanaged: value, type: function.returnType)
-    case 3:
-      guard let value = target.perform(function.sel, with: params) else { return nil }
-      return Result(unmanaged: value, type: function.returnType)
-    case 4:
-      guard let value = target.perform(function.sel, with: params, with: callId) else { return nil }
-      return Result(unmanaged: value, type: function.returnType)
+  class func target(data: RoutableData) -> Any? {
+    guard
+      let target = getClass(name: data.className),
+      let sel = getSEL(target: target, name: data.selName),
+      let sig = Proxy.methodSignature(target, sel: sel),
+      let inv = Invocation(methodSignature: sig)
+      else {
+        data.isBadURL = true
+        cache[data.id] = data
+        return nil
+    }
+    
+    inv.target = target
+    inv.selector = sel
+    inv.invoke()
+    var returnType = ObjectType(char: sig.methodReturnType)
+    switch returnType {
+    case .longlong,.point,.int:
+      var value: Int = 0
+      inv.getReturnValue(&value)
+      return value
+    case .double:
+      var value: Double = 0.0
+      inv.getReturnValue(&value)
+      return value
+    case .bool:
+      var value: Bool?
+      inv.getReturnValue(&value)
+      return value
+    case .object:
+      var value: NSObject? = nil
+      inv.getReturnValue(&value)
+      print(value)
+      print(CFGetRetainCount(value as CFTypeRef) - 1)
+      print(String(format: "%p", value as! CVarArg))
+      return value
+    case .void:
+      return nil
+    case .sel:
+      var value: Selector?
+      inv.getReturnValue(&value)
+      return value
     default:
-      assert(false)
+      return nil
+    }
+    
+    let res = invReturnValue(inv: inv)
+    
+    data.isBadURL = false
+    cache[data.id] = data
+    return res
+  }
+  
+  
+  // 参数设置
+  class func invSetParams(inv: Invocation,params: [String: Any],callId: Int) {
+    (0..<inv.methodSignature.numberOfArguments).map { (index) -> ObjectType in
+      return ObjectType(char: inv.methodSignature.getArgumentType(at: index))
+      }
+      .dropFirst(2)
+      .enumerated()
+      .forEach { (element) in
+        switch element.element {
+        case .int:
+          var item = callId
+          inv.setArgument(&item, at: element.offset + 2)
+        case .object:
+          var item = params
+          inv.setArgument(&item, at: element.offset + 2)
+        default: break
+        }
+    }
+  }
+  // 处理返回值类型
+  class func invReturnValue(inv: Invocation) -> Any? {
+    
+    let returnType = ObjectType(char: inv.methodSignature.methodReturnType)
+    switch returnType {
+    case .bool:
+      var value: Bool?
+      inv.getReturnValue(&value)
+      return value
+    case .double:
+      var value: Double?
+      inv.getReturnValue(&value)
+      return value
+    case .object:
+      var value: NSObject?
+      inv.getReturnValue(&value)
+      return value
+    case .void:
+      return nil
+    case .longlong,.point,.int:
+      var value: Int?
+      inv.getReturnValue(&value)
+      return value
+    case .sel:
+      var value: Selector?
+      inv.getReturnValue(&value)
+      return value
+    default:
       return nil
     }
   }
@@ -293,7 +396,7 @@ extension Routable {
   ///
   /// - Parameter string: 需要处理的参数字符
   /// - Returns: 处理后类型
-  static func dealValueType(string: String?) -> Any? {
+  class func dealValueType(string: String?) -> Any? {
     guard var str = string?.removingPercentEncoding else { return string }
     guard !str.isEmpty else { return str }
     str = str.trimmingCharacters(in: CharacterSet.whitespaces)
@@ -305,11 +408,13 @@ extension Routable {
     return str
   }
   
+  
+  
   /// 获取路径所需参数
   ///
   /// - Parameter url: 路径
   /// - Returns: 所需参数
-  static func getPathValues(url: URL) -> (class: String,function: String,params: [String: Any])?{
+  class func urlParse(url: URL) -> (class: String,function: String,params: [String: Any])?{
     
     /// 处理协议头合法
     guard (scheme.isEmpty || url.scheme == scheme),
@@ -328,7 +433,6 @@ extension Routable {
         }
       }
     }
-    
     return (className,function,params)
   }
   

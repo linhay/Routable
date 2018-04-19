@@ -1,6 +1,6 @@
 {
   "name": "SPRoutable",
-  "version": "0.9.4",
+  "version": "0.9.5.1",
   "summary": "基础的路由服务",
   "homepage": "https://github.com/linhay/Routable",
   "license": {
@@ -12,22 +12,14 @@
   },
   "source": {
     "git": "https://github.com/linhay/Routable.git",
-    "tag": "0.9.4"
+    "tag": "0.9.5.1"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": [
-    "Sources/*/**",
-    "Sources/*/*/**",
-    "Sources/**"
-  ],
-  "public_header_files": [
-    "Sources/Routable.h"
-  ],
-  "requires_arc": true,
+  "source_files": "Sources/*.{swift,h}",
   "dependencies": {
-    "AnyFormatProtocol": [
+    "RoutableAssist": [
 
     ]
   },

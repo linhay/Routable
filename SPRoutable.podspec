@@ -10,12 +10,9 @@ s.source = { :git => 'https://github.com/linhay/Routable.git', :tag => s.version
 
 s.ios.deployment_target = '8.0'
 
-s.source_files = ["Sources/*/**","Sources/*/*/**","Sources/**"]
+s.source_files = 'Sources/*.{swift,h}'
 
-s.public_header_files = ["Sources/Routable.h"]
-s.requires_arc = true
-
-s.dependency 'AnyFormatProtocol'
+s.dependency 'RoutableAssist'
 s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
 
 end
