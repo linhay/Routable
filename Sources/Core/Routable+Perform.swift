@@ -29,6 +29,7 @@ extension Routable {
     if let data = cache[id] {
       if data.isBadURL { return nil }
       blockCache[id] = block
+      data.params = urlValue.params
       return getReturnValue(data: data)
     }
     
