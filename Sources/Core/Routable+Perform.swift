@@ -124,9 +124,10 @@ extension Routable {
   /// - Parameter data: 数据
   /// - Returns: 返回值
   class func getReturnValue(data: RoutableData) -> Any? {
-    if data.returnType == .object {
+    switch data.returnType {
+    case .object,.void:
       return getReturnObjectValue(data: data)
-    }else{
+    default:
       return getReturnUnObjectValue(data: data)
     }
   }
@@ -178,7 +179,7 @@ extension Routable {
     inv.selector = sel
     invSetParams(inv: inv, params: data.params, id: data.id)
     inv.invoke()
-    
+
     switch data.returnType {
     case .longlong,.point,.int:
       var value: Int = 0
@@ -212,11 +213,11 @@ extension Routable {
       .dropFirst(2)
       .enumerated()
       .forEach { (element) in
-        switch element.element {
-        case .int:
+        switch element.offset {
+        case 1:
           var item = id
           inv.setArgument(&item, at: element.offset + 2)
-        case .object:
+        case 0:
           var item = params
           inv.setArgument(&item, at: element.offset + 2)
         default: break

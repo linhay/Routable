@@ -15,9 +15,9 @@ extension Routable {
   ///   - url: 待格式化 url 或 url 字符串
   ///   - params: 待拼接入url得参数
   /// - Returns: 合并后的 url
-  public class func createURL(url: URLCoin,params:[String: Any]) -> URL?{
-    if params.isEmpty { return url.asURL() }
-    guard var components = URLComponents(string: url.asString()) else { return nil }
+  public class func createURL(url: String,params:[String: Any]) -> URL?{
+    if params.isEmpty { return URL(string: url) }
+    guard var components = URLComponents(string: url) else { return nil }
     var querys = components.queryItems ?? []
     let newQuerys = params.map { (item) -> URLQueryItem in
       switch item.value {
@@ -75,12 +75,33 @@ extension Routable {
         }
       }
     }
+    return URLValue(targetName: className, selName: function, params: params)
+  }
+  
+  /// 重定向策略
+  class func rewrite(value: URLValue) -> URLValue {
+    guard let id = getCacheId(value: value), var rule = repleRules[id] else { return value }
+    var params = value.params
     
-    let value1 = URLValue(targetName: className, selName: function, params: params)
-    /// 重定向策略
-    guard let id = getCacheId(value: value1),
-    var rule = repleRules[id] else { return value1 }
-    rule.params = value1.params
+    /// 先执行覆盖原有key 后执行新增key
+    /// 覆盖原有参数的值
+    rule.params.forEach { (item) in
+      if let v = item.value as? String, v.hasPrefix("$"){}
+      else{
+        params[item.key] = item.value
+      }
+    }
+    
+    rule.params.forEach { (item) in
+      /// 从原有参数取值
+      if var v = item.value as? String, v.hasPrefix("$"){
+        v.removeFirst()
+        params[item.key] = params[v]
+      }
+    }
+    
+    rule.params = params
     return rule
   }
+  
 }

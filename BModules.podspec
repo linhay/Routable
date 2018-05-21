@@ -17,6 +17,8 @@ s.public_header_files = ["SourcesB/BModules.h"]
 s.frameworks = ['UIKit']
 s.requires_arc = true
 s.dependency 'SPRoutable/Core'
+s.dependency 'AnyFormatProtocol'
+
 s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
 
 end

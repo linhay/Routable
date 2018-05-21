@@ -1,6 +1,6 @@
 {
   "name": "SPRoutable",
-  "version": "0.9.6",
+  "version": "0.9.7",
   "summary": "基础的路由服务",
   "homepage": "https://github.com/linhay/Routable",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/linhay/Routable.git",
-    "tag": "0.9.6"
+    "tag": "0.9.7"
   },
   "platforms": {
     "ios": "8.0"
@@ -32,10 +32,10 @@
       }
     },
     {
-      "name": "OC",
-      "source_files": "Sources/OC/*.{swift,h}",
+      "name": "UIKit",
+      "source_files": "Sources/UIKit/*.{swift,h}",
       "dependencies": {
-        "SPRoutable/Core": [
+        "RoutableAssist": [
 
         ]
       }

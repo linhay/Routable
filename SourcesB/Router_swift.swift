@@ -30,7 +30,7 @@ extension Router_swift {
   }
   
   @objc func cgfloat() -> CGFloat {
-    return CGFloat(3.14)
+    return CGFloat(666.666)
   }
   
   @objc func boolValue() -> Bool {
@@ -38,7 +38,7 @@ extension Router_swift {
   }
   
   @objc func dictionary() -> [String: Any] {
-    return ["int": 0, "double": 3.14]
+    return ["int": 666, "double": 666.666]
   }
   
   @objc func array() -> [Any] {
@@ -55,20 +55,18 @@ extension Router_swift {
 // MARK: - UI测试
 extension Router_swift {
   
-  @objc public func vc(params: [String: Any]) -> UIViewController {
-    let vc = UIViewController()
-    vc.title = params["title"] as? String ?? ""
-    return vc
+  @objc func vc() -> UIViewController {
+    return UIViewController()
   }
   
 }
 
 extension Router_swift {
   
-  @objc public func standard1(params: [String: Any], id: String) -> [String: Any]? {
-    Routable.callback(id: id, params: ["standard1": "block"], isRemove: true)
-    return ["standard1": "return"]
-  
+  @objc func async(params: [String: Any], id: String) {
+    DispatchQueue.global().asyncAfter(deadline: DispatchTime(uptimeNanoseconds: 2000 * 1000)) {
+      Routable.callback(id: id, params: params)
+    }
   }
   
 }

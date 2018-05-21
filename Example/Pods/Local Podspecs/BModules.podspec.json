@@ -32,6 +32,9 @@
   "dependencies": {
     "SPRoutable/Core": [
 
+    ],
+    "AnyFormatProtocol": [
+
     ]
   },
   "pod_target_xcconfig": {

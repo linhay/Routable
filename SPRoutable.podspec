@@ -17,9 +17,9 @@ s.subspec 'Core' do |ss|
   ss.dependency 'RoutableAssist'
 end
 
-s.subspec 'OC' do |ss|
-  ss.source_files = 'Sources/OC/*.{swift,h}'
-  ss.dependency 'SPRoutable/Core'
+s.subspec 'UIKit' do |ss|
+  ss.source_files = 'Sources/UIKit/*.{swift,h}'
+  ss.dependency 'RoutableAssist'
 end
 
 s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
