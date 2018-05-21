@@ -33,6 +33,10 @@ extension Routable {
       return getReturnValue(data: data)
     }
     
+    if block != nil {
+      blockCache[id] = block
+    }
+    
     let data = RoutableData()
     data.id = id
     data.targetName = urlValue.targetName
@@ -130,6 +134,7 @@ extension Routable {
     default:
       return getReturnUnObjectValue(data: data)
     }
+
   }
   
   /// 获取 object 类型返回值
@@ -145,19 +150,16 @@ extension Routable {
         return nil
     }
     
+    var value:  Unmanaged<AnyObject>? = nil
     switch sig.numberOfArguments {
-    case 2:
-      let value = target.perform(sel)
-      return value?.takeUnretainedValue()
-    case 3:
-      let value = target.perform(sel, with: data.params)
-      return value?.takeUnretainedValue()
-    case 4:
-      let value = target.perform(sel, with: data.params, with: data.id)
-      return value?.takeUnretainedValue()
-    default:
-      return nil
+    case 2: value = target.perform(sel)
+    case 3: value = target.perform(sel, with: data.params)
+    case 4: value = target.perform(sel, with: data.params, with: data.id)
+    default: break
     }
+    if data.returnType == .void { return nil }
+    return value?.takeUnretainedValue()
+
   }
   
   /// 获取 非object 类型返回值
