@@ -64,7 +64,7 @@ extension Router_swift {
 extension Router_swift {
   
   @objc func async(params: [String: Any], id: String) {
-    DispatchQueue.global().asyncAfter(deadline: DispatchTime(uptimeNanoseconds: 2000 * 1000)) {
+    DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
       Routable.callback(id: id, params: params)
     }
   }

@@ -31,23 +31,6 @@ extension UIImage: ExtensionCompatible { }
 extension UIView: ExtensionCompatible { }
 extension UIViewController: ExtensionCompatible { }
 
-public extension BLExtension where Base: UILabel{
-  /// 改变字体大小 增加或者减少
-  /// - Parameter offSet: 变化量
-  public func change(with offSet: CGFloat) {
-    let textFont = base.font.pointSize
-    base.font = UIFont.systemFont(ofSize: textFont + offSet)
-  }
-}
-
-public extension BLExtension where Base: NSLayoutConstraint {
-  /// 改变Constant 增加或者减少
-  /// - Parameter offSet: 变化量
-  public func change(with offSet: CGFloat) {
-    let nowConstant = base.constant
-    base.constant += nowConstant
-  }
-}
 
 public extension NSCoder{
 

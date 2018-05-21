@@ -16,7 +16,6 @@ s.source_files = ["SourcesA/*/**","SourcesA/*/*/**","SourcesA/**"]
 s.public_header_files = ["SourcesA/AModules.h"]
 s.frameworks = ['UIKit']
 s.requires_arc = true
-s.dependency 'SPRoutable/Core'
-s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
+s.dependency 'SPRoutable'
 
 end

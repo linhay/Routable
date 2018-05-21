@@ -70,16 +70,16 @@ class ViewController: UITableViewController {
           self.alert(title: item.title, message: String(describing: result))
         }
         
-        guard value != nil else { return }
-        self.alert(title: item.title, message: String(describing: value))
+        guard let result = value else { return }
+        self.alert(title: item.title, message: String(describing: result))
       }
       cell.rightBtn.add(for: .touchUpInside) {
         let value = Routable.object(url: item.swift,params: ["param1" : "title"]) { (result) in
           self.alert(title: item.title, message: String(describing: result))
         }
         
-        guard value != nil else { return }
-        self.alert(title: item.title, message: String(describing: value))
+        guard let result = value else { return }
+        self.alert(title: item.title, message: String(describing: result))
       }
     default:
       cell.label.text =

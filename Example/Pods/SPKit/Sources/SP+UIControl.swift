@@ -20,15 +20,15 @@ public extension UIControl {
     actionBlocks.append(act)
     self.addTarget(self, action: selector, for: event)
   }
-
+  
 }
 
 
 // MARK: - runtime keys
 extension UIControl {
-  private static var once: Bool = false
-
-  class func swizzling() {
+  fileprivate static var once: Bool = false
+  
+  fileprivate class func swizzing() {
     if once == false {
       once = true
       RunTime.exchangeMethod(selector: #selector(UIControl.sendAction(_:to:for:)),
@@ -36,19 +36,19 @@ extension UIControl {
                              class: UIControl.self)
     }
   }
-
+  
   fileprivate struct ActionKey {
-    static var action = UnsafeRawPointer.init(bitPattern: "uicontrol_action_block".hashValue)
-    static var time = UnsafeRawPointer.init(bitPattern: "uicontrol_event_time".hashValue)
-    static var interval = UnsafeRawPointer.init(bitPattern: "uicontrol_event_interval".hashValue)
+    static var action = UnsafeRawPointer(bitPattern: "uicontrol_action_block".hashValue)
+    static var time = UnsafeRawPointer(bitPattern: "uicontrol_event_time".hashValue)
+    static var interval = UnsafeRawPointer(bitPattern: "uicontrol_event_interval".hashValue)
   }
 }
 
 // MARK: - time
-extension UIControl: SwizzlingProtocol {
-
+extension UIControl {
+  
   /// 系统响应事件
-  private var systemActions: [String] {
+  fileprivate var systemActions: [String] {
     return ["_handleShutterButtonReleased:",
             "cameraShutterPressed:",
             "_tappedBottomBarCancelButton:",
@@ -56,9 +56,9 @@ extension UIControl: SwizzlingProtocol {
             "recordStart:",
             "btnTouchUp:withEvent:"]
   }
-
+  
   // 重复点击的间隔
- public var eventInterval: TimeInterval {
+  public var eventInterval: TimeInterval {
     get {
       if let eventInterval = objc_getAssociatedObject(self,
                                                       UIControl.ActionKey.interval!) as? TimeInterval {
@@ -67,15 +67,16 @@ extension UIControl: SwizzlingProtocol {
       return 0
     }
     set {
+      UIControl.swizzing()
       objc_setAssociatedObject(self,
                                UIControl.ActionKey.interval!,
                                newValue as TimeInterval,
                                .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
   }
-
+  
   /// 上次事件响应时间
-  private var lastEventTime: TimeInterval {
+  fileprivate var lastEventTime: TimeInterval {
     get {
       if let eventTime = objc_getAssociatedObject(self, UIControl.ActionKey.time!) as? TimeInterval {
         return eventTime
@@ -83,35 +84,36 @@ extension UIControl: SwizzlingProtocol {
       return 1.0
     }
     set {
+      UIControl.swizzing()
       objc_setAssociatedObject(self,
                                UIControl.ActionKey.time!,
                                newValue as TimeInterval,
                                .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
   }
-
-  @objc func sp_sendAction(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
+  
+  @objc fileprivate func sp_sendAction(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
     if systemActions.contains(action.description) || eventInterval <= 0 {
       self.sp_sendAction(action: action, to: target, forEvent: event)
       return
     }
-
+    
     let nowTime = Date().timeIntervalSince1970
     if nowTime - lastEventTime < eventInterval { return }
     if eventInterval > 0 { lastEventTime = nowTime }
     self.sp_sendAction(action: action, to: target, forEvent: event)
   }
-
+  
 }
 
 // MARK: - target
 extension UIControl {
-
+  
   fileprivate struct ActionBlock {
     var key: UInt
     var action: ()->()
   }
-
+  
   fileprivate var actionBlocks: [ActionBlock] {
     get { return objc_getAssociatedObject(self,UIControl.ActionKey.action!) as? [ActionBlock] ?? [] }
     set { objc_setAssociatedObject(self,
@@ -120,7 +122,7 @@ extension UIControl {
                                    .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
   }
-
+  
   fileprivate func triggerAction(for: UIControl, event: UIControlEvents){
     let action = actionBlocks.filter { (item) -> Bool
       in return item.key == event.rawValue
@@ -128,7 +130,7 @@ extension UIControl {
     guard let act = action else { return }
     act.action()
   }
-
+  
   fileprivate func selector(event: UIControlEvents) -> Selector? {
     var selector: Selector?
     switch event.rawValue {
@@ -161,7 +163,7 @@ extension UIControl {
     }
     return selector
   }
-
+  
   @objc fileprivate func touchDown(sender: UIControl) {
     triggerAction(for: sender, event: .touchDown)
   }

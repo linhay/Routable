@@ -9,8 +9,12 @@ import UIKit
 
 public extension CALayer {
   public var borderUIColor:UIColor? {
-    set { self.borderColor = newValue?.cgColor }
-    get { return UIColor(cgColor: self.borderColor!) }
+    set {
+      self.borderColor = newValue?.cgColor
+    }
+    get {
+      guard let cgColor = borderColor else { return nil }
+      return UIColor(cgColor: cgColor) }
   }
 }
 

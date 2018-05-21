@@ -69,20 +69,19 @@ public extension Array {
 
   /// 获取: 指定位置的值
   ///
+  /// as python
+  /// let list = [0,1,2]
+  /// print(list.value(at: 1))
+  /// 1
+  /// print(list.value(at: -1))
+  /// 2
+  ///
   /// - Parameter index: 指定序列
   /// - Returns: 值
   public func value(at index: Int) -> Element? {
-    guard index >= 0 && index < count else { return nil }
-    return self[index]
-  }
-
-  /// 获取:反向序列的值
-  ///
-  /// - Parameter index: 序列
-  /// - Returns: 指定值
-  public func value(reverse index: Int) -> Int? {
-    guard index >= 0 && index < count else { return nil }
-    return Swift.max(self.count - index, 0)
+    let rawIndex = index < 0 ? count + index : index
+    guard rawIndex < count, rawIndex >= 0 else { return nil }
+    return self[rawIndex]
   }
 
   /// 打乱数组

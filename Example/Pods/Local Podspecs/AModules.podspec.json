@@ -30,11 +30,8 @@
   ],
   "requires_arc": true,
   "dependencies": {
-    "SPRoutable/Core": [
+    "SPRoutable": [
 
     ]
-  },
-  "pod_target_xcconfig": {
-    "SWIFT_VERSION": "4.0"
   }
 }
