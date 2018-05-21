@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Foundation
 import RoutableAssist
 
 public class Routable: NSObject {
@@ -88,6 +87,27 @@ extension Routable {
   
 }
 
+// MARK: - UIKit
+public extension Routable {
+  
+  /// 解析viewController类型
+  ///
+  /// - Parameter url: viewController 路径
+  /// - Returns: viewController 或者 nil
+  @objc public class func viewController(url: String,params:[String: Any] = [:]) -> UIViewController? {
+    return object(url: url, params: params) as? UIViewController
+  }
+  
+  /// 解析view类型
+  ///
+  /// - Parameter url: view 路径
+  /// - Returns: view 或者 nil
+  @objc public class func view(url: String,params:[String: Any] = [:]) -> UIView? {
+    return object(url: url, params: params) as? UIView
+  }
+  
+}
+
 extension Routable {
   
   /*
@@ -116,7 +136,6 @@ extension Routable {
     }
   }
   
-  
   /// 解析Any类型(回调形式)
   ///
   /// - Parameters:
@@ -131,8 +150,6 @@ extension Routable {
     let rewriteValue = rewrite(value: value)
     return target(urlValue: rewriteValue, block: call)
   }
-  
-  
   
 }
 
@@ -151,8 +168,3 @@ extension Routable {
     cache.removeAll()
   }
 }
-
-
-
-
-

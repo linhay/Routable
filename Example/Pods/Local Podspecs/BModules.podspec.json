@@ -30,7 +30,7 @@
   ],
   "requires_arc": true,
   "dependencies": {
-    "SPRoutable/Core": [
+    "SPRoutable": [
 
     ],
     "AnyFormatProtocol": [

@@ -17,17 +17,12 @@ PODS:
   - BLFoundation/URL (0.5.2)
   - BModules (0.1.0):
     - AnyFormatProtocol
-    - SPRoutable/Core
+    - SPRoutable
   - RoutableAssist (0.2.1)
   - SnapKit (4.0.0)
   - SPKit (0.2.8):
     - BLFoundation
-  - SPRoutable (0.9.7):
-    - SPRoutable/Core (= 0.9.7)
-    - SPRoutable/UIKit (= 0.9.7)
-  - SPRoutable/Core (0.9.7):
-    - RoutableAssist
-  - SPRoutable/UIKit (0.9.7):
+  - SPRoutable (0.9.8):
     - RoutableAssist
   - Then (2.3.0)
 
@@ -61,11 +56,11 @@ SPEC CHECKSUMS:
   AModules: 3eb727db8a979422ef8e79650da5ded118197319
   AnyFormatProtocol: 53e053ca472f1266730a6559bffc266d1fdd07cf
   BLFoundation: b64b8c309b8560aef83357b545cac23a79663603
-  BModules: ac73bf1b114aac3267d4ce230d276e1b3f2f96e3
+  BModules: da05aa4f11c88301a07170623e7f33b28ab4647b
   RoutableAssist: 91c034a4da892a5f023c2fd891a90702ba0e6594
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SPKit: 5fb9860f2ff79bf0c1ea50979909cd34a38c285b
-  SPRoutable: a3b2e5d0ce45f9f147bc089f23f1eca33c672b1c
+  SPRoutable: 887f70aed9a93d6a32266437aeaf63b43458f9e5
   Then: ee21c97b85ff6062b9b0080c9abb1eea46743345
 
 PODFILE CHECKSUM: c902cda1f679e6e29e53074543f49f7a0974342c
