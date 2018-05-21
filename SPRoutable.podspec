@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = 'SPRoutable'
-s.version          = '0.9.7'
+s.version          = '0.9.8'
 s.summary          = '基础的路由服务'
 
 s.homepage         = 'https://github.com/linhay/Routable'
