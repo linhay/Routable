@@ -66,7 +66,7 @@ class ViewController: UITableViewController {
       cell.leftBtn.setTitle(item.objc, for: .normal)
       cell.rightBtn.setTitle(item.swift, for: .normal)
       cell.leftBtn.add(for: .touchUpInside) {
-        let value = Routable.object(url: item.objc,params: ["param1" : "title"]) { (result) in
+        let value = Routable.object(str: item.objc,params: ["param1" : "title"]) { (result) in
           self.alert(title: item.title, message: String(describing: result))
         }
         
@@ -74,7 +74,7 @@ class ViewController: UITableViewController {
         self.alert(title: item.title, message: String(describing: result))
       }
       cell.rightBtn.add(for: .touchUpInside) {
-        let value = Routable.object(url: item.swift,params: ["param1" : "title"]) { (result) in
+        let value = Routable.object(str: item.swift,params: ["param1" : "title"]) { (result) in
           self.alert(title: item.title, message: String(describing: result))
         }
         
@@ -102,13 +102,13 @@ class ViewController: UITableViewController {
       
       cell.leftBtn.add(for: .touchUpInside) {
         Routable.rewrite(rules: self.rewriteRule)
-        guard let vc = Routable.viewController(url: self.rewriteRule.keys.first!) else { return }
+        guard let vc = Routable.viewController(str: self.rewriteRule.keys.first!) else { return }
         self.navigationController?.pushViewController(vc, animated: true)
       }
       
       cell.rightBtn.add(for: .touchUpInside) {
         Routable.rewrite(rules: [:])
-        guard let vc = Routable.viewController(url: self.rewriteRule.keys.first!) else { return }
+        guard let vc = Routable.viewController(str: self.rewriteRule.keys.first!) else { return }
         self.navigationController?.pushViewController(vc, animated: true)
       }
     }

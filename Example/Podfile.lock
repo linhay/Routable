@@ -22,7 +22,7 @@ PODS:
   - SnapKit (4.0.0)
   - SPKit (0.2.8):
     - BLFoundation
-  - SPRoutable (0.9.8):
+  - SPRoutable (0.9.8.1):
     - RoutableAssist
   - Then (2.3.0)
 
@@ -60,7 +60,7 @@ SPEC CHECKSUMS:
   RoutableAssist: 91c034a4da892a5f023c2fd891a90702ba0e6594
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SPKit: 5fb9860f2ff79bf0c1ea50979909cd34a38c285b
-  SPRoutable: 887f70aed9a93d6a32266437aeaf63b43458f9e5
+  SPRoutable: 3d1e851bb6abff96769c3b2e113d78cb647cbfa9
   Then: ee21c97b85ff6062b9b0080c9abb1eea46743345
 
 PODFILE CHECKSUM: c902cda1f679e6e29e53074543f49f7a0974342c

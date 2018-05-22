@@ -68,15 +68,29 @@ extension Routable {
   /// 执行路径指定函数
   ///
   /// - Parameter url: 函数路径
-  @objc public class func exec(url: String, params:[String: Any] = [:]) {
+  @objc public class func exec(url: URL, params:[String: Any] = [:]) {
     _ = object(url: url, params: params)
+  }
+  
+  /// 执行路径指定函数
+  ///
+  /// - Parameter url: 函数路径
+  @objc public class func exec(str: String, params:[String: Any] = [:]) {
+    _ = object(str: str, params: params)
   }
   
   /// 通知所有已缓存类型函数
   ///
   /// - Parameter url: 函数路径
-  @objc public class func notice(url: String,params:[String: Any] = [:]) {
-    guard let url = createURL(url: url, params: params) else { return }
+  @objc public class func notice(url: URL,params:[String: Any] = [:]) {
+    notice(str: url.absoluteString, params: params)
+  }
+  
+  /// 通知所有已缓存类型函数
+  ///
+  /// - Parameter url: 函数路径
+  @objc public class func notice(str: String,params:[String: Any] = [:]) {
+    guard let url = createURL(url: str, params: params) else { return }
     guard var value = urlParse(url: url) else { return }
     if value.targetName != "notice" { return }
     for item in cache.values {
@@ -94,18 +108,33 @@ public extension Routable {
   ///
   /// - Parameter url: viewController 路径
   /// - Returns: viewController 或者 nil
-  @objc public class func viewController(url: String,params:[String: Any] = [:]) -> UIViewController? {
+  @objc public class func viewController(url: URL,params:[String: Any] = [:]) -> UIViewController? {
     return object(url: url, params: params) as? UIViewController
+  }
+  
+  /// 解析viewController类型
+  ///
+  /// - Parameter url: viewController 路径
+  /// - Returns: viewController 或者 nil
+  @objc public class func viewController(str: String,params:[String: Any] = [:]) -> UIViewController? {
+    return object(str: str, params: params) as? UIViewController
   }
   
   /// 解析view类型
   ///
   /// - Parameter url: view 路径
   /// - Returns: view 或者 nil
-  @objc public class func view(url: String,params:[String: Any] = [:]) -> UIView? {
+  @objc public class func view(url: URL,params:[String: Any] = [:]) -> UIView? {
     return object(url: url, params: params) as? UIView
   }
   
+  /// 解析view类型
+  ///
+  /// - Parameter url: view 路径
+  /// - Returns: view 或者 nil
+  @objc public class func view(str: String,params:[String: Any] = [:]) -> UIView? {
+    return object(str: str, params: params) as? UIView
+  }
 }
 
 extension Routable {
@@ -142,13 +171,25 @@ extension Routable {
   ///   - url: url
   ///   - params: url 参数(选填)
   ///   - call: 回调数据
-  @discardableResult @objc public class func object(url: String,
+  @discardableResult @objc public class func object(str: String,
                                                     params:[String: Any] = [:],
                                                     call: ((_: [String: Any])->())? = nil) -> Any? {
-    guard let url = createURL(url: url, params: params) else { return nil }
+    guard let url = createURL(url: str, params: params) else { return nil }
     guard let value = urlParse(url: url) else { return nil }
     let rewriteValue = rewrite(value: value)
     return target(urlValue: rewriteValue, block: call)
+  }
+  
+  /// 解析Any类型(回调形式)
+  ///
+  /// - Parameters:
+  ///   - url: url
+  ///   - params: url 参数(选填)
+  ///   - call: 回调数据
+  @discardableResult @objc public class func object(url: URL,
+                                                    params:[String: Any] = [:],
+                                                    call: ((_: [String: Any])->())? = nil) -> Any? {
+    return object(str: url.absoluteString, params: params, call: call)
   }
   
 }

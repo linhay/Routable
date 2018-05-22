@@ -1,6 +1,6 @@
 {
   "name": "SPRoutable",
-  "version": "0.9.8",
+  "version": "0.9.8.1",
   "summary": "基础的路由服务",
   "homepage": "https://github.com/linhay/Routable",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/linhay/Routable.git",
-    "tag": "0.9.8"
+    "tag": "0.9.8.1"
   },
   "platforms": {
     "ios": "8.0"
