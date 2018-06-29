@@ -1,30 +1,48 @@
 {
   "name": "SPRoutable",
-  "version": "0.9.8.1",
+  "version": "0.9.9.alpha",
+  "license": "MIT",
   "summary": "基础的路由服务",
   "homepage": "https://github.com/linhay/Routable",
-  "license": {
-    "type": "MIT",
-    "file": "LICENSE"
-  },
   "authors": {
     "linhey": "linheyhan.linhey@outlook.com"
   },
   "source": {
     "git": "https://github.com/linhay/Routable.git",
-    "tag": "0.9.8.1"
+    "tag": "0.9.9.alpha"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "8.0",
+    "tvos": "9.0",
+    "osx": "10.10",
+    "watchos": "2.0"
   },
-  "requires_arc": true,
-  "source_files": "Sources/Core/*.{swift,h}",
+  "source_files": "Sources/*.{swift,h}",
+  "public_header_files": [
+    "Sources/Routable.h"
+  ],
+  "osx": {
+    "exclude_files": [
+      "Routale+UIKit.swift"
+    ]
+  },
+  "watchos": {
+    "exclude_files": [
+      "Routale+UIKit.swift"
+    ]
+  },
+  "tvos": {
+    "exclude_files": [
+      "Routale+UIKit.swift"
+    ]
+  },
   "dependencies": {
     "RoutableAssist": [
-
+      "0.2.2"
     ]
   },
   "pod_target_xcconfig": {
     "SWIFT_VERSION": "4.0"
-  }
+  },
+  "requires_arc": true
 }

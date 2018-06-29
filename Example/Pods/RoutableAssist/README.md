@@ -1,6 +1,6 @@
 # RoutableAssist
 
-[![CI Status](http://img.shields.io/travis/158179948@qq.com/RoutableAssist.svg?style=flat)](https://travis-ci.org/158179948@qq.com/RoutableAssist)
+[![CI Status](http://img.shields.io/travis/is.linhay@outlook.com/RoutableAssist.svg?style=flat)](https://travis-ci.org/is.linhay@outlook.com/RoutableAssist)
 [![Version](https://img.shields.io/cocoapods/v/RoutableAssist.svg?style=flat)](http://cocoapods.org/pods/RoutableAssist)
 [![License](https://img.shields.io/cocoapods/l/RoutableAssist.svg?style=flat)](http://cocoapods.org/pods/RoutableAssist)
 [![Platform](https://img.shields.io/cocoapods/p/RoutableAssist.svg?style=flat)](http://cocoapods.org/pods/RoutableAssist)
@@ -22,7 +22,7 @@ pod 'RoutableAssist'
 
 ## Author
 
-158179948@qq.com, 158179948@qq.com
+linhay, is.linhay@outlook.com
 
 ## License
 

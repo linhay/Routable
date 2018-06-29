@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  Routable
 //
-//  Created by bigL055 on 06/10/2017.
-//  Copyright (c) 2017 bigL055. All rights reserved.
+//  Created by linhay on 06/10/2017.
+//  Copyright (c) 2017 linhay. All rights reserved.
 //
 
 import UIKit

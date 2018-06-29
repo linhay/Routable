@@ -18,18 +18,17 @@ PODS:
   - BModules (0.1.0):
     - AnyFormatProtocol
     - SPRoutable
-  - RoutableAssist (0.2.1)
+  - RoutableAssist (0.2.2)
   - SnapKit (4.0.0)
   - SPKit (0.2.8):
     - BLFoundation
-  - SPRoutable (0.9.8.1):
-    - RoutableAssist
+  - SPRoutable (0.9.9.alpha):
+    - RoutableAssist (= 0.2.2)
   - Then (2.3.0)
 
 DEPENDENCIES:
   - AModules (from `../`)
   - BModules (from `../`)
-  - RoutableAssist (= 0.2.1)
   - SnapKit
   - SPKit
   - SPRoutable (from `../`)
@@ -57,12 +56,12 @@ SPEC CHECKSUMS:
   AnyFormatProtocol: 53e053ca472f1266730a6559bffc266d1fdd07cf
   BLFoundation: b64b8c309b8560aef83357b545cac23a79663603
   BModules: da05aa4f11c88301a07170623e7f33b28ab4647b
-  RoutableAssist: 91c034a4da892a5f023c2fd891a90702ba0e6594
+  RoutableAssist: fdc37e8b5cc44d323aa7668cbbbd3859c3faf89e
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SPKit: 5fb9860f2ff79bf0c1ea50979909cd34a38c285b
-  SPRoutable: 3d1e851bb6abff96769c3b2e113d78cb647cbfa9
+  SPRoutable: ef18b8e24989a73ab3bc1c5f3998bc7c9a08a157
   Then: ee21c97b85ff6062b9b0080c9abb1eea46743345
 
-PODFILE CHECKSUM: c902cda1f679e6e29e53074543f49f7a0974342c
+PODFILE CHECKSUM: eba0961e3694fd8296645525ec401adae6fbe14d
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.5.3

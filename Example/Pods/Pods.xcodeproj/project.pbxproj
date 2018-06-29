@@ -10,15 +10,14 @@
 		0026CF8D8A889F8F7BB63D985E17F993 /* SP+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B020883385FE3AE1FB767B109C5E090 /* SP+Extension.swift */; };
 		0272C8BCC7EC8227F5C3F3C462C695DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CB956354D5AD69AFD72A0DBD1A101F /* Foundation.framework */; };
 		07F80A8DF4250AA21FCB6B83F88BAE19 /* Proxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CEFBA49C00B47DC674E0A156F3C391 /* Proxy.m */; };
-		091FD77387F3C38C7F6E69129543ED7B /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E631EACD82A45E038B734206959C0A /* Routable.swift */; };
 		0B802D5FA20F035B6883DA65BB9F34E5 /* Invocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A1C9A999E7C55C59C2204741136251 /* Invocation.m */; };
 		0E16B4BA774A2F595880C7B02C58007B /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F204BAE7EEFAFC411D16D5348148E81 /* Debugging.swift */; };
 		0EDBDC573F4B4D9E797316A047C6057B /* SP+UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE5EB614E3024F9737ECF3267D4695F /* SP+UIView+Frame.swift */; };
 		101FB83D4C0192EB38B5B35EFE6898BF /* AnyFormatProtocol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5055B97FDD5497ED5A09B20B2702A079 /* AnyFormatProtocol.framework */; };
 		133129A8AD6A80F0431C6B2E5C3D9532 /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9789FA73219BB8F1446FBF7E601A0DD /* ConstraintView.swift */; };
 		1364E76379C1B9130EA71203776E0DCC /* ConstraintPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A03564F971500224BE9D3CB596BA01 /* ConstraintPriority.swift */; };
-		16A1A118BDA34C33B199EB48CDC78E98 /* Router_objc.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E3A46FC4362A764B446A41B4C7B064 /* Router_objc.m */; };
-		17AE4275FD69C424E65261C36B403CF9 /* SPRoutable-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BCC1C435FECE8239EF58A6BBE1D6841 /* SPRoutable-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16A1A118BDA34C33B199EB48CDC78E98 /* Router_objc.m in Sources */ = {isa = PBXBuildFile; fileRef = E1680FD8A10AE813CD6A450CE7DE4ACD /* Router_objc.m */; };
+		17AE4275FD69C424E65261C36B403CF9 /* SPRoutable-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A9968F805947094F032BE29721AA2F3A /* SPRoutable-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		194CB70C4198A75501CAEFC2F8732F39 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7482CD70196237C9AFF5E185AFDC3888 /* ConstraintMaker.swift */; };
 		1A5B4A2CD72DB505646CA40E0EB7B138 /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD36DFDE457430E838052E54625FA869 /* ConstraintViewDSL.swift */; };
 		1B9E84D3D78759AB1C539583E3CE0D58 /* SP+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0515744873C050E1E7B5CDC247C38D /* SP+UIImage.swift */; };
@@ -30,47 +29,49 @@
 		262F5569BD3446440F42736EDA49D6C8 /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DF5BC2EAF49A91167B464780A2010C /* ConstraintLayoutGuide+Extensions.swift */; };
 		280D1E3A00D907D94C60BA2C8B912125 /* SP+UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15DFAC81EE9A2A428921DA78EBBF850 /* SP+UIApplication.swift */; };
 		2B6C459E294BABDD6A09FB7F7DF54D07 /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E3E0D73EEA465765EBF8A6D689248F /* ConstraintMakerRelatable.swift */; };
-		2EDFD7DB654DBAC1FC39B0CFC68713D1 /* Router_objc.h in Headers */ = {isa = PBXBuildFile; fileRef = F772CD2DA9EBB25CDD4CC6712DD0568D /* Router_objc.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2EDFD7DB654DBAC1FC39B0CFC68713D1 /* Router_objc.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BFB7D8350047BAA9CB16CC92013079E /* Router_objc.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		303D49F093DD836F09BF18FA8A147483 /* SP+NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3233D173A6DD932258A846B9EFFFC35 /* SP+NSLayoutConstraint.swift */; };
 		31CC145ACFB90EA94060744D1680A68D /* RoutableAssist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48F1DE036A281BCC5FC369DB8CB177E /* RoutableAssist.framework */; };
 		32F002DCFA228C776EDEFC5FB89FC8D0 /* DateComponents+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6853A8EFB7CAC7A610E3E1AD9C2250E /* DateComponents+Timepiece.swift */; };
-		38C8FDAD5F5AD583B7A1571CC4051CD5 /* AModules.h in Headers */ = {isa = PBXBuildFile; fileRef = 11930478FF0B63141F068D26D498FCED /* AModules.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38C8FDAD5F5AD583B7A1571CC4051CD5 /* AModules.h in Headers */ = {isa = PBXBuildFile; fileRef = 29680CBEEF6DB721DB7EABB01200C869 /* AModules.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C7C1C97217DA7697874AEA991637ECE /* Int+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7798193523C806323BE97846DD1FF87 /* Int+Timepiece.swift */; };
 		3C9C560B421114F7492BB70C20373B6A /* String+operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2601C099140663FB527794068BA6C7 /* String+operator.swift */; };
-		4370C740AC7E3BDDBD8D0926C09CB14A /* Routable+Perform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173E5A3FD35E3DA23579208626EAA8F /* Routable+Perform.swift */; };
 		4679221A894E81DC8A42C303DD43F23D /* String+match.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED15D83F0FB878EC5A3D69B7E8FBB058 /* String+match.swift */; };
 		4858A644C08D35FAB23751CFD46C48BC /* SP+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7F7E214B31614ABAAF7FD96D0C7FF9 /* SP+UITextField.swift */; };
+		489C131BE9D387670896DF0EA82EF6C2 /* Routable+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40CC661FC9B41283BB39334AAE8B64E /* Routable+URL.swift */; };
+		495DCAB593217D5DEB3FE632FA3295BE /* Routable+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADDB57178B730EE72360272675DF2F0 /* Routable+Data.swift */; };
 		4AE45C77C551A24E1FECD2B904416993 /* SP+UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EA2DA95D89CB607B8A0FE4CCBBEEBB /* SP+UIBarButtonItem.swift */; };
 		4CC0A39922C7E3574E2A009A5CCBB94E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CB956354D5AD69AFD72A0DBD1A101F /* Foundation.framework */; };
+		4E09FE64B3BD0CFB6DCA0D9A8BF4BF1E /* Routable+ObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A84D4E977BB0DD174E6BC4E496ABE26 /* Routable+ObjectType.swift */; };
 		4E75B3FC871A8A7D5EA89C98910DBE15 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03EE8811FABF0B6F86A5283A13CA5CF /* Int.swift */; };
 		4E7AFCE9B239A1EB30252B2597415DE3 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B244BC6FCD65EB18E0C1ECD754EF956F /* LayoutConstraint.swift */; };
-		4E883178231D175C38C252516C135A8D /* BModules.h in Headers */ = {isa = PBXBuildFile; fileRef = 256EE74C1D3BF4813409354B15D859CB /* BModules.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E883178231D175C38C252516C135A8D /* BModules.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D56AFEAD4FA92D0C6C9EF7FDF3DC041 /* BModules.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50F17DC73A87E34530DA73F9336F1D40 /* BLFoundation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3387CC4981D3A1E2AFDEF8D5C4E01438 /* BLFoundation-dummy.m */; };
-		5413A0DFC78281D2D3608426E24097D9 /* Routable+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0A4ADA598EEACC6BDED597A74CCE60 /* Routable+URL.swift */; };
 		54CD5C8B555B5738D37AEA4E133D9146 /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F25516E39C746F4C1A7E86BC41331 /* ConstraintMakerEditable.swift */; };
 		55A1F89B741977A4E4803A9F86D255A1 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1553920EB6FFFB925065109FB185FF9C /* Typealiases.swift */; };
 		5661CF1C180A1B1AF66B4A647DB2D10F /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24045C87A819966821066DF614FF595 /* ConstraintLayoutGuide.swift */; };
 		574ACAD5901819A71F2784EA7BEFBE33 /* Pods-Routable_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B736146411615876D6108C86D0346273 /* Pods-Routable_Example-dummy.m */; };
 		5770E1A7BE1A7BBAFC1E4505AEED025D /* Then-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B0E5808D1285C4AD5D0F18596CF8781E /* Then-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5CC937102B80DE772107092EC077951B /* BModules-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 88AE85B0FF2B3DBC202169A463820702 /* BModules-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5CC937102B80DE772107092EC077951B /* BModules-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B6DD4C40E6D5198C4B3CDD2DC3A7096E /* BModules-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5CF9EB99B0CE67A50BF45C12FEA689E7 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB972402E344730C15CD155972FB63 /* Double.swift */; };
 		5D8BE19E1D2F31E2CC98505842B0C729 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CB956354D5AD69AFD72A0DBD1A101F /* Foundation.framework */; };
 		5F2371A9B49ED8D6E8DD3F861BC3D1AB /* ConstraintMakerPriortizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D1A84DFA7FFE713468813997B3038F /* ConstraintMakerPriortizable.swift */; };
 		5FCF87C03776D4CB7E5C3E28C5E950B0 /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346AAC450FB0C98E25486A585A4D0086 /* ConstraintPriorityTarget.swift */; };
 		619327A9B9EA16CCE7C8F5D4176516D5 /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C968BAE2BF6FAB933AF998EDDC4DD82 /* ConstraintDSL.swift */; };
 		663321974E531E1ED918823505DF1BA8 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123C7506D69AEE878A82994AA2056C21 /* Character.swift */; };
-		69C842EB7B21DC8B0968DFE27282F727 /* Router_rewrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63754A2DDEE53B770B445820CB866756 /* Router_rewrite.swift */; };
+		69C842EB7B21DC8B0968DFE27282F727 /* Router_rewrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F36EB622DBB9C9C2219E7EF6DC3D74 /* Router_rewrite.swift */; };
 		6A36B63FA5B6BA30423E9B13DD0698BB /* MethodSignature.h in Headers */ = {isa = PBXBuildFile; fileRef = F58C344731DF38071524F42C55DC7112 /* MethodSignature.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6A480DD189FEC479DD467A6DBB5916BF /* SP+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15848557D81E5317E70CDDE7F734D149 /* SP+UIView.swift */; };
+		6C772D407AF980B330EA8F7D13438A52 /* Routable.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A0488C29406AFC8181A7B1D73173538 /* Routable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6CC458B54CEBC9D99E3308F32FF5A8E3 /* AnyFormatProtocol-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 82E8A6EC8E1173E40D6C59F710FC7B64 /* AnyFormatProtocol-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7018EC37D164C53E50AD4458867C8CC8 /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C35DFE75071C39B81286B14E3482C1 /* ConstraintRelatableTarget.swift */; };
 		730B97CD743BD1E70D49EC2DF557D728 /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C8877FEE0BD7EE27FD1EF8F65239270E /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		737D52DED2159F3E03CBEE64C1D6D128 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB24B0EC16A89FC8E766E9F77117F7D8 /* Date.swift */; };
 		7A44371750C347892406289EE754F969 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4D32CA57989788CC47D4783D4C7CF1 /* UIKit.framework */; };
 		7D0E4F09341BCF565E916472E264E1D9 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED93B579F97184DE1D176ACE9151A34 /* ConstraintRelation.swift */; };
-		7E5704B7171DE314089885B56E871700 /* SPRoutable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2885762EB50144A12AB7DEF9BF1B2459 /* SPRoutable-dummy.m */; };
 		7EFC265C79728610A295452F17F3B8CB /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854747DF498D584AB96E6AA200325149 /* ConstraintAttributes.swift */; };
 		7F4761F2F002BCFC6439DFB63E68B10F /* SP+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441C23D9FAE45D49478BD2568DAA58DB /* SP+UILabel.swift */; };
+		80771CC71F242470C9647D1B5E995CEA /* Routable+Perform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334A83AD3CD09BBB44EE0E3696DF43B8 /* Routable+Perform.swift */; };
 		81859488BA73D109F6B290BB3790C0B2 /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B872C3F23BC970FBC6B0A7C23839A334 /* SnapKit-dummy.m */; };
 		819892B6D63A7E104810F2C38AAAA017 /* RunTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986B40180C29B3E4A633FCD751A51A34 /* RunTime.swift */; };
 		81C48E364016ECB7F61BC066326AA9C8 /* RoutableAssist-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C825A28F768F34A87DF0F33310834816 /* RoutableAssist-dummy.m */; };
@@ -83,35 +84,36 @@
 		92774525CE765D43646CAA06B778DDFB /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D2C2F5F33914866B07B9F3382519E1 /* ConstraintInsets.swift */; };
 		93C8E4CC7A8917C2A2D13B620CCD6B09 /* Regex+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79688F206F4F3BFF078A3C77E2052B48 /* Regex+Extension.swift */; };
 		95ED31E54AD482CFEBF6F182C3185296 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CB956354D5AD69AFD72A0DBD1A101F /* Foundation.framework */; };
-		96C01924C1F18462BB9750419F98CE4D /* Routable+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B74AE64FA9FB904719924D5491940D /* Routable+Data.swift */; };
 		97EFFD9A49BF168A9BC6E9900D68EA28 /* SPRoutable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46EE1B8DE1E074D6E9540C524F19E10 /* SPRoutable.framework */; };
 		98BADF738C8F842B8A89DE61F67148F4 /* SPRoutable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C46EE1B8DE1E074D6E9540C524F19E10 /* SPRoutable.framework */; };
 		9BB4D8B00BC9C7297ED3E66CF26E1AAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CB956354D5AD69AFD72A0DBD1A101F /* Foundation.framework */; };
 		9C99F028A863A31C301C4D0EA12360EC /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECD0DDA3EE875690C9CB6F649360D3E /* ConstraintLayoutSupportDSL.swift */; };
 		9CC4B10D742F07DE3DA61F82311ADA68 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2153CC8600FF9218BE882781F98D69AF /* String+MD5.swift */; };
-		9DA21E2FC5ABB01A6827456795C5051F /* Router_web.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4111C38F1DC44FDFA2303BC2470B823B /* Router_web.swift */; };
+		9D56B8147004A2473BB37D9FAADA26D0 /* SPRoutable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C3311D90192DB6393A26865A35BC432E /* SPRoutable-dummy.m */; };
+		9DA21E2FC5ABB01A6827456795C5051F /* Router_web.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0A95E212790ADB8735B0568278CF53 /* Router_web.swift */; };
 		A5663C434AA0D49A6C6C22232E21250F /* RoutableAssist-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 53A8D29B2956F23F2142D3B0F195EE4D /* RoutableAssist-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A79E854B99CCD151CD760093DB540A45 /* Routable.h in Headers */ = {isa = PBXBuildFile; fileRef = A18AFBB01ED1CBE17C716BC1C5A3886F /* Routable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A857C51F9E3E235490989A87678E0288 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B5182CE1E5C2DC2D4D02CB5421C81 /* Data.swift */; };
 		A9DF7DD2D9B81C3884753D5120AE3E89 /* String+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AEBC7AB08F25D741913323CFB636BB /* String+Timepiece.swift */; };
 		AAF88C65A630BBC9E118A63A13C3B2F7 /* RoutableAssist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A48F1DE036A281BCC5FC369DB8CB177E /* RoutableAssist.framework */; };
+		AC0EF0F2E74C95637B65F5468E5014BC /* Routale+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D212481A46F3F390A0C8A2C993CF1CA /* Routale+UIKit.swift */; };
 		AE369CB5329DC9F739F73DEEF56F8946 /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F57D12F488CA79625DCBDC894A22F86 /* ConstraintView+Extensions.swift */; };
 		AEC8362975950026D29DA635C3B45F0A /* Then-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB3BAB0792B604F1888EDFCE23F0287 /* Then-dummy.m */; };
 		AEFED0F65D7ECE67E3A8FB7EA881192E /* SP+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06248AD7B0312067575AE181F799830C /* SP+UIColor.swift */; };
-		B1CC7B86A0C415494912552E28BDA646 /* Routable+ObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421BD1F2C21168184F6DDF0F20010C7E /* Routable+ObjectType.swift */; };
-		B201FA46D81143D2E8E47810BBCACA2E /* Router_swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB83510F49BBC3AED7BBEC1AB1052E3 /* Router_swift.swift */; };
+		B201FA46D81143D2E8E47810BBCACA2E /* Router_swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CE02CE560BC4824B355B7E298B317A /* Router_swift.swift */; };
 		B27519C87B7C851D905BF79A0AE84275 /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEF5A1A9DC32A80C006EB3A7457A412 /* ConstraintMultiplierTarget.swift */; };
-		B29AB87D7ABA65D8C30DBE82EFC2D7E1 /* BModules-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA82372E7340EEAF98549872264EE49 /* BModules-dummy.m */; };
+		B29AB87D7ABA65D8C30DBE82EFC2D7E1 /* BModules-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD65B3BF7BB6ECFD3B8B5E7A01A88673 /* BModules-dummy.m */; };
 		B3C03F55331DFFE139CBC3A0D175076C /* AnyFormatProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 55DB93E87761F6BAEA175457AB2999AB /* AnyFormatProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B6F17232B5A3CDC98BC6E6A03AF32177 /* SP+UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ED041F3912032A0C3C5F1F2F293E35 /* SP+UIStoryboard.swift */; };
+		B708848C9846385CC3EF1D6BC999C49B /* Routable+format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D04BADB8301D2531219D4A4743791D4 /* Routable+format.swift */; };
 		B7A1162CA3DCEC5C9483BEBBA8761EFA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4D32CA57989788CC47D4783D4C7CF1 /* UIKit.framework */; };
 		BACC2B24354BC2E0803B4120E88262FA /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CBEF238E005ABDF2EB81DF02E2E8AC /* ConstraintMakerExtendable.swift */; };
 		BB13A8D6F9B05C02C78E9FAF4464FF64 /* BLFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 35EB659C0AB5AE29247574F1F30A44A1 /* BLFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD939C47150337BF0B8FA38F16116997 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CB956354D5AD69AFD72A0DBD1A101F /* Foundation.framework */; };
+		BE97A973BCFF8E91E9C1CB314087A477 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7CD9CD06D4722596F2081B3B20A1C /* Routable.swift */; };
 		C2892EC7BD9E25A8597B2C268A3FF23B /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9824577F2396E646D1E3434F0FAECB /* LayoutConstraintItem.swift */; };
 		C38631C20758901EE6C23FD00312A68D /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6858835505097F6D02D08EB6F35A5EC /* URL.swift */; };
 		C4A75B5E624D8952C734EA4A605D4E4F /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EA67E3E9216D72191BBAC88842A4C9 /* UILayoutSupport+Extensions.swift */; };
-		C80EC37741AD0ADDB61CC0ECCE1CBEEA /* AModules-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 54E8EE7DDC3099CC278450B0809DDE78 /* AModules-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C80EC37741AD0ADDB61CC0ECCE1CBEEA /* AModules-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FD653E96A3336B626BF883ADFBD79946 /* AModules-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C99CFE1C466872D64018F7962ED8FB48 /* Proxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DB13C00757A626755CDEF3DED0B40F5 /* Proxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA97BC06127FCACC4DBA48AD34EE9467 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CB956354D5AD69AFD72A0DBD1A101F /* Foundation.framework */; };
 		CB7E6C672B9423FC0338D8258B60ADC7 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5B5B78D1772119412821FCADECC29 /* Constraint.swift */; };
@@ -122,13 +124,12 @@
 		D2C6809C67962F594D70D65AA8309B31 /* Date+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB044FBFD14635F6E3F3664F9B39CC9 /* Date+Timepiece.swift */; };
 		D56D22D1239745833B30680B0CD1942E /* SPKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA662D03C7505EDD601EBA6D912FC63 /* SPKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D7277C53D7E0B58ED3D239F86AC77A26 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FECC5084CF09DAB1DCB2B184B210A4 /* Array.swift */; };
-		D7AAA7B41347C8C3856855954AD94F21 /* AModules-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B551ED4BA60C746781527C6FEDD9023B /* AModules-dummy.m */; };
+		D7AAA7B41347C8C3856855954AD94F21 /* AModules-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BDDCA5B8330F9E792C21577FDAA60F /* AModules-dummy.m */; };
 		DA511DAAA8815321B8DA0135DC5A32DD /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78799EED8C756D999E89CC17EA120358 /* ConstraintConstantTarget.swift */; };
 		DABBC693BCF5634BA9CC7EF39496BEEC /* Invocation.h in Headers */ = {isa = PBXBuildFile; fileRef = ACA2F8BF9386EB7679333A23719C8D8D /* Invocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB7439B778D1ED0E385A84F77A8684DC /* MethodSignature.m in Sources */ = {isa = PBXBuildFile; fileRef = C56FD8D1C8CF861C098903FBF823EBED /* MethodSignature.m */; };
 		DD609FDC77E571C5BB8040C518645680 /* SPKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9C9F649B340A00729EC6BFF5438FF4 /* SPKit-dummy.m */; };
 		DDD9E8BF5684BD52260CCD5801A106A6 /* Pods-Routable_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 574B694ADD492932B6A78018F2D5D48E /* Pods-Routable_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DEE10A488E303FF36818CB09B2F63DE2 /* Routable+format.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A2C8D9FCF1E8F8585640F767FE6C8D /* Routable+format.swift */; };
 		DFDD96F77A398CD7876E3803A33256CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CB956354D5AD69AFD72A0DBD1A101F /* Foundation.framework */; };
 		DFFEE98719B4622A6D7151DD26E64EC0 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F413E0F726D7D6B5062CC9F65C1503 /* Then.swift */; };
 		E0466A22573CB193C453633ADCB66259 /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E4E7F1AC808C18D0391CAF0EFD0F92 /* ConstraintOffsetTarget.swift */; };
@@ -265,7 +266,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03BD1658623698F60390AC9B6444CF29 /* BModules-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BModules-prefix.pch"; sourceTree = "<group>"; };
 		06248AD7B0312067575AE181F799830C /* SP+UIColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UIColor.swift"; path = "Sources/SP+UIColor.swift"; sourceTree = "<group>"; };
 		066B9B33933E968D95118D4A8AF84F2F /* BLFoundation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BLFoundation.modulemap; sourceTree = "<group>"; };
 		06CEFBA49C00B47DC674E0A156F3C391 /* Proxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Proxy.m; path = RoutableAssist/Classes/Proxy.m; sourceTree = "<group>"; };
@@ -274,7 +274,6 @@
 		0B020883385FE3AE1FB767B109C5E090 /* SP+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+Extension.swift"; path = "Sources/SP+Extension.swift"; sourceTree = "<group>"; };
 		0C968BAE2BF6FAB933AF998EDDC4DD82 /* ConstraintDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDSL.swift; path = Source/ConstraintDSL.swift; sourceTree = "<group>"; };
 		0D9EA54809E64661BC85DC85FEF26572 /* Then-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Then-prefix.pch"; sourceTree = "<group>"; };
-		11930478FF0B63141F068D26D498FCED /* AModules.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AModules.h; path = SourcesA/AModules.h; sourceTree = "<group>"; };
 		123C7506D69AEE878A82994AA2056C21 /* Character.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Character.swift; path = Sources/String/Character.swift; sourceTree = "<group>"; };
 		1264CB8F4BEF97C9BEF8D7B251B529AD /* SPKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SPKit.framework; path = SPKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D2C2F5F33914866B07B9F3382519E1 /* ConstraintInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsets.swift; path = Source/ConstraintInsets.swift; sourceTree = "<group>"; };
@@ -284,25 +283,28 @@
 		15848557D81E5317E70CDDE7F734D149 /* SP+UIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UIView.swift"; path = "Sources/SP+UIView.swift"; sourceTree = "<group>"; };
 		15912B9C75D031391F57D720E9222654 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1644E6940AAF73F4C17F9DBF50D18084 /* BLFoundation.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BLFoundation.xcconfig; sourceTree = "<group>"; };
-		1A5213A49C87091B6D604AB53F4E0F70 /* AModules.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = AModules.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		17792B11286BC4FA3E081AA08D2949E0 /* SPRoutable.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SPRoutable.modulemap; sourceTree = "<group>"; };
 		1C9824577F2396E646D1E3434F0FAECB /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Source/LayoutConstraintItem.swift; sourceTree = "<group>"; };
+		1D56AFEAD4FA92D0C6C9EF7FDF3DC041 /* BModules.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BModules.h; path = SourcesB/BModules.h; sourceTree = "<group>"; };
 		1DB13C00757A626755CDEF3DED0B40F5 /* Proxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Proxy.h; path = RoutableAssist/Classes/Proxy.h; sourceTree = "<group>"; };
 		2150F7871B3F087EF13C4F03C4DD3375 /* AnyFormatProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyFormatProtocol.swift; path = Sources/AnyFormatProtocol.swift; sourceTree = "<group>"; };
 		2153CC8600FF9218BE882781F98D69AF /* String+MD5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+MD5.swift"; path = "Sources/String/String+MD5.swift"; sourceTree = "<group>"; };
-		22FC1E7531F34E1308157E3C3BC17384 /* SPRoutable.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = SPRoutable.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		22FECC5084CF09DAB1DCB2B184B210A4 /* Array.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Array.swift; path = Sources/Data/Array.swift; sourceTree = "<group>"; };
-		256EE74C1D3BF4813409354B15D859CB /* BModules.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BModules.h; path = SourcesB/BModules.h; sourceTree = "<group>"; };
 		266B5182CE1E5C2DC2D4D02CB5421C81 /* Data.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Data.swift; path = Sources/Data/Data.swift; sourceTree = "<group>"; };
+		2736DA16F3F9CF51BE3090330B80C61E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27F413E0F726D7D6B5062CC9F65C1503 /* Then.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Then.swift; path = Sources/Then/Then.swift; sourceTree = "<group>"; };
 		284DF63A6C991779E55FE2B208EBD32E /* RoutableAssist-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RoutableAssist-prefix.pch"; sourceTree = "<group>"; };
-		2885762EB50144A12AB7DEF9BF1B2459 /* SPRoutable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SPRoutable-dummy.m"; sourceTree = "<group>"; };
+		29680CBEEF6DB721DB7EABB01200C869 /* AModules.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AModules.h; path = SourcesA/AModules.h; sourceTree = "<group>"; };
 		29D1A84DFA7FFE713468813997B3038F /* ConstraintMakerPriortizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerPriortizable.swift; path = Source/ConstraintMakerPriortizable.swift; sourceTree = "<group>"; };
 		2B029109A4370A67D3DA110552852A5E /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerFinalizable.swift; path = Source/ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
+		2D04BADB8301D2531219D4A4743791D4 /* Routable+format.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+format.swift"; path = "Sources/Routable+format.swift"; sourceTree = "<group>"; };
 		2D7F7E214B31614ABAAF7FD96D0C7FF9 /* SP+UITextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UITextField.swift"; path = "Sources/SP+UITextField.swift"; sourceTree = "<group>"; };
 		2D9C9F649B340A00729EC6BFF5438FF4 /* SPKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SPKit-dummy.m"; sourceTree = "<group>"; };
 		2E1B68FF00ECFFC5473FCCFDCBDDC62A /* BLFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BLFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F9428F3C1DFDCFAE512E2219342F7F3 /* SP+CALayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+CALayer.swift"; path = "Sources/SP+CALayer.swift"; sourceTree = "<group>"; };
+		30BDDCA5B8330F9E792C21577FDAA60F /* AModules-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AModules-dummy.m"; sourceTree = "<group>"; };
 		312B0F6CDE4D1AC53245989EB92F61D5 /* SP+CGRect.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+CGRect.swift"; path = "Sources/SP+CGRect.swift"; sourceTree = "<group>"; };
+		334A83AD3CD09BBB44EE0E3696DF43B8 /* Routable+Perform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+Perform.swift"; path = "Sources/Routable+Perform.swift"; sourceTree = "<group>"; };
 		337A420F1EE7C20BA330060CB194A75E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3387CC4981D3A1E2AFDEF8D5C4E01438 /* BLFoundation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BLFoundation-dummy.m"; sourceTree = "<group>"; };
 		344D12F58C507579DA092917A48C834F /* Then.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Then.framework; path = Then.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -310,69 +312,65 @@
 		35EB659C0AB5AE29247574F1F30A44A1 /* BLFoundation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BLFoundation.h; path = Sources/BLFoundation.h; sourceTree = "<group>"; };
 		39DF5BC2EAF49A91167B464780A2010C /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintLayoutGuide+Extensions.swift"; path = "Source/ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
 		3AA662D03C7505EDD601EBA6D912FC63 /* SPKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPKit-umbrella.h"; sourceTree = "<group>"; };
+		3C4542B0815CA3D94971E6CF4F0B2935 /* AModules-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AModules-prefix.pch"; sourceTree = "<group>"; };
 		401D04202C0AA03834EE71CCD5A7FADD /* Then.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Then.xcconfig; sourceTree = "<group>"; };
-		4111C38F1DC44FDFA2303BC2470B823B /* Router_web.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Router_web.swift; sourceTree = "<group>"; };
 		41687B31D64C0290884E4BE48401573B /* SP+UIButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UIButton.swift"; path = "Sources/SP+UIButton.swift"; sourceTree = "<group>"; };
-		421BD1F2C21168184F6DDF0F20010C7E /* Routable+ObjectType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+ObjectType.swift"; path = "Sources/Core/Routable+ObjectType.swift"; sourceTree = "<group>"; };
+		43FACB04F94551D550BB4E0AA0961E88 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		441C23D9FAE45D49478BD2568DAA58DB /* SP+UILabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UILabel.swift"; path = "Sources/SP+UILabel.swift"; sourceTree = "<group>"; };
 		45E71B8D7259D61AA3CC42ECD9D234D9 /* BLFoundation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BLFoundation-prefix.pch"; sourceTree = "<group>"; };
-		49F0387B7BB71928E2C8220DC523151B /* AModules.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AModules.modulemap; sourceTree = "<group>"; };
+		48C94C25C3FEC95A6B7D683281B5BEB6 /* AModules.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AModules.xcconfig; sourceTree = "<group>"; };
 		4BDA8F6198974E57B74D9032C277D30C /* RoutableAssist.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RoutableAssist.xcconfig; sourceTree = "<group>"; };
 		4DB044FBFD14635F6E3F3664F9B39CC9 /* Date+Timepiece.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Timepiece.swift"; path = "Sources/Date/Date+Timepiece.swift"; sourceTree = "<group>"; };
+		4E4F73A6503489CB223D1DE1135F5214 /* BModules.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = BModules.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4F57D12F488CA79625DCBDC894A22F86 /* ConstraintView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintView+Extensions.swift"; path = "Source/ConstraintView+Extensions.swift"; sourceTree = "<group>"; };
 		5055B97FDD5497ED5A09B20B2702A079 /* AnyFormatProtocol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AnyFormatProtocol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50CDDBB134BD2F5292368B7497B1479F /* BModules.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BModules.modulemap; sourceTree = "<group>"; };
 		51A5B5B78D1772119412821FCADECC29 /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Source/Constraint.swift; sourceTree = "<group>"; };
 		53A8D29B2956F23F2142D3B0F195EE4D /* RoutableAssist-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RoutableAssist-umbrella.h"; sourceTree = "<group>"; };
-		54E8EE7DDC3099CC278450B0809DDE78 /* AModules-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AModules-umbrella.h"; sourceTree = "<group>"; };
-		557FA2C9B64A424955C199B809494211 /* BModules.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = BModules.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		53D7CD9CD06D4722596F2081B3B20A1C /* Routable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Routable.swift; path = Sources/Routable.swift; sourceTree = "<group>"; };
 		558597FC76D1425902689923BA620A9E /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Source/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
 		55DB93E87761F6BAEA175457AB2999AB /* AnyFormatProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AnyFormatProtocol.h; path = Sources/AnyFormatProtocol.h; sourceTree = "<group>"; };
 		574B694ADD492932B6A78018F2D5D48E /* Pods-Routable_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Routable_Example-umbrella.h"; sourceTree = "<group>"; };
 		578D63A489D33055FE722D583228E0F9 /* SPKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SPKit.xcconfig; sourceTree = "<group>"; };
 		5A5586E0F84E994E9185E6BEBC94C731 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A6A1AFB74E5F8C62FFE60B8F0235365 /* String+substring.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+substring.swift"; path = "Sources/String/String+substring.swift"; sourceTree = "<group>"; };
-		5BA18A920008B18EDE6BCD3CCCA21395 /* AModules.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AModules.xcconfig; sourceTree = "<group>"; };
-		5D693FF13B8656DC884FB52A8AEA6E11 /* SPRoutable-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPRoutable-prefix.pch"; sourceTree = "<group>"; };
+		5CA4B3C66F2AFEFA2DA44C8590F38403 /* AModules.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AModules.modulemap; sourceTree = "<group>"; };
 		5DA19FDB9904D44663CBE401E56BA6CD /* Pods-Routable_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Routable_Example.modulemap"; sourceTree = "<group>"; };
-		5DA82372E7340EEAF98549872264EE49 /* BModules-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BModules-dummy.m"; sourceTree = "<group>"; };
-		5DB83510F49BBC3AED7BBEC1AB1052E3 /* Router_swift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Router_swift.swift; path = SourcesB/Router_swift.swift; sourceTree = "<group>"; };
 		5E24FF463D11BCE465B5CF8798CE12C9 /* ConstraintConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConfig.swift; path = Source/ConstraintConfig.swift; sourceTree = "<group>"; };
+		5EA22A7FD0ABA145A19A7BB72C657E5C /* BModules.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BModules.xcconfig; sourceTree = "<group>"; };
 		608C86D96489B2F1D9C647D4E1BDFA4B /* AnyFormatProtocol-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AnyFormatProtocol-dummy.m"; sourceTree = "<group>"; };
 		60B094B401E7ABF7DE44B93C3BA1A6FC /* Pods-Routable_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Routable_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		63754A2DDEE53B770B445820CB866756 /* Router_rewrite.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Router_rewrite.swift; sourceTree = "<group>"; };
+		60E2543977BF55281839103183D4C1D2 /* SPRoutable-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPRoutable-prefix.pch"; sourceTree = "<group>"; };
 		64E3E0D73EEA465765EBF8A6D689248F /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerRelatable.swift; path = Source/ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
-		664AE38DE61943C44C0887A84FF73920 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68FEF8FD71558E81E4C53D948731F684 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		696D6A3F7CEABF42DB4B09CA679025A6 /* Then.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Then.modulemap; sourceTree = "<group>"; };
-		6C0A4ADA598EEACC6BDED597A74CCE60 /* Routable+URL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+URL.swift"; path = "Sources/Core/Routable+URL.swift"; sourceTree = "<group>"; };
-		6ECAB683A983059FABA4D823E61934D7 /* BModules.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BModules.xcconfig; sourceTree = "<group>"; };
 		6F204BAE7EEFAFC411D16D5348148E81 /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Source/Debugging.swift; sourceTree = "<group>"; };
 		71AEBC7AB08F25D741913323CFB636BB /* String+Timepiece.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Timepiece.swift"; path = "Sources/Date/String+Timepiece.swift"; sourceTree = "<group>"; };
-		71B74AE64FA9FB904719924D5491940D /* Routable+Data.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+Data.swift"; path = "Sources/Core/Routable+Data.swift"; sourceTree = "<group>"; };
 		7482CD70196237C9AFF5E185AFDC3888 /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Source/ConstraintMaker.swift; sourceTree = "<group>"; };
 		76BC1F187B9185F16C5C44ED5F43F187 /* SPKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPKit-prefix.pch"; sourceTree = "<group>"; };
 		78799EED8C756D999E89CC17EA120358 /* ConstraintConstantTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConstantTarget.swift; path = Source/ConstraintConstantTarget.swift; sourceTree = "<group>"; };
+		792962EEC9CA0CC5975BCAFE8D74B898 /* BModules-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BModules-prefix.pch"; sourceTree = "<group>"; };
 		79688F206F4F3BFF078A3C77E2052B48 /* Regex+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Regex+Extension.swift"; path = "Sources/String/Regex+Extension.swift"; sourceTree = "<group>"; };
-		7BCC1C435FECE8239EF58A6BBE1D6841 /* SPRoutable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPRoutable-umbrella.h"; sourceTree = "<group>"; };
+		7A84D4E977BB0DD174E6BC4E496ABE26 /* Routable+ObjectType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+ObjectType.swift"; path = "Sources/Routable+ObjectType.swift"; sourceTree = "<group>"; };
+		7ADDB57178B730EE72360272675DF2F0 /* Routable+Data.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+Data.swift"; path = "Sources/Routable+Data.swift"; sourceTree = "<group>"; };
+		7BFB7D8350047BAA9CB16CC92013079E /* Router_objc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Router_objc.h; path = SourcesA/Router_objc.h; sourceTree = "<group>"; };
+		7D212481A46F3F390A0C8A2C993CF1CA /* Routale+UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routale+UIKit.swift"; path = "Sources/Routale+UIKit.swift"; sourceTree = "<group>"; };
 		7DC865B8023FE22EA58F1959F6F40963 /* Dictionary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dictionary.swift; path = Sources/Data/Dictionary.swift; sourceTree = "<group>"; };
-		8173E5A3FD35E3DA23579208626EAA8F /* Routable+Perform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+Perform.swift"; path = "Sources/Core/Routable+Perform.swift"; sourceTree = "<group>"; };
 		81A1C9A999E7C55C59C2204741136251 /* Invocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Invocation.m; path = RoutableAssist/Classes/Invocation.m; sourceTree = "<group>"; };
 		823D4C587954AF0F2D097ED88D89DBA1 /* RoutableAssist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RoutableAssist.framework; path = RoutableAssist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82E8A6EC8E1173E40D6C59F710FC7B64 /* AnyFormatProtocol-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AnyFormatProtocol-umbrella.h"; sourceTree = "<group>"; };
 		84728B66FF5319A2D2CE7F495D2CBA88 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		854747DF498D584AB96E6AA200325149 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
-		88AE85B0FF2B3DBC202169A463820702 /* BModules-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BModules-umbrella.h"; sourceTree = "<group>"; };
 		8B41FD22E386EF81CA2E1E50B795D720 /* Pods-Routable_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Routable_Example-frameworks.sh"; sourceTree = "<group>"; };
-		8E075E915F007B909774322E739AB7AC /* SPRoutable.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SPRoutable.modulemap; sourceTree = "<group>"; };
 		8E28B390B6FB2421496CBC769FD76A85 /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Source/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
 		8EAB972402E344730C15CD155972FB63 /* Double.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Double.swift; path = Sources/Number/Double.swift; sourceTree = "<group>"; };
 		9335E8829F0C63EEE74BD4EDC4B40A28 /* String+format.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+format.swift"; path = "Sources/String/String+format.swift"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		93E5871CAC863741175AC58EA2951BA9 /* AModules-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AModules-prefix.pch"; sourceTree = "<group>"; };
 		94D4266760AD5C0E8F69F7FD15D1F322 /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
 		96ED041F3912032A0C3C5F1F2F293E35 /* SP+UIStoryboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UIStoryboard.swift"; path = "Sources/SP+UIStoryboard.swift"; sourceTree = "<group>"; };
 		986B40180C29B3E4A633FCD751A51A34 /* RunTime.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RunTime.swift; path = Sources/Tools/RunTime.swift; sourceTree = "<group>"; };
 		987E8543F9B478D15D822D0F851C7628 /* SnapKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.xcconfig; sourceTree = "<group>"; };
+		9A0488C29406AFC8181A7B1D73173538 /* Routable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Routable.h; path = Sources/Routable.h; sourceTree = "<group>"; };
 		9A5B36C4152247CBBB3CE411A3B57157 /* BLFoundation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BLFoundation-umbrella.h"; sourceTree = "<group>"; };
 		9AADE6BBC6C0406D520DE7C0700F171B /* Pods-Routable_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Routable_Example-resources.sh"; sourceTree = "<group>"; };
 		9AE5EB614E3024F9737ECF3267D4695F /* SP+UIView+Frame.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UIView+Frame.swift"; path = "Sources/SP+UIView+Frame.swift"; sourceTree = "<group>"; };
@@ -381,41 +379,44 @@
 		9F0515744873C050E1E7B5CDC247C38D /* SP+UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UIImage.swift"; path = "Sources/SP+UIImage.swift"; sourceTree = "<group>"; };
 		9FD2B9A96CA1B8CC5FD3EC8D80BBA748 /* AnyFormatProtocol-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AnyFormatProtocol-prefix.pch"; sourceTree = "<group>"; };
 		A10A0ADED4956CCABCE4999710BB08D5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A18AFBB01ED1CBE17C716BC1C5A3886F /* Routable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Routable.h; path = Sources/Core/Routable.h; sourceTree = "<group>"; };
 		A27635B7B080B9E342FF8234501C193E /* CharacterSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CharacterSet.swift; path = Sources/String/CharacterSet.swift; sourceTree = "<group>"; };
 		A48F1DE036A281BCC5FC369DB8CB177E /* RoutableAssist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RoutableAssist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D382A2726AA7C35704029AECD5AFD1 /* AnyFormatProtocol.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AnyFormatProtocol.modulemap; sourceTree = "<group>"; };
 		A6E90BD96C06D64C79F57D43970DB04C /* SP+UIControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UIControl.swift"; path = "Sources/SP+UIControl.swift"; sourceTree = "<group>"; };
-		A7034F526DA2E3D2C888F62A5045130A /* BModules.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BModules.modulemap; sourceTree = "<group>"; };
+		A9968F805947094F032BE29721AA2F3A /* SPRoutable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPRoutable-umbrella.h"; sourceTree = "<group>"; };
 		AC77A0BB79DE3A408C634AD6911C0069 /* Pods-Routable_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Routable_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		ACA2F8BF9386EB7679333A23719C8D8D /* Invocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Invocation.h; path = RoutableAssist/Classes/Invocation.h; sourceTree = "<group>"; };
+		AE7C5FD7FAE1985B809BFC9625032F9F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		AECD0DDA3EE875690C9CB6F649360D3E /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Source/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
-		AEEE3D9B8ED8F220EBC984492DF407D2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF20F0215DF7C6AAFD7286C1CD6DAB0C /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
 		AF2601C099140663FB527794068BA6C7 /* String+operator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+operator.swift"; path = "Sources/String/String+operator.swift"; sourceTree = "<group>"; };
+		AF33A0260E14178398AFD907F84CF32F /* SPRoutable.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SPRoutable.xcconfig; sourceTree = "<group>"; };
 		B0E5808D1285C4AD5D0F18596CF8781E /* Then-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Then-umbrella.h"; sourceTree = "<group>"; };
 		B24045C87A819966821066DF614FF595 /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuide.swift; path = Source/ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
 		B244BC6FCD65EB18E0C1ECD754EF956F /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
-		B551ED4BA60C746781527C6FEDD9023B /* AModules-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AModules-dummy.m"; sourceTree = "<group>"; };
+		B40CC661FC9B41283BB39334AAE8B64E /* Routable+URL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+URL.swift"; path = "Sources/Routable+URL.swift"; sourceTree = "<group>"; };
 		B6CBEF238E005ABDF2EB81DF02E2E8AC /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Source/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
+		B6DD4C40E6D5198C4B3CDD2DC3A7096E /* BModules-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BModules-umbrella.h"; sourceTree = "<group>"; };
 		B6EA67E3E9216D72191BBAC88842A4C9 /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutSupport+Extensions.swift"; path = "Source/UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
 		B736146411615876D6108C86D0346273 /* Pods-Routable_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Routable_Example-dummy.m"; sourceTree = "<group>"; };
+		B792152388A3BF4D31E9B2C2C95789DF /* SPRoutable.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = SPRoutable.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B872C3F23BC970FBC6B0A7C23839A334 /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
 		B8828A5117FFA3FC505AD73768F51A18 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B9A2C8D9FCF1E8F8585640F767FE6C8D /* Routable+format.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Routable+format.swift"; path = "Sources/Core/Routable+format.swift"; sourceTree = "<group>"; };
-		BA42DBC43547B2CA1AC464CFC6F7EDAE /* SPRoutable.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SPRoutable.xcconfig; sourceTree = "<group>"; };
+		BD65B3BF7BB6ECFD3B8B5E7A01A88673 /* BModules-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BModules-dummy.m"; sourceTree = "<group>"; };
 		BE2F25516E39C746F4C1A7E86BC41331 /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerEditable.swift; path = Source/ConstraintMakerEditable.swift; sourceTree = "<group>"; };
 		C03EE8811FABF0B6F86A5283A13CA5CF /* Int.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Int.swift; path = Sources/Number/Int.swift; sourceTree = "<group>"; };
+		C0F36EB622DBB9C9C2219E7EF6DC3D74 /* Router_rewrite.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Router_rewrite.swift; sourceTree = "<group>"; };
+		C3311D90192DB6393A26865A35BC432E /* SPRoutable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SPRoutable-dummy.m"; sourceTree = "<group>"; };
 		C46EE1B8DE1E074D6E9540C524F19E10 /* SPRoutable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPRoutable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4EDC2125F6A0C14291C70EA43DB1D8C /* BModules.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BModules.framework; path = BModules.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C53E4A31A46585DC0A49C1C08D20BB2D /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SnapKit.modulemap; sourceTree = "<group>"; };
 		C56FD8D1C8CF861C098903FBF823EBED /* MethodSignature.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MethodSignature.m; path = RoutableAssist/Classes/MethodSignature.m; sourceTree = "<group>"; };
-		C5E631EACD82A45E038B734206959C0A /* Routable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Routable.swift; path = Sources/Core/Routable.swift; sourceTree = "<group>"; };
 		C61706E34DFFF3AB88E277819915197E /* String+format.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+format.swift"; path = "Sources/String+format.swift"; sourceTree = "<group>"; };
 		C63EA31CA5CE6B3FEF60C9DEE29D5588 /* Pods-Routable_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Routable_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C6858835505097F6D02D08EB6F35A5EC /* URL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URL.swift; path = Sources/URL/URL.swift; sourceTree = "<group>"; };
 		C705F328786E618BAB7B97F2B892A7D2 /* SP+ViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+ViewController.swift"; path = "Sources/SP+ViewController.swift"; sourceTree = "<group>"; };
 		C7692811752BF4440459F96A10E7398C /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Source/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
+		C7CE02CE560BC4824B355B7E298B317A /* Router_swift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Router_swift.swift; path = SourcesB/Router_swift.swift; sourceTree = "<group>"; };
 		C7EA2DA95D89CB607B8A0FE4CCBBEEBB /* SP+UIBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UIBarButtonItem.swift"; path = "Sources/SP+UIBarButtonItem.swift"; sourceTree = "<group>"; };
 		C804CB94B586D0AAE53BE69CD998A2EB /* AModules.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AModules.framework; path = AModules.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C825A28F768F34A87DF0F33310834816 /* RoutableAssist-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RoutableAssist-dummy.m"; sourceTree = "<group>"; };
@@ -425,30 +426,31 @@
 		D7A03564F971500224BE9D3CB596BA01 /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Source/ConstraintPriority.swift; sourceTree = "<group>"; };
 		D9314C0D0814DAAE87A60071F2545887 /* SP+UICell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UICell.swift"; path = "Sources/SP+UICell.swift"; sourceTree = "<group>"; };
 		D9789FA73219BB8F1446FBF7E601A0DD /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
-		D9E3A46FC4362A764B446A41B4C7B064 /* Router_objc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Router_objc.m; path = SourcesA/Router_objc.m; sourceTree = "<group>"; };
 		DAB3BAB0792B604F1888EDFCE23F0287 /* Then-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Then-dummy.m"; sourceTree = "<group>"; };
 		DB4AF81FA09F30BB3D22D530BEAB9963 /* AnyFormatProtocol.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AnyFormatProtocol.xcconfig; sourceTree = "<group>"; };
 		DBE013D96C12108AE155B798CE97BC0B /* RoutableAssist.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RoutableAssist.modulemap; sourceTree = "<group>"; };
 		DD36DFDE457430E838052E54625FA869 /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Source/ConstraintViewDSL.swift; sourceTree = "<group>"; };
+		E1680FD8A10AE813CD6A450CE7DE4ACD /* Router_objc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Router_objc.m; path = SourcesA/Router_objc.m; sourceTree = "<group>"; };
 		E26A51FDCB0693BA56C722B2EB23824C /* BLFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BLFoundation.framework; path = BLFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3922B698A6445F25C7BFB93C046F27A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		E6CB956354D5AD69AFD72A0DBD1A101F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		EB24B0EC16A89FC8E766E9F77117F7D8 /* Date.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Date.swift; path = Sources/Date/Date.swift; sourceTree = "<group>"; };
 		ED15D83F0FB878EC5A3D69B7E8FBB058 /* String+match.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+match.swift"; path = "Sources/String/String+match.swift"; sourceTree = "<group>"; };
 		ED8556EAED5304C98734BFFD0C1DD169 /* SPRoutable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SPRoutable.framework; path = SPRoutable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF7C117B3301ED5C8A2975107A77934 /* CGFloat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CGFloat.swift; path = Sources/Number/CGFloat.swift; sourceTree = "<group>"; };
 		EEC65485AFCE5C5A688FCBCE23CFE506 /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
+		EF0A95E212790ADB8735B0568278CF53 /* Router_web.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Router_web.swift; sourceTree = "<group>"; };
 		F0C35DFE75071C39B81286B14E3482C1 /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Source/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
 		F15DFAC81EE9A2A428921DA78EBBF850 /* SP+UIApplication.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UIApplication.swift"; path = "Sources/SP+UIApplication.swift"; sourceTree = "<group>"; };
+		F22A1FC01D50BBA76827002610B17438 /* AModules.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = AModules.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F3233D173A6DD932258A846B9EFFFC35 /* SP+NSLayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+NSLayoutConstraint.swift"; path = "Sources/SP+NSLayoutConstraint.swift"; sourceTree = "<group>"; };
 		F49EF68743F5F4F66B62ABB1E1A5CD16 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F58C344731DF38071524F42C55DC7112 /* MethodSignature.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MethodSignature.h; path = RoutableAssist/Classes/MethodSignature.h; sourceTree = "<group>"; };
 		F63257FCA08CC561099BAC63594A5408 /* String+extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+extension.swift"; path = "Sources/String/String+extension.swift"; sourceTree = "<group>"; };
+		F683BA12C6F92A1E0A86215DD73D4196 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6853A8EFB7CAC7A610E3E1AD9C2250E /* DateComponents+Timepiece.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateComponents+Timepiece.swift"; path = "Sources/Date/DateComponents+Timepiece.swift"; sourceTree = "<group>"; };
-		F772CD2DA9EBB25CDD4CC6712DD0568D /* Router_objc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Router_objc.h; path = SourcesA/Router_objc.h; sourceTree = "<group>"; };
 		F7798193523C806323BE97846DD1FF87 /* Int+Timepiece.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Int+Timepiece.swift"; path = "Sources/Date/Int+Timepiece.swift"; sourceTree = "<group>"; };
 		F81D039D20290F568C6ABC42AF47BF29 /* SPKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SPKit.modulemap; sourceTree = "<group>"; };
-		F89122885F3376E49A1BFB6B5552C214 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD653E96A3336B626BF883ADFBD79946 /* AModules-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AModules-umbrella.h"; sourceTree = "<group>"; };
 		FECCE4701E70884B269388CE53C53B82 /* Pods-Routable_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Routable_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -560,28 +562,6 @@
 			path = "../Target Support Files/BLFoundation";
 			sourceTree = "<group>";
 		};
-		0C7DECCA4E6C7B0CFDA1381E23E43C75 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				1A5213A49C87091B6D604AB53F4E0F70 /* AModules.podspec */,
-				E3922B698A6445F25C7BFB93C046F27A /* LICENSE */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		11166163EF57E7C4355AF1522066F63B /* AModules */ = {
-			isa = PBXGroup;
-			children = (
-				11930478FF0B63141F068D26D498FCED /* AModules.h */,
-				F772CD2DA9EBB25CDD4CC6712DD0568D /* Router_objc.h */,
-				D9E3A46FC4362A764B446A41B4C7B064 /* Router_objc.m */,
-				0C7DECCA4E6C7B0CFDA1381E23E43C75 /* Pod */,
-				CD90FB918E134DD0869A3BFDA9A24304 /* Support Files */,
-			);
-			name = AModules;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		121769C719A7CD1E56D53BF237D3ADA7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -632,32 +612,18 @@
 			name = Number;
 			sourceTree = "<group>";
 		};
-		31C2FEF2C162EC9C805E808CAC7E4C07 /* Development Pods */ = {
+		214B8FA0FD02ABA7C206CB8C61CE4C8A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				11166163EF57E7C4355AF1522066F63B /* AModules */,
-				640A56E85277942506C28BBBF0B37AB3 /* BModules */,
-				515CA0FBADF6952C22D30978A07F0BFA /* SPRoutable */,
+				5CA4B3C66F2AFEFA2DA44C8590F38403 /* AModules.modulemap */,
+				48C94C25C3FEC95A6B7D683281B5BEB6 /* AModules.xcconfig */,
+				30BDDCA5B8330F9E792C21577FDAA60F /* AModules-dummy.m */,
+				3C4542B0815CA3D94971E6CF4F0B2935 /* AModules-prefix.pch */,
+				FD653E96A3336B626BF883ADFBD79946 /* AModules-umbrella.h */,
+				43FACB04F94551D550BB4E0AA0961E88 /* Info.plist */,
 			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		3F12642CF99209F8CE74E4EDA0E440FF /* rewrite */ = {
-			isa = PBXGroup;
-			children = (
-				63754A2DDEE53B770B445820CB866756 /* Router_rewrite.swift */,
-				4111C38F1DC44FDFA2303BC2470B823B /* Router_web.swift */,
-			);
-			name = rewrite;
-			path = SourcesB/rewrite;
-			sourceTree = "<group>";
-		};
-		3FD920158CABA713E67E1D946E92621D /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				22FC1E7531F34E1308157E3C3BC17384 /* SPRoutable.podspec */,
-			);
-			name = Pod;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/AModules";
 			sourceTree = "<group>";
 		};
 		409BA4AF82AF683EC52C2BE773EEB622 /* RoutableAssist */ = {
@@ -675,6 +641,42 @@
 			path = RoutableAssist;
 			sourceTree = "<group>";
 		};
+		44E1558DADD09FAC4469806CE871C1C1 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				B792152388A3BF4D31E9B2C2C95789DF /* SPRoutable.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		481C9090F6CA3784E0819E7F324FCB64 /* SPRoutable */ = {
+			isa = PBXGroup;
+			children = (
+				9A0488C29406AFC8181A7B1D73173538 /* Routable.h */,
+				53D7CD9CD06D4722596F2081B3B20A1C /* Routable.swift */,
+				7ADDB57178B730EE72360272675DF2F0 /* Routable+Data.swift */,
+				2D04BADB8301D2531219D4A4743791D4 /* Routable+format.swift */,
+				7A84D4E977BB0DD174E6BC4E496ABE26 /* Routable+ObjectType.swift */,
+				334A83AD3CD09BBB44EE0E3696DF43B8 /* Routable+Perform.swift */,
+				B40CC661FC9B41283BB39334AAE8B64E /* Routable+URL.swift */,
+				7D212481A46F3F390A0C8A2C993CF1CA /* Routale+UIKit.swift */,
+				44E1558DADD09FAC4469806CE871C1C1 /* Pod */,
+				52D309F3ECCD70F5C7B5586883587222 /* Support Files */,
+			);
+			name = SPRoutable;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		4ABD6415C2D0467738000AEF2C9D5BB2 /* rewrite */ = {
+			isa = PBXGroup;
+			children = (
+				C0F36EB622DBB9C9C2219E7EF6DC3D74 /* Router_rewrite.swift */,
+				EF0A95E212790ADB8735B0568278CF53 /* Router_web.swift */,
+			);
+			name = rewrite;
+			path = SourcesB/rewrite;
+			sourceTree = "<group>";
+		};
 		4DC67942334B246466DF719D80C69295 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -682,21 +684,18 @@
 			name = Data;
 			sourceTree = "<group>";
 		};
-		515CA0FBADF6952C22D30978A07F0BFA /* SPRoutable */ = {
+		52D309F3ECCD70F5C7B5586883587222 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A18AFBB01ED1CBE17C716BC1C5A3886F /* Routable.h */,
-				C5E631EACD82A45E038B734206959C0A /* Routable.swift */,
-				71B74AE64FA9FB904719924D5491940D /* Routable+Data.swift */,
-				B9A2C8D9FCF1E8F8585640F767FE6C8D /* Routable+format.swift */,
-				421BD1F2C21168184F6DDF0F20010C7E /* Routable+ObjectType.swift */,
-				8173E5A3FD35E3DA23579208626EAA8F /* Routable+Perform.swift */,
-				6C0A4ADA598EEACC6BDED597A74CCE60 /* Routable+URL.swift */,
-				3FD920158CABA713E67E1D946E92621D /* Pod */,
-				FF786DCED3BC33363499C51A378F3BEE /* Support Files */,
+				F683BA12C6F92A1E0A86215DD73D4196 /* Info.plist */,
+				17792B11286BC4FA3E081AA08D2949E0 /* SPRoutable.modulemap */,
+				AF33A0260E14178398AFD907F84CF32F /* SPRoutable.xcconfig */,
+				C3311D90192DB6393A26865A35BC432E /* SPRoutable-dummy.m */,
+				60E2543977BF55281839103183D4C1D2 /* SPRoutable-prefix.pch */,
+				A9968F805947094F032BE29721AA2F3A /* SPRoutable-umbrella.h */,
 			);
-			name = SPRoutable;
-			path = ../..;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/SPRoutable";
 			sourceTree = "<group>";
 		};
 		545A25A52CA34844431522592516A12A /* String */ = {
@@ -730,16 +729,16 @@
 			name = Date;
 			sourceTree = "<group>";
 		};
-		640A56E85277942506C28BBBF0B37AB3 /* BModules */ = {
+		70360171B6AFA47009F9E775907C0376 /* AModules */ = {
 			isa = PBXGroup;
 			children = (
-				256EE74C1D3BF4813409354B15D859CB /* BModules.h */,
-				5DB83510F49BBC3AED7BBEC1AB1052E3 /* Router_swift.swift */,
-				F55889CA7187376DDEAAC0C972AA79E8 /* Pod */,
-				3F12642CF99209F8CE74E4EDA0E440FF /* rewrite */,
-				CA0E39F71ACC2CD16DE1AC8DCF128A6D /* Support Files */,
+				29680CBEEF6DB721DB7EABB01200C869 /* AModules.h */,
+				7BFB7D8350047BAA9CB16CC92013079E /* Router_objc.h */,
+				E1680FD8A10AE813CD6A450CE7DE4ACD /* Router_objc.m */,
+				8D3CC84E924E449AF2921EB11EC973CD /* Pod */,
+				214B8FA0FD02ABA7C206CB8C61CE4C8A /* Support Files */,
 			);
-			name = BModules;
+			name = AModules;
 			path = ../..;
 			sourceTree = "<group>";
 		};
@@ -804,12 +803,34 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				31C2FEF2C162EC9C805E808CAC7E4C07 /* Development Pods */,
+				C5BC73767A02BD631F076067A44C79A7 /* Development Pods */,
 				121769C719A7CD1E56D53BF237D3ADA7 /* Frameworks */,
 				DA4EB1CF5C9738C2AF6B5EB2AA9B981D /* Pods */,
 				571569B86A29C1AB1808E51B1536DD47 /* Products */,
 				C834C5847F6E37CBAEF48FA009175E4D /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		8D3CC84E924E449AF2921EB11EC973CD /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				F22A1FC01D50BBA76827002610B17438 /* AModules.podspec */,
+				AE7C5FD7FAE1985B809BFC9625032F9F /* LICENSE */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		915A481E6AFA10E1357BC319F2AF44C2 /* BModules */ = {
+			isa = PBXGroup;
+			children = (
+				1D56AFEAD4FA92D0C6C9EF7FDF3DC041 /* BModules.h */,
+				C7CE02CE560BC4824B355B7E298B317A /* Router_swift.swift */,
+				EB9613FBB13B7A08CF976167482D4421 /* Pod */,
+				4ABD6415C2D0467738000AEF2C9D5BB2 /* rewrite */,
+				E83630B9B8EAB7B269ECF73528BF0ED4 /* Support Files */,
+			);
+			name = BModules;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		93E73ED02CE1FB1AA7041B15B770DC8A /* SPKit */ = {
@@ -883,40 +904,22 @@
 			name = URL;
 			sourceTree = "<group>";
 		};
+		C5BC73767A02BD631F076067A44C79A7 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				70360171B6AFA47009F9E775907C0376 /* AModules */,
+				915A481E6AFA10E1357BC319F2AF44C2 /* BModules */,
+				481C9090F6CA3784E0819E7F324FCB64 /* SPRoutable */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
 		C834C5847F6E37CBAEF48FA009175E4D /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
 				D4BECA821CA30E9CD2E83571036F8901 /* Pods-Routable_Example */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		CA0E39F71ACC2CD16DE1AC8DCF128A6D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				A7034F526DA2E3D2C888F62A5045130A /* BModules.modulemap */,
-				6ECAB683A983059FABA4D823E61934D7 /* BModules.xcconfig */,
-				5DA82372E7340EEAF98549872264EE49 /* BModules-dummy.m */,
-				03BD1658623698F60390AC9B6444CF29 /* BModules-prefix.pch */,
-				88AE85B0FF2B3DBC202169A463820702 /* BModules-umbrella.h */,
-				AEEE3D9B8ED8F220EBC984492DF407D2 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/BModules";
-			sourceTree = "<group>";
-		};
-		CD90FB918E134DD0869A3BFDA9A24304 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				49F0387B7BB71928E2C8220DC523151B /* AModules.modulemap */,
-				5BA18A920008B18EDE6BCD3CCCA21395 /* AModules.xcconfig */,
-				B551ED4BA60C746781527C6FEDD9023B /* AModules-dummy.m */,
-				93E5871CAC863741175AC58EA2951BA9 /* AModules-prefix.pch */,
-				54E8EE7DDC3099CC278450B0809DDE78 /* AModules-umbrella.h */,
-				F89122885F3376E49A1BFB6B5552C214 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/AModules";
 			sourceTree = "<group>";
 		};
 		D4BECA821CA30E9CD2E83571036F8901 /* Pods-Routable_Example */ = {
@@ -964,6 +967,20 @@
 			path = "../Target Support Files/Then";
 			sourceTree = "<group>";
 		};
+		E83630B9B8EAB7B269ECF73528BF0ED4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				50CDDBB134BD2F5292368B7497B1479F /* BModules.modulemap */,
+				5EA22A7FD0ABA145A19A7BB72C657E5C /* BModules.xcconfig */,
+				BD65B3BF7BB6ECFD3B8B5E7A01A88673 /* BModules-dummy.m */,
+				792962EEC9CA0CC5975BCAFE8D74B898 /* BModules-prefix.pch */,
+				B6DD4C40E6D5198C4B3CDD2DC3A7096E /* BModules-umbrella.h */,
+				2736DA16F3F9CF51BE3090330B80C61E /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/BModules";
+			sourceTree = "<group>";
+		};
 		EB2D22E9FDD60B3427A80CD868F46B20 /* BLFoundation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1003,10 +1020,10 @@
 			path = BLFoundation;
 			sourceTree = "<group>";
 		};
-		F55889CA7187376DDEAAC0C972AA79E8 /* Pod */ = {
+		EB9613FBB13B7A08CF976167482D4421 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				557FA2C9B64A424955C199B809494211 /* BModules.podspec */,
+				4E4F73A6503489CB223D1DE1135F5214 /* BModules.podspec */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
@@ -1021,20 +1038,6 @@
 			);
 			name = AnyFormatProtocol;
 			path = AnyFormatProtocol;
-			sourceTree = "<group>";
-		};
-		FF786DCED3BC33363499C51A378F3BEE /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				664AE38DE61943C44C0887A84FF73920 /* Info.plist */,
-				8E075E915F007B909774322E739AB7AC /* SPRoutable.modulemap */,
-				BA42DBC43547B2CA1AC464CFC6F7EDAE /* SPRoutable.xcconfig */,
-				2885762EB50144A12AB7DEF9BF1B2459 /* SPRoutable-dummy.m */,
-				5D693FF13B8656DC884FB52A8AEA6E11 /* SPRoutable-prefix.pch */,
-				7BCC1C435FECE8239EF58A6BBE1D6841 /* SPRoutable-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/SPRoutable";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1125,7 +1128,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A79E854B99CCD151CD760093DB540A45 /* Routable.h in Headers */,
+				6C772D407AF980B330EA8F7D13438A52 /* Routable.h in Headers */,
 				17AE4275FD69C424E65261C36B403CF9 /* SPRoutable-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1269,7 +1272,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 967B278119E863A15CF29A571ACF8DB6 /* Build configuration list for PBXNativeTarget "SPRoutable" */;
 			buildPhases = (
-				509D2FAA8C90451082698E1574AD8A4A /* Sources */,
+				262CE7CD7B6ACE75F576B18525D88790 /* Sources */,
 				ACF0853DD30F2702259658D84E27F7DD /* Frameworks */,
 				EA69F9D31EFD44D9BBC7088482901309 /* Headers */,
 			);
@@ -1375,6 +1378,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		262CE7CD7B6ACE75F576B18525D88790 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				495DCAB593217D5DEB3FE632FA3295BE /* Routable+Data.swift in Sources */,
+				B708848C9846385CC3EF1D6BC999C49B /* Routable+format.swift in Sources */,
+				4E09FE64B3BD0CFB6DCA0D9A8BF4BF1E /* Routable+ObjectType.swift in Sources */,
+				80771CC71F242470C9647D1B5E995CEA /* Routable+Perform.swift in Sources */,
+				489C131BE9D387670896DF0EA82EF6C2 /* Routable+URL.swift in Sources */,
+				BE97A973BCFF8E91E9C1CB314087A477 /* Routable.swift in Sources */,
+				AC0EF0F2E74C95637B65F5468E5014BC /* Routale+UIKit.swift in Sources */,
+				9D56B8147004A2473BB37D9FAADA26D0 /* SPRoutable-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2D2391C3B4192B7A9646AC337EBEEBCC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1439,20 +1457,6 @@
 				D290F33643BCFE816E977CD0DF45AAC1 /* String+substring.swift in Sources */,
 				A9DF7DD2D9B81C3884753D5120AE3E89 /* String+Timepiece.swift in Sources */,
 				C38631C20758901EE6C23FD00312A68D /* URL.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		509D2FAA8C90451082698E1574AD8A4A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				96C01924C1F18462BB9750419F98CE4D /* Routable+Data.swift in Sources */,
-				DEE10A488E303FF36818CB09B2F63DE2 /* Routable+format.swift in Sources */,
-				B1CC7B86A0C415494912552E28BDA646 /* Routable+ObjectType.swift in Sources */,
-				4370C740AC7E3BDDBD8D0926C09CB14A /* Routable+Perform.swift in Sources */,
-				5413A0DFC78281D2D3608426E24097D9 /* Routable+URL.swift in Sources */,
-				091FD77387F3C38C7F6E69129543ED7B /* Routable.swift in Sources */,
-				7E5704B7171DE314089885B56E871700 /* SPRoutable-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1629,7 +1633,7 @@
 /* Begin XCBuildConfiguration section */
 		1505C7691AC604588925B92FA0D623C4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6ECAB683A983059FABA4D823E61934D7 /* BModules.xcconfig */;
+			baseConfigurationReference = 5EA22A7FD0ABA145A19A7BB72C657E5C /* BModules.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1662,7 +1666,7 @@
 		};
 		2B7E8FF30E401ABAB92DE03B6899DEA8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5BA18A920008B18EDE6BCD3CCCA21395 /* AModules.xcconfig */;
+			baseConfigurationReference = 48C94C25C3FEC95A6B7D683281B5BEB6 /* AModules.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1759,7 +1763,7 @@
 		};
 		64B6D9B78A8AE2ACC17D46769B299CB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5BA18A920008B18EDE6BCD3CCCA21395 /* AModules.xcconfig */;
+			baseConfigurationReference = 48C94C25C3FEC95A6B7D683281B5BEB6 /* AModules.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1855,7 +1859,7 @@
 		};
 		75F9A31982DED55891A39D76EC8C29FE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA42DBC43547B2CA1AC464CFC6F7EDAE /* SPRoutable.xcconfig */;
+			baseConfigurationReference = AF33A0260E14178398AFD907F84CF32F /* SPRoutable.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2242,7 +2246,7 @@
 		};
 		D104946DFAD1C93F17E547D70050532D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA42DBC43547B2CA1AC464CFC6F7EDAE /* SPRoutable.xcconfig */;
+			baseConfigurationReference = AF33A0260E14178398AFD907F84CF32F /* SPRoutable.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2306,7 +2310,7 @@
 		};
 		E2BCEDBC164DADC5C3CC6177FF8F7BC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6ECAB683A983059FABA4D823E61934D7 /* BModules.xcconfig */;
+			baseConfigurationReference = 5EA22A7FD0ABA145A19A7BB72C657E5C /* BModules.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

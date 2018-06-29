@@ -5,7 +5,7 @@ This application makes use of the following third party libraries:
 
 MIT License
 
-Copyright (c) 2017 bigL055
+Copyright (c) 2017 linhay
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -258,7 +258,7 @@ THE SOFTWARE.
 
 MIT License
 
-Copyright (c) 2017 bigL055
+Copyright (c) 2017 linhay
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -281,7 +281,7 @@ SOFTWARE.
 
 ## RoutableAssist
 
-Copyright (c) 2018 158179948@qq.com <158179948@qq.com>
+Copyright (c) 2018 linhay <is.linhay@outlook.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -511,7 +511,7 @@ THE SOFTWARE.
 
 MIT License
 
-Copyright (c) 2017 bigL055
+Copyright (c) 2017 linhay
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
