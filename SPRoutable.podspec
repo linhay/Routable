@@ -14,16 +14,16 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.10'
   s.watchos.deployment_target = '2.0'
   
-  s.source_files = 'Sources/*.{swift,h}'
-  s.public_header_files = ["Sources/Routable.h"]
+  s.source_files = ['Sources/*.{swift,h}']
+  s.public_header_files = ['Sources/Routable.h']
   
-  s.osx.exclude_files = ["Routale+UIKit.swift"]
-  s.watchos.exclude_files = ["Routale+UIKit.swift"]
-  s.tvos.exclude_files = ["Routale+UIKit.swift"]
+  s.osx.exclude_files = ['Sources/Routale+UIKit.swift']
+  s.watchos.exclude_files = ['Sources/Routale+UIKit.swift']
+  s.tvos.exclude_files = ['Sources/Routale+UIKit.swift']
   
   s.dependency 'RoutableAssist', '0.2.2'
   
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
   s.requires_arc = true
-
+  
 end
