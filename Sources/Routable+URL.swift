@@ -73,10 +73,18 @@ extension Routable {
   /// - Returns: 所需参数
   class func urlParse(url: URL) -> URLValue?{
     
+    var config: Config
+    if let scheme = url.scheme,let value = configs[scheme] {
+      config = value
+    }else if let value = configs["*"] {
+      config = value
+    }else{
+      assertionFailure("未获取到有效配置")
+      return nil
+    }
+    
     /// 处理协议头合法
-    guard (scheme.isEmpty || url.scheme == scheme),
-      let function = url.path.components(separatedBy: "/").last,
-      let className = url.host else { return nil }
+    guard let function = url.path.components(separatedBy: "/").last, let className = url.host else { return nil }
     
     /// 处理参数
     var params = [String: Any]()
@@ -90,7 +98,7 @@ extension Routable {
         }
       }
     }
-    return URLValue(targetName: className, selName: function, params: params)
+    return URLValue(config: config, targetName: className, selName: function, params: params)
   }
   
   /// 重定向策略

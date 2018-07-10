@@ -37,7 +37,7 @@ extension Routable {
   class func target(urlValue: URLValue,
                     block: (([String: Any]) -> ())?) -> Any? {
     
-
+    
     guard let id = getCacheId(value: urlValue) else { return nil }
     
     // 命中缓存
@@ -59,8 +59,8 @@ extension Routable {
     data.params = urlValue.params
     
     guard
-      let target = getClass(name: urlValue.targetName),
-      let sel = getSEL(target: target, name: urlValue.selName),
+      let target = getClass(name: urlValue.config.classPrefix + urlValue.targetName),
+      let sel = getSEL(target: target, funcName: urlValue.config.funcPrefix + urlValue.selName, paramName: urlValue.config.paramName),
       target.responds(to: sel),
       let sig = Proxy.methodSignature(target, sel: sel)
       else {
@@ -99,11 +99,11 @@ extension Routable {
       return value
     }
     
-    if let value = target(name: classPrefix + name) {
+    if let value = target(name: name) {
       return value
     }
     // 不在主工程中的swift类
-    if let value = target(name: namespace + "." + classPrefix + name) {
+    if let value = target(name: "\(namespace).\(name)") {
       return value
     }
     return nil
@@ -115,13 +115,13 @@ extension Routable {
   ///   - target: 指定类
   ///   - name: 指定函数名
   /// - Returns: 指定函数
-  class func getSEL(target: NSObject, name: String) -> Selector? {
+  class func getSEL(target: NSObject, funcName: String,paramName: String) -> Selector? {
     var methodNum: UInt32 = 0
     let methods = class_copyMethodList(type(of: target), &methodNum)
     let list = (0..<numericCast(methodNum)).flatMap { (index) -> Selector? in
       guard let method = methods?[index] else { return nil }
       let sel: Selector = method_getName(method)
-      guard sel.description.hasPrefix(funcPrefix + name) else { return nil }
+      guard sel.description.hasPrefix(funcName) else { return nil }
       return sel
       }.sorted { (func1, func2) -> Bool in
         let funcName1 = func1.description
@@ -149,7 +149,7 @@ extension Routable {
     default:
       return getReturnUnObjectValue(data: data)
     }
-
+    
   }
   
   /// 获取 object 类型返回值
@@ -174,7 +174,7 @@ extension Routable {
     }
     if data.returnType == .void { return nil }
     return value?.takeUnretainedValue()
-
+    
   }
   
   /// 获取 非object 类型返回值
@@ -196,7 +196,7 @@ extension Routable {
     inv.selector = sel
     invSetParams(inv: inv, params: data.params, id: data.id)
     inv.invoke()
-
+    
     switch data.returnType {
     case .longlong,.point,.int:
       var value: Int = 0

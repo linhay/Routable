@@ -48,7 +48,7 @@ class ViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Routable"
-    Routable.funcPrefix = ""
+    Routable.setConfig(scheme: "*", classPrefix: "Router_", funcPrefix: "", paramName: "Params")
     Routable.rewrite(rules:rewriteRule)
     tableView.sp.register(URLReturnValueCell.self)
   }

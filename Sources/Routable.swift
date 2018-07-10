@@ -24,24 +24,44 @@ import Foundation
 import RoutableAssist
 
 public class Routable: NSObject {
-  /// 类名前缀
-  @objc public static var classPrefix = "Router_"
-  /// 方法名前缀
-  @objc public static var funcPrefix = "router_"
-  /// 参数名
-  @objc public static var paramName = "Params"
-  /// 指定协议头, ""则为任意格式
-  @objc public static var scheme = ""
+  
+  /* 指定 scheme 下匹配规则
+   classPrefix 类名前缀
+   funcPrefix  方法名前缀
+   paramName   参数名
+   
+   适用场景: 多模块时可使用不同匹配规则
+   
+   🌰:
+   rule: ["*": ["classPrefix": "Router_","funcPrefix": "router_","paramName":"Params"],
+   "sp": ["classPrefix": "SP_","funcPrefix": "sp_","paramName":"value"]]
+   
+   url1: sp://device/id只会查找以下函数
+   @objc(SP_device)
+   class SP_device: NSObject {
+   @objc func sp_id() {}
+   }
+   
+   url1: router://device/id只会查找以下函数
+   @objc(Router_device)
+   class SP_device: NSObject {
+   @objc func router_id() {}
+   }
+   */
+  public static var configs = ["*":Config.default]
+  /// 重定向策略 (可用于页面降级)
+  public static var repleRules = [String: URLValue]()
   
   /// 命名空间
   static let namespace = Bundle.main.infoDictionary?["CFBundleExecutable"] as! String
-  /// 重定向策略 (可用于页面降级)
-  static var repleRules = [String: URLValue]()
   /// 缓存
   static var cache = [String: RoutableData]()
   /// 回调缓存
   static var blockCache = [String: (_: [String: Any])->()]()
 }
+
+
+
 
 // MARK: - block
 extension Routable {

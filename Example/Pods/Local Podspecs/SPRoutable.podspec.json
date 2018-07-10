@@ -17,23 +17,25 @@
     "osx": "10.10",
     "watchos": "2.0"
   },
-  "source_files": "Sources/*.{swift,h}",
+  "source_files": [
+    "Sources/*.{swift,h}"
+  ],
   "public_header_files": [
     "Sources/Routable.h"
   ],
   "osx": {
     "exclude_files": [
-      "Routale+UIKit.swift"
+      "Sources/Routale+UIKit.swift"
     ]
   },
   "watchos": {
     "exclude_files": [
-      "Routale+UIKit.swift"
+      "Sources/Routale+UIKit.swift"
     ]
   },
   "tvos": {
     "exclude_files": [
-      "Routale+UIKit.swift"
+      "Sources/Routale+UIKit.swift"
     ]
   },
   "dependencies": {

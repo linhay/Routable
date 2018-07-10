@@ -35,9 +35,25 @@ extension Routable {
     var isBadURL = false
   }
   
-  struct URLValue {
-    var targetName: String
-    var selName: String
-    var params: [String: Any]
+  public struct Config {
+    public static let `default` = Config(scheme: "*", classPrefix: "Router_", funcPrefix: "router_", paramName: "Params")
+    public var scheme: String
+    public var classPrefix: String
+    public var funcPrefix: String
+    public var paramName: String
+    
+    public func desc() -> [String: String] {
+      return ["scheme": scheme,
+              "classPrefix": classPrefix,
+              "funcPrefix": funcPrefix,
+              "paramName": paramName]
+    }
+  }
+  
+  public struct URLValue {
+    public var config: Config
+    public var targetName: String
+    public var selName: String
+    public var params: [String: Any]
   }
 }
