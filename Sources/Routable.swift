@@ -23,6 +23,8 @@
 import Foundation
 import RoutableAssist
 
+public typealias RoutableBlock = @convention(block) (_ dict:[String:Any]) -> Void
+
 public class Routable: NSObject {
   
   /* 指定 scheme 下匹配规则
@@ -51,50 +53,10 @@ public class Routable: NSObject {
   public static var configs = ["*":Config.default]
   /// 重定向策略 (可用于页面降级)
   public static var repleRules = [String: URLValue]()
-  
   /// 命名空间
   static let namespace = Bundle.main.infoDictionary?["CFBundleExecutable"] as! String
   /// 缓存
-  static var cache = [String: RoutableData]()
-  /// 回调缓存
-  static var blockCache = [String: (_: [String: Any])->()]()
-}
-
-
-
-
-// MARK: - block
-extension Routable {
-  
-  /// 执行回调
-  ///
-  /// - Parameters:
-  ///   - id: 回调id(自动生成并传递)
-  @objc public class func callback(id:String) {
-    callback(id: id, params: [:], isRemove: true)
-  }
-  
-  /// 执行回调
-  ///
-  /// - Parameters:
-  ///   - id: 回调id(自动生成并传递)
-  ///   - params: 回调数据
-  @objc public class func callback(id:String, params:[String: Any]) {
-    callback(id: id, params: params, isRemove: true)
-  }
-  
-  /// 执行回调
-  ///
-  /// - Parameters:
-  ///   - id: 回调id(自动生成并传递)
-  ///   - params: 回调数据
-  ///   - isRemove: 是否移除本次回调(默认移除)
-  @objc public class func callback(id:String, params:[String: Any],isRemove: Bool) {
-    blockCache[id]?(params)
-    if isRemove { blockCache[id] = nil }
-  }
-  
-  
+  static var cache = [String: ClassInfo]()
 }
 
 extension Routable {
@@ -128,8 +90,8 @@ extension Routable {
     guard var value = urlParse(url: url) else { return }
     if value.targetName != "notice" { return }
     for item in cache.values {
-      value.targetName = item.targetName
-      _ = target(urlValue: value, block: nil)
+//      value.targetName = item.targetName
+//      _ = target(urlValue: value, block: nil)
     }
   }
   
@@ -169,9 +131,7 @@ extension Routable {
   ///   - url: url
   ///   - params: url 参数(选填)
   ///   - call: 回调数据
-  @discardableResult @objc public class func object(str: String,
-                                                    params:[String: Any] = [:],
-                                                    call: ((_: [String: Any])->())? = nil) -> Any? {
+  @discardableResult @objc public class func object(str: String, params:[String: Any] = [:], call: RoutableBlock? = nil) -> Any? {
     guard let url = createURL(url: str, params: params) else { return nil }
     guard let value = urlParse(url: url) else { return nil }
     let rewriteValue = rewrite(value: value)
@@ -184,9 +144,7 @@ extension Routable {
   ///   - url: url
   ///   - params: url 参数(选填)
   ///   - call: 回调数据
-  @discardableResult @objc public class func object(url: URL,
-                                                    params:[String: Any] = [:],
-                                                    call: ((_: [String: Any])->())? = nil) -> Any? {
+  @discardableResult @objc public class func object(url: URL, params:[String: Any] = [:], call: RoutableBlock? = nil) -> Any? {
     return object(str: url.absoluteString, params: params, call: call)
   }
   

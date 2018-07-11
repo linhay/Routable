@@ -34,170 +34,84 @@ extension Routable {
   ///   - params: 函数参数
   ///   - isCacheTarget: 是否缓存
   /// - Returns: 对象
-  class func target(urlValue: URLValue,
-                    block: (([String: Any]) -> ())?) -> Any? {
-    
-    
-    guard let id = getCacheId(value: urlValue) else { return nil }
-    
-    // 命中缓存
-    if let data = cache[id] {
-      if data.isBadURL { return nil }
-      blockCache[id] = block
-      data.params = urlValue.params
-      return getReturnValue(data: data)
-    }
-    
-    if block != nil {
-      blockCache[id] = block
-    }
-    
-    let data = RoutableData()
-    data.id = id
-    data.targetName = urlValue.targetName
-    data.selName = urlValue.selName
-    data.params = urlValue.params
-    
-    guard
-      let target = getClass(name: urlValue.config.classPrefix + urlValue.targetName),
-      let sel = getSEL(target: target, funcName: urlValue.config.funcPrefix + urlValue.selName, paramName: urlValue.config.paramName),
-      target.responds(to: sel),
-      let sig = Proxy.methodSignature(target, sel: sel)
-      else {
-        data.isBadURL = true
-        cache[data.id] = data
-        return nil
-    }
-    
-    data.target = target
-    data.sel = sel
-    data.returnType = ObjectType(char: sig.methodReturnType)
-    cache[data.id] = data
-    return getReturnValue(data: data)
-  }
-  
-  
-  /// 获取类对象
-  ///
-  /// - Parameter name: 类名
-  /// - Returns: 类对象
-  class func getClass(name: String) -> NSObject? {
-    func target(name: String) -> NSObject? {
-      guard let targetClass = NSClassFromString(name) as? NSObject.Type else { return nil }
-      let target = targetClass.init()
-      
-      return target
-    }
-    
-    /// 缓存搜索
-    let cacheData = cache.first { (item) -> Bool in
-      return item.key == name
-      }?.value.target
-    
-    /// 命中缓存
-    if let value = cacheData {
-      return value
-    }
-    
-    if let value = target(name: name) {
-      return value
-    }
-    // 不在主工程中的swift类
-    if let value = target(name: "\(namespace).\(name)") {
-      return value
+  class func target(urlValue: URLValue, block: RoutableBlock?) -> Any? {
+    let className = urlValue.config.classPrefix + urlValue.targetName
+    let funcName = urlValue.config.funcPrefix + urlValue.selName
+    if let classInfo = cache[className] {
+      if let method = classInfo.findMethods(name: funcName) {
+        return getReturnValue(instance: classInfo, method: method,params: urlValue.params,block: block)
+      }
+    } else if let classInfo = ClassInfo.initWith(name: className) {
+      cache[className] = classInfo
+      if let method = classInfo.findMethods(name: funcName) {
+        return getReturnValue(instance: classInfo, method: method,params: urlValue.params,block: block)
+      }
     }
     return nil
-  }
-  
-  /// 获取指定类指定函数
-  ///
-  /// - Parameters:
-  ///   - target: 指定类
-  ///   - name: 指定函数名
-  /// - Returns: 指定函数
-  class func getSEL(target: NSObject, funcName: String,paramName: String) -> Selector? {
-    var methodNum: UInt32 = 0
-    let methods = class_copyMethodList(type(of: target), &methodNum)
-    let list = (0..<numericCast(methodNum)).flatMap { (index) -> Selector? in
-      guard let method = methods?[index] else { return nil }
-      let sel: Selector = method_getName(method)
-      guard sel.description.hasPrefix(funcName) else { return nil }
-      return sel
-      }.sorted { (func1, func2) -> Bool in
-        let funcName1 = func1.description
-          .components(separatedBy: ":").first?
-          .components(separatedBy: "With" + paramName).first ?? ""
-        let funcName2 = func2.description
-          .components(separatedBy: ":").first?
-          .components(separatedBy: "With" + paramName).first ?? ""
-        return funcName1.count < funcName2.count
-    }
-    free(methods)
-    return list.first
-  }
-  
-  
-  
-  /// 获取返回值
-  ///
-  /// - Parameter data: 数据
-  /// - Returns: 返回值
-  class func getReturnValue(data: RoutableData) -> Any? {
-    switch data.returnType {
-    case .object,.void:
-      return getReturnObjectValue(data: data)
-    default:
-      return getReturnUnObjectValue(data: data)
-    }
-    
-  }
-  
-  /// 获取 object 类型返回值
-  ///
-  /// - Parameter data: 数据
-  /// - Returns: 返回值
-  class func getReturnObjectValue(data: RoutableData) -> Any? {
-    guard
-      let sel = data.sel,
-      let target = data.target,
-      let sig = Proxy.methodSignature(target, sel: sel)
-      else {
-        return nil
-    }
-    
-    var value:  Unmanaged<AnyObject>? = nil
-    switch sig.numberOfArguments {
-    case 2: value = target.perform(sel)
-    case 3: value = target.perform(sel, with: data.params)
-    case 4: value = target.perform(sel, with: data.params, with: data.id)
-    default: break
-    }
-    if data.returnType == .void { return nil }
-    return value?.takeUnretainedValue()
-    
   }
   
   /// 获取 非object 类型返回值
   ///
   /// - Parameter data: 数据
   /// - Returns: 返回值
-  class func getReturnUnObjectValue(data: RoutableData) -> Any? {
+  class func getReturnValue(instance: ClassInfo,method: Method, params: [String:Any], block: RoutableBlock?) -> Any? {
     
     guard
-      let sel = data.sel,
-      let target = data.target,
-      let sig = Proxy.methodSignature(target, sel: sel),
-      let inv = Invocation(methodSignature: sig)
+      let sel = method.sel,
+      let target = instance.instance,
+      let sig = Proxy.methodSignature(target, sel: sel)
       else {
         return nil
     }
     
+    if method.returnType == .object {
+      var value: Unmanaged<AnyObject>? = nil
+      switch sig.numberOfArguments {
+      case 2: value = target.perform(sel)
+      case 3 where method.paramsTypes[2] == .block:
+        value = target.perform(sel, with: block)
+      case 3 where method.paramsTypes[2] == .object:
+        value = target.perform(sel, with: params)
+      case 4:
+        if method.paramsTypes[2] == .object, method.paramsTypes[3] == .block {
+          value = target.perform(sel, with: params, with: block)
+        }else if method.paramsTypes[2] == .block, method.paramsTypes[3] == .object {
+          value = target.perform(sel, with: block, with: params)
+        }
+      default: break
+      }
+      if method.returnType == .void { return nil }
+      return value?.takeUnretainedValue()
+    }
+    
+    
+    guard let inv = Invocation(methodSignature: sig) else { return nil }
     inv.target = target
     inv.selector = sel
-    invSetParams(inv: inv, params: data.params, id: data.id)
+    
+    if method.paramsTypes.count >= 3 {
+      if method.paramsTypes[2] == .block {
+        var block = block
+        inv.setArgument(&block, at: 2)
+      }else if method.paramsTypes[2] == .object {
+        var params = params
+        inv.setArgument(&params, at: 2)
+      }
+    }
+    
+    if method.paramsTypes.count >= 4 {
+      if method.paramsTypes[3] == .block {
+        var block = block
+        inv.setArgument(&block, at: 3)
+      }else if method.paramsTypes[3] == .object {
+        var params = params
+        inv.setArgument(&params, at: 3)
+      }
+    }
+    
     inv.invoke()
     
-    switch data.returnType {
+    switch method.returnType {
     case .longlong,.point,.int:
       var value: Int = 0
       inv.getReturnValue(&value)
@@ -220,26 +134,5 @@ extension Routable {
       return nil
     }
   }
-  
-  
-  // 参数设置
-  class func invSetParams(inv: Invocation,params: [String: Any],id: String) {
-    (0..<inv.methodSignature.numberOfArguments).map { (index) -> ObjectType in
-      return ObjectType(char: inv.methodSignature.getArgumentType(at: index))
-      }
-      .dropFirst(2)
-      .enumerated()
-      .forEach { (element) in
-        switch element.offset {
-        case 1:
-          var item = id
-          inv.setArgument(&item, at: element.offset + 2)
-        case 0:
-          var item = params
-          inv.setArgument(&item, at: element.offset + 2)
-        default: break
-        }
-    }
-  }
-  
+
 }

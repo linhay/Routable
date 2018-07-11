@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "SPKit.h"
 
 FOUNDATION_EXPORT double SPKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char SPKitVersionString[];

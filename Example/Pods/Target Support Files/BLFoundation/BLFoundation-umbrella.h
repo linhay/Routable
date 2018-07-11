@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "BLFoundation.h"
 
 FOUNDATION_EXPORT double BLFoundationVersionNumber;
 FOUNDATION_EXPORT const unsigned char BLFoundationVersionString[];

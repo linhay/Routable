@@ -1,39 +1,37 @@
-# SPKit
+<p align="center">
+<img src="https://raw.githubusercontent.com/linhay/SPKit/master/Screenshot/logo.jpg" alt="SPKit" title="SPKit"/>
+</p>
 
-[![Version](https://img.shields.io/cocoapods/v/SPKit.svg?style=flat)](http://cocoapods.org/pods/SPKit)
-[![License](https://img.shields.io/cocoapods/l/SPKit.svg?style=flat)](http://cocoapods.org/pods/SPKit)
-[![Platform](https://img.shields.io/cocoapods/p/SPKit.svg?style=flat)](http://cocoapods.org/pods/SPKit)
+[![build](https://travis-ci.org/linhay/SPKit.svg?branch=master)](https://travis-ci.org/SPKit/SPKit)
+![language](https://img.shields.io/badge/language-swift-orange.svg)
+![Platform](https://img.shields.io/cocoapods/p/SPKit.svg?style=flat)
+![Version](https://img.shields.io/cocoapods/v/SPKit.svg?style=flat)
+![CocoaPods](https://img.shields.io/badge/CocoaPods-supported-brightgreen.svg)
+[![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](http://mit-license.org)
 
-## 简介
+## Require
 
-提供一套基于UIKit的扩展框架,方便于项目快速开发.
+- iOS 8
+- Swift 4.0
 
-## 安装
+## Install
 
-- 使用cocoapods安装
+CocoaPod
 
-  ```
-  pod 'SPKit'
-  ```
+```
+pod "SPKit"
+```
 
-- 导入
+## Useage
 
-  - swift
 
-    ```
-    import SPKit
-    ```
-
-  - objc
-
-    ```
-    #import<SPKit/SPKit.h>
-    ```
 
 ## Author
 
-linhay,linhan.linhey@outlook.com
+linhay: is.linhay@outlook.com
 
 ## License
 
 SPKit is available under the MIT license. See the LICENSE file for more info.
+
+ 

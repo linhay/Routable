@@ -49,8 +49,9 @@ extension Routable {
   ///   - classPrefix: 类名前缀
   ///   - funcPrefix: 函数名前缀
   ///   - paramName: 参数名
-  @objc public static func setConfig(scheme: String,classPrefix: String,funcPrefix: String,paramName: String) {
-    configs[scheme] = Config(scheme: scheme, classPrefix: classPrefix, funcPrefix: funcPrefix, paramName: paramName)
+  ///   - remark: 备注
+  @objc public static func setConfig(scheme: String,classPrefix: String,funcPrefix: String,paramName: String, remark:String) {
+    configs[scheme] = Config(scheme: scheme, classPrefix: classPrefix, funcPrefix: funcPrefix, paramName: paramName,remark: remark)
   }
   
   /// 移除指定配置

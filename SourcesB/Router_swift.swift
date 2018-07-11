@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SPRoutable
 
 @objc(Router_swift)
 public class Router_swift: NSObject {
@@ -63,9 +62,9 @@ extension Router_swift {
 
 extension Router_swift {
   
-  @objc func async(params: [String: Any], id: String) {
+  @objc func async(params: [String: Any],block: @escaping (_ dict:[String:Any]) -> Void) {
     DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
-      Routable.callback(id: id, params: params)
+      block(["string": #function])
     }
   }
   

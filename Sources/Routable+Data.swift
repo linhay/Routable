@@ -24,23 +24,93 @@ import Foundation
 
 extension Routable {
   
-  class RoutableData {
-    var id: String = ""
-    var targetName = ""
-    var selName = ""
-    var target: NSObject?
+  class ClassInfo {
+    var name: String = ""
+    var instance: NSObject?
+    var classType: AnyClass?
+    lazy var methods: [String: Method] = { return getMethods() }()
+    lazy var classMethods: [String: Method] = [:]
+    
+    class func initWith(name: String) -> ClassInfo? {
+      let classInfo = ClassInfo()
+      if let classType = NSClassFromString(name) as? NSObject.Type {
+        classInfo.name = name
+        classInfo.classType = classType
+        classInfo.instance = classType.init()
+      }
+      
+      // 不在主工程中的swift类
+      if let classType = NSClassFromString("\(namespace).\(name)") as? NSObject.Type {
+        classInfo.name = name
+        classInfo.classType = classType
+        classInfo.instance = classType.init()
+      }
+      
+      if name.isEmpty { return nil }
+      return classInfo
+    }
+    
+    
+    func findMethods(name: String) -> Method? {
+      let list = self.methods.keys.filter { (item) -> Bool in
+        return item.hasPrefix(name)
+        }.sorted()
+      guard let key = list.first else { return nil }
+      return methods[key]
+    }
+    
+    func getMethods() -> [String: Method] {
+      guard let classType = classType else { return [:] }
+      var dict = [String: Method]()
+      var methodNum: UInt32 = 0
+      let methods = class_copyMethodList(classType, &methodNum)
+      for index in (0..<numericCast(methodNum)) {
+        guard let method = methods?[index] else { continue }
+        var item = Method()
+        item.sel = method_getName(method)
+        item.name = item.sel?.description ?? ""
+        
+        /// 获取返回值类型
+        let returnType = method_copyReturnType(method)
+        item.returnType = ObjectType(char: returnType)
+        free(returnType)
+        
+        /// 获取参数类型
+        let arguments = method_getNumberOfArguments(method)
+        item.paramsTypes = (0..<arguments).map { (index) -> ObjectType in
+          guard let argumentType = method_copyArgumentType(method, index) else {
+            return ObjectType.unknown
+          }
+          let type = ObjectType.init(char: argumentType)
+          free(argumentType)
+          return type
+        }
+        
+        dict.updateValue(item, forKey: item.name)
+      }
+      free(methods)
+      return dict
+    }
+    
+  }
+  
+  
+  struct Method {
+    var name: String = ""
     var sel: Selector?
-    var params = [String: Any]()
+    var id: String = ""
+    var paramsTypes: [ObjectType] = []
+    var params: [String: Any] = [:]
     var returnType: ObjectType = .unknown
-    var isBadURL = false
   }
   
   public struct Config {
-    public static let `default` = Config(scheme: "*", classPrefix: "Router_", funcPrefix: "router_", paramName: "Params")
+    public static let `default` = Config(scheme: "*", classPrefix: "Router_", funcPrefix: "router_", paramName: "Params",remark:"")
     public var scheme: String
     public var classPrefix: String
     public var funcPrefix: String
     public var paramName: String
+    public var remark: String
     
     public func desc() -> [String: String] {
       return ["scheme": scheme,
@@ -56,4 +126,42 @@ extension Routable {
     public var selName: String
     public var params: [String: Any]
   }
+  
+  enum ObjectType: String {
+    case void     = "v"  //void类型   v
+    case sel      = ":"  //selector  :
+    case object   = "@"  //对象类型   "@"
+    case block    = "@?"
+    case double   = "d"  //double类型 d
+    case int      = "i"  //int类型    i
+    case bool     = "B"  //C++中的bool或者C99中的_Bool B
+    case longlong = "q"  //long long类型 q
+    case point    = "^"  //          ^
+    case unknown  = ""
+    
+    init(char: UnsafePointer<CChar>) {
+      guard let str = String(utf8String: char) else {
+        self = .unknown
+        return
+      }
+      self = ObjectType(rawValue: str) ?? .unknown
+    }
+    
+    //  case char     =     //char      c
+    //  case char*    =     //char*     *
+    //  case short    =     //short     s
+    //  case long     =     //long      l
+    //  case float    =     //float     f
+    //  case `class`  =     //class     #
+    //  case array    =     //[array type]
+    //  case `struct` =     //{name=type…}
+    //  case union    =     //(name=type…)
+    //  case bnum     =     //A bit field of num bits
+    //  case unsignedChar  = //unsigned char    C
+    //  case unsignedInt   = //unsigned int     I
+    //  case unsignedShort = //unsigned short   S
+    //  case unsignedLong  = //unsigned long    L
+    //  case unsignedLongLong = //unsigned short   Q
+  }
+  
 }
