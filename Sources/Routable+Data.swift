@@ -52,6 +52,7 @@ class ClassInfo {
   
   
   func findMethods(name: String) -> Method? {
+    if name.isEmpty { return nil }
     let list = self.methods.keys.filter { (item) -> Bool in
       return item.hasPrefix(name)
       }.sorted()
@@ -128,7 +129,7 @@ struct URLValue {
   static func initWith(config: Config, url: URL, params: [String: Any]) -> URLValue? {
     let list = url.path.components(separatedBy: "/")
     if list.isEmpty { return nil }
-    guard let className = url.host,let funcName = list.first else { return nil }
+    guard let className = url.host,let funcName = list.dropFirst().first else { return nil }
     
     var value = URLValue()
     value.config = config
@@ -165,10 +166,16 @@ struct URLValue {
     guard !str.isEmpty else { return str }
     str = str.trimmingCharacters(in: CharacterSet.whitespaces)
     guard str.hasPrefix("[") || str.hasPrefix("{") else { return str }
-    let dict = RoutableHelp.dictionary(string: str)
-    if !dict.isEmpty { return dict }
-    let array = RoutableHelp.array(string: str)
-    if !array.isEmpty { return array }
+    if let data = str.data(using: .utf8) {
+      do {
+        let value = try JSONSerialization.jsonObject(with: data, options: [])
+        if let v = value as? Dictionary<AnyHashable, Any>, v.isEmpty { return str }
+        if let v = value as? Array<Any>, v.isEmpty { return str }
+        return value
+      } catch {
+        return str
+      }
+    }
     return str
   }
   
