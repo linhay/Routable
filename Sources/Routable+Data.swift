@@ -119,10 +119,59 @@ struct Config {
 }
 
 struct URLValue {
-  public var config: Config
-  public var className: String
-  public var funcName: String
-  public var params: [String: Any]
+  public var config: Config = Config.default
+  public var className: String = ""
+  public var funcName: String = ""
+  public var params: [String: Any] = [:]
+  
+  
+  static func initWith(config: Config, url: URL, params: [String: Any]) -> URLValue? {
+    let list = url.path.components(separatedBy: "/")
+    if list.isEmpty { return nil }
+    guard let className = url.host,let funcName = list.first else { return nil }
+    
+    var value = URLValue()
+    value.config = config
+    value.className = className
+    value.funcName = funcName
+    
+    /// 处理参数
+    var queryItems = [String: Any]()
+    if let urlstr = url.query {
+      urlstr.components(separatedBy: "&").forEach { (item) in
+        let list = item.components(separatedBy: "=")
+        if list.count == 2 {
+          queryItems[list.first!] = dealValueType(string: list.last)
+        }else if list.count > 2 {
+          queryItems[list.first!] = dealValueType(string: list.dropFirst().joined())
+        }
+      }
+    }
+    
+    params.forEach { (item) in
+      queryItems.updateValue(item.value, forKey: item.key)
+    }
+    
+    value.params = queryItems
+    return value
+  }
+  
+  /// 处理参数类型
+  ///
+  /// - Parameter string: 需要处理的参数字符
+  /// - Returns: 处理后类型
+  static func dealValueType(string: String?) -> Any? {
+    guard var str = string?.removingPercentEncoding else { return string }
+    guard !str.isEmpty else { return str }
+    str = str.trimmingCharacters(in: CharacterSet.whitespaces)
+    guard str.hasPrefix("[") || str.hasPrefix("{") else { return str }
+    let dict = RoutableHelp.dictionary(string: str)
+    if !dict.isEmpty { return dict }
+    let array = RoutableHelp.array(string: str)
+    if !array.isEmpty { return array }
+    return str
+  }
+  
 }
 
 enum ObjectType: String {

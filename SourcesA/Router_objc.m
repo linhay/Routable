@@ -48,7 +48,6 @@
   
 -(void)async: (NSDictionary *)params id: (NSString *)id {
   dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC));
-  
   dispatch_after(delayTime, dispatch_get_main_queue(), ^{
 //    [Routable callbackWithId:id params:@{@"1":@"2", @"3":@"4", @"5":@"6"}];
   });

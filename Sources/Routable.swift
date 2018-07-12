@@ -55,8 +55,14 @@ public class Routable: NSObject {
   
   public static let configs = Routable_Configs()
   public static let cache = Routable_Cache()
+  public static let rewrite = Routable_Rewrite()
+  
+  @objc public class func sharedConfigs() -> Routable_Configs { return configs }
+  @objc public class func sharedCache() -> Routable_Cache { return cache }
+  @objc public class func sharedRewrite() -> Routable_Rewrite { return rewrite }
+  
   /// 重定向策略 (可用于页面降级)
-   static var repleRules = [String: URLValue]()
+  static var repleRules = [String: URLValue]()
 }
 
 extension Routable {
@@ -78,17 +84,16 @@ extension Routable {
   /// 通知所有已缓存类型函数
   ///
   /// - Parameter url: 函数路径
-  @objc public class func notice(url: URL, params:[String: Any] = [:], call: RoutableBlock? = nil) {
-    notice(str: url.absoluteString, params: params, call: call)
+  @objc public class func notice(str: String, params:[String: Any] = [:], call: RoutableBlock? = nil) {
+    guard let url = URL(string: str) else { return }
+    notice(url: url, params: params, call: call)
   }
   
   /// 通知所有已缓存类型函数
   ///
   /// - Parameter url: 函数路径
-  @objc public class func notice(str: String, params:[String: Any] = [:], call: RoutableBlock? = nil) {
-    guard let url = createURL(url: str, params: params) else { return }
-    guard let value = urlParse(url: url) else { return }
-    if value.className != "notice" { return }
+  @objc public class func notice(url: URL, params:[String: Any] = [:], call: RoutableBlock? = nil) {
+    guard url.host == "notice", let value = urlParse(url: url, params: params) else { return }
     notice(urlValue: value, block: call)
   }
   
@@ -97,45 +102,6 @@ extension Routable {
 // MARK: - rewrite apis
 extension Routable {
   
-  /*
-   [待重定向URL: 重定向URL + 参数名替换(可选)]
-   ["http://a/vc": "http://b/vc?errorPage=a&type=$style"] // host重定向
-   URL:
-   http://a/vc?style=0
-   替换后:
-   http://b/vc?errorPage=a&type=0
-   ["http://a/vc": "http://web/vc?url=https://www.baidu.com"] //页面降级
-   */
-  
-  /// 设置重定向规则组
-  /// 
-  /// - Parameter rules: 重定向规则
-  @objc public class func rewrite(rules: [String: String]) {
-    repleRules.removeAll()
-    rules.forEach { (item) in
-      if let lhsURL = URL(string: item.key),
-        let rhsURL = URL(string: item.value),
-        let lhsValue = urlParse(url: lhsURL),
-        let cacheId = getCacheId(value: lhsValue),
-        let rhsValue = urlParse(url: rhsURL) {
-        repleRules[cacheId] = rhsValue
-      }
-    }
-  }
-  
-  /// 解析Any类型(回调形式)
-  ///
-  /// - Parameters:
-  ///   - url: url
-  ///   - params: url 参数(选填)
-  ///   - call: 回调数据
-  @discardableResult @objc public class func object(str: String, params:[String: Any] = [:], call: RoutableBlock? = nil) -> Any? {
-    guard let url = createURL(url: str, params: params) else { return nil }
-    guard let value = urlParse(url: url) else { return nil }
-    let rewriteValue = rewrite(value: value)
-    return target(urlValue: rewriteValue, block: call)
-  }
-  
   /// 解析Any类型(回调形式)
   ///
   /// - Parameters:
@@ -143,17 +109,35 @@ extension Routable {
   ///   - params: url 参数(选填)
   ///   - call: 回调数据
   @discardableResult @objc public class func object(url: URL, params:[String: Any] = [:], call: RoutableBlock? = nil) -> Any? {
-    return object(str: url.absoluteString, params: params, call: call)
+    guard let value = urlParse(url: url, params: params) else { return nil }
+    let rewriteValue = rewrite.rewrite(urlValue: value)
+    return target(urlValue: rewriteValue, block: call)
+  }
+  
+  /// 解析Any类型(回调形式)
+  ///
+  /// - Parameters:
+  ///   - str: url
+  ///   - params: url 参数(选填)
+  ///   - call: 回调数据
+  @discardableResult @objc public class func object(str: String, params:[String: Any] = [:], call: RoutableBlock? = nil) -> Any? {
+    guard let url = URL(string: str) else { return nil }
+    return object(url: url, params: params, call: call)
   }
   
 }
 
+// MARK: - urlParse
 extension Routable {
   
-  class func getCacheId(value: URLValue) -> String? {
-    let id = value.className + "#" + value.funcName
-    if id.first == "#" || id.last == "#" { return nil }
-    return id
+  /// 获取路径所需参数
+  ///
+  /// - Parameter url: 路径
+  /// - Returns: 所需参数
+  class func urlParse(url: URL, params: [String : Any]) -> URLValue?{
+    guard let configs = self.configs.value(url: url) else { return nil }
+    return URLValue.initWith(config: configs, url: url, params: params)
   }
   
 }
+

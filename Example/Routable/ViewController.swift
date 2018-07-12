@@ -59,7 +59,7 @@ class ViewController: UITableViewController {
     super.viewDidLoad()
     title = "Routable"
     Routable.configs.set(scheme: "*", classPrefix: "Router_", funcPrefix: "", remark: "")
-    Routable.rewrite(rules:rewriteRule)
+//    Routable.rewrite(rules:rewriteRule)
     tableView.sp.register(URLReturnValueCell.self)
   }
   
@@ -111,13 +111,13 @@ class ViewController: UITableViewController {
       cell.rightBtn.setTitle(self.rewriteRule.keys.first!, for: .normal)
       
       cell.leftBtn.add(for: .touchUpInside) {
-        Routable.rewrite(rules: self.rewriteRule)
+        // Routable.rewrite(rules: self.rewriteRule)
         guard let vc = Routable.viewController(str: self.rewriteRule.keys.first!) else { return }
         self.navigationController?.pushViewController(vc, animated: true)
       }
       
       cell.rightBtn.add(for: .touchUpInside) {
-        Routable.rewrite(rules: [:])
+        // Routable.rewrite(rules: [:])
         guard let vc = Routable.viewController(str: self.rewriteRule.keys.first!) else { return }
         self.navigationController?.pushViewController(vc, animated: true)
       }

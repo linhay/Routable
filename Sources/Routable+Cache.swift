@@ -23,7 +23,8 @@
 import Foundation
 
 // MARK: - cache apis
-public class Routable_Cache {
+@objc(Routable_Cache)
+public class Routable_Cache: NSObject {
   /// 缓存
   var cache = [String: ClassInfo]()
   

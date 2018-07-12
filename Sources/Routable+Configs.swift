@@ -23,7 +23,8 @@
 import Foundation
 
 // MARK: - configs apis
-public class Routable_Configs {
+@objc(Routable_Configs)
+public class Routable_Configs: NSObject {
   var cache = ["*":Config.default]
   
   /// 获取配置列表
@@ -55,7 +56,7 @@ public class Routable_Configs {
                         classPrefix: String,
                         funcPrefix: String,
                         remark:String) {
-    cache[scheme] = Config(scheme: scheme, classPrefix: classPrefix, funcPrefix: funcPrefix,remark: remark)
+    cache[scheme] = Config(scheme: scheme, classPrefix: classPrefix, funcPrefix: funcPrefix, remark: remark)
   }
   
   /// 移除多条指定配置
@@ -75,6 +76,24 @@ public class Routable_Configs {
   @objc public func reset() -> [String: [String: String]] {
     cache = ["*": Config.default]
     return ["*": Config.default.desc()]
+  }
+  
+}
+
+extension Routable_Configs {
+  
+  func value(url: URL) -> Config? {
+    guard let scheme = url.scheme else { return nil }
+    if let value = cache[scheme] {
+      return value
+    }else if let value = cache["*"] {
+      return value
+    }
+    return nil
+  }
+  
+  func value(scheme: String) -> Config? {
+    return cache[scheme]
   }
   
 }
