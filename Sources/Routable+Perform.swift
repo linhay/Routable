@@ -50,6 +50,20 @@ extension Routable {
     return nil
   }
   
+  /// 通知已实例化类
+  ///
+  /// - Parameters:
+  ///   - urlValue: urlValue
+  ///   - block: block
+  class func notice(urlValue: URLValue, block: RoutableBlock?) {
+    let funcName = urlValue.config.funcPrefix + urlValue.selName
+    cache.values.forEach { (classInfo) in
+      if let method = classInfo.findMethods(name: funcName)  {
+        _ = getReturnValue(instance: classInfo, method: method,params: urlValue.params,block: block)
+      }
+    }
+  }
+  
   /// 获取 非object 类型返回值
   ///
   /// - Parameter data: 数据
@@ -64,6 +78,7 @@ extension Routable {
         return nil
     }
     
+    // object类型 无法通过 Invocation 获取,原因 引用计数未正确增加
     if method.returnType == .object {
       var value: Unmanaged<AnyObject>? = nil
       switch sig.numberOfArguments {
@@ -83,7 +98,6 @@ extension Routable {
       if method.returnType == .void { return nil }
       return value?.takeUnretainedValue()
     }
-    
     
     guard let inv = Invocation(methodSignature: sig) else { return nil }
     inv.target = target

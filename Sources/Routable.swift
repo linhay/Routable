@@ -27,29 +27,29 @@ public typealias RoutableBlock = @convention(block) (_ dict:[String:Any]) -> Voi
 
 public class Routable: NSObject {
   
-  /* 指定 scheme 下匹配规则
-   classPrefix 类名前缀
-   funcPrefix  方法名前缀
-   paramName   参数名
-   
-   适用场景: 多模块时可使用不同匹配规则
-   
-   🌰:
-   rule: ["*": ["classPrefix": "Router_","funcPrefix": "router_","paramName":"Params"],
-   "sp": ["classPrefix": "SP_","funcPrefix": "sp_","paramName":"value"]]
-   
-   url1: sp://device/id只会查找以下函数
-   @objc(SP_device)
-   class SP_device: NSObject {
-   @objc func sp_id() {}
-   }
-   
-   url1: router://device/id只会查找以下函数
-   @objc(Router_device)
-   class SP_device: NSObject {
-   @objc func router_id() {}
-   }
-   */
+  /// 指定 scheme 下匹配规则
+  //  classPrefix 类名前缀
+  //  funcPrefix  方法名前缀
+  //  paramName   参数名
+  //
+  //  适用场景: 多模块时可使用不同匹配规则
+  //
+  //  🌰:
+  //  rule: ["*": ["classPrefix": "Router_","funcPrefix": "router_","paramName":"Params"],
+  //  "sp": ["classPrefix": "SP_","funcPrefix": "sp_","paramName":"value"]]
+  //
+  //  url1: sp://device/id只会查找以下函数
+  //  @objc(SP_device)
+  //  class SP_device: NSObject {
+  //    @objc func sp_id() {}
+  //  }
+  //
+  //  url1: router://device/id只会查找以下函数
+  //  @objc(Router_device)
+  //  class SP_device: NSObject {
+  //    @objc func router_id() {}
+  //  }
+  
   public static var configs = ["*":Config.default]
   /// 重定向策略 (可用于页面降级)
   public static var repleRules = [String: URLValue]()
@@ -78,21 +78,18 @@ extension Routable {
   /// 通知所有已缓存类型函数
   ///
   /// - Parameter url: 函数路径
-  @objc public class func notice(url: URL,params:[String: Any] = [:]) {
-    notice(str: url.absoluteString, params: params)
+  @objc public class func notice(url: URL, params:[String: Any] = [:], call: RoutableBlock? = nil) {
+    notice(str: url.absoluteString, params: params, call: call)
   }
   
   /// 通知所有已缓存类型函数
   ///
   /// - Parameter url: 函数路径
-  @objc public class func notice(str: String,params:[String: Any] = [:]) {
+  @objc public class func notice(str: String, params:[String: Any] = [:], call: RoutableBlock? = nil) {
     guard let url = createURL(url: str, params: params) else { return }
     guard var value = urlParse(url: url) else { return }
     if value.targetName != "notice" { return }
-    for item in cache.values {
-//      value.targetName = item.targetName
-//      _ = target(urlValue: value, block: nil)
-    }
+    notice(urlValue: value, block: call)
   }
   
 }
