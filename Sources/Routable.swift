@@ -28,35 +28,35 @@ public typealias RoutableBlock = @convention(block) (_ dict:[String:Any]) -> Voi
 public class Routable: NSObject {
   
   /// 指定 scheme 下匹配规则
-  //  classPrefix 类名前缀
-  //  funcPrefix  方法名前缀
-  //  paramName   参数名
-  //
-  //  适用场景: 多模块时可使用不同匹配规则
-  //
-  //  🌰:
-  //  rule: ["*": ["classPrefix": "Router_","funcPrefix": "router_","paramName":"Params"],
-  //  "sp": ["classPrefix": "SP_","funcPrefix": "sp_","paramName":"value"]]
-  //
-  //  url1: sp://device/id只会查找以下函数
-  //  @objc(SP_device)
-  //  class SP_device: NSObject {
-  //    @objc func sp_id() {}
-  //  }
-  //
-  //  url1: router://device/id只会查找以下函数
-  //  @objc(Router_device)
-  //  class SP_device: NSObject {
-  //    @objc func router_id() {}
-  //  }
+  ///  classPrefix 类名前缀
+  ///  funcPrefix  方法名前缀
+  ///  paramName   参数名
+  ///
+  ///  适用场景: 多模块时可使用不同匹配规则
+  ///
+  ///  As an example:
+  ///
+  ///  rule: ["*": ["classPrefix": "Router_","funcPrefix": "router_"],
+  ///         "sp": ["classPrefix": "SP_","funcPrefix": "sp_"]]
+  ///
+  ///  url1: sp://device/id只会查找以下函数:
+  ///
+  ///     @objc(SP_device)
+  ///     class SP_device: NSObject {
+  ///         @objc func sp_id() {}
+  ///     }
+  ///
+  ///  url1: router://device/id只会查找以下函数:
+  ///
+  ///     @objc(Router_device)
+  ///     class SP_device: NSObject {
+  ///         @objc func router_id() {}
+  ///     }
   
-  public static var configs = ["*":Config.default]
+  public static let configs = Routable_Configs()
+  public static let cache = Routable_Cache()
   /// 重定向策略 (可用于页面降级)
-  public static var repleRules = [String: URLValue]()
-  /// 命名空间
-  static let namespace = Bundle.main.infoDictionary?["CFBundleExecutable"] as! String
-  /// 缓存
-  static var cache = [String: ClassInfo]()
+   static var repleRules = [String: URLValue]()
 }
 
 extension Routable {
@@ -87,13 +87,14 @@ extension Routable {
   /// - Parameter url: 函数路径
   @objc public class func notice(str: String, params:[String: Any] = [:], call: RoutableBlock? = nil) {
     guard let url = createURL(url: str, params: params) else { return }
-    guard var value = urlParse(url: url) else { return }
-    if value.targetName != "notice" { return }
+    guard let value = urlParse(url: url) else { return }
+    if value.className != "notice" { return }
     notice(urlValue: value, block: call)
   }
   
 }
 
+// MARK: - rewrite apis
 extension Routable {
   
   /*
@@ -149,16 +150,10 @@ extension Routable {
 
 extension Routable {
   
-  class func getCacheId(value: Routable.URLValue) -> String? {
-    let id = value.targetName + "#" + value.selName
+  class func getCacheId(value: URLValue) -> String? {
+    let id = value.className + "#" + value.funcName
     if id.first == "#" || id.last == "#" { return nil }
     return id
   }
   
-  /// 清除指定缓存
-  ///
-  /// - Parameter name: key
-  public class func cacheAll() {
-    cache.removeAll()
-  }
 }

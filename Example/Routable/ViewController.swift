@@ -15,6 +15,13 @@ import SPKit
 
 class ViewController: UITableViewController {
   
+  
+  struct CellUnit {
+    let title = ""
+    let leftURL = ""
+    let rightURL = ""
+  }
+  
   var resultTests = [(title: "获取 int 类型返回值",
                       objc: "sp://objc/int",
                       swift: "sp://swift/int"),
@@ -39,7 +46,10 @@ class ViewController: UITableViewController {
                      (title: "获取 viewcontroller 类型返回值",
                       objc: "sp://objc/vc",
                       swift: "sp://swift/vc"),
-                     (title: "获取 async/异步 返回值",
+                     (title: "获取 asyncWithoutReturn/异步 返回值",
+                      objc: "sp://objc/async",
+                      swift: "sp://swift/async?title=title"),
+                     (title: "获取 asyncWithReturn/异步 返回值",
                       objc: "sp://objc/async",
                       swift: "sp://swift/async?title=title")]
   
@@ -48,7 +58,7 @@ class ViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Routable"
-    Routable.setConfig(scheme: "*", classPrefix: "Router_", funcPrefix: "", paramName: "Params", remark: "")
+    Routable.configs.set(scheme: "*", classPrefix: "Router_", funcPrefix: "", remark: "")
     Routable.rewrite(rules:rewriteRule)
     tableView.sp.register(URLReturnValueCell.self)
   }
@@ -119,7 +129,7 @@ class ViewController: UITableViewController {
   func alert(title: String, message: String) {
     let alert = UIAlertController(title: title,
                                   message: message,
-                                  preferredStyle: .actionSheet)
+                                  preferredStyle: .alert)
     
     let action = UIAlertAction(title: "done",
                                style: .cancel,

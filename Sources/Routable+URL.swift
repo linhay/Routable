@@ -74,9 +74,9 @@ extension Routable {
   class func urlParse(url: URL) -> URLValue?{
     
     var config: Config
-    if let scheme = url.scheme,let value = configs[scheme] {
+    if let scheme = url.scheme,let value = configs.cache[scheme] {
       config = value
-    }else if let value = configs["*"] {
+    }else if let value = configs.cache["*"] {
       config = value
     }else{
       assertionFailure("未获取到有效配置")
@@ -98,7 +98,7 @@ extension Routable {
         }
       }
     }
-    return URLValue(config: config, targetName: className, selName: function, params: params)
+    return URLValue(config: config, className: className, funcName: function, params: params)
   }
   
   /// 重定向策略

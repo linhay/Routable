@@ -7,13 +7,13 @@
 //
 
 import UIKit
-
+import SPRoutable
 @objc(Router_swift)
 public class Router_swift: NSObject {
   
 }
 
-// 返回值类型测试
+// MARK: - 返回值类型测试
 extension Router_swift {
   
   @objc func double() -> Double {
@@ -48,60 +48,47 @@ extension Router_swift {
     return #selector(Router_swift.string);
   }
   
-}
-
-
-// MARK: - UI测试
-extension Router_swift {
-  
   @objc func vc() -> UIViewController {
     return UIViewController()
   }
   
 }
 
+// MARK: - 回调测试
 extension Router_swift {
   
-  @objc func async(params: [String: Any],block: @escaping (_ dict:[String:Any]) -> Void) {
+  @objc func asyncWithoutReturn(params: [String: Any],block: @escaping (_ dict:[String:Any]) -> Void) {
     DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
-      block(["string": #function])
+      block(["asyncWithoutReturn": #function])
     }
+  }
+  
+  @objc func asyncWithReturn(params: [String: Any],block: @escaping (_ dict:[String:Any]) -> Void) -> String {
+    DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
+      block(["asyncWithReturn": #function])
+    }
+    return #function
   }
   
 }
 
-// 参数类型测试
+// MARK: - 函数名匹配测试
 extension Router_swift {
   
-  /// 普通格式
-  @objc func params1(params: String) {
-    print("params1")
+  @objc func nameTest() {
+    print(#function)
   }
   
-  /// 普通格式(前缀相同)
-  @objc func params1Test(params: String) {
-    print("params1Test")
+  @objc func nameTestWithParams() {
+    print(#function)
   }
   
-  
-  /// 重复函数名 + 多参数格式 (不匹配该类型)
-  @objc func params1(params: String,id: String) {
-    print("params1")
+  @objc func nameTest(_ params: [String: Any]) {
+    print(#function)
   }
   
-  /// 匿名格式
-  @objc func params2(_ params: String) {
-    print("params2")
+  @objc func nameTest(params: [String: Any]) {
+    print(#function)
   }
-  
-  /// 默认参数格式
-  @objc func params3(params: String = "") {
-    print("params3")
-  }
-  
-  /// 匿名+默认参数格式
-  @objc func params4(_ params: String = "") {
-    print("params4")
-  }
-  
+
 }

@@ -22,14 +22,15 @@
 
 import Foundation
 
-// MARK: - public configs apis
-extension Routable {
+// MARK: - configs apis
+public class Routable_Configs {
+  var cache = ["*":Config.default]
   
   /// 获取配置列表
   ///
   /// - Returns: 配置列表
-  @objc public static func getConfigs() -> [String: [String: String]] {
-    return configs.mapValues { (item) -> [String: String] in
+  @objc public func list() -> [String: [String: String]] {
+    return cache.mapValues { (item) -> [String: String] in
       return item.desc()
     }
   }
@@ -38,8 +39,8 @@ extension Routable {
   ///
   /// - Parameter scheme: url scheme
   /// - Returns: 配置
-  @objc public static func getConfig(scheme: String) -> [String: String]? {
-    return configs[scheme]?.desc()
+  @objc public  func value(for scheme: String) -> [String: String]? {
+    return cache[scheme]?.desc()
   }
   
   /// 添加/替换 配置
@@ -50,31 +51,30 @@ extension Routable {
   ///   - funcPrefix: 函数名前缀
   ///   - paramName: 参数名
   ///   - remark: 备注
-  @objc public static func setConfig(scheme: String,classPrefix: String,funcPrefix: String,paramName: String, remark:String) {
-    configs[scheme] = Config(scheme: scheme, classPrefix: classPrefix, funcPrefix: funcPrefix, paramName: paramName,remark: remark)
-  }
-  
-  /// 移除指定配置
-  ///
-  /// - Parameter scheme: url scheme
-  /// - Returns: 配置
-  @discardableResult @objc public static func removeConfig(scheme: String) -> [String:String] {
-    guard let value = configs.removeValue(forKey: scheme) else { return [:] }
-    return  value.desc()
+  @objc public func set(scheme: String,
+                        classPrefix: String,
+                        funcPrefix: String,
+                        remark:String) {
+    cache[scheme] = Config(scheme: scheme, classPrefix: classPrefix, funcPrefix: funcPrefix,remark: remark)
   }
   
   /// 移除多条指定配置
   ///
   /// - Parameter schemes: url scheme
-  @objc public static func removeConfigs(schemes: [String]) {
+  @objc public func remove(for schemes: [String]) -> [String: [String: String]] {
+    var dict = [String: [String: String]]()
     schemes.forEach { (item) in
-      configs.removeValue(forKey: item)
+      dict[item] = cache.removeValue(forKey: item)?.desc()
     }
+    return dict
   }
   
   /// 重置为默认配置
-  @objc public static func resetConfigs() {
-    configs = ["*": Config.default]
+  ///
+  /// - Returns: 默认配置
+  @objc public func reset() -> [String: [String: String]] {
+    cache = ["*": Config.default]
+    return ["*": Config.default.desc()]
   }
   
 }

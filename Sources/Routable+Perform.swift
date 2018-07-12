@@ -35,14 +35,14 @@ extension Routable {
   ///   - isCacheTarget: 是否缓存
   /// - Returns: 对象
   class func target(urlValue: URLValue, block: RoutableBlock?) -> Any? {
-    let className = urlValue.config.classPrefix + urlValue.targetName
-    let funcName = urlValue.config.funcPrefix + urlValue.selName
-    if let classInfo = cache[className] {
+    let className = urlValue.config.classPrefix + urlValue.className
+    let funcName = urlValue.config.funcPrefix + urlValue.funcName
+    if let classInfo = cache.cache[className] {
       if let method = classInfo.findMethods(name: funcName) {
         return getReturnValue(instance: classInfo, method: method,params: urlValue.params,block: block)
       }
     } else if let classInfo = ClassInfo.initWith(name: className) {
-      cache[className] = classInfo
+      cache.cache[className] = classInfo
       if let method = classInfo.findMethods(name: funcName) {
         return getReturnValue(instance: classInfo, method: method,params: urlValue.params,block: block)
       }
@@ -56,8 +56,8 @@ extension Routable {
   ///   - urlValue: urlValue
   ///   - block: block
   class func notice(urlValue: URLValue, block: RoutableBlock?) {
-    let funcName = urlValue.config.funcPrefix + urlValue.selName
-    cache.values.forEach { (classInfo) in
+    let funcName = urlValue.config.funcPrefix + urlValue.funcName
+    cache.cache.values.forEach { (classInfo) in
       if let method = classInfo.findMethods(name: funcName)  {
         _ = getReturnValue(instance: classInfo, method: method,params: urlValue.params,block: block)
       }
