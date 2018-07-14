@@ -9,23 +9,35 @@ import Foundation
 
 @objc(Routable_rewrite)
 public class Routable_Rewrite: NSObject {
-  
   /// 重定向策略 (可用于页面降级)
+  /// 自定义规则 第一优先级
+  @objc public var block: RewriteBlock? = nil
+  /// 默认规则组 第二优先级
   @objc public var cache = [[String: [String: Any]]]()
-  
 }
 
-
 extension Routable_Rewrite {
+  
   func rewrite(urlValue: URLValue) -> URLValue {
+    /// 自定义规则
+    if let dict = block?(["url": urlValue.ctx_url,"params": urlValue.ctx_body]),
+      let urlStr = dict["url"] as? String,
+      let url = URL(string: urlStr),
+      let body = dict["params"] as? [String: Any],
+      let configs = Routable.configs.value(url: url),
+      let value = URLValue.initWith(config: configs, url: url, params: body) {
+      return value
+    }
+    
+    /// 默认规则组
     for item in cache {
       if let value = reload(urlValue: urlValue, match: item["match"] ?? [:], replce: item["replce"] ?? [:]) {
         return value
       }
     }
+    
     return urlValue
   }
-  
   
   func reload(urlValue: URLValue, match: [String: Any], replce: [String: Any]) -> URLValue? {
     // 规则匹配

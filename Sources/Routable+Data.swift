@@ -120,11 +120,14 @@ struct Config {
 }
 
 struct URLValue {
-  public var config: Config = Config.default
-  public var className: String = ""
-  public var funcName: String = ""
-  public var params: [String: Any] = [:]
+  var config: Config = Config.default
+  var className: String = ""
+  var funcName: String = ""
+  var params: [String: Any] = [:]
   
+  var ctx_url: String = ""
+  var ctx_path: String = ""
+  var ctx_body: [String: Any] = [:]
   
   static func initWith(config: Config, url: URL, params: [String: Any]) -> URLValue? {
     let list = url.path.components(separatedBy: "/")
@@ -151,6 +154,16 @@ struct URLValue {
     
     params.forEach { (item) in
       queryItems.updateValue(item.value, forKey: item.key)
+    }
+    
+    value.ctx_url = url.baseURL?.absoluteString ?? ""
+    value.ctx_path = url.path
+    value.ctx_body = queryItems
+    
+    if !params.keys.contains("ctx") {
+      queryItems["ctx"] = ["url": value.ctx_url,
+                           "path": value.ctx_path,
+                           "body": value.ctx_body]
     }
     
     value.params = queryItems

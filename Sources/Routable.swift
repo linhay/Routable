@@ -23,7 +23,8 @@
 import Foundation
 import RoutableAssist
 
-public typealias RoutableBlock = @convention(block) (_ dict:[String:Any]) -> Void
+public typealias RewriteBlock  = @convention(block) (_ dict: [String: Any]) -> [String: Any]
+public typealias RoutableBlock = @convention(block) (_ dict: [String: Any]) -> Void
 
 public class Routable: NSObject {
   
