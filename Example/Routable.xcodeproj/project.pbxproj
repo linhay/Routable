@@ -13,6 +13,8 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		7600C3EC86201FBE2F488EC4 /* Pods_Routable_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7A1A607D848D1067BAEC435 /* Pods_Routable_Example.framework */; };
 		9D4AFF4F1F62B33B00CB7AFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D4AFF4E1F62B33B00CB7AFF /* Main.storyboard */; };
+		CD46812220F9A81600C4D73E /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = CD46812120F9A81600C4D73E /* .travis.yml */; };
+		CD46812420F9A82500C4D73E /* .swift-version in Resources */ = {isa = PBXBuildFile; fileRef = CD46812320F9A82400C4D73E /* .swift-version */; };
 		CDC77629201B02DD00D1E90B /* trunk.sh in Resources */ = {isa = PBXBuildFile; fileRef = CDC77628201B02DD00D1E90B /* trunk.sh */; };
 		CDEE99D12088F75B005D474C /* URLReturnValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEE99CF2088F75B005D474C /* URLReturnValueCell.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +36,8 @@
 		9D3908501F6391A600539CDD /* AModules.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = AModules.podspec; path = ../AModules.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9D39085D1F639DB800539CDD /* BModules.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = BModules.podspec; path = ../BModules.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9D4AFF4E1F62B33B00CB7AFF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		CD46812120F9A81600C4D73E /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
+		CD46812320F9A82400C4D73E /* .swift-version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ".swift-version"; path = "../.swift-version"; sourceTree = "<group>"; };
 		CDC77628201B02DD00D1E90B /* trunk.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = trunk.sh; path = ../trunk.sh; sourceTree = "<group>"; };
 		CDEE99CF2088F75B005D474C /* URLReturnValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLReturnValueCell.swift; sourceTree = "<group>"; };
 		D708ABE3D23B10173268732B /* SPRoutable.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SPRoutable.podspec; path = ../SPRoutable.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -117,6 +121,8 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				CD46812320F9A82400C4D73E /* .swift-version */,
+				CD46812120F9A81600C4D73E /* .travis.yml */,
 				CDC77628201B02DD00D1E90B /* trunk.sh */,
 				9D3908501F6391A600539CDD /* AModules.podspec */,
 				9D39085D1F639DB800539CDD /* BModules.podspec */,
@@ -189,9 +195,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD46812220F9A81600C4D73E /* .travis.yml in Resources */,
 				9D4AFF4F1F62B33B00CB7AFF /* Main.storyboard in Resources */,
 				CDC77629201B02DD00D1E90B /* trunk.sh in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				CD46812420F9A82500C4D73E /* .swift-version in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
