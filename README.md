@@ -20,7 +20,7 @@
 CocoaPod
 
 ```
-pod 'Routable'
+pod 'SPRoutable'
 ```
 
 ## Useage
