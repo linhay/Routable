@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name    = 'SPRoutable'
-  s.version = '0.9.9.1.alpha'
+  s.version = '1.0.0'
   s.license = 'MIT'
   s.summary = '基础的路由服务'
   
   s.homepage  = 'https://github.com/linhay/Routable'
-  s.author    = { 'linhey' => 'linheyhan.linhey@outlook.com' }
+  s.author    = { 'linhey' => 'is.linhay@outlook.com' }
   s.source    = { :git => 'https://github.com/linhay/Routable.git', :tag => s.version.to_s }
   
   s.ios.deployment_target = '8.0'

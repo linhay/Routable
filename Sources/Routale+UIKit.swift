@@ -22,6 +22,29 @@
 
 import UIKit
 
+// MARK: - only swift
+public extension Routable {
+  
+  /// 解析viewController类型
+  ///
+  /// - Parameter coin: viewController 路径
+  /// - Returns: viewController 或者 nil
+  public class func viewController(coin: RoutableCoin,params:[String: Any] = [:]) -> UIViewController? {
+    return object(url: coin.toURL(), params: params) as? UIViewController
+  }
+  
+  
+  /// 解析view类型
+  ///
+  /// - Parameter coin: view 路径
+  /// - Returns: view 或者 nil
+  public class func view(coin: RoutableCoin,params:[String: Any] = [:]) -> UIView? {
+    return object(url: coin.toURL(), params: params) as? UIView
+  }
+  
+}
+
+
 // MARK: - UIKit
 public extension Routable {
   

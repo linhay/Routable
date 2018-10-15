@@ -26,6 +26,10 @@ import RoutableAssist
 public typealias RewriteBlock  = @convention(block) (_ dict: [String: Any]) -> [String: Any]
 public typealias RoutableBlock = @convention(block) (_ dict: [String: Any]) -> Void
 
+public protocol RoutableCoin {
+  func toURL() -> URL
+}
+
 public class Routable: NSObject {
   
   /// 指定 scheme 下匹配规则
@@ -66,6 +70,36 @@ public class Routable: NSObject {
   static var repleRules = [String: URLValue]()
 }
 
+// MARK: - only swift
+extension Routable {
+  
+  /// 执行路径指定函数
+  ///
+  /// - Parameter coin: 函数路径
+  public class func exec(coin: RoutableCoin, params:[String: Any] = [:]) {
+    exec(url: coin.toURL(), params: params)
+  }
+  
+  /// 通知所有已缓存类型函数
+  ///
+  /// - Parameter coin: 函数路径
+  public class func notice(coin: RoutableCoin, params:[String: Any] = [:], call: RoutableBlock? = nil) {
+   notice(url: coin.toURL(), params: params, call: call)
+  }
+  
+  /// 解析Any类型(回调形式)
+  ///
+  /// - Parameters:
+  ///   - coin: url
+  ///   - params: url 参数(选填)
+  ///   - call: 回调数据
+  @discardableResult public class func object(coin: RoutableCoin, params:[String: Any] = [:], call: RoutableBlock? = nil) -> Any? {
+    return object(url: coin.toURL(), params: params, call: call)
+  }
+  
+}
+
+// MARK: - swift with oc
 extension Routable {
   
   /// 执行路径指定函数
@@ -85,17 +119,17 @@ extension Routable {
   /// 通知所有已缓存类型函数
   ///
   /// - Parameter url: 函数路径
-  @objc public class func notice(str: String, params:[String: Any] = [:], call: RoutableBlock? = nil) {
-    guard let url = URL(string: str) else { return }
-    notice(url: url, params: params, call: call)
+  @objc public class func notice(url: URL, params:[String: Any] = [:], call: RoutableBlock? = nil) {
+    guard url.host == "notice", let value = urlParse(url: url, params: params) else { return }
+    notice(urlValue: value, block: call)
   }
   
   /// 通知所有已缓存类型函数
   ///
   /// - Parameter url: 函数路径
-  @objc public class func notice(url: URL, params:[String: Any] = [:], call: RoutableBlock? = nil) {
-    guard url.host == "notice", let value = urlParse(url: url, params: params) else { return }
-    notice(urlValue: value, block: call)
+  @objc public class func notice(str: String, params:[String: Any] = [:], call: RoutableBlock? = nil) {
+    guard let url = URL(string: str) else { return }
+    notice(url: url, params: params, call: call)
   }
   
 }
